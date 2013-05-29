@@ -1,0 +1,14 @@
+O_TARGET := flash.o
+
+ifeq ($(CONFIG_RALINK_FLASH_API),y)
+FLASH_OBJ = flash_k.obj
+endif
+
+ifeq ($(CONFIG_RALINK_FLASH_API),m)
+FLASH_OBJ = flash_m.obj
+endif
+
+obj-y := $(FLASH_OBJ)
+obj-m := $(O_TARGET)
+include $(TOPDIR)/Rules.make
+

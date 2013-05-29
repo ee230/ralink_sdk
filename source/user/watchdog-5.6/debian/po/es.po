@@ -1,0 +1,93 @@
+# watchdog translation to spanish 
+# Copyright (C) 2008 Software in the Public Interest, SPI Inc.
+# This file is distributed under the same license as the watchdog package.
+#
+# Changes
+# - Initial translation
+# Carlos Eduardo Sotelo Pinto <krlos.aqp@debian.org>, 2008
+#
+# Traductores, si no estan familiarizados con el formato PO, merece la 
+# pena leer la documentación de gettext, especialmente las secciones 
+# dedicadas a este formato, por ejemplo ejecutando
+#
+#   info -n '(gettext)PO Files'
+#   info -n '(gettext)Header Entry'
+#
+# - El proyecto de traducción de Debian al español
+#   http://www.debian.org/intl/spanish/
+# especialmente las notas y normas de traducción en
+#   http://www.debian.org/intl/spanish/notas
+#
+# - La guía de traducción de po's de debconof
+#   /usr/share/doc/po-debconf/README-trans
+# o
+#   http://www.debian.org/intl/l10n/po-debconf/README-trans
+#
+# Si tiene dudas o consultas sobre esta traducción consulte con el último
+# traductor (campo Last-Translator) y ponga en copia a la lista de
+# traducción de Debian al español (<debian-l10n-spanish@lists.debian.org>)
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: watchdog 5.4-5\n"
+"Report-Msgid-Bugs-To: meskes@debian.org\n"
+"POT-Creation-Date: 2007-07-16 08:48+0200\n"
+"PO-Revision-Date: 2008-08-09 20:18-0500\n"
+"Last-Translator: Carlos Eduardo Sotelo Pinto <krlos.aqpp@gmail.com>\n"
+"Language-Team: Spanish <debian-l10n-spanish@list.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid "Start watchdog at boot time?"
+msgstr "¿Desea cargar «watchdog» al inicio del sistema?"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid ""
+"Please specify whether watchdog should be started as part of the boot "
+"process. This can be changed later by editing /etc/default/watchdog."
+msgstr ""
+"Especifique si se debe iniciar watchdog como parte del proceso de carga del "
+"sistema. Puuede cambiar más adelante esto luego editando el archivo /etc/"
+"default/watchdog."
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid "Restart watchdog on upgrades?"
+msgstr "¿Desea reiniciar «watchdog» en las actualizaciones?"
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid ""
+"If the kernel is configured with the CONFIG_WATCHDOG_NOWAYOUT option (which "
+"is not the default setting), restarting watchdog will cause a spurious "
+"reboot (the kernel will assume that the watchdog daemon crashed)."
+msgstr ""
+"Si el kernel esta configurado con la opción CONFIG_WATCHDOG_NOWAYOUT (que no "
+"es la opción por omisión), reiniciar watchdog causará un reinicio momentáneo "
+"(el kernel asumirá que el demonio de watchdog ha colisionado.)"
+
+#. Type: string
+#. Description
+#: ../templates:4001
+msgid "Watchdog module to preload:"
+msgstr "Módulo de watchdog a precargar:"
+
+#. Type: string
+#. Description
+#: ../templates:4001
+msgid ""
+"Please choose which watchdog module should be preloaded before starting "
+"watchdog. The 'softdog' module should be suited for all installations. Enter "
+"'none' if you don't want the script to load a module."
+msgstr ""
+"Seleccione que módulo de watchdog se cargará antes de iniciar watchdog. El "
+"módulo «softdog» se adaptará a todas las instalaciones. Ingrese «none» si no "
+"desea el guión para cargar un módulo."

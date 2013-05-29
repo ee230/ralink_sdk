@@ -1,0 +1,14 @@
+#!/bin/sh
+set -e
+
+if [ -f /var/lib/dpkg/info/watchdog.prerm ]; then
+# fix that old nasty reboot-on-upgrade bug
+	if [ `grep "/etc/init.d/watchdog stop" /var/lib/dpkg/info/watchdog.prerm >/dev/null` ]
+then 
+		sed -e 's%/etc/init.d/watchdog stop%# do not stop watchdog here /etc/init.d/watchdog stop%' < /var/lib/dpkg/info/watchdog.prerm > /var/lib/dpkg/info/watchdog.prerm.new &&
+		mv /var/lib/dpkg/info/watchdog.prerm.new /var/lib/dpkg/info/watchdog.prerm
+	fi
+fi
+
+#DEBHELPER#
+

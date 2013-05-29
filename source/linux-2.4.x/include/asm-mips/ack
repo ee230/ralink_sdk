@@ -1,0 +1,1453 @@
+addrspace.h: *  32-bit MIPS address spaces
+addrspace.h: * 64-bit address conversions
+arc/types.h:/* The pointer types.  Note that we're using a 64-bit compiler but all
+arc/types.h:   pointer in the ARC structures are only 32-bit, so we need some disgusting
+arc/types.h:/* The pointer types.  We're 64-bit and the firmware is also 64-bit, so
+asm.h: * away by gas in -O mode. These nops are however required to fill delay
+asm.h: * LEAF - declare leaf routine
+asm.h: * NESTED - declare nested routine entry point
+asm.h: * END - mark end of function
+asm.h:		.size	function,.-function
+asm.h: * EXPORT - export definition of symbol
+asm.h: * FEXPORT - export definition of a function symbol
+asm.h: * ABS - export absolute symbol
+asm.h: * Macros to handle different pointer/register sizes for 32/64-bit code
+atomic.h: * atomic_read - read atomic variable
+atomic.h:#define atomic_read(v)	((v)->counter)
+atomic.h: * atomic_set - set atomic variable
+atomic.h:#define atomic_set(v,i)	((v)->counter = (i))
+atomic.h: * atomic_add - add integer to atomic variable
+atomic.h:	v->counter += i;
+atomic.h: * atomic_sub - subtract the atomic variable
+atomic.h:	v->counter -= i;
+atomic.h:	temp = v->counter;
+atomic.h:	v->counter = temp;
+atomic.h:	temp = v->counter;
+atomic.h:	temp -= i;
+atomic.h:	v->counter = temp;
+atomic.h: * atomic_add - add integer to atomic variable
+atomic.h:		: "=&r" (temp), "=m" (v->counter)
+atomic.h:		: "Ir" (i), "m" (v->counter));
+atomic.h: * atomic_sub - subtract the atomic variable
+atomic.h:		: "=&r" (temp), "=m" (v->counter)
+atomic.h:		: "Ir" (i), "m" (v->counter));
+atomic.h:		: "=&r" (result), "=&r" (temp), "=m" (v->counter)
+atomic.h:		: "Ir" (i), "m" (v->counter)
+atomic.h:		: "=&r" (result), "=&r" (temp), "=m" (v->counter)
+atomic.h:		: "Ir" (i), "m" (v->counter)
+atomic.h: * atomic_sub_and_test - subtract value from variable and test result
+atomic.h: * atomic_inc_and_test - increment and test
+atomic.h: * atomic_dec_and_test - decrement by 1 and test
+atomic.h: * atomic_inc - increment atomic variable
+atomic.h: * atomic_dec - decrement and test
+atomic.h: * atomic_add_negative - add and test if negative
+au1000_dma.h:	au_writel(DMA_BE0, chan->io + DMA_MODE_SET);
+au1000_dma.h:	au_writel(DMA_BE1, chan->io + DMA_MODE_SET);
+au1000_dma.h:	au_writel(DMA_BE0 | DMA_BE1, chan->io + DMA_MODE_SET);
+au1000_dma.h:	au_writel(DMA_GO, chan->io + DMA_MODE_SET);
+au1000_dma.h:	au_writel(DMA_GO, chan->io + DMA_MODE_CLEAR);
+au1000_dma.h:		if (au_readl(chan->io + DMA_MODE_READ) & DMA_HALT)
+au1000_dma.h:	au_writel(~DMA_GO, chan->io + DMA_MODE_CLEAR);
+au1000_dma.h:	return (au_readl(chan->io + DMA_MODE_READ) & DMA_HALT) ? 1 : 0;
+au1000_dma.h:	au_writel(PHYSADDR(chan->fifo_addr),
+au1000_dma.h:		  chan->io + DMA_PERIPHERAL_ADDR);
+au1000_dma.h:	mode = chan->mode | (chan->dev_id << DMA_DID_BIT);
+au1000_dma.h:	if (chan->irq)
+au1000_dma.h:	au_writel(~mode, chan->io + DMA_MODE_CLEAR);
+au1000_dma.h:	au_writel(mode, chan->io + DMA_MODE_SET);
+au1000_dma.h:	chan->mode &= ~(DMA_BE | DMA_DR | DMA_TS8 | DMA_DW_MASK | DMA_NC);
+au1000_dma.h:	chan->mode |= mode;
+au1000_dma.h:	return chan->mode;
+au1000_dma.h:		return -1;
+au1000_dma.h:	return (au_readl(chan->io + DMA_MODE_READ) & DMA_AB) ? 1 : 0;
+au1000_dma.h: * set the device FIFO address for a specific DMA channel - only
+au1000_dma.h:	if (chan->mode & DMA_DS)	/* second bank of device ids */
+au1000_dma.h:	if (chan->dev_id != DMA_ID_GP04 && chan->dev_id != DMA_ID_GP05)
+au1000_dma.h:	au_writel(PHYSADDR(a), chan->io + DMA_PERIPHERAL_ADDR);
+au1000_dma.h:	au_writel(DMA_D0, chan->io + DMA_MODE_CLEAR);
+au1000_dma.h:	au_writel(DMA_D1, chan->io + DMA_MODE_CLEAR);
+au1000_dma.h: * This does nothing - not applicable to Au1000 DMA.
+au1000_dma.h:	au_writel(a, chan->io + DMA_BUFFER0_START);
+au1000_dma.h:	au_writel(a, chan->io + DMA_BUFFER1_START);
+au1000_dma.h:	au_writel(count, chan->io + DMA_BUFFER0_COUNT);
+au1000_dma.h:	au_writel(count, chan->io + DMA_BUFFER1_COUNT);
+au1000_dma.h:	au_writel(count, chan->io + DMA_BUFFER0_COUNT);
+au1000_dma.h:	au_writel(count, chan->io + DMA_BUFFER1_COUNT);
+au1000_dma.h: * Returns -1 if neither or both done bits set.
+au1000_dma.h:    return au_readl(chan->io + DMA_MODE_READ) & (DMA_D0 | DMA_D1);
+au1000_dma.h:		return -1;
+au1000_dma.h:	return chan->irq;
+au1000_dma.h:	curBufCntReg = (au_readl(chan->io + DMA_MODE_READ) & DMA_AB) ?
+au1000_dma.h:	count = au_readl(chan->io + curBufCntReg) & DMA_COUNT_MASK;
+au1000_dma.h:	if ((chan->mode & DMA_DW_MASK) == DMA_DW16)
+au1000_dma.h:	else if ((chan->mode & DMA_DW_MASK) == DMA_DW32)
+au1000_gpio.h:#define NOT_AVAIL		(-1)
+au1000_gpio.h:#define MINOR_TO_GPIOPIN(minor)		((minor < AU1X00_MAX_PRIMARY_GPIO) ? minor : (minor - AU1X00_MAX_PRIMARY_GPIO))
+au1000_gpio.h: * GPIO0-GPIO31, minor=0-31.
+au1000_gpio.h: * GPIO200-GPIO215, minor=32-47.
+au1000_gpio.h:	int data;	// Pin output when itized (0/1), or at the term. 0/1/-1 (tristate).
+au1000.h: * Taken from PPC tree.  -- Dan
+au1000.h:	return 31 - lz;
+au1000.h:	return __ilog2(x & -x);
+au1000.h:	return __ilog2(x & -x) + 1;
+au1000.h:/* UARTS 0-3 */
+au1000.h:#define UART_LSR_THRE	0x20	/* Transmit-hold-register empty */
+au1000.h:#define SSI_CONFIG_ALEN_N(N)		((N-1)<<20)
+au1000.h:#define SSI_CONFIG_DLEN_N(N)		((N-1)<<16)
+au1000.h:  /* FIXME - double check this from asm-ppc/pci-bridge.h */
+au1000.h:  ({ long _ctl_ = -1;                                 \
+au1000.h:	       _ctl_ = pci_irq_table[idsel - min_idsel][pin-1];               \
+au1000_pcmcia.h: *  59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+au1000_pcmcia.h: * These really belong in a board-specific header file...
+au1000_usbdev.h: *	Au1000 USB Device-Side Driver
+au1100_mmc.h: * From "AMD Alchemy Solutions Au1100 Processor Data Book - Preliminary"
+au1100_mmc.h:/* support routines required on a platform-specific basis */
+au1xxx_dbdma.h:/* Specifics for the Au1xxx Descriptor-Based DMA Controllers, first
+au1xxx_dbdma.h:	u32	ddma_desptr;	/* 32-byte aligned pointer to descriptor */
+au1xxx_dbdma.h:#define DDMA_CFG_DFN	(1 << 3)	/* Descriptor fetch non-coherent */
+au1xxx_dbdma.h: * Must be 32-byte aligned.
+au1xxx_dbdma.h:#define DSCR_CMD0_MEM		(1 << 30)	/* mem-mem transfer */
+au1xxx_dbdma.h:#define DSCR_CMD0_SN		(0x1 << 12)	/* Source non-coherent */
+au1xxx_dbdma.h:#define DSCR_CMD0_DN		(0x1 << 11)	/* Destination non-coherent */
+au1xxx_dbdma.h:/* Source1, 1-dimensional stride.
+au1xxx_dbdma.h:/* Dest1, 1-dimensional stride.
+au1xxx_dbdma.h: 	Some compatibilty macros --
+au1xxx_psc.h:/* Enable slots 3-12.
+au1xxx_psc.h:#define PSC_AC97CFG_TXSLOT_ENA(x)	(1 << (((x) - 3) + 11))
+au1xxx_psc.h:#define PSC_AC97CFG_RXSLOT_ENA(x)	(1 << (((x) - 3) + 1))
+au1xxx_psc.h:#define PSC_AC97CFG_SET_LEN(x)	(((((x)-2)/2) & 0xf) << 21)
+au1xxx_psc.h:#define PSC_I2SCFG_SET_WS(x)	(((((x) / 2) - 1) & 0x7f) << 16)
+au1xxx_psc.h:#define PSC_I2SCFG_SET_LEN(x)	((((x) - 1) & 0x1f) << 4)
+au1xxx_psc.h:#define PSC_SPICFG_SET_LEN(x)	(((x-1) & 0x1f) << 4)
+baget/vac.h:#define    VAC_CTRL_RECOVERY_IOSELI(x) ((((x)-1)&7)<<8)
+baget/vac.h:#define    VAC_CTRL_DELAY_DSACKI(x)    ((((x)-1)&7)<<13)
+baget/vic.h:#define    VIC_LOCAL_TIM_PAS_ASSERT(x)   (((x)-2)&0xf)
+baget/vic.h:#define    VIC_LOCAT_TIM_DS_DEASSERT(x)  ((((x)-1)&1)<<4)
+baget/vic.h:#define    VIC_LOCAL_TIM_PAS_DEASSERT(x) ((((x)-1)&0x7)<<5)
+baget/baget.h:#define BAGET_A24M_BASE       0xFC000000      /* VME-master A24 base address  */
+baget/baget.h:#define BAGET_A24S_BASE       0x00000000      /* VME-slave A24 base address   */
+baget/baget.h:#define BAGET_A24S_MASK       0x00c00000      /* VME-slave A24 address mask   */
+baget/baget.h:#define BAGET_IRQ_MASK(x)       ((NR_IRQS-1) & (x))
+bcache.h:/* Some R4000 / R4400 / R4600 / R5000 machines may have a non-dma-coherent,
+bcache.h:	bcops->bc_enable();
+bcache.h:	bcops->bc_disable();
+bcache.h:	bcops->bc_wback_inv(page, size);
+bcache.h:	bcops->bc_inv(page, size);
+bitops.h: * Copyright (c) 1994 - 1997, 1999, 2000  Ralf Baechle (ralf@gnu.org)
+bitops.h: * set_bit - Atomically set a bit in memory
+bitops.h: * restricted to acting on a single-word quantity.
+bitops.h: * __set_bit - Set a bit in memory
+bitops.h: * Unlike set_bit(), this function is non-atomic and may be reordered.
+bitops.h: * clear_bit - Clears a bit in memory
+bitops.h: * change_bit - Toggle a bit in memory
+bitops.h: * restricted to acting on a single-word quantity.
+bitops.h: * __change_bit - Toggle a bit in memory
+bitops.h: * Unlike change_bit(), this function is non-atomic and may be reordered.
+bitops.h: * test_and_set_bit - Set a bit and return its old value
+bitops.h: * __test_and_set_bit - Set a bit and return its old value
+bitops.h: * This operation is non-atomic and can be reordered.
+bitops.h: * test_and_clear_bit - Clear a bit and return its old value
+bitops.h: * __test_and_clear_bit - Clear a bit and return its old value
+bitops.h: * This operation is non-atomic and can be reordered.
+bitops.h: * test_and_change_bit - Change a bit and return its new value
+bitops.h: * __test_and_change_bit - Change a bit and return its old value
+bitops.h: * This operation is non-atomic and can be reordered.
+bitops.h: * set_bit - Atomically set a bit in memory
+bitops.h: * restricted to acting on a single-word quantity.
+bitops.h: * __set_bit - Set a bit in memory
+bitops.h: * Unlike set_bit(), this function is non-atomic and may be reordered.
+bitops.h: * clear_bit - Clears a bit in memory
+bitops.h: * change_bit - Toggle a bit in memory
+bitops.h: * restricted to acting on a single-word quantity.
+bitops.h: * __change_bit - Toggle a bit in memory
+bitops.h: * Unlike change_bit(), this function is non-atomic and may be reordered.
+bitops.h: * test_and_set_bit - Set a bit and return its old value
+bitops.h: * __test_and_set_bit - Set a bit and return its old value
+bitops.h: * This operation is non-atomic and can be reordered.
+bitops.h: * test_and_clear_bit - Clear a bit and return its old value
+bitops.h: * __test_and_clear_bit - Clear a bit and return its old value
+bitops.h: * This operation is non-atomic and can be reordered.
+bitops.h: * test_and_change_bit - Change a bit and return its new value
+bitops.h: * __test_and_change_bit - Change a bit and return its old value
+bitops.h: * This operation is non-atomic and can be reordered.
+bitops.h: * test_bit - Determine whether a bit is set
+bitops.h: * ffz - find first zero in word.
+bitops.h: * ffs - find first bit set
+bitops.h: * find_next_zero_bit - find the first zero bit in a memory region
+bitops.h:	size -= result;
+bitops.h:		tmp |= ~0UL >> (32-offset);
+bitops.h:		size -= 32;
+bitops.h:		size -= 32;
+bitops.h:#if 0 /* Fool kernel-doc since it doesn't do macros yet */
+bitops.h: * find_first_zero_bit - find the first zero bit in a memory region
+bitops.h: * Returns the bit-number of the first zero bit, not the number of the byte
+bitops.h: * hweightN - returns the hamming weight of a N-bit word
+bitops.h:	size -= result;
+bitops.h:		tmp |= ~0U >> (32-offset); /* bug or feature ? */
+bitops.h:		size -= 32;
+bitops.h:		size -= 32;
+bootinfo.h:#define MACH_GROUP_TITAN       22 /* PMC-Sierra Titan 			    */
+bootinfo.h:#define MACH_ACER_PICA_61	0	/* Acer PICA-61 (PICA1)		*/
+bootinfo.h:#define MACH_OLIVETTI_M700      2	/* Olivetti M700-10 (-15 ??)    */
+bootinfo.h:#define MACH_NEC_DDB5074	0	/* NEC DDB Vrc-5074 */
+bootinfo.h:#define MACH_NEC_DDB5476	1	/* NEC DDB Vrc-5476 */
+bootinfo.h:#define MACH_NEC_DDB5477	2	/* NEC DDB Vrc-5477 */
+bootinfo.h:#define MACH_BAGET201		0	/* BT23-201 */
+bootinfo.h:#define MACH_BAGET202		1	/* BT23-202 */
+bootinfo.h:#define MACH_TOSHIBA_JMR3927	3	/* JMR-TX3927 CPU/IO board */
+bootinfo.h:#define MACH_PB1000		0	/* Au1000-based eval board */
+bootinfo.h:#define MACH_PB1100		1	/* Au1100-based eval board */
+bootinfo.h:#define MACH_PB1500		2	/* Au1500-based eval board */
+bootinfo.h:#define MACH_DB1000		3       /* Au1000-based eval board */
+bootinfo.h:#define MACH_DB1100		4       /* Au1100-based eval board */
+bootinfo.h:#define MACH_DB1500		5       /* Au1500-based eval board */
+bootinfo.h:#define MACH_XXS1500		6       /* Au1500-based eval board */
+bootinfo.h:#define MACH_MTX1		7	/* 4G MTX-1 Au1500-based board */
+bootinfo.h:#define MACH_PB1550     	9       /* Au1550-based eval board */
+bootinfo.h:#define MACH_PB1200     	10      /* Au1200-based eval board */
+bootinfo.h:#define MACH_DB1550     	11      /* Au1550-based eval board */
+bootinfo.h:#define MACH_DB1200     	12      /* Au1200-based eval board */
+bootinfo.h:#define MACH_VICTOR_MPC30X	3	/* Victor MP-C303/304 */
+bootinfo.h:#define MACH_CASIO_E55		5	/* CASIO CASSIOPEIA E-10/15/55/65 */
+bootinfo.h:#define	MACH_TITAN_YOSEMITE	1 	/* PMC-Sierra Yosemite */
+branch.h:	return regs->cp0_cause & CAUSEF_BD;
+branch.h:		return regs->cp0_epc;
+branch.h:	return regs->cp0_epc + 4;
+branch.h:		regs->cp0_epc += 4;
+break.h: * non-Linux/MIPS object files or make use of them in the future.
+break.h:#define BRK_BD_TAKEN	3	/* For bd slot emulation - not implemented */
+break.h:#define BRK_BD_NOTTAKEN	4	/* For bd slot emulation - not implemented */
+break.h:#define BRK_NORLD	10	/* No rld found - not used by Linux/MIPS */
+bugs.h: * This is included by init/main.c to check for architecture-dependent bugs.
+cachectl.h: * cachectl.h -- defines for MIPS cache control system calls
+cacheflush.h: *  - flush_cache_all() flushes entire cache
+cacheflush.h: *  - flush_cache_mm(mm) flushes the specified mm context's cache lines
+cacheflush.h: *  - flush_cache_page(mm, vmaddr) flushes a single page
+cacheflush.h: *  - flush_cache_range(mm, start, end) flushes a range of pages
+cacheflush.h: *  - flush_page_to_ram(page) write back kernel page to ram
+cacheflush.h: *  - flush_icache_range(start, end) flush a range of instructions
+cacheflush.h: *  - flush_cache_sigtramp() flush signal trampoline
+cacheflush.h: *  - flush_icache_all() flush the entire instruction cache
+cacheflush.h: *  - flush_data_cache_page() flushes a page from the data cache
+cacheops.h: * Cache Operations available on all MIPS processors with R4000-style caches
+cacheops.h: * R4000-specific cacheops
+cacheops.h: * R4000SC and R4400SC-specific cacheops
+cacheops.h: * R5000-specific cacheops
+cacheops.h: * RM7000-specific cacheops
+cacheops.h: * R1000-specific cacheops
+cacheops.h: * Cacheops 0x02, 0x06, 0x0a, 0x0c-0x0e, 0x16, 0x1a and 0x1e are unused.
+checksum.h: * and adds in "sum" (32-bit)
+checksum.h: * returns a 32-bit number suitable for feeding into itself
+checksum.h: * it's best to have buff aligned on a 32-bit boundary
+checksum.h:		*err_ptr = -EFAULT;
+checksum.h:		return -1;
+checksum.h: * computes the checksum of the TCP/UDP pseudo-header
+checksum.h: * returns a 16-bit checksum, already complemented
+checksum.h: * this routine is used for miscellaneous IP-like checksums, mainly
+cpu.h:  +----------------+----------------+----------------+----------------+
+cpu.h:  +----------------+----------------+----------------+----------------+
+cpu.h:   that bits 16-23 have been 0 for all MIPS processors before the MIPS32/64
+cpu.h: * +---------------------------------+----------------+----------------+
+cpu.h: * +---------------------------------+----------------+----------------+
+cpu.h: * Bit 15 encodes if an ISA level supports 64-bit operations.
+cpu.h:#define MIPS_CPU_SUBSET_CACHES	0x00020000 /* P-cache subset enforced */
+csb250.h: *  59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+db1200.h: *  59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+db1200.h: *    *example: IDE bis pos is  = 64 - 64
+db1200.h:                ETH bit pos is  = 65 - 64
+db1200.h:#define BOARD_CARD_INSERTED(SOCKET) bcsr->sig_status & (1<<(8+(2*SOCKET)))
+db1x00.h: *  59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+db1x00.h:#define BOARD_CARD_INSERTED(SOCKET) !(bcsr->status & (1<<(4+SOCKET)))
+db1x00.h:#define BOARD_CARD_INSERTED(SOCKET) !(bcsr->status & (1<<(4+SOCKET)))
+ddb5074.h: *  include/asm-mips/ddb5074.h -- NEC DDB Vrc-5074 definitions
+ddb5xxx/ddb5074.h: *  include/asm-mips/ddb5074.h -- NEC DDB Vrc-5074 definitions
+ddb5xxx/ddb5476.h:#define	DDB_DCS5_SIZE		0x00200000	/* 2MB, 8-bit */
+ddb5xxx/ddb5476.h:#define	DDB_DCS4_SIZE		0x00200000	/* 2MB, 8-bit */
+ddb5xxx/ddb5476.h:#define DDB_BOOTCS_SIZE         0x00200000      /* 2 MB - doc says 4MB */
+ddb5xxx/ddb5476.h: *   . CPU itself - 8 sources
+ddb5xxx/ddb5476.h: *   . i8259 - 16 sources
+ddb5xxx/ddb5476.h: *   . vrc5476 - 16 sources
+ddb5xxx/ddb5476.h: *  All VRC5476 PCI interrupts are level-triggered (no ack needed).
+ddb5xxx/ddb5476.h: * vrc5476 irq defs, see page 52-64 of Vrc5074 system controller manual
+ddb5xxx/ddb5476.h:#define irq_to_nile4(n)         ((n)-NUM_I8259_IRQ)
+ddb5xxx/ddb5476.h: * low-level irq functions
+ddb5xxx/ddb5477.h: * include/asm-mips/ddb5xxx/ddb5477.h
+ddb5xxx/ddb5477.h:#undef  DDB_CPUSTAT		/* duplicate in Vrc-5477 */
+ddb5xxx/ddb5477.h:#define	DDB_PCICTL0_L	0x02e0	/* PCI0 Control-L */
+ddb5xxx/ddb5477.h:#define	DDB_PCICTL0_H	0x02e4	/* PCI0 Control-H */
+ddb5xxx/ddb5477.h:#define	DDB_PCIARB0_L	0x02e8	/* PCI0 Arbitration-L */
+ddb5xxx/ddb5477.h:#define	DDB_PCIARB0_H	0x02ec	/* PCI0 Arbitration-H */
+ddb5xxx/ddb5477.h:#define	DDB_PCICTL1_L	0x06e0	/* PCI1 Control-L */
+ddb5xxx/ddb5477.h:#define	DDB_PCICTL1_H	0x06e4	/* PCI1 Control-H */
+ddb5xxx/ddb5477.h:#define	DDB_PCIARB1_L	0x06e8	/* PCI1 Arbitration-L */
+ddb5xxx/ddb5477.h:#define	DDB_PCIARB1_H	0x06ec	/* PCI1 Arbitration-H */
+ddb5xxx/ddb5477.h:#define DDB_GIUFUNSEL	0x4040  /* select dual-func pins */
+ddb5xxx/ddb5477.h:/* the actual ram size is detected at run-time */
+ddb5xxx/ddb5477.h:#define	DDB_BOOTCS_SIZE		0x00200000	/* 2 MB - doc says 4MB */
+ddb5xxx/ddb5477.h:/* low-level routine for enabling vrc5477 irq, bypassing high-level */
+ddb5xxx/ddb5477.h: *   . CPU itself - 8 sources
+ddb5xxx/ddb5477.h: *   . i8259 - 16 sources
+ddb5xxx/ddb5477.h: *   . vrc5477 - 32 sources
+ddb5xxx/ddb5477.h: *  All VRC5477 PCI interrupts are level-triggered (no ack needed).
+ddb5xxx/ddb5477.h:#define VRC5477_IRQ_IOPCI_INTA	(16 + VRC5477_IRQ_BASE)      /* USB-H */
+ddb5xxx/ddb5477.h:#define VRC5477_IRQ_IOPCI_INTB	(17 + VRC5477_IRQ_BASE)      /* USB-P */
+ddb5xxx/ddb5477.h:#define	VRC5477_I8259_CASCADE	(VRC5477_IRQ_INTC - VRC5477_IRQ_BASE)
+ddb5xxx/ddb5xxx.h: * include/asm-mips/ddb5xxx/ddb5xxx.h
+ddb5xxx/ddb5xxx.h: *	uPD31577(VRC5477) VR5432-SDRAM/PCI Bridge (Luke)
+ddb5xxx/ddb5xxx.h:#define DDB_DCS2	0x0010	/* Device Chip-Select 2 [R/W] */
+ddb5xxx/ddb5xxx.h:#define DDB_DCS3	0x0018	/* Device Chip-Select 3 [R/W] */
+ddb5xxx/ddb5xxx.h:#define DDB_DCS4	0x0020	/* Device Chip-Select 4 [R/W] */
+ddb5xxx/ddb5xxx.h:#define DDB_DCS5	0x0028	/* Device Chip-Select 5 [R/W] */
+ddb5xxx/ddb5xxx.h:#define DDB_DCS6	0x0030	/* Device Chip-Select 6 [R/W] */
+ddb5xxx/ddb5xxx.h:#define DDB_DCS7	0x0038	/* Device Chip-Select 7 [R/W] */
+ddb5xxx/ddb5xxx.h:#define DDB_DCS8	0x0040	/* Device Chip-Select 8 [R/W] */
+ddb5xxx/ddb5xxx.h:#define DDB_BOOTCS	0x0078	/* Boot ROM Chip-Select [R/W] */
+ddb5xxx/ddb5xxx.h: *  Memory-Interface Registers
+ddb5xxx/ddb5xxx.h: *  PCI-Bus Registers
+ddb5xxx/ddb5xxx.h: *  Local-Bus Registers
+ddb5xxx/ddb5xxx.h:#define DDB_LCST2	0x0110	/* Local Bus Chip-Select Timing 2 [R/W] */
+ddb5xxx/ddb5xxx.h:#define DDB_LCST3	0x0118	/* Local Bus Chip-Select Timing 3 [R/W] */
+ddb5xxx/ddb5xxx.h:#define DDB_LCST4	0x0120	/* Local Bus Chip-Select Timing 4 [R/W] */
+ddb5xxx/ddb5xxx.h:#define DDB_LCST5	0x0128	/* Local Bus Chip-Select Timing 5 [R/W] */
+ddb5xxx/ddb5xxx.h:#define DDB_LCST6	0x0130	/* Local Bus Chip-Select Timing 6 [R/W] */
+ddb5xxx/ddb5xxx.h:#define DDB_LCST7	0x0138	/* Local Bus Chip-Select Timing 7 [R/W] */
+ddb5xxx/ddb5xxx.h:#define DDB_LCST8	0x0140	/* Local Bus Chip-Select Timing 8 [R/W] */
+ddb5xxx/ddb5xxx.h:#define DDB_DCSFN	0x0150	/* Device Chip-Select Muxing and Output */
+ddb5xxx/ddb5xxx.h:#define DDB_DCSIO	0x0158	/* Device Chip-Selects As I/O Bits [R/W] */
+ddb5xxx/ddb5xxx.h:#define DDB_BCST	0x0178	/* Local Boot Chip-Select Timing [R/W] */
+ddb5xxx/ddb5xxx.h:#define DDB_T1CTRL	0x01D0	/* CPU-Bus Read Time-Out Control [R/W] */
+ddb5xxx/ddb5xxx.h:#define DDB_T1CNTR	0x01D8	/* CPU-Bus Read Time-Out Counter [R/W] */
+ddb5xxx/ddb5xxx.h:#define DDB_T2CTRL	0x01E0	/* General-Purpose Timer Control [R/W] */
+ddb5xxx/ddb5xxx.h:#define DDB_T2CNTR	0x01E8	/* General-Purpose Timer Counter [R/W] */
+ddb5xxx/ddb5xxx.h:#define DDB_SSVID	0x022C	/* PCI Sub-System Vendor ID [R/W] */
+ddb5xxx/ddb5xxx.h:#define DDB_SSID	0x022E	/* PCI Sub-System ID [R/W] */
+debug.h: * Debug macros for run-time debugging.  Turned on/off with 
+debug.h: * run-time macros for catching spurious errors.  Eable CONFIG_RUNTIME_DEBUG in
+debug.h: * Use them as run-time debugging aid.  NEVER USE THEM AS ERROR HANDLING CODE!!!
+dec/tc.h: * of the first card not in use or -ENODEV
+dec/kn230.h: *	include/asm-mips/dec/kn230.h
+dec/ecc.h: *	include/asm-mips/dec/ecc.h
+dec/ecc.h: * The register is r/wc -- any write clears it.
+dec/ecc.h: * from the last memory read.  The register is r/wc -- any write clears it.
+dec/kn02ba.h: *	include/asm-mips/dec/kn02ba.h
+dec/kn02ba.h: *	DECstation 5000/1xx (3min or KN02-BA) definitions.
+dec/kn02ba.h: * I/O ASIC interrupt bits.  Star marks denote non-IRQ status bits.
+dec/kn02ca.h: *	include/asm-mips/dec/kn02ca.h
+dec/kn02ca.h: *	Personal DECstation 5000/xx (Maxine or KN02-CA) definitions.
+dec/kn02ca.h: * I/O ASIC interrupt bits.  Star marks denote non-IRQ status bits.
+dec/kn02ca.h:#define KN02CA_IO_INR_POWERON	13	/* (*) ACCESS.Bus/power-on reset */
+dec/kn02xa.h: * The rest is defined in system-specific headers.
+dec/kn02xa.h: * The rest is defined in system-specific headers.
+dec/interrupts.h: * with the machine-specific interrupt routines.
+dec/interrupts.h:#define DEC_IRQ_TC5		DEC_IRQ_ASC	/* virtual PMAZ-AA */
+dec/interrupts.h:#define DEC_IRQ_TC6		DEC_IRQ_LANCE	/* virtual PMAD-AA */
+dec/ioasic_addrs.h:#define IO_REG_SCSI_SCR		0x1b0	/* SCSI Partial-Word DMA Control */
+dec/ioasic_addrs.h:#define IO_REG_FCTR		0x1e0	/* Free-Running Counter */
+dec/ioasic_addrs.h: * The lower 16 bits are system-specific.  Bits 15,11:8 are common and
+dec/ioasic_addrs.h: * defined here.  The rest is defined in system-specific headers.
+dec/kn01.h:#define KN01_CSR_STATUS		(1<<14)	/* self-test result status output */
+dec/kn03.h: * I/O ASIC interrupt bits.  Star marks denote non-IRQ status bits.
+dec/kn05.h: *	include/asm-mips/dec/kn05.h
+dec/kn05.h: * The register appears read-only.
+dec/rtc-dec.h: *	include/asm-mips/dec/rtc-dec.h
+dec/tcmodule.h: * EK-TCAAD-FS-004
+dec/serial.h: *	include/asm-mips/dec/serial.h
+dec/ioasic.h: *	include/asm-mips/dec/ioasic.h
+dec/tcinfo.h: * EK-TCAAD-FS-004
+dec/ioasic_ints.h: * The lower 16 bits are system-specific and thus defined in
+dec/ioasic_ints.h: * system-specific headers.
+delay.h: * Copyright (C) 1995 - 1998, 2001 by Ralf Baechle
+div64.h:		" addiu	%4, %4, -1\n\t" \
+dma.h: *  controller 1: channels 0-3, byte operations, ports 00-1F
+dma.h: *  controller 2: channels 4-7, word operations, ports C0-DF
+dma.h: *  - ALL registers are 8 bits only, regardless of transfer size
+dma.h: *  - channel 4 is not used - cascades 1 into 2.
+dma.h: *  - channels 0-3 are byte - addresses/counts are for physical bytes
+dma.h: *  - channels 5-7 are word - addresses/counts are for physical words
+dma.h: *  - transfers must not cross physical 64K (0-3) or 128K (5-7) boundaries
+dma.h: *  - transfer count loaded to registers is 1 less than actual count
+dma.h: *  - controller 2 offsets are all even (2x offsets for controller 1)
+dma.h: *  - page registers for 5-7 don't use data bit 0, represent 128K pages
+dma.h: *  - page registers for 0-3 use bit 0, represent 64K pages
+dma.h: *  Address mapping for channels 0-3:
+dma.h: *  Address mapping for channels 5-7:
+dma.h: * Again, channels 5-7 transfer _physical_ words (16 bits), so addresses
+dma.h: * and counts _must_ be word-aligned (the lowest address bit is _ignored_ at
+dma.h: * the hardware level, so odd-byte transfers aren't possible).
+dma.h: * count - 1 : 64K => 0xFFFF, 1 => 0x0000.  Thus, count is always 1 or more,
+dma.h: * and up to 128K bytes may be transferred on channels 5-7 in one operation.
+dma.h:#define DMA1_MASK_REG		0x0A	/* single-channel mask (w) */
+dma.h:#define DMA1_CLEAR_FF_REG	0x0C	/* clear pointer flip-flop (w) */
+dma.h:#define DMA1_MASK_ALL_REG       0x0F    /* all-channels mask (w) */
+dma.h:#define DMA2_MASK_REG		0xD4	/* single-channel mask (w) */
+dma.h:#define DMA2_CLEAR_FF_REG	0xD8	/* clear pointer flip-flop (w) */
+dma.h:#define DMA2_MASK_ALL_REG       0xDE    /* all-channels mask (w) */
+dma.h:#define DMA_MODE_CASCADE 0xC0   /* pass thru DREQ->HRQ, DACK<-HLDA only */
+dma.h: * After that, keep track of it. :-)
+dma.h: * --- In order to do that, the DMA routines below should ---
+dma.h: * --- only be used while holding the DMA lock ! ---
+dma.h: * Assumes dma flip-flop is clear.
+dma.h: * NOTE 2: "count" represents _bytes_ and must be even for channels 5-7.
+dma.h:        count--;
+dma.h: * Assumes DMA flip-flop is clear.
+dma.h:	/* using short to get 16-bit wrap around */
+ds1286.h: * mc146818rtc.h - register definitions for the Real-Time-Clock / CMOS RAM
+ds1286.h: * Copyright Torsten Duwe <duwe@informatik.uni-erlangen.de> 1993
+elf.h:#define EF_MIPS_ARCH_1      0x00000000  /* -mips1 code.  */
+elf.h:#define EF_MIPS_ARCH_2      0x10000000  /* -mips2 code.  */
+elf.h:#define EF_MIPS_ARCH_3      0x20000000  /* -mips3 code.  */
+elf.h:#define EF_MIPS_ARCH_4      0x30000000  /* -mips4 code.  */
+elf.h:#define EF_MIPS_ARCH_5      0x40000000  /* -mips5 code.  */
+elf.h:	if (__h->e_machine != EM_MIPS)					\
+elf.h:	if (__h->e_ident[EI_CLASS] != ELFCLASS32)			\
+elf.h:	if ((__h->e_flags & EF_MIPS_ABI2) != 0)				\
+elf.h:	if (((__h->e_flags & EF_MIPS_ABI) != 0) &&			\
+elf.h:	    ((__h->e_flags & EF_MIPS_ABI) != EF_MIPS_ABI_O32))		\
+elf.h:#define irix_elf_check_arch(hdr)	((hdr)->e_machine == EM_MIPS)
+elf.h: * See comments in asm-alpha/elf.h, this is the same thing
+elf.h:	_r->regs[1] = _r->regs[2] = _r->regs[3] = _r->regs[4] = 0;	\
+elf.h:	_r->regs[5] = _r->regs[6] = _r->regs[7] = _r->regs[8] = 0;	\
+elf.h:	_r->regs[9] = _r->regs[10] = _r->regs[11] = _r->regs[12] = 0;	\
+elf.h:	_r->regs[13] = _r->regs[14] = _r->regs[15] = _r->regs[16] = 0;	\
+elf.h:	_r->regs[17] = _r->regs[18] = _r->regs[19] = _r->regs[20] = 0;	\
+elf.h:	_r->regs[21] = _r->regs[22] = _r->regs[23] = _r->regs[24] = 0;	\
+elf.h:	_r->regs[25] = _r->regs[26] = _r->regs[27] = _r->regs[28] = 0;	\
+elf.h:	_r->regs[30] = _r->regs[31] = 0;				\
+errno.h:#define	EXDEV		18	/* Cross-device link */
+errno.h:#define	EROFS		30	/* Read-only file system */
+errno.h:#define	ENOTSOCK	95	/* Socket operation on non-socket */
+fcntl.h:/* open/fcntl - O_SYNC is only implemented on blocks devices and on files
+fcntl.h:#define F_GETFL		3	/* get file->f_flags */
+fcntl.h:#define F_SETFL		4	/* set file->f_flags */
+ficmmp.h: *  59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+ficmmp.h:#define AU1XXX_ATA_MEM_SIZE		(AU1XXX_ATA_END - AU1XXX_ATA_BASE +1)
+fixmap.h: * fixmap.h: compile-time virtual memory allocation
+fixmap.h: * Here we define all the compile-time 'special' virtual
+fixmap.h: * Also this lets us do fail-safe vmalloc(), we
+fixmap.h: * vmalloc()-ed addresses never overlap.
+fixmap.h: * these 'compile-time allocated' memory buffers are
+fixmap.h: * fixed-size 4k pages. (or larger if used with an increment
+fixmap.h: * fix-mapped?
+fixmap.h:	FIX_KMAP_END = FIX_KMAP_BEGIN+(KM_TYPE_NR*NR_CPUS)-1,
+fixmap.h:#define FIXADDR_START	(FIXADDR_TOP - FIXADDR_SIZE)
+fixmap.h:#define __fix_to_virt(x)	(FIXADDR_TOP - ((x) << PAGE_SHIFT))
+fixmap.h: * directly without tranlation, we catch the bug with a NULL-deference
+fixmap.h:	 * out-of-range indices).
+floppy.h: * Copyright (C) 1995 - 2000 Ralf Baechle
+floppy.h:#define fd_inb(port)		fd_ops->fd_inb(port)
+floppy.h:#define fd_outb(value,port)	fd_ops->fd_outb(value,port)
+floppy.h:#define fd_enable_dma()		fd_ops->fd_enable_dma(FLOPPY_DMA)
+floppy.h:#define fd_disable_dma()	fd_ops->fd_disable_dma(FLOPPY_DMA)
+floppy.h:#define fd_request_dma()	fd_ops->fd_request_dma(FLOPPY_DMA)
+floppy.h:#define fd_free_dma()		fd_ops->fd_free_dma(FLOPPY_DMA)
+floppy.h:#define fd_clear_dma_ff()	fd_ops->fd_clear_dma_ff(FLOPPY_DMA)
+floppy.h:#define fd_set_dma_mode(mode)	fd_ops->fd_set_dma_mode(FLOPPY_DMA, mode)
+floppy.h:#define fd_set_dma_addr(addr)	fd_ops->fd_set_dma_addr(FLOPPY_DMA, \
+floppy.h:#define fd_set_dma_count(count)	fd_ops->fd_set_dma_count(FLOPPY_DMA,count)
+floppy.h:#define fd_get_dma_residue()	fd_ops->fd_get_dma_residue(FLOPPY_DMA)
+floppy.h:#define fd_enable_irq()		fd_ops->fd_enable_irq(FLOPPY_IRQ)
+floppy.h:#define fd_disable_irq()	fd_ops->fd_disable_irq(FLOPPY_IRQ)
+floppy.h:#define fd_dma_mem_alloc(size)	fd_ops->fd_dma_mem_alloc(size)
+floppy.h:#define fd_dma_mem_free(mem,size) fd_ops->fd_dma_mem_free(mem,size)
+floppy.h:#define fd_drive_type(n)	fd_ops->fd_drive_type(n)
+floppy.h:#define FDC1			fd_ops->fd_getfdaddr1();
+floppy.h:#define CROSS_64KB(a,s) ((unsigned long)(a)/K_64 != ((unsigned long)(a) + (s) - 1) / K_64)
+fpregdef.h: * These definitions only cover the R3000-ish 16/32 register model.
+fpu_emulator.h: *  59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+fpu.h:#define clear_fpu_owner() do { current->flags &= ~PF_USEDFPU; } while(0)
+fpu.h:	return cpu_has_fpu && ((current->flags & PF_USEDFPU) != 0); 
+fpu.h:		current->flags |= PF_USEDFPU;
+fpu.h:		current->flags &= ~PF_USEDFPU;
+fpu.h:		return (unsigned long long *)&tsk->thread.fpu.hard.fp_regs[0];
+fpu.h:		return (unsigned long long *)tsk->thread.fpu.soft.regs;
+galileo-boards/gt96100.h: *  59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+galileo-boards/gt96100.h:/* TDPR0 - Transmit Dual Port RAM. block size 0xff */
+galileo-boards/gt96100.h:/* RDPR0 - Receive Dual Port RAM. block size 0xff */
+gdb-stub.h: * Derived from the stack layout described in asm-mips/stackframe.h
+gdb-stub.h:#define GDB_FR_SIZE		((((GDB_FR_CP0_PRID) + 4) + (PTRSIZE-1)) & ~(PTRSIZE-1))
+gdb-stub.h: * This is the same as above, but for the high-level
+gfx.h: * This is the user-visible SGI GFX interface.
+gfx.h: * any kernel-only bits on it.
+gt64120/gt64120.h: *  59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+gt64120/gt64120.h:#define MSK(n)                    ((1 << (n)) - 1)
+gt64120/gt64120.h: *   GT_WRITE(ofs, data)           - read/write GT64120 registers in 32bit
+gt64120/gt64120.h: *   TIMER 	- gt64120 timer irq, temporary solution until
+gt64120/gt64120.h:#include <asm/gt64120/mips-boards/gt64120_dep.h>
+gt64120/gt64120.h:#include <asm/gt64120/mips-boards/gt64120_dep.h>
+gt64120/gt64120.h: * bytes when running bigendian.  We also provide non-swapping versions.
+gt64120/gt64120.h: * Board-dependent functions, which must be defined in
+hardirq.h:#define irq_exit(cpu, irq)	(local_irq_count(cpu)--)
+hardirq.h:	--local_irq_count(cpu);
+hazards.h: * mtc0->mfc0 hazard
+hazards.h: * mtc0->mfc0 hazard
+hazards.h: * R10000 rocks - all hazards handled in hardware, so this becomes a nobrainer.
+hazards.h: * care about the irq_enable_hazard - sooner or later the hardware will
+hdreg.h: *  Copyright (C) 1994-1996  Linus Torvalds & authors
+highmem.h: * Redesigned the x86 32-bit VM architecture to deal with
+highmem.h:#define LAST_PKMAP_MASK (LAST_PKMAP-1)
+highmem.h:#define PKMAP_NR(virt)  ((virt-PKMAP_BASE) >> PAGE_SHIFT)
+highmem.h: * The use of kmap_atomic/kunmap_atomic is discouraged - kmap/kunmap
+highmem.h:	set_pte(kmap_pte-idx, mk_pte(page, kmap_prot));
+i8259.h: *	include/asm-mips/i8259.h
+ide.h: * Copyright (C) 1994-1996  Linus Torvalds & authors
+ide.h:	return ide_ops->ide_default_irq(base);
+ide.h:	return ide_ops->ide_default_io_base(index);
+ide.h:	ide_ops->ide_init_hwif_ports(hw, data_port, ctrl_port, irq);
+ide.h:#define ide_ack_intr(hwif)	((hwif)->hw.ack_intr ? (hwif)->hw.ack_intr(hwif) : 1)
+ide.h:/* MIPS port and memory-mapped I/O string operations.  */
+ide.h:	while (count--) {
+ide.h:	while (count--) {
+ide.h:	while (count--) {
+ide.h:	while (count--) {
+init.h:#error "<asm/init.h> should never be used - use <linux/init.h> instead"
+inst.h:	 * The others (0x14 - 0x1f) are unused.
+inst.h: * Damn ...  bitfields depend from byteorder :-(
+ioctl.h:#define _IOC_NRMASK	((1 << _IOC_NRBITS)-1)
+ioctl.h:#define _IOC_TYPEMASK	((1 << _IOC_TYPEBITS)-1)
+ioctl.h:#define _IOC_SIZEMASK	((1 << _IOC_SIZEBITS)-1)
+ioctl.h:#define _IOC_DIRMASK	((1 << _IOC_DIRBITS)-1)
+ioctls.h:						/* 127-124 compat */
+ioctls.h:#define TIOCGPTN	_IOR('T',0x30, unsigned int) /* Get Pty Number (of pty-mux device) */
+io.h: * Copyright (C) 1994 - 2000 Ralf Baechle
+io.h:#include <asm/pgtable-bits.h>
+io.h:#define bus_to_baddr(bus, addr)	(bus_to_baddr[(bus)->number] + (addr))
+io.h:#define baddr_to_bus(bus, addr)	((addr) - bus_to_baddr[(bus)->number])
+io.h: * IP22 seems braindead enough to swap 16-bits values in hardware, but not
+io.h: * 32-bits.  Go figure... Can't tell without documentation.
+io.h: * We only do the swapping to keep the kernel config bits of bi-endian
+io.h:#define page_to_phys(page)	((u64)(page - mem_map) << PAGE_SHIFT)
+io.h:#define page_to_phys(page)	((page - mem_map) << PAGE_SHIFT)
+io.h: *     ioremap         -       map bus memory into CPU space
+io.h: *     ioremap_nocache         -       map bus memory into CPU space
+io.h: * 24-31 on SNI.
+io.h: * to PAGE_OFFSET is pure coincidence - it does not mean ISA values
+io.h: * used as the IO-area pointer (it can be iounmapped as well, so the
+io.h:#define eth_io_copy_and_sum(skb,src,len,unused) memcpy_fromio((skb)->data,(src),(len))
+io.h: *     check_signature         -       find BIOS signatures
+io.h:		length--;
+io.h: *     isa_check_signature             -       find BIOS signatures
+io.h:		length--;
+io.h: *     virt_to_phys    -       map virtual addresses to physical
+io.h:	return (unsigned long)address - PAGE_OFFSET;
+io.h: *     phys_to_virt    -       map physical address to virtual
+io.h:	return (unsigned long)address - PAGE_OFFSET;
+io.h:	while (count--) {
+io.h:	while (count--) {
+io.h:	while (count--) {
+io.h:	while (count--) {
+io.h:	while (count--) {
+io.h:	while (count--) {
+io.h: * The caches on some architectures aren't dma-coherent and have need to
+io.h: *  - dma_cache_wback_inv(start, size) makes caches and coherent by
+io.h: *  - dma_cache_wback(start, size) makes caches and coherent by
+io.h: *  - dma_cache_inv(start, size) invalidates the affected parts of the
+ipcbuf.h: * - 32-bit seq
+ipcbuf.h: * - 2 miscellaneous 64-bit values
+irq_cpu.h: *	include/asm-mips/irq_cpu.h
+it8172/it8172_int.h: * and the non-maskable ints from 48 to 53.
+it8172/it8172_int.h:/* 12 - 15 reserved */
+it8172/it8172_int.h:#define MIPS_CPU_TIMER_IRQ       (NR_IRQS-1)
+jazzdma.h: * Helpfile for jazzdma.c -- Mips Jazz R4030 DMA controller support
+jazzdma.h:#define VDMA_OFFSET(a)          ((unsigned int)(a) & (VDMA_PAGESIZE-1))
+jazz.h: * Copyright (C) 1995 - 1998 by Andreas Busse and Ralf Baechle
+jazz.h: * 0xf0000000 - Rev1
+jazz.h: * 0xf0000001 - Rev2
+jazz.h: * 0xf0000002 - Rev3
+jazz.h: *      ---------
+jazz.h: *      ---------
+jazz.h: *      --------- . (0)
+jazz.h: * Note: Channels 4...7 are not used with respect to the Acer PICA-61
+jmr3927/irq.h: *  linux/include/asm-mips/tx3927/irq.h
+jmr3927/irq.h:	sp->next = tb_irq_spaces;
+jmr3927/pci.h: * include/asm-mips/jmr3927/pci.h
+jmr3927/pci.h: * Based on include/asm-mips/ddb5xxx/pci.h
+jmr3927/pci.h: * Each pci channel is a top-level PCI bus seem by CPU.  A machine  with
+jmr3927/tx3927.h:#define TX3927_PCIC_IDSEL_AD_TO_SLOT(ad)	((ad) - 11)
+jmr3927/ds1742rtc.h: * ds1742rtc.h - register definitions for the Real-Time-Clock / CMOS RAM
+jmr3927/ds1742rtc.h: *   Based on include/asm-mips/ds1643rtc.h.
+jmr3927/ds1742rtc.h: * Copyright (C) 1999-2001 Toshiba Corporation
+jmr3927/jmr3927.h: * Defines for the TJSYS JMR-TX3927/JMI-3927IO2/JMY-1394IF.
+jmr3927/jmr3927.h: * Copyright (C) 2000-2001 Toshiba Corporation
+jmr3927/jmr3927.h:	romcr3 = tx3927_romcptr->cr[3];
+jmr3927/jmr3927.h:	tx3927_romcptr->cr[3] &= 0xffffefff;	/* do not wait infinitely */
+jmr3927/jmr3927.h:	tx3927_romcptr->cr[3] = romcr3;
+jmr3927/jmr3927.h:#define jmr3927_led_set(n/*0-16*/)	jmr3927_ioc_reg_out(~(n), JMR3927_IOC_LED_ADDR)
+jmr3927/jmr3927.h:#define jmr3927_io_led_set(n/*0-3*/)	jmr3927_isac_reg_out((n), JMR3927_ISAC_LED_ADDR)
+jmr3927/jmr3927.h:#define jmr3927_led_and_set(n/*0-16*/)	jmr3927_ioc_reg_out((~(n)) & jmr3927_ioc_reg_in(JMR3927_IOC_LED_ADDR), JMR3927_IOC_LED_ADDR)
+jmr3927/jmr3927.h:#define jmr3927_dipsw1()	((tx3927_pioptr->din & (1 << 11)) == 0)
+jmr3927/jmr3927.h:#define jmr3927_dipsw2()	((tx3927_pioptr->din & (1 << 10)) == 0)
+jmr3927/jmr3927.h:/* use Pre-scaler T0 (1/2) */
+jmr3927/jmr3927.h:#define JMR3927_NR_IRQ_IRC	16	/* On-Chip IRC */
+jmr3927/jmr3927.h:/* RTL8019AS 10M Ether (JMI-3927IO2:JPW2:1-2 Short) */
+jmr3927/jmr3927.h:/* TC35815 100M Ether (JMR-TX3912:JPW4:2-3 Short) */
+jmr3927/jmr3927.h:#define JMR3927_ETHER1_PORT	(JMR3927_ISAIO_BASE - JMR3927_PORT_BASE + 0x280)
+jmr3927/jmr3927.h:#define JMR3927_KBD_PORT	(JMR3927_ISAIO_BASE - JMR3927_PORT_BASE + 0x00800060)
+jmr3927/jmr3927.h:#define JMR3927_IDE_PORT	(JMR3927_ISAIO_BASE - JMR3927_PORT_BASE + 0x001001f0)
+keyboard.h: * Copyright (C) 1994 - 1999 Ralf Baechle
+keyboard.h:#define kbd_request_region() kbd_ops->kbd_request_region()
+keyboard.h:#define kbd_request_irq(handler) kbd_ops->kbd_request_irq(handler)
+keyboard.h:#define aux_request_irq(hand, dev_id) kbd_ops->aux_request_irq(hand)
+keyboard.h:#define aux_free_irq(dev_id) kbd_ops->aux_free_irq()
+keyboard.h:#define kbd_read_input() kbd_ops->kbd_read_input()
+keyboard.h:#define kbd_write_output(val) kbd_ops->kbd_write_output(val)
+keyboard.h:#define kbd_write_command(val) kbd_ops->kbd_write_command(val)
+keyboard.h:#define kbd_read_status() kbd_ops->kbd_read_status()
+lasat/lasat.h: *  59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+lasat/lasat.h:/* Configuration descriptor encoding - see the doc for details */
+linux_logo_dec.h: * include/asm-mips/linux_logo_dec.h: This is a linux logo
+linux_logo_dec.h: * Copyright (C) 2001 Jan-Benedict Glaw <jbglaw@lug-owl.de>
+linux_logo.h: * include/asm-mips/linux_logo.h: This is a linux logo
+linux_logo_sgi.h: * include/asm-mips/linux_logo_sgi.h: This is a linux logo
+linux_logo_sgi.h: * Copyright (C) 2001 Jan-Benedict Glaw <jbglaw@lug-owl.de>
+mc146818rtc.h:rtc_ops->rtc_read_data(addr); \
+mc146818rtc.h:rtc_ops->rtc_write_data(val, addr); \
+mc146818rtc.h:rtc_ops->rtc_bcd_mode()
+mc146818rtc.h:#include <asm/dec/rtc-dec.h>
+mips-boards/msc01_pci.h:#define MSC01_PCI_HEAD11_OFS		0x2058  /* SubSystem ID, -VendorID */
+mips-boards/msc01_pci.h: * FIXME - are these macros specific to Malta and co or to the MSC?  If the
+mips-boards/atlasint.h: *  59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+mips-boards/atlasint.h: * Atlas registers are memory mapped on 64-bit aligned boundaries and
+mips-boards/malta.h: *  59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+mips-boards/malta.h: * Defines of the Malta board specific address-MAP, registers, etc.
+mips-boards/malta.h: * Malta RTC-device indirect register access.
+mips-boards/saa9730_uart.h: *  59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+mips-boards/generic.h: * 59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+mips-boards/generic.h: * Defines of the MIPS boards specific address-MAP, registers, etc.
+mips-boards/generic.h:#include <asm/mips-boards/bonito64.h>
+mips-boards/seadint.h: *  59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+mips-boards/prom.h: *  59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+mips-boards/sead.h: *  59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+mips-boards/sead.h: * Defines of the SEAD board specific address-MAP, registers, etc.
+mips-boards/maltaint.h: *  59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+mips-boards/bonito64.h:#define BONITO_BOOT_TOP 		(BONITO_BOOT_BASE+BONITO_BOOT_SIZE-1)
+mips-boards/bonito64.h:#define BONITO_FLASH_TOP		(BONITO_FLASH_BASE+BONITO_FLASH_SIZE-1)
+mips-boards/bonito64.h:#define BONITO_SOCKET_TOP		(BONITO_SOCKET_BASE+BONITO_SOCKET_SIZE-1)
+mips-boards/bonito64.h:#define BONITO_REG_TOP			(BONITO_REG_BASE+BONITO_REG_SIZE-1)
+mips-boards/bonito64.h:#define BONITO_DEV_TOP			(BONITO_DEV_BASE+BONITO_DEV_SIZE-1)
+mips-boards/bonito64.h:#define BONITO_PCILO_TOP		(BONITO_PCILO_BASE+BONITO_PCILO_SIZE-1)
+mips-boards/bonito64.h:#define BONITO_PCIHI_TOP		(BONITO_PCIHI_BASE+BONITO_PCIHI_SIZE-1)
+mips-boards/bonito64.h:#define BONITO_PCIIO_TOP		(BONITO_PCIIO_BASE+BONITO_PCIIO_SIZE-1)
+mips-boards/bonito64.h:#define BONITO_PCICFG_TOP		(BONITO_PCICFG_BASE+BONITO_PCICFG_SIZE-1)
+mips-boards/bonito64.h:/* Added by RPF 11-9-00 */
+mips-boards/bonito64.h:/* --- */
+mips-boards/bonito64.h:/* GPIO Regs - r/w */
+mips-boards/bonito64.h:/* ICU Configuration Regs - r/w */
+mips-boards/bonito64.h:/* ICU Enable Regs - IntEn & IntISR are r/o. */
+mips-boards/bonito64.h:/* DRAM - sdCfg */
+mips-boards/bonito64.h:/* Changed by RPF 11-9-00 */
+mips-boards/bonito64.h:/* --- */
+mips-boards/bonito64.h:/* Added by RPF 11-9-00 */
+mips-boards/bonito64.h:/* --- */
+mips-boards/bonito64.h:/* PCI Cache - pciCacheCtrl */
+mips-boards/bonito64.h:/* Added by RPF 11-9-00 */
+mips-boards/bonito64.h:/* --- */
+mips-boards/bonito64.h:#define BONITO_PCIMAP_WINOFFSET(ADDR)	((ADDR) & (BONITO_PCIMAP_WINSIZE - 1))
+mips-boards/bonito64.h:#define BONITO_PCIMEMBASECFGSIZE(WIN,SIZE)	(((~((SIZE)-1))>>(BONITO_PCIMEMBASECFG_ASHIFT-BONITO_PCIMEMBASECFG_MEMBASE##WIN##_MASK_SHIFT)) & BONITO_PCIMEMBASECFG_MEMBASE##WIN##_MASK)
+mips-boards/bonito64.h:#define BONITO_PCIMEMBASECFGBASE(WIN,BASE)	(((BASE)>>(BONITO_PCIMEMBASECFG_ASHIFT-BONITO_PCIMEMBASECFG_MEMBASE##WIN##_TRANS_SHIFT)) & BONITO_PCIMEMBASECFG_MEMBASE##WIN##_TRANS)
+mips-boards/bonito64.h:#define BONITO_PCIMEMBASECFG_SIZE(WIN,CFG)  (((((~(CFG)) & BONITO_PCIMEMBASECFG_MEMBASE##WIN##_MASK)) << (BONITO_PCIMEMBASECFG_ASHIFT - BONITO_PCIMEMBASECFG_MEMBASE##WIN##_MASK_SHIFT)) | BONITO_PCIMEMBASECFG_AMASK)
+mips-boards/atlas.h: *  59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+mips-boards/atlas.h: * Defines of the Atlas board specific address-MAP, registers, etc.
+mips-boards/atlas.h: * Atlas RTC-device indirect register access.
+mips-boards/piix4.h: *  59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+mipsregs.h:#define FPU_CSR_RD      0x3     /* towards -Infinity */
+mipsregs.h: * physical address space running the 32-bit kernel.  That's none atm :-)
+mman.h:/* These are linux-specific */
+mman.h:#define MAP_GROWSDOWN	0x1000		/* stack-like segment */
+mman.h:#define MADV_NORMAL	0x0		/* default page-in behavior */
+mman.h:#define MADV_RANDOM	0x1		/* page-in minimum required */
+mman.h:#define MADV_SEQUENTIAL	0x2		/* read-ahead aggressively */
+mman.h:#define MADV_WILLNEED	0x3		/* pre-fault pages */
+mmu_context.h: * use the processor id via current->processor, where current is stored
+mmu_context.h:#define cpu_context(cpu, mm)	((mm)->context[cpu])
+mmu_context.h:#define ASID_VERSION_MASK  ((unsigned long)~(ASID_MASK|(ASID_MASK-1)))
+mmu_context.h:	TLBMISS_HANDLER_SETUP_PGD(next->pgd);
+mmu_context.h:	 * Mark current->active_mm as not "active" anymore.
+mmu_context.h:	clear_bit(cpu, &prev->cpu_vm_mask);
+mmu_context.h:	set_bit(cpu, &next->cpu_vm_mask);
+mmu_context.h: * After we have set current->mm to a new value, this activates
+mmu_context.h:	TLBMISS_HANDLER_SETUP_PGD(next->pgd);
+mmu_context.h:	clear_bit(cpu, &prev->cpu_vm_mask);
+mmu_context.h:	set_bit(cpu, &next->cpu_vm_mask);
+mmu_context.h:	if (test_bit(cpu, &mm->cpu_vm_mask))  {
+module.h: * modutils/obj/obj-mips.c
+module.h:	archdata = (struct archdata *)(mod->archdata_start);
+module.h:	if (archdata->dbe_table_start > archdata->dbe_table_end ||
+module.h:	    (archdata->dbe_table_start &&
+module.h:	     !((unsigned long)archdata->dbe_table_start >=
+module.h:	       ((unsigned long)mod + mod->size_of_struct) &&
+module.h:	       ((unsigned long)archdata->dbe_table_end <
+module.h:	        (unsigned long)mod + mod->size))) ||
+module.h:            (((unsigned long)archdata->dbe_table_start -
+module.h:	      (unsigned long)archdata->dbe_table_end) %
+module.h:			"module_arch_init: archdata->dbe_table_* invalid.\n");
+module.h:	mod->archdata_start = (char *)&archdata;
+module.h:	mod->archdata_end = mod->archdata_start + sizeof(archdata);
+msgbuf.h: * - extension of time_t to 64-bit on 32-bitsystem to solve the y2038 problem
+msgbuf.h: * - 2 miscellaneous unsigned long values
+mv64340_dep.h: * include/asm-mips/mv64340-dep.h
+mv64340_dep.h: *     Board-dependent definitions for MV-64340 chip.
+mv64340.h:* mv64340.h - MV-64340 Internal registers definition file.
+namei.h: * linux/include/asm-mips/namei.h
+namei.h:	if (current->personality != PER_IRIX32)
+ng1hw.h:#define REX3WAIT(rex3)  while ((rex3)->p1.set.status & GFXBUSY)
+ng1hw.h:#define BFIFOWAIT(rex3)  while ((rex3)->p1.set.status & BACKBUSY)
+nile4.h: *  asm-mips/nile4.h -- NEC Vrc-5074 Nile 4 definitions
+nile4.h:#define NILE4_DCS2	0x0010	/* Device Chip-Select 2 [R/W] */
+nile4.h:#define NILE4_DCS3	0x0018	/* Device Chip-Select 3 [R/W] */
+nile4.h:#define NILE4_DCS4	0x0020	/* Device Chip-Select 4 [R/W] */
+nile4.h:#define NILE4_DCS5	0x0028	/* Device Chip-Select 5 [R/W] */
+nile4.h:#define NILE4_DCS6	0x0030	/* Device Chip-Select 6 [R/W] */
+nile4.h:#define NILE4_DCS7	0x0038	/* Device Chip-Select 7 [R/W] */
+nile4.h:#define NILE4_DCS8	0x0040	/* Device Chip-Select 8 [R/W] */
+nile4.h:#define NILE4_BOOTCS	0x0078	/* Boot ROM Chip-Select [R/W] */
+nile4.h:     *  Memory-Interface Registers
+nile4.h:     *  PCI-Bus Registers
+nile4.h:     *  Local-Bus Registers
+nile4.h:#define NILE4_LCST2	0x0110	/* Local Bus Chip-Select Timing 2 [R/W] */
+nile4.h:#define NILE4_LCST3	0x0118	/* Local Bus Chip-Select Timing 3 [R/W] */
+nile4.h:#define NILE4_LCST4	0x0120	/* Local Bus Chip-Select Timing 4 [R/W] */
+nile4.h:#define NILE4_LCST5	0x0128	/* Local Bus Chip-Select Timing 5 [R/W] */
+nile4.h:#define NILE4_LCST6	0x0130	/* Local Bus Chip-Select Timing 6 [R/W] */
+nile4.h:#define NILE4_LCST7	0x0138	/* Local Bus Chip-Select Timing 7 [R/W] */
+nile4.h:#define NILE4_LCST8	0x0140	/* Local Bus Chip-Select Timing 8 [R/W] */
+nile4.h:#define NILE4_DCSFN	0x0150	/* Device Chip-Select Muxing and Output */
+nile4.h:#define NILE4_DCSIO	0x0158	/* Device Chip-Selects As I/O Bits [R/W] */
+nile4.h:#define NILE4_BCST	0x0178	/* Local Boot Chip-Select Timing [R/W] */
+nile4.h:#define NILE4_T1CTRL	0x01D0	/* CPU-Bus Read Time-Out Control [R/W] */
+nile4.h:#define NILE4_T1CNTR	0x01D8	/* CPU-Bus Read Time-Out Counter [R/W] */
+nile4.h:#define NILE4_T2CTRL	0x01E0	/* General-Purpose Timer Control [R/W] */
+nile4.h:#define NILE4_T2CNTR	0x01E8	/* General-Purpose Timer Counter [R/W] */
+nile4.h:#define NILE4_SSVID	0x022C	/* PCI Sub-System Vendor ID [R/W] */
+nile4.h:#define NILE4_SSID	0x022E	/* PCI Sub-System ID [R/W] */
+nile4.h:     *  Serial-Port Registers
+nile4.h:#define NILE4_INT_CPCE	0	/* CPU-Interface Parity-Error Interrupt */
+nile4.h:#define NILE4_INT_CNTD	1	/* CPU No-Target Decode Interrupt */
+nile4.h:#define NILE4_INT_MCE	2	/* Memory-Check Error Interrupt */
+nile4.h:#define NILE4_INT_GPT	6	/* General-Purpose Timer Interrupt */
+nile4.h:#define NILE4_INT_LBRTD	7	/* Local-Bus Ready Timer Interrupt */
+nile4.h:#define irq_to_nile4(n)		((n)-NUM_I8259_INTERRUPTS)
+paccess.h: * by sending a DBE error like accessing possibly non-existant memory or
+paccess.h:	".word\t1b-4,3b\n\t" \
+paccess.h:	:"o" (__mp(__gu_addr)), "i" (-EFAULT)); })
+paccess.h:	".word\t1b-4,3b\n\t" \
+paccess.h:	:"r" (__pu_val), "o" (__mp(__pu_addr)), "i" (-EFAULT)); })
+page.h: * Copyright (C) 1994 - 1999, 2003 by Ralf Baechle
+page.h:#define PAGE_MASK	(~(PAGE_SIZE-1))
+page.h: * These are used to make use of C type-checking..
+page.h:	size = (size-1) >> (PAGE_SHIFT-1);
+page.h:	order = -1;
+page.h:#define PAGE_ALIGN(addr)	(((addr) + PAGE_SIZE - 1) & PAGE_MASK)
+page.h:#define __pa(x)		((unsigned long) (x) - PAGE_OFFSET)
+page.h:#define VALID_PAGE(page)	((page - mem_map) < max_mapnr)
+page.h:#define UNCAC_ADDR(addr)	((addr) - PAGE_OFFSET + UNCAC_BASE)
+page.h:#define CAC_ADDR(addr)		((addr) - UNCAC_BASE + PAGE_OFFSET)
+param.h:    * Ye olde division-by-multiplication trick.
+param.h:#  define QUOTIENT ((1UL << (32 - LOG_2_HZ)) * 100)
+param.h:   unless you know what you're doing - changing breaks binary compatibility.  */
+param.h:#define NOGROUP		(-1)
+pb1000.h: *  59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+pb1000.h:/* VPPEN1 - VPPEN0 */
+pb1000.h:/* VCCEN1 - VCCEN0 */
+pb1100.h: *  59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+pb1200.h: *  59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+pb1200.h: *    *example: IDE bis pos is  = 64 - 64
+pb1200.h:                ETH bit pos is  = 65 - 64
+pb1200.h:#define BOARD_CARD_INSERTED(SOCKET) bcsr->sig_status & (1<<(8+(2*SOCKET)))
+pb1500.h: *  59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+pb1550.h: *  59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+pb1550.h:#define DAUGHTER_CARD_MEM_SIZE		(0xADFFFFFF - DAUGHTER_CARD_BASE + 1)
+pci_channel.h: * Each pci channel is a top-level PCI bus seem by CPU.  A machine  with
+pci.h:   already-configured bus numbers - to be used for buggy BIOSes
+pci.h: * NULL for PCI-like buses (ISA, EISA).
+pci.h: * Returns non-NULL cpu-view pointer to the buffer if successful and
+pci.h: * The 32-bit bus address to use is returned.
+pci.h:	return bus_to_baddr(hwdev->bus, __pa(ptr));
+pci.h:		addr = baddr_to_bus(hwdev->bus, dma_addr) + PAGE_OFFSET;
+pci.h:	return bus_to_baddr(hwdev->bus, page_to_phys(page) + offset);
+pci.h:		addr = baddr_to_bus(hwdev->bus, dma_address) + PAGE_OFFSET;
+pci.h: * mode for DMA.  This is the scather-gather version of the
+pci.h:		if (sg->address && sg->page)
+pci.h:		else if (!sg->address && !sg->page)
+pci.h:		if (sg->address) {
+pci.h:			dma_cache_wback_inv((unsigned long)sg->address,
+pci.h:			                    sg->length);
+pci.h:			sg->dma_address = bus_to_baddr(hwdev->bus, __pa(sg->address));
+pci.h:			sg->dma_address = page_to_bus(sg->page) +
+pci.h:			                  sg->offset;
+pci.h:				(page_address(sg->page) + sg->offset),
+pci.h:				sg->length);
+pci.h:		if (sg->address && sg->page)
+pci.h:		else if (!sg->address && !sg->page)
+pci.h:		if (!sg->address)
+pci.h:		dma_cache_wback_inv((unsigned long)sg->address, sg->length);
+pci.h:	addr = baddr_to_bus(hwdev->bus, dma_handle) + PAGE_OFFSET;
+pci.h: * The same as pci_dma_sync_single but for a scatter-gather list,
+pci.h:		dma_cache_wback_inv((unsigned long)sg->address, sg->length);
+pci.h: * only drive the low 24-bits during PCI bus mastering, then
+pci.h:	return (dma64_addr_t) bus_to_baddr(pdev->bus, addr);
+pci.h:	unsigned long poff = baddr_to_bus(pdev->bus, dma_addr) >> PAGE_SHIFT;
+pci.h:	addr = baddr_to_bus(pdev->bus, dma_addr) + PAGE_OFFSET;
+pci.h:#define sg_dma_address(sg)	((sg)->dma_address)
+pci.h:#define sg_dma_len(sg)		((sg)->length)
+pgalloc.h: * Copyright (C) 1994 - 2001 by Ralf Baechle
+pgalloc.h: *  - flush_tlb_all() flushes all processes TLB entries
+pgalloc.h: *  - flush_tlb_mm(mm) flushes the specified mm context TLB entries
+pgalloc.h: *  - flush_tlb_page(mm, vmaddr) flushes a single page
+pgalloc.h: *  - flush_tlb_range(mm, start, end) flushes a range of pages
+pgalloc.h: *  - flush_tlb_pgtables(mm, start, end) flushes a range of page tables
+pgalloc.h: *  - flush_tlb_one(page) flushes a single kernel page
+pgalloc.h:			(PTRS_PER_PGD - USER_PTRS_PER_PGD) * sizeof(pgd_t));
+pgalloc.h:		pgtable_cache_size--;
+pgalloc.h:		pgtable_cache_size--;
+pgalloc.h:		pgtable_cache_size--;
+pgalloc.h: * allocating and freeing a pmd is trivial: the 1-entry pmd is
+pgtable-32.h: * traditional mips two-level paging structure:
+pgtable-32.h:#define PMD_SHIFT       (2 * PAGE_SHIFT - PTE_T_LOG2)
+pgtable-32.h:        pte_val(__pte) = ((phys_t)(page - mem_map) << (PAGE_SHIFT + 2)) | \
+pgtable-32.h:	pte_val(__pte) = ((phys_t)(page - mem_map) << PAGE_SHIFT) | \
+pgtable-64.h:#define mk_pte(page, pgprot) __mk_pte((page) - mem_map, (pgprot))
+pgtable-64.h: * value and then use set_pte to update it.  -ben
+pgtable-64.h:	ptep->pte_high = pte.pte_high;
+pgtable-64.h:	ptep->pte_low = pte.pte_low;
+pgtable-64.h:			buddy->pte_low |= _PAGE_GLOBAL;
+pgtable-bits.h: * Copyright (C) 1994 - 2002 by Ralf Baechle
+pgtable-bits.h:/* bobtseng --, 2005.12.16 */
+pgtable.h:	test_bit(PG_dcache_dirty, &(page)->flags)
+pgtable.h:	set_bit(PG_dcache_dirty, &(page)->flags)
+pgtable.h:	clear_bit(PG_dcache_dirty, &(page)->flags)
+pgtable.h: * - add_wired_entry() add a fixed TLB entry, and move wired register
+pgtable.h: * - add_temporary_entry() add a temporary TLB entry. We use TLB entries
+pgtable.h:/* Basically we have the same two-level (which is the logical three level
+pgtable.h:/* PMD_SHIFT determines the size of the area a second-level page table can map */
+pgtable.h:#define PMD_MASK	(~(PMD_SIZE-1))
+pgtable.h:/* PGDIR_SHIFT determines what a third-level page table entry can map */
+pgtable.h:#define PGDIR_MASK	(~(PGDIR_SIZE-1))
+pgtable.h:# define VMALLOC_END	(PKMAP_BASE-2*PAGE_SIZE)
+pgtable.h:# define VMALLOC_END	(FIXADDR_START-2*PAGE_SIZE)
+pgtable.h:#include <asm/pgtable-bits.h>
+pgtable.h:#include <asm/pgtable-64.h>
+pgtable.h:#include <asm/pgtable-32.h>
+pgtable.h: * The "pgd_xxx()" functions here are trivial for a folded two-level
+pgtable.h:	(((address) >> PMD_SHIFT) & (PTRS_PER_PMD-1))
+pgtable.h:/* to find an entry in a kernel page-table-directory */
+pgtable.h:/* to find an entry in a page-table-directory */
+pgtable.h:	return mm->pgd + pgd_index(address);
+pgtable.h:/* Find an entry in the second-level page table.. */
+pgtable.h:/* Find an entry in the third-level page table.. */
+pgtable.h:	       ((address >> PAGE_SHIFT) & (PTRS_PER_PTE - 1));
+pgtable.h:#include <asm-generic/pgtable.h>
+poll.h:/* XXX This one seems to be more-or-less nonstandard.  */
+posix_types.h: * This file is generally used by user-level software, so you need to
+posix_types.h:	__fdsetp->fds_bits[__tmp] |= (1UL<<__rem);
+posix_types.h:	__fdsetp->fds_bits[__tmp] &= ~(1UL<<__rem);
+posix_types.h:	return (__p->fds_bits[__tmp] & (1UL<<__rem)) != 0;
+posix_types.h: * for a 256-bit fd_set)
+posix_types.h:	unsigned long *__tmp = __p->fds_bits;
+posix_types.h:		__i--;
+processor.h:#define MIPS_CACHE_IC_F_DC	0x00000008	/* Ic can refill from D-cache */
+processor.h:	struct cache_desc icache;	/* Primary I-cache */
+processor.h: * Size of io_bitmap in longwords: 32 is ports 0-0x3ff.
+processor.h: * the FPU emulator for now.  See asm-mips/fpu_emulator.h.
+processor.h:	if (t->reg31 == (unsigned long) ret_from_fork)
+processor.h:		return t->reg31;
+processor.h:	return ((unsigned long *)t->reg29)[schedule_frame.pc_offset];
+processor.h:#define __PT_REG(reg) ((long)&((struct pt_regs *)0)->reg - sizeof(struct pt_regs))
+processor.h:#define __KSTK_TOS(tsk) ((unsigned long)(tsk) + KERNEL_STACK_SIZE - 32)
+processor.h:#define THREAD_MASK		(THREAD_SIZE - 1UL)
+processor.h:#define get_task_struct(tsk)      atomic_inc(&virt_to_page(tsk)->count)
+processor.h: * (MIPS, Alpha) or is unuseable with -fomit-frame-pointer (i386).
+processor.h: * __builtin_return_address works only for non-leaf functions.  We avoid the
+ptrace.h:/* 0 - 31 are integer registers, 32 - 63 are fp registers.  */
+ptrace.h:        ".size\t" #symbol",. - " #symbol)
+ptrace.h:#define user_mode(regs) (((regs)->cp0_status & KU_MASK) == KU_USER)
+ptrace.h:#define instruction_pointer(regs) ((regs)->cp0_epc)
+r4kcache.h: * Copyright (C) 1997 - 2002 Ralf Baechle (ralf@gnu.org)
+r4kcache.h: * Copyright (C) 2004 Ralf Baechle (ralf@linux-mips.org)
+r4kcache.h: * R10000 / R12000 hazard - these processors don't support the Hit_Writeback_D
+r4kcache.h: * cacheop so we use Hit_Writeback_Inv_D which is supported by all R4000-style
+r4kcache.h: * This one is RM7000-specific
+regdef.h: * include/asm-mips/regdefs.h
+regdef.h:#define AT      $1      /* assembler temp  - uppercase because of ".set at" */
+reg.h: * This defines/structures correspond to the register layout on stack -
+reg.h: * include/asm-mips/stackframe.h
+resource.h:#define RLIMIT_MEMLOCK 9		/* max locked-in-memory address space */
+riscos-syscall.h: * The syscalls 0 - 3999 are reserved for a down to the root syscall
+rt2880/surfboard.h: *  59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+rt2880/surfboardint.bob: *  59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+rt2880/surfboardint.bob: * Surfboard registers are memory mapped on 32-bit aligned boundaries and
+rt2880/surfboardint.bob:/* bobtseng added --, 2006.3.6. */
+rt2880/surfboardint.org: *  59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+rt2880/surfboardint.org: * Surfboard registers are memory mapped on 32-bit aligned boundaries and
+rt2880/generic.h: * 59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+rt2880/generic.h: * Defines of the Palmchip boards specific address-MAP, registers, etc.
+rt2880/generic.h: * Power-off register
+rt2880/prom.h: *  59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+rt2880/surfboardint.h: *  59 Temple Place - Suite 330, Boston MA 02111-1307, USA.
+rt2880/surfboardint.h: * Surfboard registers are memory mapped on 32-bit aligned boundaries and
+rt2880/surfboardint.h:/* bobtseng added --, 2006.3.6. */
+semaphore.h:	atomic_set(&sem->count, val);
+semaphore.h:	atomic_set(&sem->waking, 0);
+semaphore.h:	init_waitqueue_head(&sem->wait);
+semaphore.h:	sem->__magic = (long)&sem->__magic;
+semaphore.h: * sem->count and sem->waking atomic.
+semaphore.h:	CHECK_MAGIC(sem->__magic);
+semaphore.h:	count = atomic_dec_return(&sem->count);
+semaphore.h: * it, return zero.  If we were interrupted, returns -EINTR
+semaphore.h:	CHECK_MAGIC(sem->__magic);
+semaphore.h:	count = atomic_dec_return(&sem->count);
+semaphore.h: * Here, we do this by using lld/scd on the pair of 32-bit words.
+semaphore.h: *   Decrement(sem->count)
+semaphore.h: *   If(sem->count >=0) {
+semaphore.h: *	If(sem->waking <= 0) {		// if no wakeup pending
+semaphore.h: *	   Increment(sem->count)	// undo decrement
+semaphore.h: *	   Decrement(sem->waking)	// otherwise "steal" wakeup
+semaphore.h:	CHECK_MAGIC(sem->__magic);
+semaphore.h:	"	dli	%3, 0x0000000100000000	# count -= 1		\n"
+semaphore.h:	"	blez	%2, 1f			# if waking < 0 -> 1f	\n"
+semaphore.h:	"	daddiu	%1, %1, -1		# waking -= 1		\n"
+semaphore.h:	CHECK_MAGIC(sem->__magic);
+semaphore.h:	"	dsll32 %1, %1, 0	# zero-extend %1	\n"
+semaphore.h: * Non-blockingly attempt to down() a semaphore.
+semaphore.h:	CHECK_MAGIC(sem->__magic);
+semaphore.h:	count = atomic_read(&sem->count) - 1;
+semaphore.h:	atomic_set(&sem->count, count);
+semaphore.h:		waking = atomic_read(&sem->waking);
+semaphore.h:			atomic_set(&sem->count, count + 1);
+semaphore.h:			atomic_set(&sem->waking, waking - 1);
+semaphore.h:	CHECK_MAGIC(sem->__magic);
+semaphore.h:	count = atomic_read(&sem->count) + 1;
+semaphore.h:	waking = atomic_read(&sem->waking);
+semaphore.h:	atomic_set(&sem->count, count);
+semaphore.h:	atomic_set(&sem->waking, waking);
+semaphore.h:	return atomic_read(&sem->count);
+sembuf.h: * - 2 miscellaneous 64-bit values
+serial.h:#include <asm/mips-boards/atlas.h>
+serial.h:#include <asm/mips-boards/atlasint.h>
+serial.h:#include <asm/mips-boards/sead.h>
+serial.h:#include <asm/mips-boards/seadint.h>
+serial.h:#include <asm/galileo-boards/ev96100int.h>
+serial.h: * Also look in ip27-pci.c:pci_fixuop_ioc3() for some comments on working
+sfp-machine.h:#define _FP_NANFRAC_S		((_FP_QNANBIT_S << 1) - 1)
+sfp-machine.h:#define _FP_NANFRAC_D		((_FP_QNANBIT_D << 1) - 1), -1
+sfp-machine.h:#define _FP_NANFRAC_Q		((_FP_QNANBIT_Q << 1) - 1), -1, -1, -1
+sgi/mc.h:#define SGIMC_CCTRL0_LENDIAN	0x00020000 /* Put MC in little-endian mode */
+sgi/mc.h:#define SGIMC_EEPROM_SDATAO	0x00000008 /* Serial EEPROM data-out */
+sgi/mc.h:#define SGIMC_EEPROM_SDATAI	0x00000010 /* Serial EEPROM data-in */
+sgi/mc.h:#define SGIMC_GIOPAR_HPC64	0x00000001 /* HPC talks to GIO using 64-bits */
+sgi/mc.h:#define SGIMC_GIOPAR_GFX64	0x00000002 /* GFX talks to GIO using 64-bits */
+sgi/mc.h:#define SGIMC_GIOPAR_EXP064	0x00000004 /* EXP(slot0) talks using 64-bits */
+sgi/mc.h:#define SGIMC_GIOPAR_EXP164	0x00000008 /* EXP(slot1) talks using 64-bits */
+sgi/mc.h:#define SGIMC_GIOPAR_EISA64	0x00000010 /* EISA bus talks 64-bits to GIO */
+sgi/mc.h:#define SGIMC_GIOPAR_HPC264	0x00000020 /* 2nd HPX talks 64-bits to GIO */
+sgi/mc.h:	volatile u32 syssembit;		/* Uni-bit system semaphore */
+sgi/mc.h:	u32 _unused36[0x1000/4-2*4];
+sgi/gio.h: * -----   --------- ----------------------- -----
+sgi/gio.h: *   0     GFX       0x1f000000 - 0x1f3fffff   4MB
+sgi/gio.h: *   1     EXP0      0x1f400000 - 0x1f5fffff   2MB
+sgi/gio.h: *   2     EXP1      0x1f600000 - 0x1f9fffff   4MB
+sgi/gio.h: * There are un-slotted devices, HPC, I/O and misc devices, which are grouped
+sgi/gio.h: *   -     MISC      0x1fb00000 - 0x1fbfffff   1MB
+sgi/gio.h: *   -     RESERVED  0x18000000 - 0x1effffff 112MB
+sgi/gio.h: * 32-bit IDs are divided into
+sgi/gio.h: *	bit 16		0=GIO32 and GIO32-bis, 1=GIO64.
+sgi/gio.h: * 8-bit IDs
+sgi/gio.h: *	0x0e		E-Plex 8-port Ethernet
+sgi/gio.h: * [*] Device provide 32-bit ID.
+sgi/ioc.h: * All registers are 8-bit wide alligned on 32-bit boundary. Bad things
+sgi/ioc.h:#define SGINT_TCWORD_MOS	0x02	/* One-shot IRQ mode. */
+sgi/pi1.h:#define PI1_STAT_DEVID		0x03	/* bits 0-1 */
+sgi/pi1.h:#define PI1_DMACTRL_STDMODE	0x00    /* bits 2-3 */
+sgi/pi1.h:#define PI1_DMACTRL_SGIMODE	0x04    /* bits 2-3 */
+sgi/pi1.h:#define PI1_DMACTRL_RICOHMODE	0x08    /* bits 2-3 */
+sgi/pi1.h:#define PI1_DMACTRL_HPMODE	0x0c    /* bits 2-3 */
+sgi/hpc3.h:	u32 _unused0[0x1000/4 - 2];	/* padding */
+sgi/hpc3.h:#define HPC3_PDMACTRL_HW	0x0000ff00 /* DMA High-water mark */
+sgi/hpc3.h:	u32 _unused1[0x1000/4 - 1];	/* padding */
+sgi/hpc3.h:	u32 _unused0[0x1000/4 - 2];	/* padding */
+sgi/hpc3.h:#define HPC3_SDCFG_HW   0x01000 /* Enable 16-bit halfword DMA accesses to scsi */
+sgi/hpc3.h:#define HPC3_SPCFG_HW   0x1000 /* Enable 16-bit halfword PIO accesses to scsi */
+sgi/hpc3.h:	u32 _unused1[0x1000/4 - 6];	/* padding */
+sgi/hpc3.h:	u32 _unused0[0x1000/4 - 2];	/* padding */
+sgi/hpc3.h:	u32 _unused2[0x1000/4 - 8];	/* padding */
+sgi/hpc3.h:	u32 _unused3[0x1000/4 - 2];	/* padding */
+sgi/hpc3.h:	u32 _unused4[0x1000/4 - 4];	/* padding */
+sgi/hpc3.h:	 * you it was a peculiar bug. ;-)
+sgi/hpc3.h:#define HPC3_ISTAT_PBIMASK	0x0ff	/* irq bits for pbus devs 0 --> 7 */
+sgi/hpc3.h:	u32 _unused1[0x14000/4 - 5];	/* padding */
+sgi/hpc3.h:	/* Now direct PIO per-HPC3 peripheral access to external regs. */
+sgi/hpc3.h:	/* Per-peripheral device external registers and DMA/PIO control. */
+sgi/hpc3.h:	/* Enable 16-bit DMA access mode */
+sgi/hpc3.h:	/* Enable 16-bit PIO accesses */
+sgi/hpc3.h:	u32 _unused5[0x0800/4 - 1];
+sgi/hpc3.h:	u32 _unused6[0x0800/4 - 1];
+sgi/hpc3.h:	u32 _unused7[0x1000/4 - 1];
+sgi/hpc3.h:	volatile u32 bbram[8192-50-14];	/* Battery backed ram */
+sgi/ip22.h: * HAL2 driver). This will prevent many complications, trust me ;-)
+sgi/ip22.h:#define SGI_GIO_0_IRQ	SGI_FIFO_IRQ		/* GIO-0 */
+sgi/ip22.h:#define SGI_GIO_1_IRQ	SGINT_LOCAL0 + 6	/* GE / GIO-1 / 2nd-HPC */
+sgi/ip22.h:#define SGI_GIO_2_IRQ	SGINT_LOCAL1 + 7	/* Vert retrace / GIO-2 */
+sgi/ip22.h:#define ip22_is_fullhouse()	(sgioc->sysid & SGIOC_SYSID_FULLHOUSE)
+sgialib.h:/* A 32-bit ARC PROM pass arguments and environment as 32-bit pointer.
+sgialib.h:/* Simple char-by-char console I/O. */
+sgialib.h:/* Running stand-along programs. */
+sgiarcs.h:#define ROMVECTOR ((struct linux_romvec *) (long)(PROMBLOCK)->romvec)
+sgiarcs.h:#define SGIPROM_ROFILE    0x01  /* read-only file */
+sgiarcs.h: * Macros for calling a 32-bit ARC implementation from 64-bit code
+sgiarcs.h:	long __vec = (long) romvec->dest;				\
+sgiarcs.h:	long __vec = (long) romvec->dest;				\
+sgiarcs.h:	long __vec = (long) romvec->dest;				\
+sgiarcs.h:	long __vec = (long) romvec->dest;				\
+sgiarcs.h:	long __vec = (long) romvec->dest;				\
+sgiarcs.h:	long __vec = (long) romvec->dest;				\
+sgiarcs.h:	long (*__vec)(void) = (void *) romvec->dest;			\
+sgiarcs.h:	long (*__vec)(long) = (void *) romvec->dest;			\
+sgiarcs.h:	long (*__vec)(long, long) = (void *) romvec->dest;		\
+sgiarcs.h:	long (*__vec)(long, long, long)	= (void *) romvec->dest;	\
+sgiarcs.h:	long (*__vec)(long, long, long, long) = (void *) romvec->dest;	\
+sgiarcs.h:	__vec = (void *) romvec->dest;					\
+sgiarcs.h:#endif /* both kernel and ARC either 32-bit or 64-bit */
+shmbuf.h: * - 2 miscellaneous 32-bit values
+shmiq.h:        volatile unsigned int flags; /* place for out-of-band data */
+shmiq.h:/* -------------------- iDev stuff -------------------- */
+shmiq.h:/* These are only interpreted by SHMIQ-attacheable devices and are internal
+sibyte/sb1250_dma.h:    *  MA 02111-1307 USA
+sibyte/sb1250_dma.h: * Ethernet and Serial DMA Configuration Register 0  (Table 7-4)
+sibyte/sb1250_dma.h: * Ethernet and Serial DMA Configuration Register 1 (Table 7-5)
+sibyte/sb1250_dma.h: * Ethernet and Serial DMA Descriptor base address (Table 7-6)
+sibyte/sb1250_dma.h: * ASIC Mode Base Address (Table 7-7)
+sibyte/sb1250_dma.h: * DMA Descriptor Count Registers (Table 7-8)
+sibyte/sb1250_dma.h: * Current Descriptor Address Register (Table 7-11)
+sibyte/sb1250_dma.h: * Descriptor doubleword "A"  (Table 7-12)
+sibyte/sb1250_dma.h: * Descriptor doubleword "B"  (Table 7-13)
+sibyte/sb1250_dma.h: * Ethernet Descriptor Status Bits (Table 7-15)
+sibyte/sb1250_dma.h: * Ethernet Transmit Status Bits (Table 7-16)
+sibyte/sb1250_dma.h: * Ethernet Transmit Options (Table 7-17)
+sibyte/sb1250_dma.h: * Serial Receive Options (Table 7-18)
+sibyte/sb1250_dma.h: * Serial Transmit Status Bits (Table 7-20)
+sibyte/sb1250_dma.h: * Serial Transmit Options (Table 7-21)
+sibyte/sb1250_dma.h: * Data Mover Descriptor Base Address Register (Table 7-22)
+sibyte/sb1250_dma.h: * Data Mover Descriptor Count Register (Table 7-25)
+sibyte/sb1250_dma.h: * Data Mover Current Descriptor Address (Table 7-24)
+sibyte/sb1250_dma.h: * Data Mover Descriptor Doubleword "A"  (Table 7-26)
+sibyte/sb1250_dma.h: * Data Mover Descriptor Doubleword "B"  (Table 7-25)
+sibyte/sb1250_l2c.h:    *  MA 02111-1307 USA
+sibyte/sb1250_l2c.h: * Level 2 Cache Tag register (Table 5-3)
+sibyte/sb1250_l2c.h: * Format of level 2 cache management address (table 5-2)
+sibyte/sb1250_int.h:    *  MA 02111-1307 USA
+sibyte/sb1250_int.h: * Interrupt sources (Table 4-8, UM 0.2)
+sibyte/sb1250_int.h: * LDT Interrupt Set Register (table 4-5)
+sibyte/sb1250_int.h: * Vector format (Table 4-6)
+sibyte/sb1250_ldt.h:    *  MA 02111-1307 USA
+sibyte/sb1250_ldt.h: * LDT Command Register (Table 8-13)
+sibyte/sb1250_ldt.h: * LDT Status Register (Table 8-14).  Note that these constants
+sibyte/sb1250_ldt.h: * together (32-bit read at offset 0x04)
+sibyte/sb1250_ldt.h: * register (Table 8-15), offset 0x1C
+sibyte/sb1250_ldt.h: * Bridge Control Register (Table 8-16).  Note that these 
+sibyte/sb1250_ldt.h: * constants assume you've read the register as a 32-bit 
+sibyte/sb1250_ldt.h: * LDT Command Register (Table 8-17).  Note that these constants
+sibyte/sb1250_ldt.h: * 32-bit read at offset 0x40
+sibyte/sb1250_ldt.h: * LDT link control register (Table 8-18), and (Table 8-19)
+sibyte/sb1250_ldt.h: * LDT Link frequency register  (Table 8-20) offset 0x48
+sibyte/sb1250_ldt.h: * LDT SRI Command Register (Table 8-21).  Note that these constants
+sibyte/sb1250_ldt.h: * 32-bit read at offset 0x50
+sibyte/sb1250_ldt.h: * LDT Error control and status register (Table 8-22) (Table 8-23)
+sibyte/sb1250_ldt.h: * SRI Control register (Table 8-24, 8-25)  Offset 0x6C
+sibyte/sb1250_ldt.h: * LDT SRI Transmit Buffer Count register (Table 8-26)
+sibyte/sb1250_mac.h:    *  MA 02111-1307 USA
+sibyte/sb1250_mac.h: * MAC Configuration Register (Table 9-13)
+sibyte/sb1250_mac.h: * MAC Fifo Threshhold registers (Table 9-14)
+sibyte/sb1250_mac.h: * MAC Frame Configuration Registers (Table 9-15)
+sibyte/sb1250_mac.h: * MAC VLAN Tag Registers (Table 9-16)
+sibyte/sb1250_mac.h: * MAC Status Registers (Table 9-17)
+sibyte/sb1250_mac.h: * Also used for the MAC Interrupt Mask Register (Table 9-18)
+sibyte/sb1250_mac.h: *  and pass just the six bits to a DMA-channel-specific ISR
+sibyte/sb1250_mac.h: * MAC Fifo Pointer Registers (Table 9-19)    [Debug register]
+sibyte/sb1250_mac.h: * MAC Fifo End Of Packet Count Registers (Table 9-20)  [Debug register]
+sibyte/sb1250_mac.h: * MAC Recieve Address Filter Exact Match Registers (Table 9-21)
+sibyte/sb1250_mac.h: * MAC Recieve Address Filter Hash Match Registers (Table 9-22)
+sibyte/sb1250_mac.h: * MAC Transmit Source Address Registers (Table 9-23)
+sibyte/sb1250_mac.h: * MAC Receive Address Filter Control Registers (Table 9-24)
+sibyte/sb1250_mac.h: * MAC Receive Channel Select Registers (Table 9-25)
+sibyte/sb1250_mac.h: * MAC MII Management Interface Registers (Table 9-26)
+sibyte/sb1250_scd.h:    *  MA 02111-1307 USA
+sibyte/sb1250_scd.h: * System Revision Register (Table 4-1)
+sibyte/sb1250_scd.h: * System Config Register (Table 4-2)
+sibyte/sb1250_scd.h: * Mailbox Registers (Table 4-3)
+sibyte/sb1250_scd.h: * Watchdog Registers (Table 4-8) (Table 4-9) (Table 4-10)
+sibyte/sb1250_scd.h: * Timer Registers (Table 4-11) (Table 4-12) (Table 4-13)
+sibyte/trace_prof.h: * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+sibyte/trace_prof.h: * Routines for using 40-bit SCD cycle counter
+sibyte/trace_prof.h: * zclk_timer_init(0) at least every 2^40 - 1 ZCLKs.
+sibyte/sb1250_syncser.h:    *  MA 02111-1307 USA
+sibyte/sb1250.h: * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+sibyte/sb1250_mc.h:    *  MA 02111-1307 USA
+sibyte/sb1250_mc.h: * Memory Channel Config Register (table 6-14)
+sibyte/sb1250_mc.h: * Memory clock config register (Table 6-15)
+sibyte/sb1250_mc.h: * DRAM Command Register (Table 6-13)
+sibyte/sb1250_mc.h: * DRAM Mode Register (Table 6-14)
+sibyte/sb1250_mc.h: * SDRAM Timing Register  (Table 6-15)
+sibyte/sb1250_mc.h: * Chip Select Start Address Register (Table 6-17)
+sibyte/sb1250_mc.h: * Chip Select End Address Register (Table 6-18)
+sibyte/sb1250_mc.h: * Chip Select Interleave Register (Table 6-19)
+sibyte/sb1250_mc.h: * Row Address Bits Register (Table 6-20)
+sibyte/sb1250_mc.h: * Column Address Bits Register (Table 6-21)
+sibyte/sb1250_mc.h: * Bank Address Address Bits Register (Table 6-22)
+sibyte/sb1250_mc.h: * Chip Select Attribute Register (Table 6-23)
+sibyte/sb1250_mc.h: * ECC Test ECC Register (Table 6-25)
+sibyte/swarm.h: * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+sibyte/carmel.h: * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+sibyte/sb1250_smbus.h:    *  MA 02111-1307 USA
+sibyte/sb1250_smbus.h: * SMBus Clock Frequency Register (Table 14-2)
+sibyte/sb1250_smbus.h: * SMBus control register (Table 14-4)
+sibyte/sb1250_smbus.h: * SMBus status registers (Table 14-5)
+sibyte/sb1250_smbus.h: * SMBus Start/Command registers (Table 14-9)
+sibyte/sb1250_smbus.h: * SMBus Data Register (Table 14-6) and SMBus Extra Register (Table 14-7)
+sibyte/sb1250_smbus.h: * SMBus Packet Error Check register (Table 14-8)
+sibyte/sentosa.h: * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+sibyte/64bit.h: * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+sibyte/64bit.h: * This is annoying...we can't actually write the 64-bit IO register properly
+sibyte/64bit.h: * without having access to 64-bit registers...  which doesn't work by default
+sibyte/64bit.h: * driver code for the 32-bit and 64-bit trees
+sibyte/64bit.h: * Avoid interrupt mucking, just adjust the address for 4-byte access.
+sibyte/64bit.h: * Assume the addresses are 8-byte aligned.
+sibyte/sb1250_defs.h:    *  MA 02111-1307 USA
+sibyte/sb1250_defs.h: * 'long long' (64-bit integer) support.
+sibyte/sb1250_defs.h:    ((SIBYTE_HDR_FMASK(chip, pass) - 1) & SIBYTE_HDR_FMASK_ALLREVS(chip))
+sibyte/sb1250_defs.h:     | (SIBYTE_HDR_FMASK(chip, pass) - 1)) & SIBYTE_HDR_FMASK_ALLREVS(chip))
+sibyte/sb1250_defs.h:    *                  For multi-bit fields, all bits in the field will
+sibyte/sb1250_defs.h:    *  K_xxx           "Code" constant (value for data in a multi-bit
+sibyte/sb1250_defs.h:    *  G_xxx(X)        GET value.  This macro obtains a multi-bit field
+sibyte/sb1250_defs.h: * Cast to 64-bit number.  Presumably the syntax is different in 
+sibyte/sb1250_defs.h:#define _SB_MAKEMASK(v,n) (_SB_MAKE64((_SB_MAKE64(1)<<(v))-1) << _SB_MAKE64(n))
+sibyte/sb1250_defs.h:#define _SB_MAKEMASK_32(v,n) (_SB_MAKE32((_SB_MAKE32(1)<<(v))-1) << _SB_MAKE32(n))
+sibyte/sb1250_defs.h: * Macros to read/write on-chip registers
+sibyte/sb1250_genbus.h:    *  MA 02111-1307 USA
+sibyte/sb1250_genbus.h: * Generic Bus Region Configuration Registers (Table 11-4)
+sibyte/sb1250_genbus.h: * Generic Bus Region Size register (Table 11-5)
+sibyte/sb1250_genbus.h: * Generic Bus Region Address (Table 11-6)
+sibyte/sb1250_genbus.h: * Generic Bus Region 0 Timing Registers (Table 11-7)
+sibyte/sb1250_genbus.h: * Generic Bus Timing 1 Registers (Table 11-8)
+sibyte/sb1250_genbus.h: * Generic Bus Interrupt Status Register (Table 11-9)
+sibyte/sb1250_genbus.h: * PCMCIA configuration register (Table 12-6)
+sibyte/sb1250_genbus.h: * PCMCIA status register (Table 12-7)
+sibyte/sb1250_genbus.h: * GPIO Interrupt Type Register (table 13-3)
+sibyte/board.h: * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+sibyte/sb1250_regs.h:    *  This module contains the addresses of the on-chip peripherals
+sibyte/sb1250_regs.h:    *  MA 02111-1307 USA
+sibyte/sb1250_regs.h:/* Backward-compatibility definitions.  */
+sibyte/sb1250_uart.h:    *  MA 02111-1307 USA
+sibyte/sb1250_uart.h: * DUART Mode Register #1 (Table 10-3)
+sibyte/sb1250_uart.h: * DUART Mode Register #2 (Table 10-4)
+sibyte/sb1250_uart.h: * DUART Command Register (Table 10-5)
+sibyte/sb1250_uart.h: * DUART Status Register (Table 10-6)
+sibyte/sb1250_uart.h: * READ-ONLY
+sibyte/sb1250_uart.h: * DUART Baud Rate Register (Table 10-7)
+sibyte/sb1250_uart.h:#define V_DUART_BAUD_RATE(x)        (100000000/((x)*20)-1)
+sibyte/sb1250_uart.h: * DUART Data Registers (Table 10-8 and 10-9)
+sibyte/sb1250_uart.h: * DUART Input Port Register (Table 10-10)
+sibyte/sb1250_uart.h: * DUART Input Port Change Status Register (Tables 10-11, 10-12, and 10-13)
+sibyte/sb1250_uart.h: * DUART Output port control register (Table 10-14)
+sibyte/sb1250_uart.h: * DUART Aux Control Register (Table 10-15)
+sibyte/sb1250_uart.h: * DUART Interrupt Status Register (Table 10-16)
+sibyte/sb1250_uart.h: * DUART Channel A Interrupt Status Register (Table 10-17)
+sibyte/sb1250_uart.h: * DUART Channel B Interrupt Status Register (Table 10-18)
+sibyte/sb1250_uart.h: * DUART Interrupt Mask Register (Table 10-19)
+sibyte/sb1250_uart.h: * DUART Channel A Interrupt Mask Register (Table 10-20)
+sibyte/sb1250_uart.h: * DUART Channel B Interrupt Mask Register (Table 10-21)
+sibyte/sb1250_uart.h: * DUART Output Port Set Register (Table 10-22)
+sibyte/sb1250_uart.h: * DUART Output Port Clear Register (Table 10-23)
+sibyte/sb1250_uart.h: * DUART Output Port RTS Register (Table 10-24)
+siginfo.h:#define SI_PAD_SIZE	((SI_MAX_SIZE/sizeof(int)) - 3)
+siginfo.h:#define SI_PAD_SIZE	((SI_MAX_SIZE/sizeof(int)) - 4)
+siginfo.h:	int __pad0[SI_MAX_SIZE / sizeof(int) - SI_PAD_SIZE - 3];
+siginfo.h:#define SI_QUEUE	-1	/* sent by sigqueue */
+siginfo.h:#define SI_ASYNCIO	-2	/* sent by AIO completion */
+siginfo.h:#define SI_TIMER __SI_CODE(__SI_TIMER,-3) /* sent by timer expiration */
+siginfo.h:#define SI_MESGQ	-4	/* sent by real time mesq state change */
+siginfo.h:#define SI_SIGIO	-5	/* sent by queued SIGIO */
+siginfo.h:#define SI_TKILL	-6	/* sent by tkill system call */
+siginfo.h:#define SI_FROMUSER(siptr)	((siptr)->si_code <= 0)
+siginfo.h:#define SI_FROMKERNEL(siptr)	((siptr)->si_code > 0)
+siginfo.h:#define BUS_ADRERR	(__SI_FAULT|2)	/* non-existant physical address */
+siginfo.h:#define SIGEV_PAD_SIZE	((SIGEV_MAX_SIZE-SIGEV_HEAD_SIZE) / sizeof(int))
+siginfo.h:	if (from->si_code < 0)
+siginfo.h:		memcpy(to, from, 3*sizeof(int) + sizeof(from->_sifields._sigchld));
+signal.h:#define SIGFPE		 8	/* Floating-point exception (ANSI).  */
+signal.h:#define SIGUSR1		16	/* User-defined signal 1 (POSIX).  */
+signal.h:#define SIGUSR2		17	/* User-defined signal 2 (POSIX).  */
+signal.h:#define SIGRTMAX	(_NSIG-1)
+signal.h: * SA_INTERRUPT is a no-op, but left due to historical reasons. Use the
+signal.h:#define SA_INTERRUPT	0x20000000	/* dummy -- ignored */
+signal.h:#define SIG_ERR	((__sighandler_t)-1)	/* error return from signal */
+signal.h: * non-Linux/MIPS object files or make use of them in the future.
+signal.h:#define BRK_BD_TAKEN	3	/* For bd slot emulation - not implemented */
+signal.h:#define BRK_BD_NOTTAKEN	4	/* For bd slot emulation - not implemented */
+signal.h:#define BRK_NORLD	10	/* No rld found - not used by Linux/MIPS */
+smp.h: * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+smp.h: * Copyright (C) 2000 - 2001 by Kanoj Sarcar (kanoj@sgi.com)
+smp.h: * Copyright (C) 2000 - 2001 by Silicon Graphics, Inc.
+smp.h:#define smp_processor_id()	(current->processor)
+smp.h:   not be idempotent when cpus failed to come on-line.  */
+smp.h:#define NO_PROC_ID	(-1)
+smp.h:/* These are defined by the board-specific code. */
+smplock.h:	if (task->lock_depth >= 0) \
+smplock.h: * Re-acquire the kernel lock
+smplock.h:	if (task->lock_depth >= 0) \
+smplock.h:	if (!++current->lock_depth)
+smplock.h:	if (--current->lock_depth < 0)
+sni.h: * Interrupt 0-16 are EISA interrupts.  Interrupts from 16 on are assigned
+socket.h:#define SO_OOBINLINE 0x0100	/* Receive out-of-band data in-band.  */
+socket.h:#define SO_SNDLOWAT	0x1003	/* send low-water mark */
+socket.h:#define SO_RCVLOWAT	0x1004	/* receive low-water mark */
+socket.h:/* linux-specific, might as well be the same as on i386 */
+socket.h:/* Security levels - as per NRL IPv6 - don't actually do anything */
+socket.h:/* Nast libc5 fixup - bletch */
+socket.h:#define SOCK_RDM	4		/* reliably-delivered message	*/
+sockios.h: * Socket-level I/O control calls.
+sockios.h:/* Socket-level I/O control calls. */
+sockios.h:#define SIOCGSTAMP	0x8906			/* Get stamp - linux-specific */
+softirq.h:	local_bh_count(cpu)--;
+softirq.h:	if (!--local_bh_count(cpu) && softirq_pending(cpu))	\
+spinlock.h:#define spin_lock_init(x)	do { (x)->lock = 0; } while(0)
+spinlock.h:#define spin_is_locked(x)	((x)->lock != 0)
+spinlock.h:#define spin_unlock_wait(x)	do { barrier(); } while ((x)->lock)
+spinlock.h:	: "=m" (lock->lock), "=&r" (tmp)
+spinlock.h:	: "m" (lock->lock)
+spinlock.h:	: "=m" (lock->lock)
+spinlock.h:	: "m" (lock->lock)
+spinlock.h: * Read-write spinlocks, allowing multiple readers but only one writer.
+spinlock.h: * writers. For those circumstances we can "mix" irq-safe locks - any writer
+spinlock.h: * needs to get a irq-safe write-lock, but readers can get non-irqsafe
+spinlock.h: * read-locks.
+spinlock.h:	: "=m" (rw->lock), "=&r" (tmp)
+spinlock.h:	: "m" (rw->lock)
+spinlock.h:	: "=m" (rw->lock), "=&r" (tmp)
+spinlock.h:	: "m" (rw->lock)
+spinlock.h:	: "=m" (rw->lock), "=&r" (tmp)
+spinlock.h:	: "m" (rw->lock)
+spinlock.h:	: "=m" (rw->lock)
+spinlock.h:	: "m" (rw->lock)
+statfs.h:	long		f_frsize;	/* Fragment size - unsupported */
+stat.h: * struct stat of the 64-bit kernel.
+string.h:		"lbu\t$1,-1(%0)\n\t"
+sysmips.h: * sysmips(2) is deprecated - though some existing software uses it.
+system.h: * Copyright (C) 1994 - 1999 by Ralf Baechle
+system.h: * Copyright (C) 1994 - 1999 by Ralf Baechle
+system.h:#endif /* Processor-dependent optimization */
+termbits.h:#define VKILL		 3		/* Kill-line character [ICANON].  */
+termbits.h:#define VTIME		 5		/* Time-out value (tenths of a second) [!ICANON].  */
+termbits.h:#define VSTART		 8		/* Start (X-ON) character [IXON, IXOFF].  */
+termbits.h:#define VSTOP		 9		/* Stop (X-OFF) character [IXON, IXOFF].  */
+termbits.h:#define VREPRINT	12		/* Reprint-line character [ICANON].  */
+termbits.h:#define VWERASE		14		/* Word-erase character [ICANON].  */
+termbits.h:#define VLNEXT		15		/* Literal-next character [IEXTEN].  */
+termbits.h:#define VEOF		16		/* End-of-file character [ICANON].  */
+termbits.h:#define VEOL		17		/* End-of-line character [ICANON].  */
+termbits.h:#define ONLCR	0000004		/* Map NL to CR-NL on output.  */
+termios.h:	int	sg_flags;	/* SGI special - int, not short */
+termios.h:#define N_IRDA		11	/* Linux IrDa - http://irda.sourceforge.net/ */
+termios.h:#define N_SMSBLOCK	12	/* SMS block mode - for talking to GSM data cards about SMS messages */
+termios.h:	get_user(tmp, &(termio)->c_iflag); \
+termios.h:	(termios)->c_iflag = (0xffff0000 & ((termios)->c_iflag)) | tmp; \
+termios.h:	get_user(tmp, &(termio)->c_oflag); \
+termios.h:	(termios)->c_oflag = (0xffff0000 & ((termios)->c_oflag)) | tmp; \
+termios.h:	get_user(tmp, &(termio)->c_cflag); \
+termios.h:	(termios)->c_cflag = (0xffff0000 & ((termios)->c_cflag)) | tmp; \
+termios.h:	get_user(tmp, &(termio)->c_lflag); \
+termios.h:	(termios)->c_lflag = (0xffff0000 & ((termios)->c_lflag)) | tmp; \
+termios.h:	get_user((termios)->c_line, &(termio)->c_line); \
+termios.h:	copy_from_user((termios)->c_cc, (termio)->c_cc, NCC); \
+termios.h:	put_user((termios)->c_iflag, &(termio)->c_iflag); \
+termios.h:	put_user((termios)->c_oflag, &(termio)->c_oflag); \
+termios.h:	put_user((termios)->c_cflag, &(termio)->c_cflag); \
+termios.h:	put_user((termios)->c_lflag, &(termio)->c_lflag); \
+termios.h:	put_user((termios)->c_line, &(termio)->c_line); \
+termios.h:	copy_to_user((termio)->c_cc, (termios)->c_cc, NCC); \
+time.h: * include/asm-mips/time.h
+time.h: * RTC ops.  By default, they point to no-RTC functions.
+time.h: *	rtc_get_time - mktime(year, mon, day, hour, min, sec) in seconds.
+time.h: *	rtc_set_time - reverse the above translation and set time to RTC.
+time.h: *	rtc_set_mmss - similar to rtc_set_time, but only min and sec need
+time.h: *			to be set.  Used by RTC sync-up.
+time.h: * mips_timer_ack may be NULL if the interrupt is self-recoverable.
+time.h: * If mips_hpt_read is NULL, an R4k-compatible timer setup is attempted.
+time.h: * high-level timer interrupt routines.
+time.h: * the corresponding low-level timer interrupt routine.
+time.h: * mips_hpt_frequency - must be set if you intend to use an R4k-compatible
+titan_dep.h: * Copyright 2003 PMC-Sierra
+titan_dep.h: * Author: Manish Lachwani (lachwani@pmc-sierra.com)
+titan_dep.h: * Board specific definititions for the PMC-Sierra Yosemite
+tlb.h:#include <asm-generic/tlb.h>
+traps.h: *	include/asm-mips/traps.h
+tx3912.h: *  include/asm-mips/tx3912.h
+tx3912.h: *	---------------                                                      *
+tx3912.h: *	-------------------                                                  *
+tx3912.h: *	---------------                                                      *
+tx3912.h: *	---------------                                                      *
+tx3912.h: *	--------------                                                       *
+tx3912.h: *	---------------                                                      *
+tx4927/tx4927.h: * Copyright 2001-2002 MontaVista Software Inc.
+tx4927/tx4927.h: followed by the device name from table 4.2.2 on page 4-3 and then followed
+tx4927/tx4927.h: by the register name from table 4.2.3 on pages 4-4 to 4-8.  The manaul
+tx4927/tx4927.h:/* TX4927 SDRAM controller (64-bit registers) */
+tx4927/tx4927.h:/* TX4927 external bus controller (64-bit registers) */
+tx4927/tx4927.h:/* TX4927 SDRRAM Error Check Correction (64-bit registers) */
+tx4927/tx4927.h:/* TX4927 DMA Controller (64-bit registers) */
+tx4927/tx4927.h:/* TX4927 PCI Controller (32-bit registers) */
+tx4927/tx4927.h:/* TX4927 Configuration registers (64-bit registers) */
+tx4927/tx4927.h:/* TX4927 Timer 0 (32-bit registers) */
+tx4927/tx4927.h:/* TX4927 Timer 1 (32-bit registers) */
+tx4927/tx4927.h:/* TX4927 Timer 2 (32-bit registers) */
+tx4927/tx4927.h:/* TX4927 serial port 0 (32-bit registers) */
+tx4927/tx4927.h:/* TX4927 serial port 1 (32-bit registers) */
+tx4927/tx4927.h:/* TX4927 parallel port (32-bit registers) */
+tx4927/tx4927.h:/* TX4927 Interrupt Controller (32-bit registers) */
+tx4927/tx4927.h:/* TX4927 AC-link controller (32-bit registers) */
+tx4927/tx4927.h:#define TX4927_IRQ_CP0_RAW_BEG   0    /* tx4927 cpu built-in cp0 */
+tx4927/tx4927.h:#define TX4927_IRQ_PIC_RAW_BEG   0    /* tx4927 cpu build-in pic */
+tx4927/tx4927_pci.h: * Copyright (C) 2000-2001 Toshiba Corporation
+tx4927/tx4927_pci.h:#define TX4927_NR_IRQ_IRC       32      /* On-Chip IRC */
+tx4927/tx4927_pci.h:#define TX4927_PCIC_IDSEL_AD_TO_SLOT(ad)        ((ad) - 11)
+tx4927/toshiba_rbtx4927.h: * Copyright 2001-2002 MontaVista Software Inc.
+tx4927/toshiba_rbtx4927.h:#define RBTX4927_RTL_8019_BASE (0x1c020280-TBTX4927_ISA_IO_OFFSET)
+tx4927/tx4927_mips.h: * Copyright 2001-2002 MontaVista Software Inc.
+uaccess.h:#define __UA_LIMIT	(- TASK_SIZE)
+uaccess.h: * userspace address.  Note that we limit 32-bit userspace to 0x7fff8000 but
+uaccess.h: * we use 0x80000000 here on 32-bit kernels.  If a process passes an invalid
+uaccess.h: * address in this range it's the process's problem, not ours :-)
+uaccess.h:#define get_fs()	(current->thread.current_ds)
+uaccess.h:#define set_fs(x)	(current->thread.current_ds = (x))
+uaccess.h: *  - "addr" doesn't have any high-bits set
+uaccess.h: *  - AND "size" doesn't have any high-bits set
+uaccess.h: *  - AND "addr+size" doesn't have any high-bits set
+uaccess.h: *  - OR we are in kernel mode.
+uaccess.h: * access_ok: - Checks if a user space pointer is valid
+uaccess.h: *        %VERIFY_WRITE is a superset of %VERIFY_READ - if it is safe
+uaccess.h: * checks that the pointer is in the user space range - after calling
+uaccess.h: * this function, memory access functions may still return -EFAULT.
+uaccess.h: * verify_area: - Obsolete, use access_ok()
+uaccess.h: * Returns zero if the memory block may be valid, -EFAULT
+uaccess.h:	return access_ok(type, addr, size) ? 0 : -EFAULT;
+uaccess.h: * put_user: - Write a simple value into user space.
+uaccess.h: * @ptr must have pointer-to-simple-variable type, and @x must be assignable
+uaccess.h: * Returns zero on success, or -EFAULT on error.
+uaccess.h: * get_user: - Get a simple variable from user space.
+uaccess.h: * @ptr must have pointer-to-simple-variable type, and the result of
+uaccess.h: * Returns zero on success, or -EFAULT on error.
+uaccess.h: * __put_user: - Write a simple value into user space, with less checking.
+uaccess.h: * @ptr must have pointer-to-simple-variable type, and @x must be assignable
+uaccess.h: * Returns zero on success, or -EFAULT on error.
+uaccess.h: * __get_user: - Get a simple variable from user space, with less checking.
+uaccess.h: * @ptr must have pointer-to-simple-variable type, and the result of
+uaccess.h: * Returns zero on success, or -EFAULT on error.
+uaccess.h:	: "0" (__gu_err), "o" (__m(__gu_addr)), "i" (-EFAULT));		\
+uaccess.h:	  "o" (__m(__gu_addr + 4)), "i" (-EFAULT));			\
+uaccess.h:	  "i" (-EFAULT));						\
+uaccess.h:	  "o" (__m(__pu_addr + 4)), "i" (-EFAULT));			\
+uaccess.h: * __copy_to_user: - Copy a block of data into user space, with less checking.
+uaccess.h: * copy_to_user: - Copy a block of data into user space.
+uaccess.h: * __copy_from_user: - Copy a block of data from user space, with less checking. * @to:   Destination address, in kernel space.
+uaccess.h: * copy_from_user: - Copy a block of data from user space.
+uaccess.h: * __clear_user: - Zero a block of memory in user space, with less checking.
+uaccess.h: * __strncpy_from_user: - Copy a NUL terminated string from userspace, with less checking.
+uaccess.h: * Copies a NUL-terminated string from userspace to kernel space.
+uaccess.h: * If access to userspace fails, returns -EFAULT (some data may have been
+uaccess.h: * strncpy_from_user: - Copy a NUL terminated string from userspace.
+uaccess.h: * Copies a NUL-terminated string from userspace to kernel space.
+uaccess.h: * If access to userspace fails, returns -EFAULT (some data may have been
+uaccess.h: * strlen_user: - Get the size of a string in user space.
+uaccess.h: * Get the size of a NUL-terminated string in user space.
+uaccess.h: * strlen_user: - Get the size of a string in user space.
+uaccess.h: * Get the size of a NUL-terminated string in user space.
+unaligned.h: * get_unaligned - get value from possibly mis-aligned location
+unaligned.h: * e.g. retrieving a u16 value from a location not u16-aligned.
+unaligned.h: * put_unaligned - put value to a possibly mis-aligned location
+unaligned.h: * e.g. writing a u16 value to a location not u16-aligned.
+unaligned.h:	return ptr->x;
+unaligned.h:	return ptr->x;
+unaligned.h:	return ptr->x;
+unaligned.h:	ptr->x = r5;
+unaligned.h:	ptr->x = r5;
+unaligned.h:	ptr->x = r5;
+unistd.h: * Linux 64-bit syscalls are in the range from 5000 to 5999.
+unistd.h: * Offset of the last Linux 64-bit flavoured syscall
+unistd.h:/* XXX - _foo needs to be __foo, while __NR_bar could be _NR_bar. */
+unistd.h:	return (type)-1; \
+unistd.h:	return (type)-1; \
+unistd.h:	return (type)-1; \
+unistd.h:	return (type)-1; \
+unistd.h:	return (type)-1; \
+unistd.h: * Using those means your brain needs more than an oil change ;-)
+unistd.h:	return (type)-1; \
+unistd.h:	return (type)-1; \
+unistd.h:	return (type)-1; \
+unistd.h:	return (type)-1; \
+unistd.h: * we need this inline - forking from kernel space will result
+unistd.h: * calls - which means inline code for fork too, as otherwise we
+unistd.h:	return waitpid(-1, wait_stat, 0);
+user.h: * linux we use the `trad-core' bfd, NOT the irix-core).  The file
+user.h: *  data: The data segment follows next.  We use current->end_text to
+user.h: *	current->brk to pick up all of the user variables, plus any memory
+user.h: *	page is demand-zero or if a page is totally unused, we just cover
+user.h: *	current->start_stack, so we round each of these in order to be able
+usioctl.h: * usema/usemaclone-related stuff.
+vr4181/irq.h:   IP0 - Software interrupt
+vr4181/irq.h:   IP1 - Software interrupt
+vr4181/irq.h:   IP2 - All but battery, high speed modem, and real time clock
+vr4181/irq.h:   IP3 - RTC Long1 (system timer)
+vr4181/irq.h:   IP4 - RTC Long2
+vr4181/irq.h:   IP5 - High Speed Modem (unused on VR4181)
+vr4181/irq.h:   IP6 - Unused
+vr4181/irq.h:   IP7 - Timer interrupt from CPO_COMPARE
+vr4181/irq.h:   IP2 - same as VR4181_IRQ_INT1
+vr4181/irq.h:   IP8 - This is a cascade to GPIO IRQ's. Do not use.
+vr4181/irq.h:   IP16 - same as VR4181_IRQ_INT2
+vr4181/irq.h:   IP18 - CompactFlash
+vr4181/vr4181.h:#define VR4181_MISCREG0		__preg16(KSEG1 + 0x0B000330)	/* Misc. R/W Battery Backed Registers for Non-Volatile Storage (R/W) */
+vr4181/vr4181.h:#define VR4181_MISCREG1		__preg16(KSEG1 + 0x0B000332)	/* Misc. R/W Battery Backed Registers for Non-Volatile Storage (R/W) */
+vr4181/vr4181.h:#define VR4181_MISCREG2		__preg16(KSEG1 + 0x0B000334)	/* Misc. R/W Battery Backed Registers for Non-Volatile Storage (R/W) */
+vr4181/vr4181.h:#define VR4181_MISCREG3		__preg16(KSEG1 + 0x0B000336)	/* Misc. R/W Battery Backed Registers for Non-Volatile Storage (R/W) */
+vr4181/vr4181.h:#define VR4181_MISCREG4		__preg16(KSEG1 + 0x0B000338)	/* Misc. R/W Battery Backed Registers for Non-Volatile Storage (R/W) */
+vr4181/vr4181.h:#define VR4181_MISCREG5		__preg16(KSEG1 + 0x0B00033A)	/* Misc. R/W Battery Backed Registers for Non-Volatile Storage (R/W) */
+vr4181/vr4181.h:#define VR4181_MISCREG6		__preg16(KSEG1 + 0x0B00033C)	/* Misc. R/W Battery Backed Registers for Non-Volatile Storage (R/W) */
+vr4181/vr4181.h:#define VR4181_MISCREG7		__preg16(KSEG1 + 0x0B00033D)	/* Misc. R/W Battery Backed Registers for Non-Volatile Storage (R/W) */
+vr4181/vr4181.h:#define VR4181_MISCREG8		__preg16(KSEG1 + 0x0B000340)	/* Misc. R/W Battery Backed Registers for Non-Volatile Storage (R/W) */
+vr4181/vr4181.h:#define VR4181_MISCREG9		__preg16(KSEG1 + 0x0B000342)	/* Misc. R/W Battery Backed Registers for Non-Volatile Storage (R/W) */
+vr4181/vr4181.h:#define VR4181_MISCREG10	__preg16(KSEG1 + 0x0B000344)	/* Misc. R/W Battery Backed Registers for Non-Volatile Storage (R/W) */
+vr4181/vr4181.h:#define VR4181_MISCREG11	__preg16(KSEG1 + 0x0B000346)	/* Misc. R/W Battery Backed Registers for Non-Volatile Storage (R/W) */
+vr4181/vr4181.h:#define VR4181_MISCREG12	__preg16(KSEG1 + 0x0B000348)	/* Misc. R/W Battery Backed Registers for Non-Volatile Storage (R/W) */
+vr4181/vr4181.h:#define VR4181_MISCREG13	__preg16(KSEG1 + 0x0B00034A)	/* Misc. R/W Battery Backed Registers for Non-Volatile Storage (R/W) */
+vr4181/vr4181.h:#define VR4181_MISCREG14	__preg16(KSEG1 + 0x0B00034C)	/* Misc. R/W Battery Backed Registers for Non-Volatile Storage (R/W) */
+vr4181/vr4181.h:#define VR4181_MISCREG15	__preg16(KSEG1 + 0x0B00034E)	/* Misc. R/W Battery Backed Registers for Non-Volatile Storage (R/W) */
+vr4181/vr4181.h:#define VR4181_SIUCSEL_2	__preg8(KSEG1 + 0x0C00000A)	/* IrDA Echo-back Control (R/W) */
+vr41xx/e55.h: *	include/asm-mips/vr41xx/e55.h
+vr41xx/e55.h: *	Include file for CASIO CASSIOPEIA E-10/15/55/65.
+vr41xx/eagle.h: *	include/asm-mips/vr41xx/eagle.h
+vr41xx/eagle.h: * Copyright 2001-2003 MontaVista Software Inc.
+vr41xx/eagle.h: * General-Purpose I/O Pin Number
+vr41xx/capcella.h: *	include/asm-mips/vr41xx/capcella.h
+vr41xx/capcella.h: * General-Purpose I/O Pin Number
+vr41xx/workpad.h: *	include/asm-mips/vr41xx/workpad.h
+vr41xx/mpc30x.h: *	include/asm-mips/vr41xx/mpc30x.h
+vr41xx/mpc30x.h: *	Include file for Victor MP-C303/304.
+vr41xx/mpc30x.h: * General-Purpose I/O Pin Number
+vr41xx/vr41xx.h: * include/asm-mips/vr41xx/vr41xx.h
+vr41xx/vr41xx.h:/* VR4122 0x00000c70-0x00000c72 */
+vr41xx/vr41xx.h:/* VR4181A 0x00000c73-0x00000c7f */
+vr41xx/vr41xx.h:/* VR4131 0x00000c80-0x00000c83 */
+vr41xx/vr41xx.h:/* VR4133 0x00000c84- */
+vr41xx/vr41xx.h:#define GIU_IRQ(x)		(GIU_IRQ_BASE + (x))	/* IRQ 40-71 */
+vr41xx/vr41xx.h:#define GIU_IRQ_TO_PIN(x)	((x) - GIU_IRQ_BASE)	/* Pin 0-31 */
+vr41xx/vr41xx.h: * General-Purpose I/O Unit
+vr41xx/vrc4171.h: *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+vr41xx/vrc4173.h: *	include/asm-mips/vr41xx/vrc4173.h
+vr41xx/vrc4173.h: * Copyright 2001-2003 Montavista Software Inc.
+vr41xx/vrc4173.h: * General-Purpose I/O Unit
+vr41xx/tb0226.h: *	include/asm-mips/vr41xx/tb0226.h
+vr41xx/tb0226.h: * General-Purpose I/O Pin Number
+vr41xx/tb0229.h: *	include/asm-mips/vr41xx/tb0229.h
+vr41xx/tb0229.h: * General-Purpose I/O Pin Number
+war.h: * interrupts during indexed I-cache flushes seems to be sufficient to deal
+war.h: * pre-conditions for this problem.
+xor.h:#include <asm-generic/xor.h>
+xxs1500.h: *  59 Temple Place - Suite 330, Boston MA 02111-1307, USA.

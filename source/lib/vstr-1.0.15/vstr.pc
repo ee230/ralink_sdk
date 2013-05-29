@@ -1,0 +1,14 @@
+#
+# Pkgconfig file for using the vstr library, (via. pkg-config).
+#
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: Vstr
+Description: String Library
+Version: 1.0.15
+
+Cflags: -I${includedir}
+Libs:  -L${libdir} -lvstr

@@ -1,0 +1,12 @@
+0) Usage:
+    C:\> mcast
+
+1)Send multicast packets:
+     C:\>mcast /GRPS: 239.1.1.1 /SRCS:10.10.11.128 /NUMPKTS:1000 /INTVL:50 /SEND 
+
+2) Receive multicast packets
+     C:\>mcast /GRPS:239.1.1.1 /RECV
+
+Please use "/intf" argument to specify a interface to receive or send if you have multiple network interfaces.
+ 
+

@@ -1,0 +1,18 @@
+This is the Debian GNU/Linux prepackaged version of watchdog.
+
+This package was put together by Michael Meskes <meskes@topsystem.de>
+using the example driver given in the kernel.
+
+further Information:
+
+* see /usr/src/linux/Documentation/watchdog.txt
+
+Before you can use a kernel watchdog driver you have to make sure that the
+corresponding module is loaded. You can do that with "modprobe <drivermodule>"or with
+adding the <drivermodule> to the file "/etc/modules" to make sure it is always
+loaded during system startup. The software watchdog driver is called "softdog".
+
+Michael Meskes <meskes@debian.org> Mo Apr 17 15:05:54 CEST 2006
+
+
+

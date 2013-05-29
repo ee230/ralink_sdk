@@ -1,0 +1,120 @@
+.TH WATCHDOG.CONF 5 "January 2005"
+.UC 4
+.SH NAME
+watchdog.conf \- configuration file for the watchdog daemon
+.SH DESCRIPTION
+This file carries all configuration options for the Linux watchdog daemon.
+Each option has to be written on a line for itself. Comments start with '#'.
+Blanks are ignored except after the '=' sign. An empty text after the '='
+sign disables the feature as long as that makes sense.
+.SH OPTIONS
+.TP
+interval = <interval>
+Set the interval between two writes to the watchdog device. The kernel
+drivers expects a write command every minute. Otherwise the system will be
+rebooted. Default value is 10 seconds. An interval of more than a minute can
+only be used with the \-f command-line option.
+.TP
+logtick = <logtick>
+If you enable verbose logging, a message is written into the syslog or a
+logfile. While this is nice, it is not necessary to get a message every
+10 seconds which really fills up disk and needs CPU. logtick allows adjustment
+of the number of intervals skipped before a log message is written. If you
+use logtick = 60 and interval = 10, only every 10 minutes (600 seconds) a
+message is written. This may make the exact time of a crash harder to find but
+greatly reduces disk usage and administrator nerves if you're looking for a
+particular syslog entry in between of watchdog messages.
+.TP
+max-load-1 = <load1>
+Set the maximal allowed load average for a 1 minute span. Once this load
+average is reached the system is rebooted. Default value is 0. That means
+the load average check is disabled. Be careful not to this parameter too
+low. To set a value less then the predefined minimal value of 2, you have to
+use the \-f commandline option.
+.TP
+max-load-5 = <load5>
+Set the maximal allowed load average for a 5 minute span. Once this load
+average is reached the system is rebooted. Default value is 3/4*max-load-1.
+Be careful not to this parameter too low. To set a value less then the
+predefined minimal value of 2, you have to use the \-f commandline option.
+.TP
+max-load-15 = <load15>
+Set the maximal allowed load average for a 15 minute span. Once this load
+average is reached the system is rebooted. Default value is 1/2*max-load-1.
+Be careful not to this parameter too low. To set a value less then the
+predefined minimal value of 2, you have to use the \-f commandline option.
+.TP
+min-memory = <minpage>
+Set the minimal amount of virtual memory that has to stay free. Note that
+this is in pages. Default value is 0 pages which means this test is
+disabled. The page size is taken from the system include files.
+.TP
+max-temperature = <temp>
+Set the maximal allowed temperature. Once this temperature is reached the
+system is halted. Default value is 120. There is no unit conversion, so make
+sure you use the same unit as your hardware. Watchdog will issue warnings
+once the temperature increases 90%, 95% and 98% of this temperature.
+.TP
+watchdog-device = <device>
+Set the watchdog device name. Default is to disable keep alive support.
+.TP
+watchdog-timeout = <timeout>
+Set the watchdog device timeout during startup.  If not set, the default is
+driver-dependent.
+.TP
+temperature-device = <temp-dev>
+Set the temperature device name. Default is to disable temperature checking.
+.TP
+file = <filename>
+Set file name for file mode. 
+This option can be given as often as you like to check several files.
+.TP
+change = <mtime> 
+Set the change interval time for file mode. This options
+always belongs to the active filename, that is when finding a 'change ='
+line watchdog assumes it belongs to the most recently read 'file =' line.
+They don't neccessarily have to follow each other directly. But you cannot
+specify a 'change =' before a 'file ='.
+The default is to only stat the file and don't look for changes.
+.TP
+pidfile = <pidfilename>
+Set pidfile name for server test mode.
+This option can be given as often as you like to check several servers.
+.TP
+ping = <ip-addr>
+Set IP address for ping mode.
+This option can be used more than once to check different
+connections.
+.TP
+interface = <if-name>
+Set interface name for network mode.
+This option can be used more than once to check different
+interfaces.
+.TP
+test-binary = <testbin>
+Execute the given binary to do some user defined tests.
+.TP
+test-timeout = <timeout in seconds>
+User defined tests may only run for <timeout> seconds. Set to 0 for unlimited.
+.TP
+repair-binary = <repbin>
+Execute the given binary in case of a problem instead of shutting down the
+system.
+.TP
+admin = <mail-address>
+Email address to send admin mail to. That is, who shall be notified that the
+machine is being halted or rebooted. Default is 'root'. If you want to disable
+notification via email just set admin to en empty string.
+.TP
+realtime = <yes|no>
+If set to yes watchdog will lock itself into memory so it is never swapped
+out.
+.TP
+priority = <schedule priority>
+Set the schedule priority for realtime mode.
+.SH FILES
+.TP
+.I /etc/watchdog.conf  
+The watchdog configuration file
+.SH "SEE ALSO"
+.BR watchdog (8)

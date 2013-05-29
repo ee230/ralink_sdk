@@ -1,0 +1,58 @@
+#!/bin/sh
+set -e
+
+. /usr/share/debconf/confmodule
+db_capb backup
+
+parse_default() {
+    case `sed -n 's/^run_watchdog=//p' "$@"` in
+    0)  db_set watchdog/run false;;
+    1)  db_set watchdog/run true;;
+    *)  return 1;;
+    esac
+    db_set watchdog/module `sed -n 's/^watchdog_module="\(.*\)"/\1/p' "$@"`
+}
+
+if dpkg --compare-versions "$2" le-nl 5.2.4-4
+then
+    # Upgrade quietly from pre-debconf days (<= 5.2.4-4).
+    if parse_default /etc/init.d/watchdog; then
+	db_fset watchdog/run seen true
+	db_fset watchdog/module seen true
+    fi
+elif [ -f /etc/default/watchdog ]
+then
+    # Load previous value (may have been changed manually).
+    parse_default /etc/default/watchdog || true
+fi
+
+db_input medium watchdog/module || true
+db_go
+
+# Use a state machine to allow jumping back.
+state=1
+while true
+do
+    case $state in
+    1)
+	db_input medium watchdog/run || true
+	;;
+    2)
+	db_get watchdog/run
+	[ "$RET" = false ] || db_input medium watchdog/restart || true
+	;;
+    *)
+	break
+	;;
+    esac
+
+    if db_go
+    then
+	state=$(($state + 1))
+    else
+	state=$(($state - 1))
+    fi
+done
+
+# Check if the user backed up from the first question.
+[ $state -gt 0 ] || exit 10

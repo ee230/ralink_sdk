@@ -1,0 +1,123 @@
+#!/bin/sh
+set -e
+
+
+if [ "$1" = configure ]
+then
+    . /usr/share/debconf/confmodule
+
+    if [ -x /sbin/MAKEDEV ]; then
+	    # do we have to create the device?
+	    if [ ! -c /dev/watchdog ]
+	    then
+		(cd /dev; /sbin/MAKEDEV misc || true)
+	    fi
+
+	    # do we have to create the temperature device?
+	    if [ ! -c /dev/temperature ]
+	    then
+		(cd /dev; /sbin/MAKEDEV misc || true)
+	    fi
+    fi
+
+    # one version set some incorrect permissions
+    if [ -k /var/log/watchdog ]
+    then
+	chmod 750 /var/log/watchdog
+    fi
+
+    default_format="\
+# Start watchdog at boot time? 0 or 1
+run_watchdog=%s
+# Load module before starting watchdog
+watchdog_module=%s
+# Specify additional watchdog options here (see manpage).
+"
+
+    # Determine whether to start watchdog at boot time.
+    db_get watchdog/run
+    case $RET in
+    false)  run_watchdog=0;;
+    *)      run_watchdog=1;;
+    esac
+
+    db_get watchdog/module
+    module=$RET
+
+    # Create an up-to-date copy of the default file.
+    {
+	# If it already exists, preserve everything except our comment
+	# and $run_watchdog.
+	if [ -f /etc/default/watchdog ]
+	then
+	    printf "$default_format" '.*' '.*' \
+		| grep -vxf - /etc/default/watchdog \
+		| grep -v watchdog_options || true
+	fi
+
+	# Append our comment and the current value.
+	printf "$default_format" "$run_watchdog" "\"$module\""
+
+	# And finally preserve the watchdog_options setting.
+	if [ -f /etc/default/watchdog ]
+	then
+		grep watchdog_options /etc/default/watchdog || true
+	fi
+    } > /etc/default/watchdog.dpkg-new
+
+
+    # Replace the original atomically.
+    mv /etc/default/watchdog.dpkg-new /etc/default/watchdog
+
+    # Restart if so configured.
+    db_get watchdog/restart
+    if [ "$RET" = true ]
+    then
+    	if [ -x "`which invoke-rc.d 2>/dev/null`" ]; then
+		invoke-rc.d watchdog restart
+	else
+		/etc/init.d/watchdog stop > /dev/null 2>&1
+		/etc/init.d/watchdog start
+	fi
+    fi
+
+    #
+    # stop debconf
+    #
+    db_stop
+fi
+
+#
+# remove old links
+#
+if dpkg --compare-versions "$2" lt 5.2.4-3
+then
+	if [ -L /etc/rc2.d/S10watchdog -a \
+	     -L /etc/rc3.d/S10watchdog -a \
+	     -L /etc/rc4.d/S10watchdog -a \
+	     -L /etc/rc5.d/S10watchdog -a \
+	     -L /etc/rc0.d/K80watchdog -a \
+	     -L /etc/rc1.d/K80watchdog -a \
+	     -L /etc/rc6.d/K80watchdog ]; then
+		update-rc.d -f watchdog remove
+	fi
+fi
+
+if dpkg --compare-versions "$2" lt 5.4-11
+then
+	if [ -L /etc/rc2.d/S09wd_keepalive -a \
+	     -L /etc/rc3.d/S09wd_keepalive -a \
+	     -L /etc/rc4.d/S09wd_keepalive -a \
+	     -L /etc/rc5.d/S09wd_keepalive -a \
+	     -L /etc/rc0.d/K91wd_keepalive -a \
+	     -L /etc/rc1.d/K91wd_keepalive -a \
+	     -L /etc/rc6.d/K91wd_keepalive ]; then
+		update-rc.d -f wd_keepalive remove
+	fi
+fi
+# Not automatically added by dh_installinit (--noscripts)
+update-rc.d watchdog defaults 89 11 >/dev/null
+update-rc.d wd_keepalive start 09 2 3 4 5 . >/dev/null
+
+#DEBHELPER#
+

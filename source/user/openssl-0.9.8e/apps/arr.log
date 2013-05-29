@@ -1,0 +1,2 @@
+/opt/buildroot-gdb/lib/gcc-lib/mipsel-linux-uclibc/3.3.6/../../../../mipsel-linux-uclibc/bin/ld: cannot find -lssl
+collect2: ld returned 1 exit status

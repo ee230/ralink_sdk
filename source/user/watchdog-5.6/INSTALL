@@ -1,0 +1,57 @@
+If you're on a Debian system, make -f debian/rules binary creates the
+watchdog package. It's even easier if you use debmake, just call build.
+(Note that the Debian files are not distributed with the original source
+anymore. You have to get the Debian .diff.gz file, too.)
+
+If you use redhat, you can use the .spec file to generate a package. But as
+with Debian you have to get the .spec file from the RedHat sources. Copy
+watchdog.spec to /usr/src/redhat/SPECS, copy the .tar.gz archive to
+/usr/src/redhat/SOURCES, cd /usr/src/redhat/SPECS, rpm -ba watchdog.spec.
+(Note that the watchdog.spec file not distributed with the original source
+either.)
+
+If your Linux distribution does not include watchdog feel free to ask the
+distributor to add it. Since watchdog is GPLed there should not be a
+problem.
+
+Okay, if you want to install it manually:
+
+$ autoreconf -i (if you're building from CVS)
+$ ./configure
+$ make
+$ su
+# make install
+
+There are several options available which can be listed by running
+
+$ ./configure --help
+
+We only list some options here which are generally useful.
+
+Symbols: 
+
+    *cl - can be overridden in the command line
+    *cf - can be overridden in the config file
+
+  --with-sleep-interval=sec         (default 10)       *cl *cf
+
+    This allows you to set the default number of seconds which watchdog
+	will sleep before acting again. 
+  
+  --with-sysadmin=email             (default root)     *cf
+    
+    If watchdog attempts to reboot a machine, it will try to send an email out
+	before that. You can set the email address of the recipient with this
+    option.
+  
+  --with-maxload=int                (default 12)       *cf
+
+    If the load average reaches this point, the machine will reboot.
+
+  --with-watchdog=path              (default /dev/watchdog) *cf
+  --with-temperature=path           (default /dev/temperature) *cf
+
+    Sets the path for the respective device. 
+    
+Enjoy
+Michael

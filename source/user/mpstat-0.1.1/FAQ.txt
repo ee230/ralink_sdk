@@ -1,0 +1,49 @@
+
+
+1) What does mpstat show?
+
+Currently mpstat shows per cpu information. %usr, %sys, %idl, maj & min faults, interupts, 
+per cpu. It also shows context switches.
+
+2) What is intr, inth, csw, icsw, etc.
+
+cpuid - the id of the cpu as asigned by the bios and that which shows in /proc/cpuinfo. 
+
+majf - major page faults
+
+minf - minor page faults
+
+xcal - inter processor cross calls
+
+intr - interupts
+
+ithr - interupts as threads ** on linux this is the same as intr
+
+csw - context switches
+
+icsw - involuntary context switches
+
+migr - thread migrations
+
+smtx - spins on mutexes lock not acquirecd on the first try
+
+srw - spins on reads / writes
+
+us - %cpu in user time
+
+sy - %cpu spent in system time
+
+wt - %cpu spent in wait 
+
+idl - %cpu in idl time
+
+3) Why does one (or more) of my cpu's show no major or minor faults, or not interupts?
+
+mpstat assumes that cpu's are number 0, 1, 2, 3, etc. If they are not then the algorythm used here
+fails. This was discoverd in version 0.0.4, and 0.0.5, and will be hopefully fixed in 0.0.6.
+
+4) Why is intr and ithr now combined into one field?
+
+unlike NT and Solaris, and most other operating systems, Linux does not distinguish completely between threads and process. A process in Linux is basically a thread that does not necessarily have shared memory. If you were to show a tree view of teh process (such as that of ktop) then you would see that all process are child process of a parent proces, or a child of the init process. In essance one can think of init as the main process, and all other process are threads of init.
+
+

@@ -1,0 +1,9 @@
+Title:          watchdog
+Version:        5.6
+Description:    A software watchdog.
+Author:         meskes@debian.org (Michael Meskes)
+Maintained-by:  meskes@debian.org (Michael Meskes)
+Maintained-at:  www.sourceforge.net /projects/watchdog
+Platforms:      C program
+Copying-Policy: GPL
+Keywords:       daemon, automatic-reboot

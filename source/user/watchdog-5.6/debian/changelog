@@ -1,0 +1,608 @@
+watchdog (5.6-1) unstable; urgency=low
+
+  * New upstream version, closes: #517419
+  * Bumped Standards-Version to 3.8.1, no change needed.
+  * Added homepage field.
+  * Added watch file.
+
+ -- Michael Meskes <meskes@debian.org>  Thu, 22 Mar 2009 13:56:25 +0100
+
+watchdog (5.5-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Michael Meskes <meskes@debian.org>  Wed, 25 Feb 2009 12:08:29 +0100
+
+watchdog (5.4-11) unstable; urgency=low
+
+  * Updated Japanese debconf translation, closes: #512872
+  * Made init scripts cope with empty variable, closes: #514256
+  * Added upstream patch to prevent rare segfault on shutdown, closes: #514295
+  * Do not install stop links for wd_keepalive, closes: #506435, #506436
+  * Do not call init scripts from init scripts. Instead call
+    start-stop-daemon directly.
+
+ -- Michael Meskes <meskes@debian.org>  Wed, 11 Feb 2009 14:53:30 +0100
+
+watchdog (5.4-10) unstable; urgency=medium
+
+  * Preserve watchdog_module setting on upgrade, closes: #506376
+
+ -- Michael Meskes <meskes@debian.org>  Fri, 21 Nov 2008 10:13:09 +0100
+
+watchdog (5.4-9) unstable; urgency=low
+
+  * Do not start wd_keepalive on watchog restart, closes: #504336
+
+ -- Michael Meskes <meskes@debian.org>  Mon, 03 Nov 2008 10:10:01 +0100
+
+watchdog (5.4-8) unstable; urgency=low
+
+  * Added Swedish debconf translation, closes: #504250
+
+ -- Michael Meskes <meskes@debian.org>  Sun, 02 Nov 2008 14:03:46 +0100
+
+watchdog (5.4-7) unstable; urgency=low
+
+  * Check whether /sbin/MAKEDEV exists before calling it, closes: #503080
+
+ -- Michael Meskes <meskes@debian.org>  Wed, 22 Oct 2008 14:38:30 +0200
+
+watchdog (5.4-6) unstable; urgency=low
+
+  * Added Spanish debconf translation, closes: #495480
+  * Bumped standards-version to 3.8.0, no other changes needed.
+
+ -- Michael Meskes <meskes@debian.org>  Wed, 20 Aug 2008 15:17:35 +0200
+
+watchdog (5.4-5) unstable; urgency=low
+
+  * Bumped standards-version to 3.7.3, no other changes needed.
+  * Increased versioned build dependency on debhelper to >= 5 because we use
+    compatibility level 5.
+
+ -- Michael Meskes <meskes@debian.org>  Sat, 29 Dec 2007 13:26:40 +0100
+
+watchdog (5.4-4) unstable; urgency=low
+
+  * Replaced broken fi.po, the first version got broken during email transfer,
+    closes: #457455.
+
+ -- Michael Meskes <meskes@debian.org>  Sun, 23 Dec 2007 11:14:10 +0100
+
+watchdog (5.4-3) unstable; urgency=low
+
+  * Added Finish translation, closes: #457455.
+  * Fixed remaining lintian warnings.
+
+ -- Michael Meskes <meskes@debian.org>  Sat, 22 Dec 2007 17:36:02 +0100
+
+watchdog (5.4-2) unstable; urgency=low
+
+  * Removed dependency on devfsd which does not exist anymore.
+
+ -- Michael Meskes <meskes@debian.org>  Fri, 12 Oct 2007 09:46:05 +0200
+
+watchdog (5.4-1) unstable; urgency=low
+
+  * New upstream version.
+  * Updated to standards version 3.7.2
+  * Fixed po files that got mangled in 5.3.1-4
+
+ -- Michael Meskes <meskes@debian.org>  Fri, 17 Aug 2007 12:05:04 +0200
+
+watchdog (5.3.1-4) unstable; urgency=low
+
+  * Reviewed debconf templates and debian/control, closes: #430428
+  * Updated Czech translation, closes: #432210
+  * Updated German translation, closes: #433090
+  * Updated Portuguese translation, closes: #433240
+  * Updated French translation, closes: #433288
+  * Added Galician translation, closes: #431440
+  * Added Vietnamese translation, closes: #431559
+  * Added Russian translation, closes: #432222
+
+ -- Michael Meskes <meskes@debian.org>  Mon, 16 Jul 2007 08:35:57 +0200
+
+watchdog (5.3.1-3) unstable; urgency=low
+
+  * Made sure module is loaded before watchdog is started
+    closes: #423019, #423020 
+
+ -- Michael Meskes <meskes@debian.org>  Thu, 31 May 2007 15:18:14 +0200
+
+watchdog (5.3.1-2) unstable; urgency=low
+
+  * Added Japanese debconf templates translation, closes: #413533
+
+ -- Michael Meskes <meskes@debian.org>  Tue,  6 Mar 2007 14:09:46 +0100
+
+watchdog (5.3.1-1) unstable; urgency=low
+
+  * New upstream version, closes: #411961
+
+ -- Michael Meskes <meskes@debian.org>  Thu, 22 Feb 2007 11:46:30 +0100
+
+watchdog (5.3-1) unstable; urgency=low
+
+  * New upstream version, closes: #224241, #409587
+
+ -- Michael Meskes <meskes@debian.org>  Tue, 20 Feb 2007 12:16:03 +0100
+
+watchdog (5.2.6-7) unstable; urgency=low
+
+  * Add some upstream patches to wd_keepalive, install and use it, closes: #353053
+
+ -- Michael Meskes <meskes@debian.org>  Sun, 11 Feb 2007 10:59:11 +0100
+
+watchdog (5.2.6-6) unstable; urgency=low
+
+  * Fixed postinst to allow missing entries in /etc/default/watchdog, closes: #387261
+
+ -- Michael Meskes <meskes@debian.org>  Thu, 14 Sep 2006 09:58:37 +0200
+
+watchdog (5.2.6-5) unstable; urgency=low
+
+  * Applied upstream patch to prevent possible reboot because of uninitilized
+    variable.
+  * Added lsb-section to init script.
+
+ -- Michael Meskes <meskes@debian.org>  Tue, 12 Sep 2006 11:19:18 +0200
+
+watchdog (5.2.6-4) unstable; urgency=low
+
+  * Added Dutch po file, closes: #383337
+
+ -- Michael Meskes <meskes@debian.org>  Fri, 18 Aug 2006 16:17:22 +0200
+
+watchdog (5.2.6-3) unstable; urgency=low
+
+  * Added Czech po file, closes: #380527
+  * Added some two bug fixes from CVS.
+
+ -- Michael Meskes <meskes@debian.org>  Mon, 31 Jul 2006 10:58:42 +0200
+
+watchdog (5.2.6-2) unstable; urgency=low
+
+  * Check for existance of /etc/default/watchdog in postinst, closes: #376864
+
+ -- Michael Meskes <meskes@debian.org>  Thu,  6 Jul 2006 11:55:34 +0200
+
+watchdog (5.2.6-1) unstable; urgency=low
+
+  * New upstream version, closes: #32547, #351398, #361839, #361835
+  * Added French translation, closes: #368774
+  * Added Portuguese translation, closes: #372819
+  * Added missing db_stop to postinst, closes: #367126
+  * Added udev to Depends: line as alternative to makedev
+  * Added debconf-updatepo call to clean target in debian/rules
+  * Fixed /etc/dafault/watchdog handling in postinst, bug reported by James
+    Harper <james.harper@bendigoit.com.au>
+
+ -- Michael Meskes <meskes@debian.org>  Thu, 22 Jun 2006 20:50:01 +0200
+
+watchdog (5.2.5-2) unstable; urgency=low
+
+  * Switched to po-debconf, closes: #351398
+  * Fixed lintian warnings/errors in postinst
+
+ -- Michael Meskes <meskes@debian.org>  Tue,  9 May 2006 13:16:39 +0200
+
+watchdog (5.2.5-1) unstable; urgency=low
+
+  * New upstream version, closes: #350557, #330463, #296477
+  * Added patch to fix usage of /etc/default/watchdog, closes: #242214
+    Thanks to Steffen Joeris <Steffen.Joeris@skolelinux.de>
+  * Added a note to README.Debian that the kernel driver has to be loaded,
+    closes: #287969
+
+ -- Michael Meskes <meskes@debian.org>  Mon, 17 Apr 2006 14:39:32 +0200
+
+watchdog (5.2.4-5) unstable; urgency=low
+
+  * Prompt via debconf.  Store configuration in /etc/default/watchdog
+    (not a conffile).  Closes: #180094, #242214, #299629, #322510.
+    Thanks to Matej Vela <vela@debian.org>
+
+ -- Michael Meskes <meskes@debian.org>  Thu,  8 Sep 2005 15:12:07 +0200
+
+watchdog (5.2.4-4) unstable; urgency=medium
+
+  * Check for local changes to startup links before changing them
+    
+ -- Michael Meskes <meskes@debian.org>  Thu, 19 May 2005 19:03:38 +0200
+     
+watchdog (5.2.4-3) unstable; urgency=medium
+
+  * Changed startup priority to 89, closes: #300432
+  * Added path to init script, closes: #259277
+    
+ -- Michael Meskes <meskes@debian.org>  Sun,  8 May 2005 12:48:38 +0200
+     
+watchdog (5.2.4-2) unstable; urgency=low
+
+  * Updated manpages closes: #289386
+  * Updated package descrition closes: #285367
+
+ -- Michael Meskes <meskes@debian.org>  Tue, 25 Jan 2005 14:17:24 +0100
+ 
+watchdog (5.2.4-1) unstable; urgency=low
+
+  * New upstream version closes: #199727
+
+ -- Michael Meskes <meskes@debian.org>  Tue,  8 Jul 2003 14:36:42 +0200
+
+watchdog (5.2.3-5) unstable; urgency=low
+
+  * Fixed /etc/init.d/watchdog help. closes: #180092
+  * Added a longer sleep between stop and start during restart.
+    closes: #180093
+
+ -- Michael Meskes <meskes@debian.org>  Sun, 18 May 2003 17:07:21 +0200
+
+watchdog (5.2.3-4) unstable; urgency=low
+
+  * Add build-depends. closes: #191009
+
+ -- Michael Meskes <meskes@debian.org>  Tue, 29 Apr 2003 10:08:34 +0200
+
+watchdog (5.2.3-3) unstable; urgency=low
+
+  * Do not run make distclean if no makefile is present. closes: #190620
+
+ -- Michael Meskes <meskes@debian.org>  Sat, 26 Apr 2003 20:31:36 +0200
+
+watchdog (5.2.3-2) unstable; urgency=low
+
+  * Add missing 0 so dir mode is correctly recognized. closes: #179357
+  * Also fix existing directory.
+  * Removed "volatile" keyword so watchdog does compile on woody again.
+    closes: #179083
+
+ -- Michael Meskes <meskes@debian.org>  Wed,  5 Feb 2003 13:55:48 +0100
+
+watchdog (5.2.3-1) unstable; urgency=low
+
+  * Somehow I had an .o file in the orig.tar.gz. No idea how that happened.
+    New version does not. closes: #178881
+
+ -- Michael Meskes <meskes@debian.org>  Thu, 30 Jan 2003 13:50:51 +0100
+
+watchdog (5.2.2-1) unstable; urgency=low
+
+  * Somehow "watchdog.c " came back. Argh.
+  * Rename to 5.2.2 since the bug was in the orig tarball and this is an
+    unreleased beta of 6.0 anyway.
+  * Made option writemagic disappear and set by default. closes: #178689
+
+ -- Michael Meskes <meskes@debian.org>  Tue, 28 Jan 2003 07:44:00 +0100
+
+watchdog (5.2.1-1) unstable; urgency=low
+
+  * Clean out tarball closes: #176825
+  * Rename to 5.2.1 since the bug was in the orig tarball and this is an
+    unreleased beta of 6.0 anyway.
+
+ -- Michael Meskes <meskes@debian.org>  Fri, 24 Jan 2003 10:22:33 +0100
+
+watchdog (5.2-3) unstable; urgency=low
+
+  * Only write to open file streams closes: #175986
+
+ -- Michael Meskes <meskes@debian.org>  Sat, 11 Jan 2003 19:43:56 +0100
+
+watchdog (5.2-2) unstable; urgency=low
+
+  * Really adopted package this time
+    closes: #79556, #104775, #79287, #174462, #122414, #136177, #174496
+    closes: #120744, #120745, #174644, #148653
+  * Added dependency on devfsd or makedev. closes: #150109
+
+ -- Michael Meskes <meskes@debian.org>  Thu,  9 Jan 2003 12:03:53 +0100
+
+watchdog (5.2-1) unstable; urgency=low
+
+  * Adopted completely. closes: #79556, #104775, #79287
+  * Added lots of fixes from the 6.0 version in development
+    Closes: #174462, #122414, #136177, #174496, #120744, #120745
+  * Removed second watchdog.c file. Closes: #174644
+  * Made sure prerm file is there. Closes: #148653
+
+ -- Michael Meskes <meskes@debian.org>  Wed,  8 Jan 2003 13:20:02 +0100
+
+watchdog (5.2-0.2) unstable; urgency=low
+
+  * NMU
+  * Fix gcc 3.0 build failure.  Closes: #104775
+
+ -- LaMont Jones <lamont@debian.org>  Sun,  3 Feb 2002 21:06:36 -0700
+
+watchdog (5.2-0.1) unstable; urgency=low
+
+  * Adopted for the time being.
+  * New upstream version (not yet available from the FTP sites),
+    closes #81681, #86500, #43166, #38071, #44018
+  * Fixed reboot-on-upgrade problem, closes: #79556, #79287
+
+ -- Michael Meskes <meskes@debian.org>  Sun, 25 Mar 2001 11:08:53 +0200
+
+watchdog (5.1-2) stable unstable; urgency=low
+
+  * Uploaded to stable, adds --noscripts to debhelper invocation, closes:
+    #53298, #61939 (grave).
+
+ -- Johnie Ingram <johnie@debian.org>  Mon, 11 Dec 2000 11:59:13 -0800
+
+watchdog (5.1-1) frozen unstable; urgency=low
+
+  * Added --noscripts to debhelper invocation, closes: #53298, #61939
+    (grave).
+  * Put #DEBHELPER# tag in so usr/doc kludge works.
+  * Previous NMU fixed /sbin/MAKEDEV problem, closes: #55683.
+  * Postinst remembers configuration on upgrade, closes: #36298.
+
+ -- Johnie Ingram <johnie@debian.org>  Fri,  8 Dec 2000 14:26:56 -0800
+
+watchdog (5.1-0.3) frozen unstable; urgency=low
+
+  * Non-maintainer upload
+  * Lets upload the rc-bug fix to frozen as well. geez.
+
+ -- Wichert Akkerman <wakkerma@debian.org>  Tue, 22 Feb 2000 14:45:12 +0100
+
+watchdog (5.1-0.2) unstable; urgency=low
+
+  * Non-maintainer upload
+  * Use /sbin/MAKEDEV, Closes: Bug#55683
+
+ -- Wichert Akkerman <wakkerma@debian.org>  Sun, 20 Feb 2000 18:39:55 +0100
+
+watchdog (5.1-0.1) unstable; urgency=low
+
+  * NMU to make sure new upstrem version makes it into potato.
+    Sometimes 5.0 reboots because of a bug in watchdog.
+
+ -- Michael Meskes <meskes@debian.org>  Tue, 11 Jan 2000 11:29:13 +0100
+
+watchdog (5.0-1) unstable; urgency=low
+
+  * New upstrem version, fixing unexpected shutdowns, closes: #46082.
+
+ -- Johnie Ingram <johnie@debian.org>  Fri, 17 Dec 1999 19:01:15 -0600
+
+watchdog (4.5-2) unstable; urgency=low
+
+  * Updated to Standards-Version: 3.0.1.0.
+  * Increased general level of debhelperness.
+  * Bugs that should have been closed months ago:
+    * Realtime mode now defaults to yes upstream, closes: #36521.
+    * Return value of repair function is int upstream, closes: #34895.
+    * #include <stdio.h> is now used, closes: #34908.
+
+ -- Johnie Ingram <johnie@debian.org>  Sat, 18 Sep 1999 00:45:15 -0500
+
+watchdog (4.5-1) unstable; urgency=low
+
+  * New upstream version.
+  * Corrected location of watchdog in test -f, closes: #36884.
+
+ -- Johnie Ingram <johnie@debian.org>  Thu, 29 Apr 1999 14:24:18 -0400
+
+watchdog (4.4-2) unstable; urgency=low
+
+  * Included patch from Bart Warmerdam for glibc 2.1, closes: #35536.
+
+ -- Johnie Ingram <johnie@debian.org>  Sun,  4 Apr 1999 16:33:04 -0400
+
+watchdog (4.4-1) unstable; urgency=low
+
+  * New upstream version, closes: #34507.
+  * Buildable on systems without watchdog already installed, closes:
+    #33366.
+  * No longer creates /man directory, closes: #33387.
+
+ -- Johnie Ingram <johnie@debian.org>  Tue, 23 Mar 1999 14:43:03 -0500
+
+watchdog (4.3-2) frozen unstable; urgency=low
+
+  * Uploaded for frozen, closes: #33201 (important), also closes: #28281,
+    #32398, #28153.
+  * Architectue-specific dependencies removed in clean, closes: #32783.
+
+ -- Johnie Ingram <johnie@debian.org>  Thu, 11 Feb 1999 11:38:58 -0500
+
+watchdog (4.3-1) unstable; urgency=low
+
+  * New upstream version.
+  * Zombie feature is now documented, closes: #28281, #32398.
+
+ -- Johnie Ingram <johnie@debian.org>  Thu,  4 Feb 1999 14:36:11 -0500
+
+watchdog (4.2-1) unstable; urgency=low
+
+  * New upstream version, closes: #28153 (watchdog.conf not being read).
+
+ -- Johnie Ingram <johnie@debian.org>  Sun, 31 Jan 1999 15:20:41 -0500
+
+watchdog (4.0-6) unstable; urgency=low
+
+  * Tweaked logging info.
+
+ -- Johnie Ingram <johnie@debian.org>  Wed, 30 Dec 1998 16:06:06 -0500
+
+watchdog (4.0-5) frozen unstable; urgency=low
+
+  * Uploaded to frozen the fix from 4.0-4 (post-install script now uses
+    "misc" to create the devices /dev/temperature and /dev/watchdog if
+    missing (#30950)) on suggestion of Wichert Akkerman.
+
+ -- Johnie Ingram <johnie@debian.org>  Mon, 21 Dec 1998 19:14:10 -0500
+
+watchdog (4.0-4) unstable; urgency=low
+
+  * Post-install script now uses "misc" to create the devices
+    /dev/temperature and /dev/watchdog if missing (#30950).
+  
+ -- Johnie Ingram <johnie@debian.org>  Mon, 21 Dec 1998 13:02:14 -0500
+
+watchdog (4.0-3) unstable; urgency=low
+
+  * Added an include <stdio.h> fix from Ben Collins to fix sparc
+    compilation.
+
+ -- Johnie Ingram <johnie@debian.org>  Sat, 19 Dec 1998 21:09:41 -0500
+
+watchdog (4.0-2) unstable; urgency=low
+
+  * Corrected coment in /etc/init.d/watchdog (#30896).
+  * Patched to compile on 2.1.131.
+  * Bugs fixed in release 4.0-1: #19763.
+
+ -- Johnie Ingram <johnie@debian.org>  Sat, 19 Dec 1998 19:32:47 -0500
+
+watchdog (4.0-1) unstable; urgency=low
+
+  * New upstream version.
+  * Merged changes from non-maintainer release by Roman Hodek (#23444,
+    fixing #19763).
+  * Switched from debmake to debhelper packaging technology.
+  * Updated to Standards-Version 2.4.1.4.
+
+ -- Johnie Ingram <johnie@debian.org>  Tue, 13 Oct 1998 15:00:52 -0400
+
+watchdog (3.3-1.1) frozen unstable; urgency=medium
+
+  * Non-maintainer release
+  * Fix typo in /etc/init.d/watchdog ($run_watchdog instead of
+    $run_cucipop) Fixes: #19763
+  * Make it compile with current libc6-dev (2.0.7pre*) again. For this an
+    additional #undef _LINUX_TYPES_H is needed in mount/nfsmount.c.
+    Fixes: #23444
+
+ -- Roman Hodek <Roman.Hodek@informatik.uni-erlangen.de>  Tue, 23 Jun 1998 11:37:54 +0200
+
+watchdog (3.3-1) unstable; urgency=low
+
+  * New upstream version (#17984).
+
+ -- Johnie Ingram <johnie@debian.org>  Mon,  9 Feb 1998 09:51:06 -0500
+
+watchdog (3.2-1) unstable; urgency=low
+
+  * New upstream version.
+  * Added restart and force-reload targets to init.d.
+  * Included the example scripts for custom system monitoring.
+  * Mofified update-rc.d parameters so watchdog is the last to stop.
+  * Greater compliance with the standard for console messages.
+  * Updated to Standards-Version 2.4.0.0.
+
+ -- Johnie Ingram <johnie@debian.org>  Sat,  7 Feb 1998 10:42:53 -0500
+
+watchdog (3.1-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Johnie Ingram <johnie@debian.org>  Tue, 28 Oct 1997 17:36:20 -0500
+
+watchdog (3.0-5) unstable; urgency=low
+
+  * Protected configuration prompting with a conditional so it isn't used
+    when dpkg is trying to abort (#12574).
+
+ -- Johnie Ingram <johnie@debian.org>  Tue,  9 Sep 1997 23:07:46 -0400
+
+watchdog (3.0-4) unstable; urgency=low
+
+  * Patched to build on sparc architecture, in the hopes that SparcLinux
+    will one day support it.
+
+ -- Johnie Ingram <johnie@debian.org>  Sat, 30 Aug 1997 23:56:43 -0400
+
+watchdog (3.0-3) unstable; urgency=low
+
+  * Fixed /tmp/watchdog.$$ security hole in installation script (#11795).
+  * Updated to Standards-Version 2.2.0.0.
+  * Switched to pristine upstream tar archive.
+
+ -- Johnie Ingram <johnie@debian.org>  Sat,  9 Aug 1997 13:44:14 -0400
+
+watchdog (3.0-2) unstable; urgency=low
+
+  * Added code to create /dev/temperature during configuration.
+  * Now uses the MAKEDEV program to generate the devices.
+  * Corrected three sentence spacing errors in full package description.
+
+ -- Johnie Ingram <johnie@debian.org>  Sun, 13 Jul 1997 01:34:52 -0400
+
+watchdog (3.0-1) unstable; urgency=low
+
+  * New upstream version.
+  * Compiled against libc6.
+
+ -- Johnie Ingram <johnie@debian.org>  Fri, 11 Jul 1997 13:38:56 -0400
+
+watchdog (2.1-2) unstable; urgency=low
+
+  * Init script and postinst tweaked to comply with the Standard for
+    Console Messages.
+  * Added file checksums (debmake 3.2.2).
+  
+ -- Johnie Ingram <johnie@debian.org>  Sat, 8 Mar 1997 09:52:27 -0500
+
+watchdog (2.1-1) unstable; urgency=low
+
+  * New maintainer.
+  * New upstream version: can now do an orderly restart if the system load
+    starts climbing out of reach.
+  * Updated to Standards-Version 2.1.2.2 with debmake 3.1.6.
+  * Changed sequence code so watchdog starts early in the boot process.
+  * Removed automatic kill of watchdog process so kernels compiled with
+    CONFIG_WATCHDOG_NOWAYOUT won't reboot.
+
+ -- Johnie Ingram <johnie@debian.org>  Sun, 16 Feb 1997 19:21:29 -0500
+
+watchdog (2.0-0)
+
+  * New upstream version
+  * Fixed debian.rules file to be architecture independent
+  
+ -- Michael Meskes <meskes@debian.org>  Thu May 30 13:03:27 MET DST 1996
+  
+watchdog (1.2-0)
+
+  * New upstream version
+  * Fixed some minor bugs in Debian files
+
+ -- Michael Meskes <meskes@informatik.rwth-aachen.de>  Thu May 23 14:21:27 MET DST 1996
+
+watchdog (1.1-3)
+
+  * Fixed debian.rules to include revision field
+
+ -- Michael Meskes <meskes@informatik.rwth-aachen.de>  Thu Mar  7 14:46:38 MET 1996
+  
+watchdog (1.1-2)
+
+  * Corrected prerm script
+  * Added run_watchdog variable to /etc/init.d/watchdog
+  * Postinst script now can start watchdog
+
+ -- Michael Meskes <meskes@informatik.rwth-aachen.de>  Wed Mar  6 13:47:14 MET 1996
+
+watchdog (1.1-1)
+
+  * Added /etc/init.d/watchdog to debian.conffiles
+
+ -- Michael Meskes <meskes@informatik.rwth-aachen.de>  Wed Mar  6 12:03:29 MET 1996
+  
+watchdog (1.1-0)
+
+  * Updated to new upstream version
+  
+ -- Michael Meskes <meskes@informatik.rwth-aachen.de>  Tue Mar  5 09:10:28 MET 1996
+  
+watchdog (1.0-1)
+
+  * Added postrm file
+
+ -- Michael Meskes <meskes@informatik.rwth-aachen.de>  Sat Mar  2 11:23:20 MET 1996

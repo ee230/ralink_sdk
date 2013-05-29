@@ -1,0 +1,13 @@
+O_TARGET := hw_nat.o
+
+ifeq ($(CONFIG_RA_HW_NAT),y)
+NAT_OBJ = hw_nat_k.obj
+endif
+
+ifeq ($(CONFIG_RA_HW_NAT),m)
+NAT_OBJ = hw_nat_m.obj
+endif
+
+obj-y := $(NAT_OBJ)
+obj-m := $(O_TARGET)
+include $(TOPDIR)/Rules.make

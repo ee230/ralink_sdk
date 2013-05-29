@@ -1,0 +1,82 @@
+if RALINK_RT6855A
+
+choice
+        prompt "Soc Hardware Type"
+	default RT6855A_ASIC
+
+config  RT6855A_FPGA 
+	bool "RT6855A/RT6856A-FPGA"
+
+config  RT6855A_ASIC 
+	bool "RT6855A/RT6856A-ASIC"
+
+endchoice
+
+endif
+
+config  KERNEL_NVRAM
+	bool 'Kernel NVRAM' 
+	default n
+
+choice
+       prompt "Flash Type"
+       default MTD_ANY_RALINK
+
+config MTD_NOR_RALINK
+       bool "NOR"
+       depends on  !RALINK_RT3352 && !RALINK_RT5350 && !RALINK_RT6855 && !RALINK_RT6855A
+
+config MTD_SPI_RALINK
+       bool "SPI"
+       depends on  !RALINK_RT2880
+
+config MTD_NAND_RALINK
+       bool "NAND"
+       depends on  !RALINK_RT3352 && !RALINK_RT2880 && !RALINK_RT5350 && !RALINK_RT6855
+
+config MTD_ANY_RALINK
+       bool "ANY (NOR/SPI/NAND)"
+       depends on  !RALINK_RT3352 && !RALINK_RT5350
+
+endchoice
+
+
+choice
+	prompt "PCIe Setting"
+	default RT6855A_PCIE_PORT0_ENABLE
+
+config  RT6855A_PCIE_PORT0_ENABLE
+        bool "Port0 ENABLE Port1 DISABLE(RT6855)"
+
+config  RT6855A_PCIE_PORT01_ENABLE
+        bool "Port0&1 ENABLE(RT6856)"
+endchoice
+
+choice
+	prompt "Root File System Type"
+	default RT2880_ROOTFS_IN_RAM
+
+config  RT2880_ROOTFS_IN_RAM
+        bool "RootFS_in_RAM"
+	select BLK_DEV_INITRD 
+	select BLK_DEV_RAM 
+
+#config  RT2880_ROOTFS_IN_FLASH
+#        bool "RootFS_in_FLASH"
+endchoice
+
+config BLK_DEV_RAM_SIZE
+	int 'Default RAM disk size'
+	default 8192
+	depends on RT2880_ROOTFS_IN_RAM
+
+config ROOTFS_IN_FLASH_NO_PADDING
+	bool 'No Padding between Kernel and RootFS'
+	default n
+	depends on RT2880_ROOTFS_IN_FLASH && !RT2880_FLASH_32M && !DUAL_IMAGE
+
+config MTD_KERNEL_PART_SIZ
+	hex 'MTD Kernel Partition Size (Unit:Bytes)'
+	default 0xD0000
+	depends on RT2880_ROOTFS_IN_FLASH && !ROOTFS_IN_FLASH_NO_PADDING
+

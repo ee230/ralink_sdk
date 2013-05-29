@@ -1,0 +1,14 @@
+2009-12-15 - Snort 2.8.5.2
+
+[*] Improvements
+   * Improvements to HTTP Inspect for handling of pipelined requests
+     and chunked encodings.
+
+   * Updated the documentation for output plugins and log limits.
+
+   * Fixed building on AIX 6.
+
+   * Fixed reloading of auto-iface variables when privileges had been dropped.
+
+   * Fixed issues at startup and perfstats rotation with old versions of
+     libc (2.2, 2.3) & linux threads.

@@ -1,0 +1,72 @@
+# Portuguese translation of watchdog
+# Copyright (C) 2006 THE watchdog'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the watchdog package.
+# Rui Branco <ruipb@debianpt.org>, 2006.
+# Miguel Figueiredo <elmig@debianpt.org>, 2007.
+# 
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: watchdog 5.2.5-2\n"
+"Report-Msgid-Bugs-To: meskes@debian.org\n"
+"POT-Creation-Date: 2007-07-16 08:48+0200\n"
+"PO-Revision-Date: 2007-07-15 20:54+0100\n"
+"Last-Translator: Miguel Figueiredo <elmig@debianpt.org>\n"
+"Language-Team: Portuguese <traduz@debianpt.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid "Start watchdog at boot time?"
+msgstr "Iniciar o watchdog durante o arranque?"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid ""
+"Please specify whether watchdog should be started as part of the boot "
+"process. This can be changed later by editing /etc/default/watchdog."
+msgstr ""
+"Especifique se quer que o watchdog arranque com parte do processo de "
+"arranque. Pode no entanto alterar esta opção editando o ficheiro /etc/"
+"default/watchdog."
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid "Restart watchdog on upgrades?"
+msgstr "Reiniciar o watchdog após actualizações?"
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid ""
+"If the kernel is configured with the CONFIG_WATCHDOG_NOWAYOUT option (which "
+"is not the default setting), restarting watchdog will cause a spurious "
+"reboot (the kernel will assume that the watchdog daemon crashed)."
+msgstr ""
+"Se o kernel está configurado com a opção CONFIG_WATCHDOG_NOWAYOUT (que não "
+"está escolhido por omissão), reiniciar o watchdog irá causar uma "
+"reinicialização estranha (o kernel irá assumir que o daemon do watchdog "
+"bloqueou)."
+
+#. Type: string
+#. Description
+#: ../templates:4001
+msgid "Watchdog module to preload:"
+msgstr "Módulo watchdog para pré-carregar:"
+
+#. Type: string
+#. Description
+#: ../templates:4001
+msgid ""
+"Please choose which watchdog module should be preloaded before starting "
+"watchdog. The 'softdog' module should be suited for all installations. Enter "
+"'none' if you don't want the script to load a module."
+msgstr ""
+"Por favor escolha qual o módulo watchdog que deve ser pré-carregado antes de "
+"iniciar o watchdog. O módulo 'softdog' deve ser adequado para todas as "
+"instalações. Introduza 'none' se não quiser que o script carregue um módulo."

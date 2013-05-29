@@ -1,0 +1,28 @@
+#
+# If wd_keepalive is used as watchdog daemon instead of
+# /usr/sbin/watchdog.
+#
+#WDT_DAEMON=/usr/sbin/wd_keepalive
+
+#
+# If you need verbose message, use following option
+#
+#VERBOSE="yes"
+
+#
+# Modules related with watchdog
+#
+
+# For some people it is a module, for others not. We force it because
+# for kernels < 2.1, we need kerneld, and it's not running yet.
+START_MOD_CMD="modprobe softdog"
+
+# If you compiled your kernel with CONFIG_WATCHDOG_NOWAYOUT, you may
+# not want  to remove the module  as sometimes /etc/rc.d/init.d/halt
+# will hang on umounting some remote nfs partition or for some other
+# reason, and you may then want the kernel to reboot by itself.
+# However, this means that if you stop watchdog, your system has one
+# minute to reboot cleanly, or it will be rebooted by the kernel. If
+# this behavior  isn't what you  want, just uncomment  the following
+# line
+#STOP_MOD_CMD="rmmod softdog"

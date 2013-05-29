@@ -1,0 +1,71 @@
+# Japanese debconf templates translation for watchdog.
+# Copyright (C) 2007-2009 Michael Meskes <meskes@debian.org>
+# This file is distributed under the same license as the watchdog package.
+# Noritada Kobayashi <noritadak@gmail.com>, 2007.
+# Hideki Yamane (Debian-JP) <henrich@debian.or.jp>, 2009.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: watchdog 5.4-10\n"
+"Report-Msgid-Bugs-To: meskes@debian.org\n"
+"POT-Creation-Date: 2007-07-16 08:48+0200\n"
+"PO-Revision-Date: 2009-01-05 22:44+0900\n"
+"Last-Translator: Hideki Yamane (Debian-JP) <henrich@debian.or.jp>\n"
+"Language-Team: Japanese <debian-japanese@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid "Start watchdog at boot time?"
+msgstr "システム起動時に watchdog を開始しますか?"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid ""
+"Please specify whether watchdog should be started as part of the boot "
+"process. This can be changed later by editing /etc/default/watchdog."
+msgstr ""
+"起動プロセスの一部として watchdog を起動させるかどうか指定してください。この"
+"指定は、/etc/default/watchdog を編集して後から変更することも可能です。"
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid "Restart watchdog on upgrades?"
+msgstr "アップグレード時に watchdog を再起動しますか?"
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid ""
+"If the kernel is configured with the CONFIG_WATCHDOG_NOWAYOUT option (which "
+"is not the default setting), restarting watchdog will cause a spurious "
+"reboot (the kernel will assume that the watchdog daemon crashed)."
+msgstr ""
+"カーネルが CONFIG_WATCHDOG_NOWAYOUT オプションを有効にして設定されている場合 "
+"(デフォルトでは設定されていません)、watchdog を再起動するとシステムが誤って再"
+"起動してしまいます (watchdog デーモンがクラッシュしたとカーネルが考えるためで"
+"す)。"
+
+#. Type: string
+#. Description
+#: ../templates:4001
+msgid "Watchdog module to preload:"
+msgstr "先にロードしておく watchdog モジュール:"
+
+#. Type: string
+#. Description
+#: ../templates:4001
+msgid ""
+"Please choose which watchdog module should be preloaded before starting "
+"watchdog. The 'softdog' module should be suited for all installations. Enter "
+"'none' if you don't want the script to load a module."
+msgstr ""
+"どの watchdog モジュールを watchdog の起動前に先にロードしておく必要があるか"
+"を選択してください。「softdog」モジュールはどのようなインストール状況でも問題"
+"はありません。モジュールをロードするスクリプトが必要で無い場合は「none」と入"
+"力してください。"

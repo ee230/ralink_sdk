@@ -1,0 +1,142 @@
+﻿<po>
+  <message msgid="admin disable" msgstr="停用" />
+  <message msgid="admin enable" msgstr="啟用" />
+  <message msgid="admin apply" msgstr="確定" />
+  <message msgid="admin cancel" msgstr="取消" />
+  <message msgid="admin reset" msgstr="重置" />
+  <message msgid="admin scan" msgstr="搜尋" />
+
+  <message msgid="man title" msgstr="系統管理" />
+  <message msgid="man introduction" msgstr="您可以設定此系統的管理者跟密碼、網路時間、動態網域名稱服務。" />
+  <message msgid="man language setting" msgstr="語系設定" />
+  <message msgid="man select language" msgstr="選擇語系" />
+  <message msgid="man admin setting" msgstr="系統管理者設定" />
+  <message msgid="man admin account" msgstr="帳號" />
+  <message msgid="man admin passwd" msgstr="密碼" />
+  <message msgid="man admin watchdog" msgstr="監護者" />
+  <message msgid="man ntp setting" msgstr="網路時間設定" />
+  <message msgid="man ntp timezone" msgstr="時區：" />
+  <message msgid="man ntp mid island" msgstr="(GMT-11:00) 中途島薩摩亞" />
+  <message msgid="man ntp hawaii" msgstr="(GMT-10:00) 夏威夷" />
+  <message msgid="man ntp alaska" msgstr="(GMT-09:00) 阿拉斯加" />
+  <message msgid="man ntp pacific" msgstr="(GMT-08:00) 太平洋標準時間" />
+  <message msgid="man ntp mountain" msgstr="(GMT-07:00) 落磯山區時間" />
+  <message msgid="man ntp arizona" msgstr="(GMT-07:00) 亞利桑那" />
+  <message msgid="man ntp central" msgstr="(GMT-06:00) 中央時間" />
+  <message msgid="man ntp mid us" msgstr="(GMT-06:00) 中部美洲" />
+  <message msgid="man ntp indiana east" msgstr="(GMT-05:00) 印第安那州（東部）、哥倫比亞" />
+  <message msgid="man ntp eastern" msgstr="(GMT-05:00) 東部時區" />
+  <message msgid="man ntp atlantic" msgstr="(GMT-04:00) 大西洋標準時間、西巴西" />
+  <message msgid="man ntp bolivia" msgstr="(GMT-04:00) 玻利維亞、委內瑞拉" />
+  <message msgid="man ntp guyana" msgstr="(GMT-03:00) 蓋亞那" />
+  <message msgid="man ntp brazil east" msgstr="(GMT-03:00) 東巴西、格陵蘭" />
+  <message msgid="man ntp mid atlantic" msgstr="(GMT-02:00) 中大西洋" />
+  <message msgid="man ntp azores islands" msgstr="(GMT-01:00) 亞速爾群島" />
+  <message msgid="man ntp gambia" msgstr="(GMT) 甘比亞、賴比瑞亞、摩洛哥" />
+  <message msgid="man ntp england" msgstr="(GMT) 英格蘭" />
+  <message msgid="man ntp czech republic" msgstr="(GMT+01:00) 捷克、N" />
+  <message msgid="man ntp germany" msgstr="(GMT+01:00) 德國" />
+  <message msgid="man ntp tunisia" msgstr="(GMT+01:00) 突尼西亞" />
+  <message msgid="man ntp greece" msgstr="(GMT+02:00) 希臘、烏克蘭、土耳其" />
+  <message msgid="man ntp south africa" msgstr="(GMT+02:00) 南非" />
+  <message msgid="man ntp iraq" msgstr="(GMT+03:00) 伊拉克、約旦、科威特" />
+  <message msgid="man ntp moscow winter" msgstr="(GMT+03:00) 莫斯科冬令時間" />
+  <message msgid="man ntp armenia" msgstr="(GMT+04:00) 亞美尼亞" />
+  <message msgid="man ntp pakistan" msgstr="(GMT+05:00) 巴基斯坦、俄羅斯" />
+  <message msgid="man ntp bangladesh" msgstr="(GMT+06:00) 孟加拉、俄羅斯" />
+  <message msgid="man ntp thailand" msgstr="(GMT+07:00) 泰國、俄羅斯" />
+  <message msgid="man ntp chinacoast" msgstr="(GMT+08:00) 中國沿岸、香港" />
+  <message msgid="man ntp taipei" msgstr="(GMT+08:00) 台北" />
+  <message msgid="man ntp singapore" msgstr="(GMT+08:00) 新加坡" />
+  <message msgid="man ntp australia wa" msgstr="(GMT+08:00) 西澳洲" />
+  <message msgid="man ntp japan" msgstr="(GMT+09:00) 日本、韓國" />
+  <message msgid="man ntp korean" msgstr="(GMT+09:00) 朝鮮時區" />
+  <message msgid="man ntp guam" msgstr="(GMT+10:00) 關島、俄羅斯" />
+  <message msgid="man ntp australia qld" msgstr="(GMT+10:00) 澳洲（昆士蘭、塔斯馬尼亞、新南威爾斯、首都特別行政區、維多利亞）" />
+  <message msgid="man ntp solomon islands" msgstr="(GMT+11:00) 索羅門群島" />
+  <message msgid="man ntp fiji" msgstr="(GMT+12:00) 斐濟" />
+  <message msgid="man ntp newzealand" msgstr="(GMT+12:00) 紐西蘭" />
+  <message msgid="man ntp server" msgstr="網路時間伺服器" />
+  <message msgid="man ntp sync" msgstr="網路時間校準(小時)" />
+  <message msgid="man ntp current time" msgstr="目前時間" />
+  <message msgid="man ntp sync with host" msgstr="與主機同步" />  
+  <message msgid="man gap title" msgstr="Green AP" />
+  <message msgid="man gap time" msgstr="啟用期間" />
+  <message msgid="man gap action" msgstr="執行項目" />
+  <message msgid="man ddns setting" msgstr="動態網域名稱解析服務設定" />
+  <message msgid="man ddns provider" msgstr="動態網域名稱解析服務網站" />
+  <message msgid="man ddns none" msgstr="無" />
+  <message msgid="man ddns account" msgstr="帳號" />
+  <message msgid="man ddns passwd" msgstr="密碼" />
+  <message msgid="man ddns" msgstr="動態網域名稱服務" />
+
+  <message msgid="upload title" msgstr="韌體更新" />
+  <message msgid="upload introduction1" msgstr="更新Ralink SoC韌體可得到更新功能。" />
+  <message msgid="upload introduction2" msgstr="上傳更新Flash需要大約1分鐘請耐心等候。警告！不正常的Image將會導致中斷系統運作。" />
+  <message msgid="upload firmware" msgstr="韌體更新" />
+  <message msgid="upload firmware location" msgstr="位置：" />
+  <message msgid="upload bootloader" msgstr="開機載入程式更新" />
+  <message msgid="upload bootloader location" msgstr="位置：" />
+  <message msgid="upload firmware from usb" msgstr="由USB Disk更新韌體" />
+  <message msgid="upload firmware force upgrade via mem" msgstr="強制使用記憶體更新韌體" />
+  <message msgid="upload firmware force" msgstr="強制是否:" />
+
+  <message msgid="setman title" msgstr="設定管理" />
+  <message msgid="setman introduction" msgstr="您可以藉由匯出設定檔來儲存系統的設定、或藉由匯入的設定檔來恢復系統設定、甚至可以重置回系統預設值。" />
+  <message msgid="setman export setting" msgstr="匯出設定" />
+  <message msgid="setman export setting button" msgstr="匯出按鈕" />
+  <message msgid="setman export setting export" msgstr="匯出" />
+  <message msgid="setman import setting" msgstr="匯入設定" />
+  <message msgid="setman import setting file location" msgstr="設定檔位置" />
+  <message msgid="setman import setting import" msgstr="匯入" />
+  <message msgid="setman load factory default" msgstr="載入原廠預設值" />
+  <message msgid="setman load factory default button" msgstr="載入預設按鈕" />
+  <message msgid="setman load default" msgstr="載入預設" />
+
+  <message msgid="status title" msgstr="無線橋接器狀態" />
+  <message msgid="status introduction" msgstr="我可以查看Ralink SoC平台的狀態。" />
+  <message msgid="status system information" msgstr="系統資訊" />
+  <message msgid="status sdk version" msgstr="SDK版本" />
+  <message msgid="status system up time" msgstr="系統正常開機時間" />
+  <message msgid="status system platform" msgstr="系統平台" />
+  <message msgid="status operate mode" msgstr="運作模式" />
+  <message msgid="status internet config" msgstr="Internet設定" />
+  <message msgid="status connect type" msgstr="連接型態" />
+  <message msgid="status wan ipaddr" msgstr="廣域網路IP位址" />
+  <message msgid="status subnet mask" msgstr="子網路遮罩" />
+  <message msgid="status default gateway" msgstr="預設通訊閘" />
+  <message msgid="status primary dns" msgstr="主要網域名稱解析伺服器" />
+  <message msgid="status secondary dns" msgstr="次要網域名稱解析伺服器" />
+  <message msgid="status local network" msgstr="區域網路" />
+  <message msgid="status lan ipaddr" msgstr="本機IP位址" />
+  <message msgid="status local netmask" msgstr="區域網路遮罩" />
+  <message msgid="status mac" msgstr="MAC 位址" />
+  <message msgid="status ethernet port status" msgstr="乙太網路連接埠遮罩" />
+
+  <message msgid="statistic title" msgstr="統計資料" />
+  <message msgid="statistic introduction" msgstr="查看Ralink SoC統計資。" />
+  <message msgid="statistic memory" msgstr="記憶體" />
+  <message msgid="statistic memory total" msgstr="記憶體總容量：" />
+  <message msgid="statistic memory left" msgstr="記憶體剩餘量：" />
+  <message msgid="statistic wanlan" msgstr="廣域網路/區域網路" />
+  <message msgid="statistic wan rx pkt" msgstr="廣域網路接收的封包數：" />
+  <message msgid="statistic wan rx bytes" msgstr="廣域網路接收的資料量：" />
+  <message msgid="statistic wan tx pkt" msgstr="廣域網路傳送的封包數：" />
+  <message msgid="statistic wan tx bytes" msgstr="廣域網路傳送的資料量：" />
+  <message msgid="statistic lan rx pkt" msgstr="區域網路接收的封包數：" />
+  <message msgid="statistic lan rx bytes" msgstr="區域網路接收的資料量：" />
+  <message msgid="statistic lan tx pkt" msgstr="區域網路傳送的封包數：" />
+  <message msgid="statistic lan tx bytes" msgstr="區域網路傳送的資料量：" />
+  <message msgid="statistic all interface" msgstr="所有的介面" />
+
+  <message msgid="syscommand title" msgstr="系統指令" />
+  <message msgid="syscommand introduction" msgstr="以root的身分執行一個系統指令。" />
+  <message msgid="syscommand system command" msgstr="系統指令" />
+  <message msgid="syscommand command" msgstr="指令：" />
+
+  <message msgid="syslog title" msgstr="系統記錄" />
+  <message msgid="syslog introduction" msgstr=" 系統記錄:" />
+  <message msgid="syslog system log" msgstr="系統記錄" />
+  <message msgid="syslog clear" msgstr="清除" />
+  <message msgid="syslog refresh" msgstr="更新" />  
+</po>

@@ -1,0 +1,475 @@
+Fri Feb 23 13:26:14 MET 1996
+
+	- Watchdog 1.0 released.
+
+Tue Mar  5 09:11:34 MET 1996
+
+	- Fixed two bugs in watchdog.c reported (and patched) by 
+	  Johannes Kroeger <fiction!squirrel.owl.de!jkroeger@golden-gate.owl.de>:
+	  Watchdog now tries to open /dev/watchdog before tugging its
+	  process ID away.
+
+	- Released version 1.1
+
+Thu May 23 14:20:59 MET DST 1996
+
+	- Added process table watch routine.
+
+	- Process filemode before sleeping.
+
+	- Released version 1.2
+
+Thu May 30 13:00:44 MET DST 1996
+
+	- Watchdog now correctly shuts down the system if the
+	  process table is full
+ 
+Mon Jul 29 13:51:42 MET DST 1996
+
+	- Finally watchdog is able to shut down the system even if
+	  the process table remains full after killing all processes.
+
+	- Released version 2.0 (this was a major overhaul)
+
+Fri Jan 31 13:39:43 MET 1997
+
+	- Disconnect deamon from console.
+
+	- Close file descriptors 0, 1, 2 when compiled with USE_SYSLOG.
+
+	- Cleaned up source code.
+
+	- Write the softdog device between each check, since the increasing
+	  number of checks might cause problems otherise.
+
+	- Test the system load average and reboot if it is too high.
+
+Thu Apr  3 11:14:07 MET DST 1997
+
+	- Fixed that nasty bug that caused the root partion to stay mounted
+	  during a soft reboot.
+
+	- Fixed another bug that caused watchdog to kill itself during
+	  reboot before all the work was done.
+
+Wed Jun  4 20:16:23 CEST 1997
+
+	- Finally soft reboot works as advertised.
+
+	- Tested NFS access in filemode.
+
+Fri Jun  6 22:55:16 CEST 1997
+
+	- Added ping mode: soft reboot is initiated if a given
+	  network/host does not answer.
+
+Wen Jun 11 09:25:36 CEST 1997
+
+	- Added file table check: reboot if file table overflow occurs.
+
+Mon Jun 16 12:10:55 CEST 1997
+
+	- Upgraded to mount 2.6g.
+	- Compile and link with glibc.
+	- Implemented call to user provides test binary.
+
+Tue Jun 17 13:35:15 CEST 1997
+
+	- Added examples for test scripts.
+
+Wed Jun 18 15:51:10 CEST 1997
+
+	- Default sleep interval now configurable via Makefile.
+
+Fri Jun 20 10:51:56 CEST 1997
+
+	- Added call to repair script.
+
+Tue Jun 24 15:31:03 CEST 1997
+
+	- Repair script now calls logger to create a syslog entry.
+
+Thu Jun 26 21:40:37 CEST 1997
+
+	- Fixed call of repair script.
+	- Let watchdog sleep five seconds before closelog() to make sure
+          everything is written to the logs.
+
+Mon Jun 30 13:48:08 CEST 1997
+
+	- Make sure files are only opened once.
+	- Work even if there is no /dev/watchdog.
+
+Mon Jun 30 21:07:39 CEST 1997
+
+	- Implemented temperature test.
+	- Added double fork() to inherit rights from init. Now watchdog will
+          unmount all partitions correctly regardless what your current
+          working directory is when you start it. My thanks go to Peter Tobias
+          <tobias@et-inf.fho-emden.de> for pointing me into the right direction.
+
+Wed Jul  2 11:00:49 CEST 1997
+
+	- Halt the system if temperature is too high, but send mail to the
+	  sysadmin prior doing that.
+
+Thu Jul  3 16:22:47 CEST 1997
+
+	- Include fully quantified hostname in Subject: line for mail.
+
+Fri Jul 11 10:38:39 CEST 1997
+
+	- Released version 3.0.
+
+Fri Jul 11 10:49:31 CEST 1997
+
+	- Fixed small typo in Makefile.
+
+Wed Sep  3 12:33:32 CEST 1997
+
+	- Corrected temperature reading code.
+	- Include patch to mount.c for sparcs.
+	- Write warning to log file when temperature start climbing to high.
+
+Sun Oct 19 11:22:26 CEST 1997
+
+	- No more warnings about unused variables if compiled without
+          USE_SYSLOG.
+	- Some more glibc adjustments for glibc 2.0.5.
+
+Fri Oct 24 11:40:07 CEST 1997
+
+	- Released version 3.1.
+
+Fri Nov 28 11:10:26 CET 1997
+
+	- Changed handling of return value of repair script to take care of
+          negative return value.
+	- Stop init before going down.
+
+Fri Nov 28 11:26:50 CET 1997
+
+	- Released version 3.2.
+
+Tue Dec  2 10:02:43 CET 1997
+
+	- Stupid me! Somehow I managed to release my test version without
+          removing the call to halt the system regardless of the temperature
+          that I used for my last test. I'm sorry. Hope it didn't cause too
+          much problems.
+	- Released version 3.3.
+
+Tue Dez 30 11:35:03 CET 1997
+
+	- Reorganized watchdog source files. 
+	- Implemented no-action option.
+
+Fri Jan  2 16:30:56 CET 1998
+
+	- Made watchdog a real-time application.
+	- To enable this I had to change the process-table check code so no
+	  hang can occur there.
+
+Thu Sep 10 17:22:32 CEST 1998
+
+	- Updated mount code to version 2.8 something. Thanks to the one who
+	  send me the patches. Unfortunately I lost his email-address.
+
+Fri Sep 11 16:22:28 CEST 1998
+
+	- Updated test binary stuff to make sure it won't reboot the system
+	  if binary runs for too long.
+
+Tue Sep 15 13:28:35 CEST 1998
+
+	- Allow multiple filenames resp. ip-addresses.
+
+Fri Sep 18 16:10:56 CEST 1998
+
+	- Move all options with arguments to watchdog.conf and added long
+	  options for the remaining ones.
+	- Added option -c to add config file name.
+
+Mon Sep 21 13:16:15 CEST 1998
+
+	- Output file modification time in verbose mode.
+	- Added check for constant changing of a file.
+
+Mon Sep 21 15:23:54 CEST 1998
+
+	- Updated man pages.
+
+Thu Oct 15 18:21:57 CEST 1998
+
+	- Released version 4.0.
+
+Fri Oct 16 14:22:15 CEST 1998
+
+	- Received patches for RedHat. Argh, should have waited with
+	  releasing 4.0.
+	- Some more modifications to repair.sh.
+
+Wed Okt 21 13:33:21 CEST 1998
+
+	- Moved configuration to config.h.
+
+Tue Okt 27 20:49:23 MEZ 1998
+
+	- Released 4.1.
+
+Mon Nov 23 09:33:20 MEZ 1998
+
+	- Changed union name in extern.h from options to wdog_options to be
+	  able to compile on libc5 systems.
+
+Tue Nov 24 14:32:41 MEZ 1998
+
+	- Added patches by Sascha Schumann <sas@schell.de> for libc5
+	  compatibility.
+
+Thu Jan 14 13:43:53 CET 1999
+
+	- Fixed the bug in read_config that caused the max-load-15 line to
+	  be read as max-load-1 = 5.
+
+Thu Jan 14 14:17:35 CET 1999
+
+	- And fixed another silly bug that caused ping mode to not work
+	  anymore.
+
+Wed Jan 20 21:03:30 CET 1999
+
+	- Switched to GNU autoconf, work done by Sascha Schumann
+	  <sas@schell.de>.
+
+Fri Jan 22 17:30:41 CET 1999
+
+	- Restructured the configuration management. No need to specify
+	  compile time defaults for parameters changeable via
+	  /etc/watchdog.conf.
+
+Sat Jan 30 08:58:47 CET 1999
+
+	- Released 4.2.
+
+Mon Feb  1 18:16:04 CET 1999
+
+	- Fixed autoconf bug so CONFIG_FILENAME default is correct.
+	- Added info about zombie process to docs.
+
+Fri Feb  5 07:33:47 CET 1999
+
+	- Removed remount call so the one reported hang cannot happen
+	  anymore. This call wasn't really needed anyway.
+	- Released 4.3.
+
+Thu Feb 18 08:02:01 CET 1999
+
+	- Fixed typo in manpage.
+
+Fri Feb 19 07:49:51 CET 1999
+
+	- Send mail even in case of reboot.
+	- Close log only after the last write.
+	- Fixed getopt_long handling.
+
+Fri Feb 19 21:33:26 CET 1999
+
+	- Create directory before installing CONFIG_FILENAME.
+
+Sun Feb 28 13:05:11 CET 1999
+
+	- Released 4.4.
+
+Sat Apr 10 14:30:59 CEST 1999
+
+	- Added RedHat patches by Marc Merlin.
+	- Made ret an int variable.
+	- Include stdio.h in src/umount.c.
+	- Released 4.5.
+
+Mon May  3 19:49:45 CEST 1999
+
+	- Corrected INSTALL file to explicitely state that the .spec file is
+	  not distributed together with watchdog.
+
+Fri Sep  3 11:21:11 CEST 1999
+
+	- Change compile time maxload defaults to 24/18/12.
+
+Fre Sep  3 14:23:58 CEST 1999
+
+	- Add test for free memory.
+
+Mon Sep  6 07:40:07 CEST 1999
+
+	- Added simple test script that tests whether /bin/sh can be
+	  started.
+	- Made load average check disabled by default.
+
+Don Sep  9 19:56:06 CEST 1999
+
+	- Added passive network test and server pinging test.
+
+Sun Dec 19 13:18:35 CET 1999
+
+	- Fixed big in test_binary.c that caused not existing errors to be
+	  logged.
+	- Add red label in watchdog.8 to not use broadcast ping without
+	  explicit permission.
+
+Mon Dec 20 14:54:58 CET 1999
+
+	- Released 5.0.
+
+Mon Dec 27 17:07:51 CET 1999
+
+	- Fixed silly calculation bug in memory check.
+	- Disable memory check for default setup.
+	- Released 5.1.
+
+Sat May  6 17:01:37 MEST 2000
+
+	- added /etc/sysconfig/watchdog to the rc.watchdog.redhat script
+	- added some ifdefs to include/mount_constants.h for compilation on
+	  RedHat 6.2 without some warnings about redefined symbols
+	- added "logtick" option to the watchdog binary (I wanted to do this
+	  for a very long time -- hps)
+
+Mon Jul 24 16:49:11 PDT 2000
+
+	- added patch by Hisaaki Shibata <shibata@luky.org> to add number of
+	  times a ping is tried to config file
+
+Son Mar 25 14:18:45 CEST 2001
+
+	- Made watchdog work with kernel 2.4.
+	- Send a more verbose email.
+	- Made watchdog compile with latest libc6.
+
+Thu May 10 14:19:57 CEST 2001
+
+	- Finally released 5.2.
+
+Thu May 10 15:11:45 CEST 2001
+
+	- Started to integrate stuff written by Marcel Jansen
+	  <marcel@appliancestudio.com>.
+	- Decided to move to version 6.0.
+
+Fre Jan  3 14:47:46 CET 2003
+
+	- Added patch by Patrick Higgins <phiggins@transzap.com> to catch test
+	  programs running for too long and react to that fact.
+	- Fixed pidfile check. A missing file usually means the server exited
+	  and thus watchdog needs to take action.
+	- Finally really started adding Marcel's patches:
+		* Redirection of stdout/stderr for test and repair binary.
+		* Write timestamps to heartbeat file.
+		* Add wd_keepalive program that uses the same config file,
+		  but only updates the watchdog device.
+	- Fixed shutdown with missing sendmail program.
+	- Added two bug fixes by Stephane List <stephane.list@fr.alcove.com>.
+	- Added patch by Jos Vos <jos@xos.nl> for a "write-magic" config
+	  parameter.
+	- Use unsigned ints for free memory check.
+	  
+Mo Apr 17 14:35:29 CEST 2006
+
+	- Fixed some bugs:
+		* unsigned int is too small for free memory check
+		* Man page still referencing options that are no longer
+		  available.
+	- Logtick option is used for verbose output in all tests
+
+We Jun 21 15:42:28 CEST 2006
+
+	- Added patch by Thomas Glanzmann <sithglan@abortium.glanzmann.de> for
+	  correct parsing of ping-count option.
+	- Added a patch by James Harper <james.harper@bendigoit.com.au> to fix
+	  that nasty ping problem. Thanks a lot.
+	- Applied some bug fix patches by Christoph Probst <chris@netzpunkt.org>.
+	- Changed interface check to use unsigned long.
+	- Some more small fixes.
+
+Mo Jul 31 11:13:04 CEST 2006
+
+	- Added patch by Richard Hansen <gentoo-a7x@scientician.org> to fix
+	  intervals being 50% too long.
+
+Mon Feb 12 10:45:21 CET 2007
+
+	- Hopefully fixed outstanding problems with wd_keepalive.
+	- Added some documentation about return values of the test binary.
+	- Released 5.3.
+
+Wed Feb 21 17:33:30 CET 2007
+
+	- Removed superfluous quotation from wd_keepalive.c.
+	- Added sourceforge as new primary archive site.
+
+Thu Feb 22 11:48:57 CET 2007
+
+	- Released 5.3.1.
+
+Thu, 26 Apr 2007 15:08:07 +0200
+
+	- Added "another-chance" repair script written by Erik Rossen
+	  <rossen@prolibre.com>.
+
+Tue, 29 May 2007 16:34:34 +0200
+
+	- Applied some changes to RedHat init script.
+	- Added sysconf script for RedHat.
+
+Fri, 17 Aug 2007 11:15:08 +0200
+
+	- Made wd_keepalive honor config file option.
+	- Added wd_keealive manpage.
+	- Made wd_keepalive not start without a watchdog device.
+	- Fixed some typos in watchdog manpage.
+	- Updated Debian files.
+	- Released 5.4
+
+Mon, 14 Jan 2008 13:57:34 +0100
+
+	- Check for existance before usage of sendmail.
+
+Wed, 11 Feb 2009 15:00:48 +0100
+
+	- Added patch by Jan Rouš <jaro@koukaam.se> to prevent rare segfault on
+	  shutdown.
+
+Wed, 25 Feb 2009 10:27:35 +0100
+
+	- Added patch by Enrique Zanardi <ezanardi@atlantux.com> to let repair
+	  binary know more about the failing test.
+	- Expanded that patch to work for more tests.
+	- Released version 5.5
+
+Tue,  3 Mar 2009 14:59:55 +0100
+
+	- Added patch by Enrique Zanardi <ezanardi@atlantux.com> to
+	  check for the source of the ping reply packets.
+
+Thu, 12 Mar 2009 14:36:01 +0100
+
+	- Added patch by Lon Hohberger <lhh@redhat.com> to allow configuration
+	  of timeouts.
+	- Added another patch by Lon Hohberger <lhh@redhat.com> to make sure
+	  signal handler does not call not-signal safe functions.
+	- Made wd_keepalive accept all options watchdog accepts and not throw
+	  errors on those it does not use itself.
+
+Fri, 13 Mar 2009 12:26:40 +0100
+
+	- Made watchdog not close the watchdog device so early when trying a
+	  normal shutdown. This ensures a reset even if the system hangs while
+	  doing this.
+	- Applied patch by Richard W.M. Jones <rjones@redhat.com> to cleanup
+	  code base for gcc-4.4.
+
+Sun, 22 Mar 2009 14:33:21 +0100
+
+	- Some more bugfixes by me and Lon.
+	- Released 5.6

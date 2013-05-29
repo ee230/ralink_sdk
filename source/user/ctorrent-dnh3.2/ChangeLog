@@ -1,0 +1,828 @@
+
+                        Enhanced CTorrent Change Log
+     _________________________________________________________________
+
+   Changes for "dnh3.2" Release
+
+   Features and Performance
+     * Various code optimizations in cache searching and management.
+     * Added proactive flushing of the oldest cache entry during idle
+       time when the cache is full.
+     * Flush the cache in piece order if/when the entire cache is
+       flushed.
+     * Prefetch uncached slices when a downloading piece is nearly
+       complete.
+     * Try to reduce thrashing if a small cache is specified.
+     * Flushing completed pieces to disk is now given a higher priority
+       than hash-checking existing pieces.
+     * An informational warning is given if any filenames contain
+       non-printable characters and the -T option is not used.
+     * Added more methods of detecting connections from the client to
+       itself.
+     * If the tracker doesn't supply a peer count, count the peers it
+       gives for connection instead. (This can be off by 1 if you're
+       using NAT and a lame tracker gives you yourself as a peer, but you
+       can't connect.)
+     * Don't let initial hash-checking prevent checking tracker, ctcs,
+       and console.
+     * Improved efficiency of peer status/prefetch checking.
+     * A 16K (default slice size) file I/O buffer is now used to
+       potentially improve read/write performance.
+     * Added support for systems without the strncasecmp() library
+       function.
+
+   Bug Fixes
+     * Fixed a crash at program exit.
+     * Fixed an error when reading an empty file.
+     * Fixed a potential cache corruption issue.
+     * Bad piece data wasn't always removed from cache.
+     * Updated builtin SHA1 code to include a fix or two and take
+       advantage of autoconf (including endianness; cross-compilers take
+       note).
+     * Improved/corrected the method of determining the local IP address.
+     * Corrected the comparison of local and peer IP address.
+     * Corrected peer connection failure detection (could cause peer
+       disconnects).
+     * Corrected a potential problem in the peer handshake handling code.
+     * Corrected a problem that could prevent or delay receiving the
+       peer's bitfield.
+     * Fixed a problem with handling of tracker response data. Now
+       separate send and receive buffers are used for tracker
+       communication.
+     * Corrected end-of-header check in httpencode.cpp (tracker
+       response).
+     * Various timing-related fixes to improve maximum transfer rates.
+     * Avoid running too many idle-time tasks at a time.
+     * Improved the upload timing when not using cache.
+     * Adjusted the CTCS seed time (-e) option processing to make the
+       result more intuitive (it could be perceived as being an hour
+       off).
+     * Fixed a problem where the torrent metainfo would not be shown if
+       input was redirected. Also added input EOF/error detection for
+       cases not previously covered.
+     * Fix console input on Solaris (and potentially some other
+       platforms).
+
+   Code Cleanup
+     * Additional verbose output for cache management.
+     * Moved strnstr() from httpencode.cpp to compat.c.
+     * Improve handling of tracker contact intervals.
+     * Optimized PeekMessage function.
+     * Removed unnecessary headers from downloader.cpp.
+     _________________________________________________________________
+
+   Changes for "dnh3.1" Release
+
+   Features and Performance
+     * Cached completed pieces are flushed to disk during idle time
+       rather than immediately.
+     * When the cache is full, a single entry is now flushed to make room
+       for new data rather than flushing the entire cache.
+     * Management of open files has been enabled in order to reduce the
+       number of active file descriptors needed for large torrents.
+       Detection and reporting of related errors is also improved.
+     * Files are now opened in read-only mode when seeding.
+     * The client will not connect to the tracker when quitting if it has
+       not successfully made contact before.
+     * A new command line option "-T" substitutes a hex representation of
+       any non-printable characters in filenames; an underscore will be
+       inserted between any such sequences and regular text. This applies
+       to printing the name of the file as well as accessing it on disk,
+       so you need to use it (or not) consistently across multiple runs
+       of the same torrent. It does not apply to names specified with the
+       -s option.
+     * A new command line option "-X" specifies a "user exit" command to
+       run upon download completion. The string parameter will be passed
+       to the sh shell for execution; see the system() man page for
+       further clarification. You will need to quote this string on the
+       command line in order to identify it as a single parameter and
+       prevent special characters from being interpreted. Some
+       substitution sequences beginning with ampersand (&) are available;
+       note that it's a good idea to quote the sequence within the string
+       so that the substituted names will be quoted in the final command.
+          + "&d" will be replaced by the name of the directory or
+            filename that contains the downloaded data.
+          + "&t" will be replaced by the name of the torrent metainfo
+            file (with path, if it was specified that way to ctorrent).
+          + "&w" will be replaced by the client's working directory.
+       Note that the fork() and system() system/library functions are
+       used for best portability. As a result, significant extra memory
+       may be used while the specified command is running. Be advised to
+       use this feature as a trigger mechanism to update a file or run a
+       short script that kicks off a background task rather than for
+       executing a longer task directly.
+     * A new command line option "-d" specifies "daemon mode". The client
+       will detach itself from the terminal session and become a
+       background process. This option is also available from the
+       operator menu.
+     * Prefetch and total sent counts are reported with the cache stats
+       in verbose mode. Note that these stats are all close
+       approximations based on the default slice size of 16KB.
+     * The -n option now accepts a list of files to download in priority
+       order. Groups of simultaneous files can be specified, and
+       "resuming normal behavior" after completion is now optional (and
+       not the default). See the User's Guide for more detailed
+       information.
+     * The partial completion indicator ("P:") now shows percentages
+       rather than number of pieces when using the new status line
+       format. The download time remaining for the current set is also
+       shown.
+     * The CTCS protocol version has been incremented. Please download
+       the new version of CTCS to take advantage of new features. This
+       provides support for additional file details and prioritization,
+       and for auto-configuration of available client configuration
+       options in CTCS.
+     * Output channels can now be changed via CTCS.
+     * The input channel can now be redirected from the operator menu and
+       CTCS.
+     * Added "off" as an additional target for input and output channels.
+     * Added support for systems that do not have snprintf() and/or
+       vsnprintf().
+
+   Bug Fixes
+     * Fixed a missing maxfd variable initialization in the main loop,
+       which could cause high CPU utilization. (maxfd patch)
+     * Detect if the clock_gettime library function is missing and
+       emulate it. This facilitates building on Mac OSX. (clock_gettime
+       patch)
+     * Avoid putting the "key" field into the tracker request twice.
+     * Tracker redirection is now handled correctly and works.
+     * Fixed problems with detection and reporting of tracker connection
+       errors.
+     * Error reading from disk with -c option is now reported.
+     * Fixed a looping problem when the torrent begins with a zero-length
+       file or a file of exactly one piece.
+     * Fixed the way variable argument lists are handled in the console
+       code, which could cause crashes. (console patch)
+     * Fixed a problem flushing downloaded data to disk in certain
+       situations. (flush patch)
+     * Remove sockets from the list to check for peers disconnected
+       during processing.
+     * Updated fdset handling in peerlist, tracker, and ctcs components
+       to set appropriate states in all cases.
+     * Fixed a potential crash when receiving a message from a peer
+       (after processing it). (msg patch)
+     * Fixed an issue with rate measurement on NSLU2 devices. This was
+       due to an apparent compiler bug (unconfirmed but raised to
+       developers). There are other areas where the same effect can show
+       itself (with the -E seed ratio option for instance) that cannot be
+       so easily worked around. (bwrate patch)
+     * Fixed an issue with null/redirected standard input.
+     * If the time changes backward by a second, it is disregarded. This
+       is not really a program bug fix, but a workaround for system clock
+       glitches (observed on an NSLU2).
+
+   Code Cleanup
+     * Tracker request construction is somewhat consolidated and
+       simplified.
+     * Split the FillFDSet function into two functions of distinct roles
+       and more manageable size.
+     _________________________________________________________________
+
+   Changes for "dnh3" Release
+
+   Important Stuff to Know
+     * You should always specify an upload bandwidth limit. With the most
+       recent changes in the program, this "option" is not just a limit
+       to stay under, but an advisement to the client as well. Enhanced
+       CTorrent now tunes its upload performance based on the limit.
+       Without a limit, the client has no idea how much bandwidth your
+       line can support and so cannot perform this tuning. It is now
+       possible to achieve better upload rates with a limit than without.
+       Due to the tit-for-tat nature of bittorrent, this can also
+       indirectly increase your download performance. If you just want
+       the client to use as much upload bandwidth as possible, then
+       choose a limit that is 10% or so less than the available upload
+       capacity of your line. ("Available" means not typically in use by
+       other applications.) Note that limits are specified in KB/s
+       (kilobytes per second), where 1KB = 1024 bytes (8192 bits). Your
+       ISP likely measures in "kilobits" (Kb, where 1Kb = 1000 bits or
+       125 bytes) or "megabits" (1Mb = 1000000 bits or 122KB). Some of
+       that [to the tune of 20% in some cases] is used by the line
+       protocol and thus not available to you at all.
+     * The CTCS protocol version has been incremented. If you've written
+       an application that interfaces with CTorrent via the CTCS
+       protocol, it should continue to work if you've used protocol level
+       negotiation (PROTOCOL message). The new changes have been
+       documented on the CTCS Protocol page.
+
+   Features and Performance
+     * Fast Restart
+          + "Background" initial hash verification: Downloading and
+            uploading will begin while pieces are being verified. Status
+            will be updated as pieces are checked, and HAVE messages are
+            sent as valid pieces are found.
+          + A bitfield save file is always used. At startup, if a file of
+            the same name as the torrent file with ".bf" appended is
+            present, it is read to initialize the piece bitfield. The
+            file is then deleted, and rewritten upon exit if downloading
+            has not completed.
+          + Pieces that are indicated as already present are verified by
+            hash check (in the background). If the bitfield file is not
+            found then all pieces are checked, unless this is the first
+            time the torrent has been started.
+          + The -b option can be used to specify a different bitfield
+            filename. Difference: The option is generally not needed
+            since it is now "on" by default. It now does not prevent hash
+            checking when used.
+          + The -f option now forces accuracy of the initial bitfield.
+            Stated differently, it disables the initial hash checking of
+            pieces on startup. This option should [still] be used with
+            caution and is generally not recommended since background
+            hash checking is now used. If the bitfield file is found at
+            startup, it is used without verification; otherwise, seed
+            mode is forced (without hash verification). Difference: The
+            effect is generalized to apply to incomplete torrents (when a
+            bitfield file is found) as well as the original behavior of
+            forcing seed mode (without a bitfield file).
+          + To emulate the original initial hash check behavior (avoiding
+            background checking), use the -c and -f options together.
+     * Cache Management
+          + Automatic cache size: The -C option now specifies the maximum
+            cache size, with the default remaining 16MB. The actual size
+            used is determined by the download and upload rates and
+            timings.
+          + The maximum cache size that can be specified is no longer
+            limited. The maximum size that will be used in any case is
+            the size of the torrent.
+          + Slices to be uploaded are prefetched into the cache during
+            idle time. This can shave a few milliseconds off the time to
+            respond to an upload request, and can also help performance
+            during periods of heavy disk activity. The effectiveness may
+            be reduced slightly when heavy upload limiting is used (as
+            uploading patterns become less predictable), but it is also
+            less critical then.
+          + A more efficient cache aging mechanism has been added. This
+            reduces CPU utilization and helps increase the accuracy of
+            cache size management.
+          + The cache is now indexed by piece to speed up searches and
+            insertion.
+          + Downloaded pieces are flushed to disk upon completion of each
+            piece.
+     * Unchoke Tuning
+          + The number of unchoked peers will be increased automatically
+            when the upload bandwidth limit is not being reached and
+            decreased when there is much contention for upload bandwidth.
+            This is done to maximize upload bandwidth utilization while
+            also maximizing the upload rate to each unchoked peer.
+          + Unchoke intervals are extended when necessary in order to
+            insure that each unchoked peer has at least a chance of an
+            opportunity to download.
+          + You must specify an upload bandwidth limit in order to use
+            these features. Without a limit, the client does not know the
+            line capacity or available bandwidth. In that case TCP
+            congestion control (the network protocol) limits the
+            bandwidth, so the number of active upload streams (unchokes)
+            is kept low in order to help it work properly when the line
+            reaches its capacity.
+     * Console I/O Management
+       This is really a mostly-transparent enabler for other new current
+       and future features.
+          + Several configuration commands are available while running.
+            Note that this requires termios, termio, or sgtty support to
+            work properly; otherwise try pressing Enter after the key. It
+            should be very rare for a system to not have one of these
+            facilities.
+               o Press "h" or "?" for a list of active keys. Inactive
+                 keys will immediately update the status line.
+               o Some commands prompt for additional input. The client
+                 continues to run while waiting, though the status line
+                 is not updated. An exception is the CTCS password; just
+                 try to be relatively quick about it.
+               o Commands shown with "+/-" use the "+" and "-" keys to
+                 increment or decrement the value. After pressing the
+                 command key, press "+" and/or "-" repeatedly to adjust
+                 the value. After five presses, the increment is
+                 increased; press the command key again if you wish to
+                 reset it.
+          + An Operator Menu allows changing output destinations,
+            choosing an alternate status line format, and viewing
+            detailed status information.
+          + Presentation of messages between status line updates is
+            cleaner.
+          + A timestamp (raw clock value) is printed on "verbose" output.
+     * Options
+          + Added User-Agent header to the tracker request. A new option
+            (-A) can be used to change the string that is sent (default
+            is shown on the help screen). This feature should help with
+            trackers that try to restrict use to recognized client
+            programs. You should only need to use the -A option if the
+            tracker has been set up to allow only specific clients
+            (almost certainly out of admin ignorance in one way or
+            another).
+          + The -p option now specifies the highest port number to use.
+            The client will count down from that point looking for an
+            available port. This mimics the default behavior of counting
+            down from port 2706.
+          + A new command line option ("-a") can be used to preallocate
+            the files to download. Use this if you are concerned about
+            file fragmentation or out-of-order block storage. This option
+            is only effective when initially creating the files and will
+            cause startup to take longer as each entire file is written
+            in order to reserve physical disk space. Note that all files
+            will be created and preallocated even if the "-n" option is
+            used to download a particular file.
+          + Added some option-specific error messages to be displayed
+            instead of the help/usage screen when invalid values are
+            given on the command line.
+     * Peer Handling
+          + Peer statistics are maintained if a peer is dropped and later
+            reconnects. This can influence unchoking, and the data is
+            visible with CTCS.
+          + The client is more discerning about choosing to reconnect to
+            a lost peer.
+          + Peer download rates (the rate at which we download from each
+            peer) are now measured more precisely. This should produce
+            more accurate unchoking decisions while downloading.
+          + Inactive peers (who are interested but don't request any data
+            while unchoked) are disconnected when seeding.
+          + A newly-interested peer will be unchoked immediately if an
+            opening is available.
+          + Latency measurement is used to avoid counting errors that are
+            likely due to transmission delays. To help with this, latency
+            is now also measured when not downloading from a peer. The
+            error threshold (tolerance) has also been reduced.
+          + Don't count piece hash failures during Initial & Endgame
+            modes, since it is likely that the component slices of a
+            piece came from multiple peers.
+     * Other performance improvements
+          + Bandwidth limiting is now based on current (most recent)
+            utilization rather than the past 20-second average. This
+            should produce smoother loading of the line since we don't
+            burst above the limit to make up for a recent slow period.
+            Note that average values are still shown in the status line
+            (and CTCS) since that is a better representation of the
+            overall transfer rates.
+          + Data transmission and receiving buffers are now much smaller
+            but are still increased as necessary (and now decreased when
+            appropriate as well).
+          + Some allowance has been made for time to appear to move
+            backwards, which could happen due to a system glitch,
+            hardware problem, or clock adjustment. This has not been
+            extensively tested (and probably won't be) but hadn't been
+            reported as a problem either.
+          + Timings related to bandwidth management and data transfer
+            have been significantly reworked to allow more precise and
+            accurate control.
+          + Unneeded and bad data is no longer cached and does not cause
+            additional piece completion checks.
+          + Added additional fdset tracking to reduce processing in the
+            checking and handling loops.
+          + Other code optimizations not specifically listed here.
+     * The Pause functionality is now more useful; it will now stop
+       transferring torrent data almost immediately but still interact
+       with peers and the tracker.
+
+   Bug Fixes
+     * Fixed a potential crash when reassigning a piece to a faster peer.
+       While a serious bug, it would likely only show itself on
+       memory-contrained systems.
+     * Fixed reporting of file completion when using -n, and also with
+       CTCS.
+     * Ensure that the "completed" event is sent to the tracker during
+       the next attempt if contacting the tracker is unsuccessful.
+     * The amount of data transferred since the last update, shown in the
+       status line, would go berzerk upon becoming a seeder. Some rate
+       handling code has been cleaned up and tweaked to fix this.
+     * A piece could be incorrectly reported as complete if an error
+       occurred reading the piece data for hash verification.
+
+   Code Cleanup
+     * Moved version number into a new m4 file to make patch distribution
+       easier.
+     * Changed method of locating and using SSL library and header files
+       for SHA1 support. See the INSTALLING file for information about
+       how to override this or give a hint to configure about where to
+       find the files.
+     * Added autoconf checks for integer types that may not be defined on
+       some systems.
+     * The funny business with cfg_max_slice_size is eliminated since
+       request slice size is based on user option rather than a fixed
+       request queue size.
+     * Moved bandwidth limiting functions from peer.* to peerlist.*
+     * Relocated and rewrote get_nl and set_nl.
+     * Replaced hard-coded message component length values with
+       constants.
+     * Formatting adjustments.
+     _________________________________________________________________
+
+   Changes for "dnh2.2" Release
+
+   Code Fixes
+     * Fixed checking of seed ratio (-E option) to allow fractional
+       values.
+     * Fixed CTCS interaction when a limit was not specified on the
+       command line.
+     * Fixed peer reconnect determination.
+     * Fixed a request-queue handling error that could cause a crash upon
+       becoming a seeder.
+     * Fixed creation of metainfo (torrent) file with multiple
+       subdirectories.
+     * Torrent metainfo is now only printed twice if hash-checking is
+       performed.
+
+   Operational Enhancements
+     * Errors flushing the cache are now handled more gracefully. (This
+       happens when the disk is full.)
+     * Added additional seeder detection criteria.
+     * Cleaned up parts of the help screen.
+     _________________________________________________________________
+
+   Changes for "dnh2.1" Release
+
+   Code Fixes
+     * Fixed interaction with CTCS under Linux, resulting in "Operation
+       now in progress" errors.
+     * Fixed a flaw in optimistic unchoke logic implementation.
+     * Fixed problem with return value in _btf_ftruncate() related to my
+       update for the vfat issue [btfiles patch].
+     * Fixed handling of 301/302 redirect response from the tracker.
+
+   Operational Enhancements
+     * Attempt to reconnect to successful peers that disconnect
+       unexpectedly, if possible.
+     * Changed the unchoke choice algorithm when seeding. The new method
+       is based on page 4 of the paper "Rarest First and Choke Algorithms
+       Are Enough" by Arnaud Legout et al. An exception is that CTorrent
+       chooses new unchokes using its original method (based on wait
+       time) rather than randomly.
+       See [1]the paper for details.
+     _________________________________________________________________
+
+   Changes for "dnh2" Release
+
+   Patches
+     * The following patches or their functionality are incorporated:
+       1380164 [dnh1.2]
+       1357832 [invert] (included in dnh1.2)
+       1352866 [dnh1.1]
+       1266767 [passkey2]
+       1239547 [dnh1]
+       1170457 [standalone-sha1] Added as a fallback case in configure if
+       OpenSSL is not found. To force it to be used, define
+       USE_STANDALONE_SHA1 in config.h (after running configure).
+       1164454 [ip]
+       1119610 [vfat] This bug appears to be linux-specific; I've tried
+       to handle it in a more general way that may apply to similar
+       situations on other platforms and filesystems, but I have limited
+       capability to test this.
+       1067196 [lfs] This is the large-file support that many have asked
+       for.
+
+   Optimization
+     * Use fewer calls to random() by shifting the previously unused
+       bits.
+     * Time() calls have been greatly reduced; a global timestamp
+       variable "now" is set once per main loop iteration and referenced
+       in functions that need a timestamp (except the caching I/O
+       routines which were left alone).
+     * Overall current bandwidth rates are now computed only once per
+       main loop and referenced in any routines that evaluate or control
+       bandwidth.
+     * Avoid flushing peer output buffers except in SendModule. This
+       allows for some consolidation of messages to reduce network
+       overhead.
+
+   Code Fixes
+     * Fixed use of cfg_req_queue_length to be the actual queue size
+       (queue was half of this value).
+     * Fixed: "peer is" verbose output could fubar the terminal.
+     * Formatting: Replaced indentation tabs with spaces for consistency.
+
+   Operational Enhancements
+     * Improved piece selection methods to include rarity as a factor.
+       This is not strictly "rarest-first", as we do not make a
+       comprehensive effort to find the "rarest" piece or rank pieces by
+       rarity. Rather, we use a more efficient compromise and try to find
+       the set of pieces that have "trade value" (another peer needs
+       them) and make a random choice from that set. Here is the current
+       preference order used in each mode:
+       Trade Value is defined as:
+         1. Piece that only this peer has (not considering other
+            seeders), that a peer in which we're interested needs.
+         2. Piece that not every peer in which we're interested has.
+         3. Piece that only this peer has (not considering other
+            seeders).
+         4. Piece that not every peer has.
+       Normal Mode
+         1. Piece we tried to get from another peer but stopped due to
+            choking or lost connection. (We have part of the piece
+            already.)
+         2. Piece most recently acquired by the peer (possibly/probably
+            rare).
+         3. Piece with trade value.
+         4. Any piece not yet requested.
+       Initial-piece Mode
+         1. Piece with trade value which is already in progress.
+         2. Piece with trade value that more than one peer has.
+         3. Piece with trade value.
+         4. Any piece not yet requested.
+       Endgame Mode
+         1. Piece with trade value which is already in progress, of which
+            we have the least amount.
+         2. Piece already in progress of which we have the least amount.
+     * Advanced request queueing system.
+          + Instead of requesting all of the slices for a piece at one
+            time, we now measure latency to the peer and send requests
+            based on how long it takes the data to arrive. This avoids
+            wasting upload banwidth by having too many outstanding
+            requests: If we get choked or lose the connection, the extra
+            requests were wasted; in initial or endgame modes, more
+            requests would have to be cancelled when we completed the
+            piece.
+          + A new piece will be queued for download when there is space
+            in the queue and we've requested the slices that have been
+            queued already. We also don't wait for the current piece to
+            complete before sending requests for a new piece. This helps
+            to maintain a continuous flow of data in the download
+            pipeline.
+          + When duplicating a request in initial or endgame mode, slices
+            that have already been requested are queued last.
+     * Don't send HAVE messages to seeders (to save UL bandwidth).
+          + Since we maintain interested state, and know the peer is a
+            seeder, we'll do the right thing when we become a seeder.
+          + Not sending HAVE to all peers (leechers) that already have
+            the piece is a bad idea IMO. If everyone takes the same
+            attitude, none of us will know when another becomes a seeder
+            and connections will remain open/occupied.
+          + We do send a HAVE to seeders upon completing our first piece
+            so that we don't continue to appear empty.
+     * Endgame strategy is used in get1file mode to complete the file.
+     * Queue management:
+          + Don't accept requests from choked peers.
+          + Discard peer's reponse_q when we choke them.
+          + Don't send cancels when we get choked (according to spec &
+            discussions).
+          + Don't put full piece queues in pending.
+          + Move closing peer's request queue to pending instead of
+            discarding it.
+     * Prefer uploading to or downloading from a peer after we skip them
+       due to bandwidth limiting. This is done via the g_next_up and
+       g_defer_up global variables in peer.cpp (for UL; s/up/dn for the
+       DL versions). The peerlist Sort() function and peer "click"
+       variables have been removed since they are not needed with this
+       feature.
+
+   Options & Features
+     * The -c option now reports file completion status.
+          + As a side effect the metainfo details are printed twice. This
+            allows you to view the torrent contents while pieces are
+            being verified.
+          + Total percentage completion is also added to the output.
+     * "-E" option to seed to a specified UL:DL ratio. Seeding will stop
+       when this ratio or the timeout (-e) is reached. If CTorrent starts
+       as a seeder, the ratio is interpreted as UL:[torrent size].
+     * If "-e 0" is specified (explicitly) and -E is used, there will be
+       no timeout; seeding will continue until the ratio is reached.
+     * The "-m" option previously didn't do anything, and it isn't clear
+       what it was originally going to do. Now the default value is 1,
+       and CTorrent will try to maintain at least this many peers by
+       contacting the tracker early if the peer count falls below this
+       value. This feature was present in release dnh1 but the value was
+       not changeable.
+       Actually it seems likely that this was to be number of peers that
+       the client would try to obtain (by initiating connections), as the
+       "official" client does; this is mentioned as a note in the online
+       specification. I don't really see the value in that though. That
+       said, the option as implemented here should rarely be used. It
+       might be useful only with torrents that have significantly more
+       than max_peers total peers and use a long tracker update interval
+       (such that you tend to drop a lot of peers betwen updates).
+     * "-z" option to set the slice size (the unit of a request, i.e. the
+       discrete amount of data that will be requested from a peer at one
+       time). The slice size now defaults to 16K regardless of the piece
+       length. Request queue size is computed and set based on the slice
+       size, as it now affects only system resources (though not a lot)
+       and not the way that requests are sent.
+     * Add support for "key" and "trackerid" tracker interaction
+       parameters.
+     * Support/display tracker warning message
+     * Now able to handle torrents with more than 255 files.
+     * Support for [2]CTorrent Control Server, an application and
+       protocol for monitoring and managing multiple Enhanced CTorrent
+       clients. The "-S" option is used to connect to CTCS, as in "-S
+       localhost:2780" if CTCS is listening at port 2780 on the local
+       system. Appending a colon ("-S localhost:2780:") will prompt for a
+       password to authenticate with CTCS.
+
+   Peer Handling
+     * Count immediate choke-unchoke (either order) as an error (two
+       errors actually, since it's so wasteful).
+       It may be that some clients do this to stimulate the peer when
+       they think it hasn't responded to their last unchoke (due to high
+       latency). It would be better for them to just repeat the unchoke
+       rather than choke-unchoke, as by choking they will cause the peer
+       to send the requests again.
+     * Detect unresponsive peer connections and try to fix them or
+       disconnect them. Basically, if a peer doesn't respond to our
+       request in a reasonable time then we first assume that our request
+       was lost in transmission; if it happens again then we assume the
+       connection is unreliable.
+     * Handle peers that suppress HAVE messages so we don't always think
+       that they're empty (and thus give them preferential treatment for
+       uploading). If we've sent the peer an amount of data equivalent to
+       two pieces, assume that they now have at least one complete piece.
+     _________________________________________________________________
+
+   Changes for "dnh1.2" Release
+
+   These are just corrections to the previous release that I felt were
+   necessary. Much more improvement is coming in the dnh2 release.
+
+   Bug/code fixes
+     * Bitfield::Invert patch [1357832 on sourceforge] described below.
+     * Fixed "piece length too long" check to reflect the actual queue
+       length used.
+     * Accept 128K slice size for peer requests.
+     * "Return" keyword in Random_init() removed due to potential compile
+       error.
+     * Modified longer-wait test in the optimistic unchoke routine to
+       consider whether the peer is currently choked.
+     _________________________________________________________________
+
+   Bitfield::Invert bug
+
+   There is a bug in the Bitfield::Invert() function that affects the
+   ctorrent-1.3.4 base code as well as releases dnh1 and dnh1.1. This can
+   cause the application to fail (segmentation fault) or may affect
+   downloading of all pieces of the torrent. A patch is available in the
+   Download secion.
+     _________________________________________________________________
+
+   Changes for "dnh1.1" Release
+
+   These are just corrections to the previous release that I felt were
+   necessary. Much more improvement is coming in the next release.
+
+   Bug/code fixes
+     * Peer count would increase on each tracker update if there were no
+       seeders.
+     * RequestQueue::CopyShuffle() changed to use a pointer argument.
+     * Fixed some incorrectness in PendingQueue::Delete() and
+       PendingQueue::DeleteSlice() which could cause a memory leak.
+     * Fixed random-chance inversion bug in PeerList::UnChokeCheck()
+       affecting choice for optimistic unchoking.
+
+   Improvements
+     * Move StopDLTimer() call from RequestPiece() to RequestCheck(),
+       which could occasionally affect peer download rate measurement.
+     * Most clients do not like a slice size of 128K even though it is
+       the max allowed by the BT specification. Changed max slice size to
+       64K. Note that the maximum piece length is 2MB (2097152); if you
+       need to download a torrent with a larger piece size you can change
+       the value of cfg_req_queue_length in btconfig.h from 64 to 128.
+     * Contact tracker immediately upon becoming (or starting as) a
+       seeder.
+     * Changed SendModule() to send only one slice at a time. This will
+       help with fairly distributing upload bandwidth among the unchoked
+       peers.
+     * Changed default peer ID prefix to '-CD0101-', indicating
+       CTorrent-dnh1.1 release.
+     _________________________________________________________________
+
+   Changes for "dnh1" Release
+
+   This is the first release. "dnh" identifies this patchset, and "1"
+   indicates release version 1 of the patchset.
+
+   Patches
+     * Incorporates the following patches. The number is the Request ID
+       from the [3]SourceForge patches page, which you can reference for
+       the details of each patch. The name in brackets is the name of the
+       patch file or a name I chose to refer to the patch. Some of these
+       names are used below (in brackets) to describe a fix or change to
+       a particular patch.
+       1042808 [getcwd] (incorporated in get1file patch)
+       1084776 [passkey] (incorporated in udlimit patch)
+       1109266 [align]
+       1109287 [tracker/tracker2]
+       1114197 [fmt] (incorporated in get1file patch)
+       1114364 [resetdl]
+       1116448 [get1file]
+       1118597 [crash]
+       1119467 [stall]
+       1119492 [rate]
+       1119497 [flush]
+       1119519 [opt]
+       1119689 [status]
+       1124342 [udlimit]
+
+   Download performance
+     * If a peer socket is ready for reading and writing, perform both.
+       Previously the cases were exclusive, with preference given to
+       reading.
+     * Download requests are now made to peers when they are ready for
+       writing (in addition to the existing event-driven cases). This
+       fixes peer stalls when a request couldn't be sent in an
+       event-triggered case due to bandwidth limiting or other
+       circumstances.
+     * Additional tests added so that the above request checking doesn't
+       create hard loops.
+
+   Bandwidth measurement/management
+     * [rate] Bandwidth reporting is now not capped. Also, only the time
+       used for the samples taken is used in the calculation rather than
+       the maximum interval (this affects rate calculation for individual
+       peers).
+     * Additional upload and download bandwidth limit checks added so
+       that bw management is more accurate.
+     * Corrected condition inversion bug in Rate::StopTimer(), which
+       affects peer rate calculations.
+
+   Peer count
+     * Request our max number of peers from the tracker each time rather
+       than just taking the tracker's default, so we can try to fill up.
+     * The tracker will be contacted early if all peers disconnect so
+       that we can actively try to establish some more peer connections.
+       To avoid hammering the tracker, we must have at least one peer for
+       15 seconds in order for this to be invoked.
+     * Some clients use nonzero bytes in the "reserved" part of the
+       handshake. Added code to ignore the reserved bytes if the rest of
+       the handshake is as expected. This includes Azureus 2300 thru 2304
+       (latest) which gives 0x80 as the first reserved byte and BitComet
+       which gives 0x6578 ("ex") as the first two bytes.
+     * Update peer's timestamp on any message, not just keepalives. Any
+       receipt of data from a peer now resets its timeout, preventing
+       early disconnect.
+
+   Parallel requests
+     * Initial-piece and endgame cases have been improved so that pieces
+       will be requested from multiple peers. Cancels are sent as slices
+       (subpieces) are received. This endgame strategy is described in
+       the BitTorrent online spec. The startup strategy is also described
+       in posts and facilitates obtaining a single piece more rapidly in
+       order to obtain some trade value. In initial mode, the piece of
+       which we need the least parts is targeted. In endgame mode, the
+       piece of which we need the most parts is targeted. Slices that are
+       cancelled are also removed from the "pending" queue, as are pieces
+       that are completed.
+     * When duplicating a piece request, the slice request order is also
+       shuffled in order to minimize duplication of effort.
+
+   Tracker info
+     * [status] Seems to be missing tracker.cpp diff. Added code to get
+       tracker's total peers, but not all trackers report these fields in
+       the normal response. Also added code to count successful updates
+       from the tracker.
+     * Added tracker connection state to status line (when
+       connecting/connected).
+
+   Tracker contact
+     * When interrupting (ctrl-C), connect to the tracker immediately
+       rather than waiting 15 seconds.
+     * Contact tracker "soon" after transitioning to seeder state.
+
+   Peer interaction
+     * Manage our interested state for each peer dynamically as content
+       changes.
+     * Unchoking
+          + Use the peer's interested state (confirming via the bitfield
+            that it needs our data) to consider unchoking. Using only the
+            bitfield could cause us to waste an upload slot on a peer
+            that doesn't have all content but isn't interested (like a
+            single-file downloader).
+          + Choke peers that become uninterested or don't need our data.
+          + Try unchoking new peers only as slots open or the optimistic
+            unchoke rotates. Unchoking too many peers can temporarily
+            reduce per-peer upload rates, which would make uploading to
+            us unappealing for good peers.
+          + In a tie for download speed, prefer to unchoke the peer to
+            whom we've uploaded the least data relative to what we've
+            downloaded from him.
+     * Optimistic unchoking
+          + Fixed condition inversion bug causing opt unchoking to occur
+            too often.
+          + A peer who has no pieces is now preferred 75% vs. a peer who
+            already has at least one piece, in order to help the new peer
+            become productive. This is documented in the online spec.
+          + Set peer's last-unchoke-time when choking the peer to get
+            better rotation of the optimistic unchoke. The value is now
+            the last time that a peer was in the unchoked state rather
+            than the time of the last unchoke event.
+
+   Miscellaneous items
+     * [tracker] Fixed normal program end (stop) process, which was
+       crashing.
+     * [get1file] Restore compact tracker response support.
+     * [get1file] Made display of the status line info dependent on
+       whether the option is in use.
+     * [get1file] Apply the filter when checking for what we need from a
+       peer instead of when recording what the peer has; this prevents
+       stalls when we move on to the next file. Update interested state
+       for each peer when we begin a new file. Also move the file-done
+       check into the piece completion code and check whether the next
+       file(s) has also been completed.
+     * Reduced the slice size from 32K to 16K (same as BT & Azureus).
+       This provides more precise DL rate measurement, and helps insure
+       that we receive a productive amount of data (i.e. a complete
+       slice) even if we are unchoked by a peer for only one cycle. See
+       [4]http://groups.yahoo.com/group/BitTorrent/message/1260 for more
+       discussion/analysis on this.
+     * Added -v (verbose) option for additional debugging output.
+
+References
+
+   1. http://www.eurecom.fr/~michiard/pubs/bt_experiments_techRepINRIA-00001111_VERSION1_13FEBRUARY2006.pdf
+   2. http://www.rahul.net/dholmes/ctorrent/ctcs.html
+   3. http://sourceforge.net/tracker/?atid=598034&group_id=91688&func=browse
+   4. http://groups.yahoo.com/group/BitTorrent/message/1260

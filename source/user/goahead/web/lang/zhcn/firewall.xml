@@ -1,0 +1,91 @@
+<po>
+  <message msgid="firewall disable" msgstr="停用" />
+  <message msgid="firewall enable" msgstr="启用" />
+  <message msgid="firewall apply" msgstr="确定" />
+  <message msgid="firewall reset" msgstr="重设" />
+  <message msgid="firewall del select" msgstr="选择删除" />
+  <message msgid="firewall no" msgstr="编号" />
+  <message msgid="firewall protocol" msgstr="协议" />
+  <message msgid="firewall comment" msgstr="注解" />
+  <message msgid="firewall default drop" msgstr="默认抛弃" />
+  <message msgid="firewall default accept" msgstr="默认接受" />
+
+  <message msgid="port title" msgstr="MAC/IP/Port过滤设置 " />
+  <message msgid="port introduction" msgstr=" 您可以建立防火墙规则来保护您的网路远离Internet病毒蠕虫恶意攻击。" />
+  <message msgid="port basic setting" msgstr="基本设置" />
+  <message msgid="port basic filter" msgstr="MAC/IP/Port过滤" />
+  <message msgid="port basic default policy" msgstr="默认原则 -- 未符合规则的数据包将被：" />
+  <message msgid="port basic default policy accepted" msgstr="接受。" />
+  <message msgid="port basic default policy dropped" msgstr="抛弃。" />
+  <message msgid="port filter setting" msgstr="MAC/IP/Port过滤设置" />
+  <message msgid="port filter macaddr" msgstr="来源端MAC地址" />
+  <message msgid="port filter source ipaddr" msgstr="来源端IP地址" />
+  <message msgid="port filter port range" msgstr="端口范围" />
+  <message msgid="port filter dest ipaddr" msgstr="目的端IP地址" />
+  <message msgid="port filter action" msgstr="执行动作" />
+  <message msgid="port filter action drop" msgstr="抛弃" />
+  <message msgid="port filter action accept" msgstr="接受" />
+  <message msgid="port current filter" msgstr="当前系统的MAC/IP/Port过滤规则： " />
+  <message msgid="port filter source port range" msgstr="来源端端口范围" />
+  <message msgid="port filter dest port range" msgstr="目的端端口范围" />
+  <message msgid="port filter packetcount" msgstr="数据包计数" />
+
+  <message msgid="forward title" msgstr="虚拟服务器设置 " />
+  <message msgid="forward introduction" msgstr=" 您可以建立虚拟服务器来提供网络服务。" />
+  <message msgid="forward virtual server" msgstr="虚拟服务器设置" />
+  <message msgid="forward virtual server setting" msgstr="虚拟服务器设置" />
+  <message msgid="forward virtual server ipaddr" msgstr="IP地址" />
+  <message msgid="forward virtual server port range" msgstr="端口范围" />
+  <message msgid="forward current virtual server" msgstr="当前系统的虚拟服务器: " />
+
+  <message msgid="dmz title" msgstr=" DMZ设置 " />
+  <message msgid="dmz introduction" msgstr=" 您可以建立一个隔离区（DMZ）来区分内部网络与Internet。" />
+  <message msgid="dmz setting" msgstr="DMZ设置" />
+  <message msgid="dmz ipaddr" msgstr="DMZ IP地址" />
+  <message msgid="dmz macaddr" msgstr="DMZ MAC地址" />
+  <message msgid="dmz tcpport80" msgstr="TCP port 80除外" />
+  
+  <message msgid="content filter title" msgstr="内容过滤设置" />
+  <message msgid="content filter introduction" msgstr="您可以设置内容过滤规则来限制不适当的网页。" />
+  <message msgid="content filter webs content filter" msgstr="网页内容过滤" />
+  <message msgid="content filter webs content filter filter" msgstr="过滤" />
+  <message msgid="content filter webs content filter apply" msgstr="确定" />
+  <message msgid="content filter webs content filter reset" msgstr="重设" />
+  <message msgid="content filter webs URL filter title" msgstr="网页 URL过滤设置" />
+  <message msgid="content filter webs url filter current" msgstr="当前系统的网页 URL过滤规则：" />
+  <message msgid="content filter webs url fitler No" msgstr="编号" />
+  <message msgid="content filter webs url fitler url" msgstr="URL" />
+  <message msgid="content filter webs url fitler del" msgstr="删除" />
+  <message msgid="content filter webs url fitler reset" msgstr="重设" />
+  <message msgid="content filter webs url fitler add title" msgstr="新增URL过滤规则" />
+  <message msgid="content filter webs url fitler add" msgstr="新增" />
+  <message msgid="content filter webs url fitler reset" msgstr="重设" />
+  <message msgid="content filter webs host fitler title" msgstr="网页主机过滤设置" />
+  <message msgid="content filter webs host fitler current" msgstr="当前系统的网页主机过滤规则" />
+  <message msgid="content filter webs host fitler no" msgstr="编号" />
+  <message msgid="content filter webs host fitler host" msgstr="主机名(关键字)" />
+  <message msgid="content filter webs host fitler del" msgstr="删除" />
+  <message msgid="content filter webs host fitler reset" msgstr="重设" />
+  <message msgid="content filter webs host fitler add title" msgstr="当前系统的网页主机过滤规则：" />
+  <message msgid="content filter webs host fitler keyword" msgstr="关键字" />
+  <message msgid="content filter webs host fitler add" msgstr="新增" />
+  <message msgid="content filter webs host fitler reset" msgstr="重设" />
+  
+  <message msgid="sysfw title" msgstr="系统安全设置" />
+  <message msgid="sysfw introduction" msgstr="您可以透过设置系统防火墙来保护路由器或无线接入点本身。" />
+  <message msgid="sysfw remote management title" msgstr="远程管理" />
+  <message msgid="sysfw remote management head" msgstr="远程管理 (經由广域网络)" />
+  <message msgid="sysfw allow" msgstr="允許" />
+  <message msgid="sysfw deny" msgstr="禁止" />
+  <message msgid="sysfw wanping title" msgstr="过滤广域网路的PING封包" />
+  <message msgid="sysfw wanping head" msgstr="过滤广域网路的PING封包" />
+  <message msgid="sysfw spi title" msgstr="数据包状态检测 (SPI)" />
+  <message msgid="sysfw spi head" msgstr="SPI 防火墙" />
+  <message msgid="sysfw bps title" msgstr="端口扫描" />
+  <message msgid="sysfw bps head" msgstr="防止端口扫描" />
+  <message msgid="sysfw bsf title" msgstr="SYN Flood攻击" />
+  <message msgid="sysfw bsf head" msgstr="防止SYN Flood攻击" />
+  <message msgid="sysfw apply" msgstr="确定" />
+  <message msgid="sysfw reset" msgstr="重设" />
+  
+</po>

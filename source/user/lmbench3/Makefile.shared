@@ -1,0 +1,111 @@
+# Makefile for top level of lmbench
+# $Id: Makefile.shared,v 1.1.1.1 2006-11-23 11:25:33 steven Exp $
+
+# Possible things to $(MAKE):
+#
+# build		(default) go to the source directory and build the benchmark
+# results	go to the source directory and build and run the benchmark
+# rerun		run the benchmark again
+# see		see the results that came with this release
+#		Go to the results directory and read the Makefile.
+# doc.lpr	print the documentation
+# doc.x		preview the documentation (needs X, groff, pic, etc)
+# clean		go to the subdirs and $(MAKE) clean
+# get		$(MAKE) sure all files are checked out
+# shar		build a shippable shar archive
+
+SHELL=/bin/sh
+
+build: 
+	cd src && $(MAKE)
+
+results: FRC
+	cd src && $(MAKE) results
+
+rerun: 
+	cd src && $(MAKE) rerun
+
+see:
+	cd results && $(MAKE) summary percent 2>/dev/null | more
+
+doc.lpr:
+	cd doc && $(MAKE) PS && lpr *.PS
+
+doc.x:
+	cd doc && $(MAKE) x
+
+clobber clean: 
+	for i in doc src results scripts; do \
+		echo ===== $$i =====; \
+		(cd $$i && $(MAKE) clean); \
+	done
+	/bin/rm -rf bin/*
+#	-bk clean 
+
+get: 
+	for i in doc src results scripts; do \
+		echo ===== $$i =====; \
+		(cd $$i && bk get -q); \
+	done
+	@co -q
+
+info: 
+	for i in doc src results scripts; do \
+		echo ===== $$i =====; \
+		(cd $$i && info); \
+	done
+
+release: scripts/mkrelease
+	scripts/mkrelease
+
+scripts/mkrelease:
+	cd scripts && co mkrelease
+
+# XXX - . must be named lmbench for this to work
+shar:
+	$(MAKE) clean
+	co -q Makefile
+	$(MAKE) get
+	cd .. && \
+	find lmbench -type f -print  | egrep -v 'noship|RCS' > /tmp/FILES
+	cd .. && shar -S -a -n lmbench1.0 -L 50K < /tmp/FILES 
+
+romfs:
+	$(ROMFSINST) bin/mips_linux/lmbench /bin/lmbench
+	$(ROMFSINST) scripts/net_test /bin/net_test
+
+#	$(ROMFSINST) bin/mips_linux/mhz /bin/mhz
+#	$(ROMFSINST) bin/mips_linux/enough /bin/enough
+#	$(ROMFSINST) bin/mips_linux/msleep /bin/msleep
+#	$(ROMFSINST) bin/mips_linux/par_mem /bin/parmem
+	$(ROMFSINST) bin/mips_linux/lat_mem_rd /bin/lat_mem_rd
+	$(ROMFSINST) scripts/mem_test /bin/mem_test
+
+	$(ROMFSINST) bin/mips_linux/bw_mem /bin/bw_mem
+	$(ROMFSINST) bin/mips_linux/bw_tcp /bin/bw_tcp
+	$(ROMFSINST) scripts/bw_file_rd /bin/bw_file_rd
+	$(ROMFSINST) scripts/bw_mmap_rd /bin/bw_mmap_rd
+	$(ROMFSINST) scripts/bw_mem_rd /bin/bw_mem_rd
+	$(ROMFSINST) scripts/bw_pipe /bin/bw_pipe
+	$(ROMFSINST) scripts/bw_unix /bin/bw_unix
+	
+	$(ROMFSINST) scripts/lat_fs /bin/lat_fs
+	$(ROMFSINST) scripts/lat_proc /bin/lat_proc
+	$(ROMFSINST) bin/mips_linux/lat_tcp /bin/lat_tcp
+	$(ROMFSINST) bin/mips_linux/lat_udp /bin/lat_udp
+	$(ROMFSINST) bin/mips_linux/lat_http /bin/lat_http
+	$(ROMFSINST) bin/mips_linux/lat_rpc /bin/lat_rpc
+	$(ROMFSINST) bin/mips_linux/lat_select /bin/lat_select
+	$(ROMFSINST) bin/mips_linux/lat_connect /bin/lat_connect
+	$(ROMFSINST) bin/mips_linux/lat_mmap /bin/lat_mmap
+	$(ROMFSINST) bin/mips_linux/lat_sem /bin/lat_sem
+	$(ROMFSINST) bin/mips_linux/lat_unix_connect /bin/lat_unix_connect
+	$(ROMFSINST) bin/mips_linux/lat_ctx /bin/lat_ctx
+	$(ROMFSINST) bin/mips_linux/lat_fcntl /bin/lat_fcntl
+	$(ROMFSINST) bin/mips_linux/lat_pagefault /bin/lat_pagefault
+	$(ROMFSINST) bin/mips_linux/lat_syscall /bin/lat_syscall
+	$(ROMFSINST) bin/mips_linux/lat_fifo /bin/lat_fifo
+	$(ROMFSINST) bin/mips_linux/lat_ops /bin/lat_ops
+	$(ROMFSINST) bin/mips_linux/lat_sig /bin/lat_sig
+
+FRC:

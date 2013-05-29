@@ -1,0 +1,29 @@
+#!/bin/sh
+
+if [ "$1" -eq "" ]
+then
+echo ""$0" [ip_address]"
+echo "Data Length = 512 1M 2M 4M"
+return
+fi
+
+for size in 512 1m 2m 4m; do
+echo "================"
+echo "bw_tcp -m "$size" "$1" "
+echo "================"
+bw_tcp -m $size "$1" 
+done
+
+for size in 512 1m 2m 4m; do
+echo "================"
+echo "lat_tcp -m "$size" "$1" "
+echo "================"
+lat_tcp -m $size "$1" 
+done
+
+for size in 512 1024 2048 4096; do
+echo "================"
+echo "lat_udp -m "$size" "$1" "
+echo "================"
+lat_udp -m $size "$1" 
+done

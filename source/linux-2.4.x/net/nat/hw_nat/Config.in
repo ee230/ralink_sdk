@@ -1,0 +1,71 @@
+#
+# RT2880 HWNAT configuration
+#
+
+dep_tristate 'Ralink HW NAT' CONFIG_RA_HW_NAT
+
+if [ "$CONFIG_RA_HW_NAT" != "n" ]; then
+
+comment 'Binding'
+choice 'Binding Method '  "Auto    CONFIG_RA_HW_NAT_AUTO_BIND \
+			   Semi-Auto CONFIG_RA_HW_NAT_SEMIAUTO_BIND \
+                           Manual  CONFIG_RA_HW_NAT_MANUAL_BIND
+                          "Auto
+int 'Binding Threshold (Unit:Packet Per Second)' CONFIG_RA_HW_NAT_BINDING_THRESHOLD 20
+int 'Max entries allowed build when FreeEntries>3/4 (MUST <16384)' CONFIG_RA_HW_NAT_QURT_LMT 100
+int 'Max entries allowed build when FreeEntries>1/2 (MUST <16384)' CONFIG_RA_HW_NAT_HALF_LMT 50
+int 'Max entries allowed build when FreeEntries<1/2 (MUST <16384)' CONFIG_RA_HW_NAT_FULL_LMT 25
+
+comment 'Foe Table'
+choice ' Foe Table Size'  "1K      CONFIG_RA_HW_NAT_TBL_1K \
+                           2K      CONFIG_RA_HW_NAT_TBL_2K \
+                           4K      CONFIG_RA_HW_NAT_TBL_4K \
+                           8K      CONFIG_RA_HW_NAT_TBL_8K \
+                           16K     CONFIG_RA_HW_NAT_TBL_16K \
+                          "4K
+
+choice ' Hash Algorithm'  "Hash0-Simple   CONFIG_RA_HW_NAT_HASH0 \
+                           Hash1-Complex  CONFIG_RA_HW_NAT_HASH1 \
+                          "Hash0
+
+comment 'Policy Table (Total Size MUST <= 512)'
+int 'Pre ACL Table Size'                CONFIG_RA_HW_NAT_PRE_ACL_SIZE   112
+int 'Pre Meter Table Size'              CONFIG_RA_HW_NAT_PRE_MTR_SIZE   100
+int 'Pre Accounting Table Size'         CONFIG_RA_HW_NAT_PRE_AC_SIZE    100
+int 'Post Meter Table Size'             CONFIG_RA_HW_NAT_POST_MTR_SIZE  100
+int 'Post Accounting Table Size'        CONFIG_RA_HW_NAT_POST_AC_SIZE   100
+
+
+comment 'KeepAlive Interval'
+if [ "$CONFIG_RA_HW_NAT_TBL_1K" != "n" ];then
+int '  TCP KeepAlive Interval(Unit:1Sec)' CONFIG_RA_HW_NAT_TCP_KA  5
+int '  UDP KeepAlive Interval(Unit:1Sec)' CONFIG_RA_HW_NAT_UDP_KA  5
+elif [ "$CONFIG_RA_HW_NAT_TBL_2K" != "n" ];then
+int '  TCP KeepAlive Interval(Unit:2Sec)' CONFIG_RA_HW_NAT_TCP_KA  3
+int '  UDP KeepAlive Interval(Unit:2Sec)' CONFIG_RA_HW_NAT_UDP_KA  3
+elif [ "$CONFIG_RA_HW_NAT_TBL_4K" != "n" ];then
+int '  TCP KeepAlive Interval(Unit:4Sec)' CONFIG_RA_HW_NAT_TCP_KA  1
+int '  UDP KeepAlive Interval(Unit:4Sec)' CONFIG_RA_HW_NAT_UDP_KA  1
+elif [ "$CONFIG_RA_HW_NAT_TBL_8K" != "n" ];then
+int '  TCP KeepAlive Interval(Unit:8Sec)' CONFIG_RA_HW_NAT_TCP_KA  1
+int '  UDP KeepAlive Interval(Unit:8Sec)' CONFIG_RA_HW_NAT_UDP_KA  1
+elif [ "$CONFIG_RA_HW_NAT_TBL_16K" != "n" ];then
+int '  TCP KeepAlive Interval(Unit:16Sec)' CONFIG_RA_HW_NAT_TCP_KA  1
+int '  UDP KeepAlive Interval(Unit:16Sec)' CONFIG_RA_HW_NAT_UDP_KA  1
+fi
+
+comment 'Aging out Time'
+int '  Min threshold for unbind state(Pkt count)' CONFIG_RA_HW_NAT_UNB_MNP  1000
+int '  Life time of ACL link to FOE entry(Unit:1Sec)' CONFIG_RA_HW_NAT_ACL_DLTA  3
+int '  Life time of Unbind entry (Unit:1Sec)'   CONFIG_RA_HW_NAT_UNB_DLTA  3
+int '  Life time of Bind UDP entry (Unit:1Sec)' CONFIG_RA_HW_NAT_UDP_DLTA  5
+int '  Life time of Bind TCP entry (Unit:1Sec)' CONFIG_RA_HW_NAT_TCP_DLTA  5
+int '  Life time of Bind FIN entry (Unit:1Sec)' CONFIG_RA_HW_NAT_FIN_DLTA  5
+
+comment 'Interface Name'
+string 'WLAN' CONFIG_RA_HW_NAT_WLAN_NAME "ra0"
+string 'PCI' CONFIG_RA_HW_NAT_PCI_NAME "eth0"
+string 'GMAC' CONFIG_RA_HW_NAT_GMAC_NAME "eth2"
+
+fi
+

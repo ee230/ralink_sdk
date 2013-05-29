@@ -1,0 +1,34 @@
+# These templates have been reviewed by the debian-l10n-english
+# team
+#
+# If modifications/additions/rewording are needed, please ask
+# for an advice to debian-l10n-english@lists.debian.org
+#
+# Even minor modifications require translation updates and such
+# changes should be coordinated with translators and reviewers.
+
+Template: watchdog/run
+Type: boolean
+Default: true
+_Description: Start watchdog at boot time?
+ Please specify whether watchdog should be started as part of the boot
+ process. This can be changed later by editing /etc/default/watchdog.
+
+Template: watchdog/restart
+Type: boolean
+Default: false
+_Description: Restart watchdog on upgrades?
+ If the kernel is configured with the CONFIG_WATCHDOG_NOWAYOUT option
+ (which is not the default setting), restarting watchdog will cause a
+ spurious reboot (the kernel will assume that the watchdog daemon
+ crashed).
+
+Template: watchdog/module
+Type: string
+Default: none
+_Description: Watchdog module to preload:
+ Please choose which watchdog module should be preloaded before
+ starting watchdog. The 'softdog' module should be suited for all
+ installations. Enter 'none' if you don't want the script to load
+ a module.
+

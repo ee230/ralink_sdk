@@ -1,0 +1,145 @@
+
+*** These modified files were found in JOE when it aborted on Tue May  8 12:59:13 2007
+*** JOE was aborted by UNIX signal 15
+
+*** These modified files were found in JOE when it aborted on Tue May  8 12:59:13 2007
+*** JOE was aborted by UNIX signal 15
+
+*** File '(Unnamed)'
+goto err;
+ByteASP
+PacketASP
+char_t buf
+strtoll(field, NULL, 16)
+strtoll(field, NULL, 16)
+strtoll(field, NULL, 10)
+UPNP
+UPNP
+IXML
+
+*** File '(Unnamed)'
+RECURSIVE
+link
+links
+links:
+makefile
+romfs
+romfs
+romfs
+libssl
+-lssl
+
+*** File '(Unnamed)'
+Makefile
+Makefile
+Makefile
+make.log
+make.log
+apps/
+Makefile
+libssl.pc
+Makefile
+PROBLEMS
+Makefile
+Makefile
+
+*** These modified files were found in JOE when it aborted on Tue May  8 12:59:13 2007
+*** JOE was aborted by UNIX signal 15
+
+*** File '(Unnamed)'
+goto err;
+ByteASP
+PacketASP
+char_t buf
+strtoll(field, NULL, 16)
+strtoll(field, NULL, 16)
+strtoll(field, NULL, 10)
+UPNP
+UPNP
+IXML
+
+*** File '(Unnamed)'
+romfs
+romfs
+libssl
+-lssl
+ssl
+ssl
+link_app.gnu
+DO_GNU_APP
+LINK_APP
+APPNAME
+-lssl  -lcrypto
+LIBRARIES
+LIBSSL
+-lssl
+
+*** File '(Unnamed)'
+Makefile
+test/Makefile
+test/Makefile
+PROBLEMS
+Makefile.shared
+Makefile.shared
+Makefile.shared
+Makefile.shared
+Makefile.shared
+Makefile.shared
+apps/Makefile
+apps/Makefile
+apps/Makefile
+apps/Makefile
+apps/Makefile
+apps/Makefile
+apps/Makefile
+apps/Makefile
+apps/Makefile
+apps/Makefile
+apps/Makefile
+apps/Makefile
+apps/Makefile
+apps/Makefile
+apps/Makefile
+apps/Makefile
+apps/Makefile
+apps/Makefile
+
+*** File '(Unnamed)'
+goto err;
+ByteASP
+PacketASP
+char_t buf
+strtoll(field, NULL, 16)
+strtoll(field, NULL, 16)
+strtoll(field, NULL, 10)
+UPNP
+UPNP
+IXML
+
+*** File '(Unnamed)'
+CONFIG_USER_OPENSSL
+link
+RECURSIVE
+link
+links
+links:
+makefile
+romfs
+romfs
+romfs
+-lssl
+
+*** File '(Unnamed)'
+Makefile
+makefile
+Makefile
+Makefile
+Makefile
+Makefile
+Makefile
+make.log
+make.log
+apps/
+apps/Makefile
+apps/Makefile
+apps/Makefile

@@ -1,0 +1,769 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.6	//
+ADMIN	src/watchdog.c	52;"	d	file:
+BLKGETSIZE	include/linux_fs.h	7;"	d
+CC	src/Makefile	/^CC=\/opt\/buildroot-gcc342\/bin\/mipsel-linux-uclibc-gcc$/;"	m
+CHANGE	src/watchdog.c	53;"	d	file:
+CONFIG_FILENAME	include/config.h	5;"	d
+CONFIG_LINE_LEN	include/config.h	8;"	d
+DATALEN	include/extern.h	46;"	d
+DEVICE	src/watchdog.c	54;"	d	file:
+DEVICE	src/wd_keepalive.c	40;"	d	file:
+DEVICE_TIMEOUT	src/watchdog.c	55;"	d	file:
+DISKMAJOR	src/mount.c	1051;"	d	file:
+DO_PS_FIDDLING	src/mount.c	71;"	d	file:
+ECHKILL	include/watch_err.h	13;"	d
+EDQUOT	src/nfsmount.c	789;"	d	file:
+EINVMEM	include/watch_err.h	12;"	d
+EMAXLOAD	include/watch_err.h	8;"	d
+ENOCHANGE	include/watch_err.h	11;"	d
+ENOERR	include/watch_err.h	5;"	d
+ENOLOAD	include/watch_err.h	10;"	d
+EREBOOT	include/watch_err.h	6;"	d
+ERESET	include/watch_err.h	7;"	d
+ERR_MAX	include/wd_mntent.h	6;"	d
+ETOOHOT	include/watch_err.h	9;"	d
+ETOOLONG	include/watch_err.h	14;"	d
+EXE	src/Makefile	/^EXE = watchdog wd_keepalive$/;"	m
+EXT2_PRE_02B_MAGIC	include/linux_fs.h	43;"	d
+EXT2_SUPER_MAGIC	include/linux_fs.h	44;"	d
+EXT_SUPER_MAGIC	include/linux_fs.h	36;"	d
+EX_BG	include/sundries.h	74;"	d
+EX_FAIL	include/sundries.h	71;"	d
+EX_FILEIO	include/sundries.h	70;"	d
+EX_SOFTWARE	include/sundries.h	68;"	d
+EX_SOMEOK	include/sundries.h	72;"	d
+EX_SYSERR	include/sundries.h	67;"	d
+EX_USAGE	include/sundries.h	66;"	d
+EX_USER	include/sundries.h	69;"	d
+FALSE	include/extern.h	55;"	d
+FALSE	src/wd_keepalive.c	38;"	d	file:
+FHSIZE	include/nfsmount.h	49;"	d
+FHSIZE	src/nfsmount.h	56;"	d
+FHSIZE3	src/nfsmount.h	57;"	d
+FILENAME	src/watchdog.c	56;"	d	file:
+FREEMEM	src/memory.c	19;"	d	file:
+FREESWAP	src/memory.c	20;"	d	file:
+HAVE_ALLOCA	include/config.h	19;"	d
+HAVE_ALLOCA_H	include/config.h	23;"	d
+HAVE_DECL_SYS_SIGLIST	include/config.h	27;"	d
+HAVE_DIRENT_H	include/config.h	31;"	d
+HAVE_FCNTL_H	include/config.h	37;"	d
+HAVE_GETHOSTNAME	include/config.h	40;"	d
+HAVE_INTTYPES_H	include/config.h	43;"	d
+HAVE_LIMITS_H	include/config.h	46;"	d
+HAVE_MEMORY_H	include/config.h	49;"	d
+HAVE_PATHS_H	include/config.h	58;"	d
+HAVE_SELECT	include/config.h	61;"	d
+HAVE_SOCKET	include/config.h	64;"	d
+HAVE_STDINT_H	include/config.h	67;"	d
+HAVE_STDLIB_H	include/config.h	70;"	d
+HAVE_STRCSPN	include/config.h	73;"	d
+HAVE_STRDUP	include/config.h	76;"	d
+HAVE_STRERROR	include/config.h	79;"	d
+HAVE_STRINGS_H	include/config.h	82;"	d
+HAVE_STRING_H	include/config.h	85;"	d
+HAVE_STRSTR	include/config.h	88;"	d
+HAVE_STRTOUL	include/config.h	91;"	d
+HAVE_STRUCT_STAT_ST_RDEV	include/config.h	94;"	d
+HAVE_ST_RDEV	include/config.h	98;"	d
+HAVE_SYS_IOCTL_H	include/config.h	108;"	d
+HAVE_SYS_STAT_H	include/config.h	115;"	d
+HAVE_SYS_TIME_H	include/config.h	118;"	d
+HAVE_SYS_TYPES_H	include/config.h	121;"	d
+HAVE_SYS_WAIT_H	include/config.h	124;"	d
+HAVE_UNAME	include/config.h	127;"	d
+HAVE_UNISTD_H	include/config.h	130;"	d
+HAVE_VPRINTF	include/config.h	133;"	d
+HAVE_inet_aton	src/nfsmount.c	60;"	d	file:
+HBSTAMPS	src/watchdog.c	75;"	d	file:
+HEARTBEAT	src/watchdog.c	74;"	d	file:
+HS_STANDARD_ID	include/linux_fs.h	27;"	d
+INTERFACE	src/watchdog.c	57;"	d	file:
+INTERVAL	src/watchdog.c	58;"	d	file:
+INTERVAL	src/wd_keepalive.c	41;"	d	file:
+ISODCL	include/linux_fs.h	18;"	d
+ISO_STANDARD_ID	include/linux_fs.h	19;"	d
+KA_PIDFILE	include/config.h	136;"	d
+KERNEL_NFS_MOUNT_VERSION	include/nfs_mountversion.h	1;"	d
+LOCK_TIMEOUT	include/fstab.h	4;"	d
+LOGTICK	src/watchdog.c	59;"	d	file:
+MAJOR_VERSION	include/config.h	139;"	d
+MAKE_VERSION	src/nfsmount.c	71;"	d	file:
+MAXICMPLEN	include/extern.h	48;"	d
+MAXIPLEN	include/extern.h	47;"	d
+MAXLOAD1	src/watchdog.c	60;"	d	file:
+MAXLOAD15	src/watchdog.c	62;"	d	file:
+MAXLOAD5	src/watchdog.c	61;"	d	file:
+MAXPACKET	include/extern.h	49;"	d
+MAXTEMP	src/watchdog.c	63;"	d	file:
+MAX_IFS	src/ifdown.c	28;"	d	file:
+MAX_NFSPROT	src/nfsmount.c	73;"	d	file:
+MINIX_SUPER_MAGIC	include/linux_fs.h	10;"	d
+MINIX_SUPER_MAGIC2	include/linux_fs.h	11;"	d
+MINLOAD	include/config.h	142;"	d
+MINMEM	src/watchdog.c	64;"	d	file:
+MINOR_VERSION	include/config.h	145;"	d
+MNT3ERR_ACCES	src/nfsmount.h	/^	MNT3ERR_ACCES = 13,$/;"	e	enum:mountstat3
+MNT3ERR_INVAL	src/nfsmount.h	/^	MNT3ERR_INVAL = 22,$/;"	e	enum:mountstat3
+MNT3ERR_IO	src/nfsmount.h	/^	MNT3ERR_IO = 5,$/;"	e	enum:mountstat3
+MNT3ERR_NAMETOOLONG	src/nfsmount.h	/^	MNT3ERR_NAMETOOLONG = 63,$/;"	e	enum:mountstat3
+MNT3ERR_NOENT	src/nfsmount.h	/^	MNT3ERR_NOENT = 2,$/;"	e	enum:mountstat3
+MNT3ERR_NOTDIR	src/nfsmount.h	/^	MNT3ERR_NOTDIR = 20,$/;"	e	enum:mountstat3
+MNT3ERR_NOTSUPP	src/nfsmount.h	/^	MNT3ERR_NOTSUPP = 10004,$/;"	e	enum:mountstat3
+MNT3ERR_PERM	src/nfsmount.h	/^	MNT3ERR_PERM = 1,$/;"	e	enum:mountstat3
+MNT3ERR_SERVERFAULT	src/nfsmount.h	/^	MNT3ERR_SERVERFAULT = 10006,$/;"	e	enum:mountstat3
+MNTNAMLEN	include/nfsmount.h	48;"	d
+MNTNAMLEN	src/nfsmount.h	55;"	d
+MNTOPT_GRPQUOTA	include/ext2_mnt.h	13;"	d
+MNTOPT_NOQUOTA	include/ext2_mnt.h	11;"	d
+MNTOPT_USRQUOTA	include/ext2_mnt.h	12;"	d
+MNTPATHLEN	include/nfsmount.h	47;"	d
+MNTPATHLEN	src/nfsmount.h	54;"	d
+MNTTYPE_EXT2	include/ext2_mnt.h	9;"	d
+MNT_OK	src/nfsmount.h	/^	MNT_OK = 0,$/;"	e	enum:mountstat3
+MOUNTED_LOCK	include/fstab.h	2;"	d
+MOUNTED_TEMP	include/fstab.h	3;"	d
+MOUNTPORT	src/nfsmount.h	53;"	d
+MOUNTPROC3_DUMP	src/nfsmount.h	251;"	d
+MOUNTPROC3_DUMP	src/nfsmount.h	272;"	d
+MOUNTPROC3_EXPORT	src/nfsmount.h	260;"	d
+MOUNTPROC3_EXPORT	src/nfsmount.h	281;"	d
+MOUNTPROC3_MNT	src/nfsmount.h	248;"	d
+MOUNTPROC3_MNT	src/nfsmount.h	269;"	d
+MOUNTPROC3_NULL	src/nfsmount.h	245;"	d
+MOUNTPROC3_NULL	src/nfsmount.h	266;"	d
+MOUNTPROC3_UMNT	src/nfsmount.h	254;"	d
+MOUNTPROC3_UMNT	src/nfsmount.h	275;"	d
+MOUNTPROC3_UMNTALL	src/nfsmount.h	257;"	d
+MOUNTPROC3_UMNTALL	src/nfsmount.h	278;"	d
+MOUNTPROC_DUMP	include/nfsmount.h	203;"	d
+MOUNTPROC_DUMP	include/nfsmount.h	226;"	d
+MOUNTPROC_DUMP	include/nfsmount.h	249;"	d
+MOUNTPROC_DUMP	src/nfsmount.h	159;"	d
+MOUNTPROC_DUMP	src/nfsmount.h	183;"	d
+MOUNTPROC_EXPORT	include/nfsmount.h	212;"	d
+MOUNTPROC_EXPORT	include/nfsmount.h	235;"	d
+MOUNTPROC_EXPORT	include/nfsmount.h	258;"	d
+MOUNTPROC_EXPORT	src/nfsmount.h	168;"	d
+MOUNTPROC_EXPORT	src/nfsmount.h	192;"	d
+MOUNTPROC_EXPORTALL	include/nfsmount.h	215;"	d
+MOUNTPROC_EXPORTALL	include/nfsmount.h	238;"	d
+MOUNTPROC_EXPORTALL	include/nfsmount.h	261;"	d
+MOUNTPROC_EXPORTALL	src/nfsmount.h	171;"	d
+MOUNTPROC_EXPORTALL	src/nfsmount.h	195;"	d
+MOUNTPROC_MNT	include/nfsmount.h	200;"	d
+MOUNTPROC_MNT	include/nfsmount.h	223;"	d
+MOUNTPROC_MNT	include/nfsmount.h	246;"	d
+MOUNTPROC_MNT	src/nfsmount.h	156;"	d
+MOUNTPROC_MNT	src/nfsmount.h	180;"	d
+MOUNTPROC_NULL	include/nfsmount.h	197;"	d
+MOUNTPROC_NULL	include/nfsmount.h	220;"	d
+MOUNTPROC_NULL	include/nfsmount.h	243;"	d
+MOUNTPROC_NULL	src/nfsmount.h	153;"	d
+MOUNTPROC_NULL	src/nfsmount.h	177;"	d
+MOUNTPROC_PATHCONF	include/nfsmount.h	282;"	d
+MOUNTPROC_PATHCONF	include/nfsmount.h	301;"	d
+MOUNTPROC_PATHCONF	include/nfsmount.h	320;"	d
+MOUNTPROC_PATHCONF	src/nfsmount.h	217;"	d
+MOUNTPROC_PATHCONF	src/nfsmount.h	237;"	d
+MOUNTPROC_UMNT	include/nfsmount.h	206;"	d
+MOUNTPROC_UMNT	include/nfsmount.h	229;"	d
+MOUNTPROC_UMNT	include/nfsmount.h	252;"	d
+MOUNTPROC_UMNT	src/nfsmount.h	162;"	d
+MOUNTPROC_UMNT	src/nfsmount.h	186;"	d
+MOUNTPROC_UMNTALL	include/nfsmount.h	209;"	d
+MOUNTPROC_UMNTALL	include/nfsmount.h	232;"	d
+MOUNTPROC_UMNTALL	include/nfsmount.h	255;"	d
+MOUNTPROC_UMNTALL	src/nfsmount.h	165;"	d
+MOUNTPROC_UMNTALL	src/nfsmount.h	189;"	d
+MOUNTPROG	include/nfsmount.h	193;"	d
+MOUNTPROG	src/nfsmount.h	149;"	d
+MOUNTVERS	include/nfsmount.h	194;"	d
+MOUNTVERS	src/nfsmount.h	150;"	d
+MOUNTVERS_POSIX	include/nfsmount.h	265;"	d
+MOUNTVERS_POSIX	src/nfsmount.h	200;"	d
+MOUNT_V3	src/nfsmount.h	242;"	d
+MS_LOOP	src/mount.c	122;"	d	file:
+MS_MANDLOCK	include/mount_constants.h	20;"	d
+MS_MGC_MSK	include/mount_constants.h	35;"	d
+MS_MGC_VAL	include/mount_constants.h	32;"	d
+MS_NOATIME	include/mount_constants.h	23;"	d
+MS_NOAUTO	src/mount.c	120;"	d	file:
+MS_NODEV	include/mount_constants.h	8;"	d
+MS_NODIRATIME	include/mount_constants.h	26;"	d
+MS_NOEXEC	include/mount_constants.h	11;"	d
+MS_NOMTAB	src/mount.c	128;"	d	file:
+MS_NOSUID	include/mount_constants.h	5;"	d
+MS_NOSYS	src/mount.c	125;"	d	file:
+MS_RDONLY	include/mount_constants.h	2;"	d
+MS_REMOUNT	include/mount_constants.h	17;"	d
+MS_SECURE	src/mount.c	131;"	d	file:
+MS_SYNCHRONOUS	include/mount_constants.h	14;"	d
+MS_USER	src/mount.c	121;"	d	file:
+NETDEV_LINE_LEN	src/iface.c	17;"	d	file:
+NFS_FHSIZE	src/nfsmount.c	66;"	d	file:
+NFS_MOUNT_BROKEN_SUID	include/nfs_mount4.h	53;"	d
+NFS_MOUNT_INTR	include/nfs_mount4.h	44;"	d
+NFS_MOUNT_KERBEROS	include/nfs_mount4.h	51;"	d
+NFS_MOUNT_NOAC	include/nfs_mount4.h	48;"	d
+NFS_MOUNT_NOCTO	include/nfs_mount4.h	47;"	d
+NFS_MOUNT_NONLM	include/nfs_mount4.h	52;"	d
+NFS_MOUNT_POSIX	include/nfs_mount4.h	46;"	d
+NFS_MOUNT_SECURE	include/nfs_mount4.h	45;"	d
+NFS_MOUNT_SOFT	include/nfs_mount4.h	43;"	d
+NFS_MOUNT_TCP	include/nfs_mount4.h	49;"	d
+NFS_MOUNT_VER3	include/nfs_mount4.h	50;"	d
+NFS_MOUNT_VERSION	include/nfs_mount4.h	11;"	d
+NFS_PORT	src/nfsmount.c	63;"	d	file:
+NSIG	src/shutdown.c	48;"	d	file:
+OBJS	src/Makefile	/^OBJS = file_stat.o file_table.o fstab.o iface.o ifdown.o keep_alive.o load.o \\$/;"	m
+PACKAGE	include/config.h	148;"	d
+PACKAGE_BUGREPORT	include/config.h	151;"	d
+PACKAGE_NAME	include/config.h	154;"	d
+PACKAGE_STRING	include/config.h	157;"	d
+PACKAGE_TARNAME	include/config.h	160;"	d
+PACKAGE_VERSION	include/config.h	163;"	d
+PATH_SENDMAIL	include/config.h	166;"	d
+PIDFILE	include/config.h	169;"	d
+PING	src/watchdog.c	66;"	d	file:
+PINGCOUNT	src/watchdog.c	67;"	d	file:
+PRIORITY	src/watchdog.c	68;"	d	file:
+PRIORITY	src/wd_keepalive.c	42;"	d	file:
+PROC	src/shutdown.c	/^} PROC;$/;"	t	typeref:struct:_proc_	file:
+PROC_DEVICES	src/lomount.c	7;"	d	file:
+PROC_FILESYSTEMS	src/mount.c	68;"	d	file:
+PROC_MOUNTS	src/fstab.c	19;"	d	file:
+PROC_NAME	src/mount.c	74;"	d	file:
+RANDOM_SEED	include/config.h	172;"	d
+REALTIME	src/watchdog.c	69;"	d	file:
+REALTIME	src/wd_keepalive.c	43;"	d	file:
+REPAIRBIN	src/watchdog.c	70;"	d	file:
+RETSIGTYPE	include/config.h	175;"	d
+SERVERPIDFILE	src/watchdog.c	65;"	d	file:
+SIZE	src/mount.c	69;"	d	file:
+STDC_HEADERS	include/config.h	186;"	d
+TEMP	src/watchdog.c	71;"	d	file:
+TESTBIN	src/watchdog.c	72;"	d	file:
+TESTTIMEOUT	src/watchdog.c	73;"	d	file:
+TIMEOUT	src/nfsmount_clnt.c	/^static struct timeval TIMEOUT = { 25, 0 };$/;"	v	typeref:struct:timeval	file:
+TIMER_MARGIN	include/config.h	189;"	d
+TIME_WITH_SYS_TIME	include/config.h	192;"	d
+TRUE	include/extern.h	52;"	d
+TRUE	src/wd_keepalive.c	37;"	d	file:
+TS_SIZE	include/extern.h	58;"	d
+UFS_SUPER_MAGIC	include/linux_fs.h	62;"	d
+USE_SYSLOG	include/config.h	195;"	d
+VERSION	include/config.h	198;"	d
+WATCHDOG_IOCTL_BASE	include/watchdog.h	14;"	d
+WDIOC_GETBOOTSTATUS	include/watchdog.h	24;"	d
+WDIOC_GETSTATUS	include/watchdog.h	23;"	d
+WDIOC_GETSUPPORT	include/watchdog.h	22;"	d
+WDIOC_GETTEMP	include/watchdog.h	25;"	d
+WDIOC_GETTIMEOUT	include/watchdog.h	29;"	d
+WDIOC_KEEPALIVE	include/watchdog.h	27;"	d
+WDIOC_SETOPTIONS	include/watchdog.h	26;"	d
+WDIOC_SETTIMEOUT	include/watchdog.h	28;"	d
+WDIOF_CARDRESET	include/watchdog.h	39;"	d
+WDIOF_EXTERN1	include/watchdog.h	36;"	d
+WDIOF_EXTERN2	include/watchdog.h	37;"	d
+WDIOF_FANFAULT	include/watchdog.h	35;"	d
+WDIOF_KEEPALIVEPING	include/watchdog.h	43;"	d
+WDIOF_MAGICCLOSE	include/watchdog.h	42;"	d
+WDIOF_OVERHEAT	include/watchdog.h	34;"	d
+WDIOF_POWEROVER	include/watchdog.h	40;"	d
+WDIOF_POWERUNDER	include/watchdog.h	38;"	d
+WDIOF_SETTIMEOUT	include/watchdog.h	41;"	d
+WDIOF_UNKNOWN	include/watchdog.h	31;"	d
+WDIOS_DISABLECARD	include/watchdog.h	45;"	d
+WDIOS_ENABLECARD	include/watchdog.h	46;"	d
+WDIOS_TEMPPANIC	include/watchdog.h	47;"	d
+WDIOS_UNKNOWN	include/watchdog.h	32;"	d
+WD_MNTENT_H	include/wd_mntent.h	2;"	d
+_BSD_SOURCE	src/shutdown.c	8;"	d	file:
+_LINUX_WATCHDOG_H	include/watchdog.h	10;"	d
+_NFSMOUNT_H_RPCGEN	include/nfsmount.h	7;"	d
+_NFSMOUNT_H_RPCGEN	src/nfsmount.h	7;"	d
+_PATH_FSTAB	include/fstab.h	1;"	d
+_XIAFS_SUPER_MAGIC	include/linux_fs.h	51;"	d
+_XOPEN_SOURCE	src/shutdown.c	7;"	d	file:
+__USE_GNU	src/watchdog.c	29;"	d	file:
+__USE_GNU	src/wd_keepalive.c	27;"	d	file:
+_proc_	src/shutdown.c	/^typedef struct _proc_ {$/;"	s	file:
+_rpcsvc_mount_h	include/nfsmount.h	46;"	d
+_rpcsvc_mount_h	src/nfsmount.h	51;"	d
+_running	src/watchdog.c	/^volatile sig_atomic_t _running = 1;$/;"	v
+_running	src/wd_keepalive.c	/^volatile sig_atomic_t _running = 1;$/;"	v
+acdirmax	include/nfs_mount4.h	/^	int		acdirmax;		\/* 1 *\/$/;"	m	struct:nfs_mount_data
+acdirmin	include/nfs_mount4.h	/^	int		acdirmin;		\/* 1 *\/$/;"	m	struct:nfs_mount_data
+acregmax	include/nfs_mount4.h	/^	int		acregmax;		\/* 1 *\/$/;"	m	struct:nfs_mount_data
+acregmin	include/nfs_mount4.h	/^	int		acregmin;		\/* 1 *\/$/;"	m	struct:nfs_mount_data
+add_list	src/watchdog.c	/^static void add_list(struct list **list, char *name)$/;"	f	file:
+add_process	src/test_binary.c	/^static void add_process (pid_t pid)$/;"	f	file:
+addr	include/nfs_mount4.h	/^	struct sockaddr_in addr;		\/* 1 *\/$/;"	m	struct:nfs_mount_data	typeref:struct:nfs_mount_data::sockaddr_in
+admin	src/watchdog.c	/^char *tbinary, *rbinary, *admin;$/;"	v
+admin	src/watchdog.c	/^char *tempname = NULL, *devname = NULL, *admin = "root", *progname;$/;"	v
+all	src/mount.c	/^int all = 0;$/;"	v
+already	src/mount.c	/^already (char *spec, char *node) {$/;"	f	file:
+argc0	src/mount.c	/^static int argc0;$/;"	v	file:
+argv0	src/mount.c	/^static char** argv0;$/;"	v	file:
+as_func_failure	configure	/^as_func_failure () {$/;"	f
+as_func_ret_failure	configure	/^as_func_ret_failure () {$/;"	f
+as_func_ret_success	configure	/^as_func_ret_success () {$/;"	f
+as_func_success	configure	/^as_func_success () {$/;"	f
+auth_flavours	src/nfsmount.h	/^	} auth_flavours;$/;"	m	struct:mountres3_ok	typeref:struct:mountres3_ok::__anon4
+auth_flavours_len	src/nfsmount.h	/^		u_int auth_flavours_len;$/;"	m	struct:mountres3_ok::__anon4
+auth_flavours_val	src/nfsmount.h	/^		int *auth_flavours_val;$/;"	m	struct:mountres3_ok::__anon4
+block_signals	src/sundries.c	/^block_signals (int how) {$/;"	f
+bsize	include/nfs_mount4.h	/^	unsigned int	bsize;			\/* 3 *\/$/;"	m	struct:nfs_mount_data
+bytes	include/extern.h	/^	unsigned long bytes;$/;"	m	struct:ifmode
+canonicalize	src/sundries.c	/^canonicalize (const char *path) {$/;"	f
+car	include/sundries.h	30;"	d
+cdr	include/sundries.h	31;"	d
+check_bin	src/test_binary.c	/^int check_bin(char *tbinary, time_t timeout)$/;"	f
+check_file_stat	src/file_stat.c	/^int check_file_stat(struct list *file)$/;"	f
+check_file_table	src/file_table.c	/^int check_file_table(void)$/;"	f
+check_iface	src/iface.c	/^int check_iface(struct list *dev)$/;"	f
+check_load	src/load.c	/^int check_load(void)$/;"	f
+check_memory	src/memory.c	/^int check_memory(void)$/;"	f
+check_net	src/net.c	/^int check_net(char *target, int sock_fp, struct sockaddr to, unsigned char *packet, int time, int count)$/;"	f
+check_pidfile	src/pidfile.c	/^int check_pidfile(struct list *file)$/;"	f
+check_processes	src/test_binary.c	/^static int check_processes (time_t timeout)$/;"	f	file:
+check_temp	src/temp.c	/^int check_temp(void)$/;"	f
+clear_string_opts	src/mount.c	/^clear_string_opts(void) {$/;"	f	file:
+close_all	src/shutdown.c	/^static void close_all()$/;"	f	file:
+close_all	src/wd_keepalive.c	/^static void close_all()$/;"	f	file:
+complain	src/umount.c	/^static void complain(int err, const char *dev) {$/;"	f	file:
+cons	src/sundries.c	/^cons (char *a, const string_list b) {$/;"	f
+create_mtab	src/mount.c	/^create_mtab (void) {$/;"	f	file:
+crypt_type	src/lomount.c	/^crypt_type (const char *name)$/;"	f	file:
+crypt_type_struct	src/lomount.c	/^struct crypt_type_struct {$/;"	s	file:
+crypt_type_tbl	src/lomount.c	/^} crypt_type_tbl[] = {$/;"	v	typeref:struct:crypt_type_struct
+data	include/linux_fs.h	/^	char data[ISODCL(16,2048)];$/;"	m	struct:hs_volume_descriptor
+data	include/linux_fs.h	/^	char data[ISODCL(8,2048)];$/;"	m	struct:iso_volume_descriptor
+data	include/nfs_mount4.h	/^        char                    data[32];$/;"	m	struct:nfs2_fh
+data	include/nfs_mount4.h	/^        unsigned char           data[64];$/;"	m	struct:nfs3_fh
+del_loop	src/lomount.c	/^del_loop (const char *device) {$/;"	f
+del_loop	src/lomount.c	/^del_loop (const char *device)$/;"	f
+dev_t	include/loop.h	2;"	d
+dev_t	include/loop.h	3;"	d
+dev_t	include/loop.h	5;"	d
+devname	src/watchdog.c	/^char *tempname = NULL, *devname = NULL, *admin = "root", *progname;$/;"	v
+devname	src/wd_keepalive.c	/^char *devname = NULL, *progname = NULL;$/;"	v
+devtimeout	src/watchdog.c	/^int devtimeout = TIMER_MARGIN;$/;"	v
+die	src/sundries.c	/^die (int err, const char *fmt, ...) {$/;"	f
+dirpath	include/nfsmount.h	/^typedef char *dirpath;$/;"	t
+dirpath	src/nfsmount.h	/^typedef char *dirpath;$/;"	t
+do_check	src/watchdog.c	/^static void do_check(int res, char *rbinary, char *name)$/;"	f	file:
+do_shutdown	src/shutdown.c	/^void do_shutdown(int errorcode)$/;"	f
+envp0	src/mount.c	/^static char** envp0;$/;"	v	file:
+errnum	src/nfsmount.c	/^	int errnum;$/;"	m	struct:__anon6	file:
+error	src/sundries.c	/^error (const char *fmt, ...) {$/;"	f
+ex_dir	include/nfsmount.h	/^	dirpath ex_dir;$/;"	m	struct:exportnode
+ex_dir	src/nfsmount.h	/^	dirpath ex_dir;$/;"	m	struct:exportnode
+ex_groups	include/nfsmount.h	/^	groups ex_groups;$/;"	m	struct:exportnode
+ex_groups	src/nfsmount.h	/^	groups ex_groups;$/;"	m	struct:exportnode
+ex_next	include/nfsmount.h	/^	exports ex_next;$/;"	m	struct:exportnode
+ex_next	src/nfsmount.h	/^	exports ex_next;$/;"	m	struct:exportnode
+exportnode	include/nfsmount.h	/^struct exportnode {$/;"	s
+exportnode	include/nfsmount.h	/^typedef struct exportnode exportnode;$/;"	t	typeref:struct:exportnode
+exportnode	src/nfsmount.h	/^struct exportnode {$/;"	s
+exportnode	src/nfsmount.h	/^typedef struct exportnode exportnode;$/;"	t	typeref:struct:exportnode
+exports	include/nfsmount.h	/^typedef struct exportnode *exports;$/;"	t	typeref:struct:exportnode
+exports	src/nfsmount.h	/^typedef struct exportnode *exports;$/;"	t	typeref:struct:exportnode
+ext2_super_block	include/linux_fs.h	/^struct ext2_super_block {$/;"	s
+ext2magic	include/linux_fs.h	49;"	d
+ext_super_block	include/linux_fs.h	/^struct ext_super_block {$/;"	s
+extmagic	include/linux_fs.h	41;"	d
+fake	src/mount.c	/^int fake = 0;$/;"	v
+fd	include/nfs_mount4.h	/^	int		fd;			\/* 1 *\/$/;"	m	struct:nfs_mount_data
+fhandle	include/nfsmount.h	/^typedef char fhandle[FHSIZE];$/;"	t
+fhandle	src/nfsmount.h	/^	fhandle3 fhandle;$/;"	m	struct:mountres3_ok
+fhandle	src/nfsmount.h	/^typedef char fhandle[FHSIZE];$/;"	t
+fhandle3	src/nfsmount.h	/^} fhandle3;$/;"	t	typeref:struct:__anon2
+fhandle3_len	src/nfsmount.h	/^	u_int fhandle3_len;$/;"	m	struct:__anon2
+fhandle3_val	src/nfsmount.h	/^	char *fhandle3_val;$/;"	m	struct:__anon2
+fhs_fhandle	include/nfsmount.h	/^		fhandle fhs_fhandle;$/;"	m	union:fhstatus::__anon1
+fhs_fhandle	src/nfsmount.h	/^		fhandle fhs_fhandle;$/;"	m	union:fhstatus::__anon3
+fhs_status	include/nfsmount.h	/^	u_int fhs_status;$/;"	m	struct:fhstatus
+fhs_status	src/nfsmount.h	/^	mountstat3 fhs_status;$/;"	m	struct:mountres3
+fhs_status	src/nfsmount.h	/^	u_int fhs_status;$/;"	m	struct:fhstatus
+fhstatus	include/nfsmount.h	/^struct fhstatus {$/;"	s
+fhstatus	include/nfsmount.h	/^typedef struct fhstatus fhstatus;$/;"	t	typeref:struct:fhstatus
+fhstatus	src/nfsmount.h	/^struct fhstatus {$/;"	s
+fhstatus	src/nfsmount.h	/^typedef struct fhstatus fhstatus;$/;"	t	typeref:struct:fhstatus
+fhstatus_u	include/nfsmount.h	/^	} fhstatus_u;$/;"	m	struct:fhstatus	typeref:union:fhstatus::__anon1
+fhstatus_u	src/nfsmount.h	/^	} fhstatus_u;$/;"	m	struct:fhstatus	typeref:union:fhstatus::__anon3
+file	include/extern.h	/^        struct filemode file;$/;"	m	union:wdog_options	typeref:struct:wdog_options::filemode
+file	src/watchdog.c	/^struct list *file = NULL, *target = NULL, *pidfile = NULL, *iface = NULL;$/;"	v	typeref:struct:list
+filemode	include/extern.h	/^struct filemode$/;"	s
+find_kernel_nfs_mount_version	src/nfsmount.c	/^find_kernel_nfs_mount_version(void) {$/;"	f	file:
+find_stack_direction	configure	/^find_stack_direction ()$/;"	f
+find_unused_loop_device	src/lomount.c	/^find_unused_loop_device (void) {$/;"	f
+find_unused_loop_device	src/lomount.c	/^find_unused_loop_device (void)$/;"	f
+firmware_version	include/watchdog.h	/^	unsigned int firmware_version;	\/* Firmware version of the card *\/$/;"	m	struct:watchdog_info
+fix_opts_string	src/mount.c	/^fix_opts_string (int flags, char *extra_opts)$/;"	f	file:
+flags	include/nfs_mount4.h	/^	int		flags;			\/* 1 *\/$/;"	m	struct:nfs_mount_data
+foo	include/linux_fs.h	/^	char foo[ISODCL (  1,   8)]; \/* 733 *\/$/;"	m	struct:hs_volume_descriptor
+force	src/umount.c	/^int force = 0;$/;"	v
+fstab	src/fstab.c	/^struct mntentchn mounttable, fstab;$/;"	v	typeref:struct:
+fstab_head	src/fstab.c	/^fstab_head() {$/;"	f
+fstype	src/mount.c	/^fstype(const char *device)$/;"	f	file:
+get_mountport	src/nfsmount.c	/^get_mountport(struct sockaddr_in *server_addr,$/;"	f	file:
+get_mtab_info	src/fstab.c	/^get_mtab_info(void) {$/;"	f	file:
+getfsfile	src/fstab.c	/^getfsfile (const char *file) {$/;"	f
+getfsspec	src/fstab.c	/^getfsspec (const char *spec)$/;"	f
+getmntfile	src/fstab.c	/^getmntfile (const char *name) {$/;"	f
+getmntoptfile	src/fstab.c	/^getmntoptfile (const char *file)$/;"	f
+got_fstab	src/fstab.c	/^static int got_fstab = 0;$/;"	v	file:
+got_mtab	src/fstab.c	/^static int got_mtab = 0;$/;"	v	file:
+gr_name	include/nfsmount.h	/^	name gr_name;$/;"	m	struct:groupnode
+gr_name	src/nfsmount.h	/^	name gr_name;$/;"	m	struct:groupnode
+gr_next	include/nfsmount.h	/^	groups gr_next;$/;"	m	struct:groupnode
+gr_next	src/nfsmount.h	/^	groups gr_next;$/;"	m	struct:groupnode
+groupnode	include/nfsmount.h	/^struct groupnode {$/;"	s
+groupnode	include/nfsmount.h	/^typedef struct groupnode groupnode;$/;"	t	typeref:struct:groupnode
+groupnode	src/nfsmount.h	/^struct groupnode {$/;"	s
+groupnode	src/nfsmount.h	/^typedef struct groupnode groupnode;$/;"	t	typeref:struct:groupnode
+groups	include/nfsmount.h	/^typedef struct groupnode *groups;$/;"	t	typeref:struct:groupnode
+groups	src/nfsmount.h	/^typedef struct groupnode *groups;$/;"	t	typeref:struct:groupnode
+handler	src/fstab.c	/^handler (int sig) {$/;"	f	file:
+have_mtab_info	src/fstab.c	/^static int have_mtab_info = 0;$/;"	v	file:
+hb	src/watchdog.c	/^FILE *hb;$/;"	v
+hbstamps	src/watchdog.c	/^int maxtemp = 120, hbstamps = 300, lastts, nrts;$/;"	v
+hd	include/sundries.h	/^  char *hd;$/;"	m	struct:string_list
+heartbeat	src/watchdog.c	/^char *timestamps, *heartbeat;$/;"	v
+hostname	include/nfs_mount4.h	/^	char		hostname[256];		\/* 1 *\/$/;"	m	struct:nfs_mount_data
+hs_volume_descriptor	include/linux_fs.h	/^struct  hs_volume_descriptor {$/;"	s
+id	include/linux_fs.h	/^	char id[ISODCL ( 10,  14)];$/;"	m	struct:hs_volume_descriptor
+id	include/linux_fs.h	/^	char id[ISODCL(2,6)];$/;"	m	struct:iso_volume_descriptor
+id	src/lomount.c	/^  int id;$/;"	m	struct:crypt_type_struct	file:
+identity	include/watchdog.h	/^	unsigned char identity[32];	\/* Identity of the board *\/$/;"	m	struct:watchdog_info
+iface	include/extern.h	/^        struct ifmode iface;$/;"	m	union:wdog_options	typeref:struct:wdog_options::ifmode
+iface	src/watchdog.c	/^struct list *file = NULL, *target = NULL, *pidfile = NULL, *iface = NULL;$/;"	v	typeref:struct:
+ifdown	src/ifdown.c	/^int ifdown(void)$/;"	f
+ifmode	include/extern.h	/^struct ifmode$/;"	s
+in_cksum	src/net.c	/^static int in_cksum(unsigned short *addr, int len)$/;"	f	file:
+inv	src/mount.c	/^  int  inv;			\/* true if flag value should be inverted *\/$/;"	m	struct:opt_map	file:
+is_in_proc	src/mount.c	/^is_in_proc(char *type) {$/;"	f	file:
+is_space_or_tab	src/mntent.c	/^is_space_or_tab (char c) {$/;"	f	file:
+iso_volume_descriptor	include/linux_fs.h	/^struct iso_volume_descriptor {$/;"	s
+isoctal	src/mntent.c	68;"	d	file:
+keep_alive	src/keep_alive.c	/^int keep_alive(void)$/;"	f
+killall5	src/shutdown.c	/^static void killall5(int sig)$/;"	f	file:
+lastts	src/watchdog.c	/^int maxtemp = 120, hbstamps = 300, lastts, nrts;$/;"	v
+linux_version_code	src/nfsmount.c	/^linux_version_code(void) {$/;"	f	file:
+list	include/extern.h	/^struct list$/;"	s
+load	src/watchdog.c	/^int softboot = FALSE, watchdog = -1, load = -1, mem = -1, temp = -1;$/;"	v
+lock	src/fstab.c	/^static int lock = -1;$/;"	v	file:
+lock_mtab	src/fstab.c	/^lock_mtab (void) {$/;"	f
+log_end	src/shutdown.c	/^static void log_end()$/;"	f	file:
+log_end	src/wd_keepalive.c	/^static void log_end()$/;"	f	file:
+logtick	src/watchdog.c	/^int tint = 10, logtick = 1, ticker = 1, schedprio = 1;$/;"	v
+longopts	src/mount.c	/^static struct option longopts[] =$/;"	v	typeref:struct:option	file:
+longopts	src/umount.c	/^static struct option longopts[] =$/;"	v	typeref:struct:option	file:
+magic_known	src/mount.c	/^char *magic_known[] = { "minix", "ext", "ext2", "xiafs", "iso9660", "romfs",$/;"	v
+main	src/watchdog.c	/^int main(int argc, char *const argv[])$/;"	f
+main	src/wd_keepalive.c	/^int main(int argc, char *const argv[])$/;"	f
+main_but_defunct	src/mount.c	/^main_but_defunct (int argc, char *argv[]) {$/;"	f
+mangle	src/mntent.c	/^mangle(const char *s) {$/;"	f	file:
+mask	src/mount.c	/^  int  mask;			\/* flag mask value *\/$/;"	m	struct:opt_map	file:
+matching_type	src/sundries.c	/^matching_type (const char *type, string_list types) {$/;"	f
+maxload1	src/watchdog.c	/^int maxload1 = 0, maxload5 = 0, maxload15 = 0, minpages = 0;$/;"	v
+maxload15	src/watchdog.c	/^int maxload1 = 0, maxload5 = 0, maxload15 = 0, minpages = 0;$/;"	v
+maxload5	src/watchdog.c	/^int maxload1 = 0, maxload5 = 0, maxload15 = 0, minpages = 0;$/;"	v
+maxtemp	src/watchdog.c	/^int maxtemp = 120, hbstamps = 300, lastts, nrts;$/;"	v
+mem	src/watchdog.c	/^int softboot = FALSE, watchdog = -1, load = -1, mem = -1, temp = -1;$/;"	v
+minix_super_block	include/linux_fs.h	/^struct minix_super_block {$/;"	s
+minixmagic	include/linux_fs.h	16;"	d
+minpages	src/watchdog.c	/^int maxload1 = 0, maxload5 = 0, maxload15 = 0, minpages = 0;$/;"	v
+ml_directory	include/nfsmount.h	/^	dirpath ml_directory;$/;"	m	struct:mountbody
+ml_directory	src/nfsmount.h	/^	dirpath ml_directory;$/;"	m	struct:mountbody
+ml_hostname	include/nfsmount.h	/^	name ml_hostname;$/;"	m	struct:mountbody
+ml_hostname	src/nfsmount.h	/^	name ml_hostname;$/;"	m	struct:mountbody
+ml_next	include/nfsmount.h	/^	mountlist ml_next;$/;"	m	struct:mountbody
+ml_next	src/nfsmount.h	/^	mountlist ml_next;$/;"	m	struct:mountbody
+mlocked	src/watchdog.c	/^int mlocked = FALSE, realtime = FALSE;$/;"	v
+mlocked	src/wd_keepalive.c	/^int mlocked = FALSE, realtime = FALSE;$/;"	v
+mntFILE	include/wd_mntent.h	/^} mntFILE;$/;"	t	typeref:struct:mntFILEstruct
+mntFILEstruct	include/wd_mntent.h	/^typedef struct mntFILEstruct {$/;"	s
+mnt_dir	include/fstab.h	/^     char *mnt_dir;$/;"	m	struct:mntentchn
+mnt_fsname	include/fstab.h	/^     char *mnt_fsname;$/;"	m	struct:mntentchn
+mnt_off	src/shutdown.c	/^static void mnt_off()$/;"	f	file:
+mnt_opts	include/fstab.h	/^     char *mnt_opts;$/;"	m	struct:mntentchn
+mnt_type	include/fstab.h	/^     char *mnt_type;$/;"	m	struct:mntentchn
+mntent_errs	include/wd_mntent.h	/^	int mntent_errs;$/;"	m	struct:mntFILEstruct
+mntent_file	include/wd_mntent.h	/^	char *mntent_file;$/;"	m	struct:mntFILEstruct
+mntent_fp	include/wd_mntent.h	/^	FILE *mntent_fp;$/;"	m	struct:mntFILEstruct
+mntent_lineno	include/wd_mntent.h	/^	int mntent_lineno;$/;"	m	struct:mntFILEstruct
+mntent_softerrs	include/wd_mntent.h	/^	int mntent_softerrs;$/;"	m	struct:mntFILEstruct
+mntentchn	include/fstab.h	/^struct mntentchn {$/;"	s
+mount5	src/mount.c	/^mount5 (char *special, char *dir, char *type, int flags, void *data) {$/;"	f	file:
+mount_all	src/mount.c	/^mount_all (string_list types, char *options) {$/;"	f	file:
+mount_mount_quiet	src/mount.c	/^int mount_mount_quiet=0;$/;"	v
+mount_nomtab	src/mount.c	/^int mount_nomtab = 0;$/;"	v
+mount_one	src/mount.c	/^mount_one (char *spec, char *node, char *type, char *opts, char *cmdlineopts,$/;"	f
+mount_suid	src/mount.c	/^int mount_suid = 0;$/;"	v
+mount_usage_string	src/mount.c	/^const char *mount_usage_string = "\\$/;"	v
+mount_verbose	src/mount.c	/^int mount_verbose = 0;$/;"	v
+mountbody	include/nfsmount.h	/^struct mountbody {$/;"	s
+mountbody	include/nfsmount.h	/^typedef struct mountbody mountbody;$/;"	t	typeref:struct:mountbody
+mountbody	src/nfsmount.h	/^struct mountbody {$/;"	s
+mountbody	src/nfsmount.h	/^typedef struct mountbody mountbody;$/;"	t	typeref:struct:mountbody
+mountcount	src/mount.c	/^static int mountcount = 0;$/;"	v	file:
+mounted	src/mount.c	/^mounted (char *spec, char *node) {$/;"	f	file:
+mountinfo	src/nfsmount.h	/^		mountres3_ok mountinfo;$/;"	m	union:mountres3::__anon5
+mountlist	include/nfsmount.h	/^typedef struct mountbody *mountlist;$/;"	t	typeref:struct:mountbody
+mountlist	src/nfsmount.h	/^typedef struct mountbody *mountlist;$/;"	t	typeref:struct:mountbody
+mountproc_dump_1	src/nfsmount_clnt.c	/^mountproc_dump_1(argp, clnt)$/;"	f
+mountproc_dump_2	src/nfsmount_clnt.c	/^mountproc_dump_2(argp, clnt)$/;"	f
+mountproc_export_1	src/nfsmount_clnt.c	/^mountproc_export_1(argp, clnt)$/;"	f
+mountproc_export_2	src/nfsmount_clnt.c	/^mountproc_export_2(argp, clnt)$/;"	f
+mountproc_exportall_1	src/nfsmount_clnt.c	/^mountproc_exportall_1(argp, clnt)$/;"	f
+mountproc_exportall_2	src/nfsmount_clnt.c	/^mountproc_exportall_2(argp, clnt)$/;"	f
+mountproc_mnt_1	src/nfsmount_clnt.c	/^mountproc_mnt_1(argp, clnt)$/;"	f
+mountproc_mnt_2	src/nfsmount_clnt.c	/^mountproc_mnt_2(argp, clnt)$/;"	f
+mountproc_null_1	src/nfsmount_clnt.c	/^mountproc_null_1(argp, clnt)$/;"	f
+mountproc_null_2	src/nfsmount_clnt.c	/^mountproc_null_2(argp, clnt)$/;"	f
+mountproc_pathconf_2	src/nfsmount_clnt.c	/^mountproc_pathconf_2(argp, clnt)$/;"	f
+mountproc_umnt_1	src/nfsmount_clnt.c	/^mountproc_umnt_1(argp, clnt)$/;"	f
+mountproc_umnt_2	src/nfsmount_clnt.c	/^mountproc_umnt_2(argp, clnt)$/;"	f
+mountproc_umntall_1	src/nfsmount_clnt.c	/^mountproc_umntall_1(argp, clnt)$/;"	f
+mountproc_umntall_2	src/nfsmount_clnt.c	/^mountproc_umntall_2(argp, clnt)$/;"	f
+mountres3	src/nfsmount.h	/^struct mountres3 {$/;"	s
+mountres3	src/nfsmount.h	/^typedef struct mountres3 mountres3;$/;"	t	typeref:struct:mountres3
+mountres3_ok	src/nfsmount.h	/^struct mountres3_ok {$/;"	s
+mountres3_ok	src/nfsmount.h	/^typedef struct mountres3_ok mountres3_ok;$/;"	t	typeref:struct:mountres3_ok
+mountres3_u	src/nfsmount.h	/^	} mountres3_u;$/;"	m	struct:mountres3	typeref:union:mountres3::__anon5
+mountstat3	src/nfsmount.h	/^enum mountstat3 {$/;"	g
+mountstat3	src/nfsmount.h	/^typedef enum mountstat3 mountstat3;$/;"	t	typeref:enum:mountstat3
+mounttable	src/fstab.c	/^struct mntentchn mounttable, fstab;$/;"	v	typeref:struct:mntentchn
+mtab_does_not_exist	src/fstab.c	/^mtab_does_not_exist(void) {$/;"	f
+mtab_head	src/fstab.c	/^mtab_head() {$/;"	f
+mtab_is_a_symlink	src/fstab.c	/^mtab_is_a_symlink(void) {$/;"	f
+mtab_is_writable	src/fstab.c	/^mtab_is_writable() {$/;"	f
+mtime	include/extern.h	/^	int mtime;$/;"	m	struct:filemode
+mutter	src/lomount.c	/^mutter(void) {$/;"	f	file:
+my_addmntent	src/mntent.c	/^my_addmntent (mntFILE *mfp, struct mntent *mnt) {$/;"	f
+my_endmntent	src/mntent.c	/^my_endmntent (mntFILE *mfp) {$/;"	f
+my_getmntent	src/mntent.c	/^my_getmntent (mntFILE *mfp) {$/;"	f
+my_setmntent	src/mntent.c	/^my_setmntent (const char *file, char *mode) {$/;"	f
+name	include/extern.h	/^        char *name;$/;"	m	struct:list
+name	include/nfsmount.h	/^typedef char *name;$/;"	t
+name	src/lomount.c	/^  char *name;$/;"	m	struct:crypt_type_struct	file:
+name	src/nfsmount.h	/^typedef char *name;$/;"	t
+namlen	include/nfs_mount4.h	/^	int		namlen;			\/* 2 *\/$/;"	m	struct:nfs_mount_data
+need_escaping	src/mntent.c	/^static char need_escaping[] = { ' ', '\\t', '\\n', '\\\\' };$/;"	v	file:
+net	include/extern.h	/^        struct pingmode net;$/;"	m	union:wdog_options	typeref:struct:wdog_options::pingmode
+next	include/extern.h	/^        struct list *next;$/;"	m	struct:list	typeref:struct:list::list
+next	src/shutdown.c	/^    struct _proc_ *next;	\/* Pointer to next struct.        *\/$/;"	m	struct:_proc_	typeref:struct:_proc_::_proc_	file:
+next	src/test_binary.c	/^    struct process *next;$/;"	m	struct:process	typeref:struct:process::process	file:
+nfs2_fh	include/nfs_mount4.h	/^struct nfs2_fh {$/;"	s
+nfs3_fh	include/nfs_mount4.h	/^struct nfs3_fh {$/;"	s
+nfs_errtbl	src/nfsmount.c	/^} nfs_errtbl[] = {$/;"	v	typeref:struct:__anon6	file:
+nfs_mount_data	include/nfs_mount4.h	/^struct nfs_mount_data {$/;"	s
+nfs_mount_version	src/nfsmount.c	/^int nfs_mount_version = NFS_MOUNT_VERSION;$/;"	v
+nfs_strerror	src/nfsmount.c	/^static char *nfs_strerror(int stat)$/;"	f	file:
+nfs_umount_rpc_call	src/umount.c	/^nfs_umount_rpc_call(const char *spec, const char *opts)$/;"	f	file:
+nfsmount	src/nfsmount.c	/^int nfsmount(const char *spec, const char *node, int *flags,$/;"	f
+no_act	src/watchdog.c	/^static int no_act = FALSE;$/;"	v	file:
+nrts	src/watchdog.c	/^int maxtemp = 120, hbstamps = 300, lastts, nrts;$/;"	v
+nxt	include/fstab.h	/^     struct mntentchn *nxt, *prev;$/;"	m	struct:mntentchn	typeref:struct:mntentchn::mntentchn
+old_lockfile	src/fstab.c	/^static int old_lockfile = 1;$/;"	v	file:
+old_option	src/watchdog.c	/^static void old_option(int c, char *filename)$/;"	f	file:
+old_root	include/nfs_mount4.h	/^	struct nfs2_fh	old_root;		\/* 1 *\/$/;"	m	struct:nfs_mount_data	typeref:struct:nfs_mount_data::nfs2_fh
+opt	src/mount.c	/^  const char *opt;		\/* option name *\/$/;"	m	struct:opt_map	file:
+opt_encryption	src/mount.c	/^char *opt_loopdev, *opt_vfstype, *opt_offset, *opt_encryption;$/;"	v
+opt_loopdev	src/mount.c	/^char *opt_loopdev, *opt_vfstype, *opt_offset, *opt_encryption;$/;"	v
+opt_map	src/mount.c	/^const struct opt_map opt_map[] = {$/;"	v	typeref:struct:opt_map
+opt_map	src/mount.c	/^struct opt_map$/;"	s	file:
+opt_offset	src/mount.c	/^char *opt_loopdev, *opt_vfstype, *opt_offset, *opt_encryption;$/;"	v
+opt_vfstype	src/mount.c	/^char *opt_loopdev, *opt_vfstype, *opt_offset, *opt_encryption;$/;"	v
+optfork	src/mount.c	/^int optfork = 0;$/;"	v
+options	include/watchdog.h	/^	unsigned int options;		\/* Options the card\/driver supports *\/$/;"	m	struct:watchdog_info
+packet	include/extern.h	/^	unsigned char *packet;$/;"	m	struct:pingmode
+panic	src/shutdown.c	/^static void panic(void)$/;"	f	file:
+parameter	include/extern.h	/^        union wdog_options parameter;$/;"	m	struct:list	typeref:union:list::wdog_options
+parse_list	src/sundries.c	/^parse_list (char *strings) {$/;"	f
+parse_opt	src/mount.c	/^parse_opt (const char *opt, int *mask, char *extra_opts)$/;"	f	file:
+parse_opts	src/mount.c	/^parse_opts (char *opts, int *flags, char **extra_opts)$/;"	f	file:
+parse_string_opt	src/mount.c	/^parse_string_opt(char *s) {$/;"	f	file:
+pc_link_max	include/nfsmount.h	/^	int pc_link_max;$/;"	m	struct:ppathcnf
+pc_link_max	src/nfsmount.h	/^	int pc_link_max;$/;"	m	struct:ppathcnf
+pc_mask	include/nfsmount.h	/^	short pc_mask[2];$/;"	m	struct:ppathcnf
+pc_mask	src/nfsmount.h	/^	short pc_mask[2];$/;"	m	struct:ppathcnf
+pc_max_canon	include/nfsmount.h	/^	short pc_max_canon;$/;"	m	struct:ppathcnf
+pc_max_canon	src/nfsmount.h	/^	short pc_max_canon;$/;"	m	struct:ppathcnf
+pc_max_input	include/nfsmount.h	/^	short pc_max_input;$/;"	m	struct:ppathcnf
+pc_max_input	src/nfsmount.h	/^	short pc_max_input;$/;"	m	struct:ppathcnf
+pc_name_max	include/nfsmount.h	/^	short pc_name_max;$/;"	m	struct:ppathcnf
+pc_name_max	src/nfsmount.h	/^	short pc_name_max;$/;"	m	struct:ppathcnf
+pc_path_max	include/nfsmount.h	/^	short pc_path_max;$/;"	m	struct:ppathcnf
+pc_path_max	src/nfsmount.h	/^	short pc_path_max;$/;"	m	struct:ppathcnf
+pc_pipe_buf	include/nfsmount.h	/^	short pc_pipe_buf;$/;"	m	struct:ppathcnf
+pc_pipe_buf	src/nfsmount.h	/^	short pc_pipe_buf;$/;"	m	struct:ppathcnf
+pc_vdisable	include/nfsmount.h	/^	u_char pc_vdisable;$/;"	m	struct:ppathcnf
+pc_vdisable	src/nfsmount.h	/^	u_char pc_vdisable;$/;"	m	struct:ppathcnf
+pc_xxx	include/nfsmount.h	/^	char pc_xxx;$/;"	m	struct:ppathcnf
+pc_xxx	src/nfsmount.h	/^	char pc_xxx;$/;"	m	struct:ppathcnf
+pid	src/shutdown.c	/^    pid_t pid;			\/* Process ID.                    *\/$/;"	m	struct:_proc_	file:
+pid	src/test_binary.c	/^    pid_t pid;$/;"	m	struct:process	file:
+pid	src/watchdog.c	/^pid_t pid;$/;"	v
+pidfile	src/watchdog.c	/^struct list *file = NULL, *target = NULL, *pidfile = NULL, *iface = NULL;$/;"	v	typeref:struct:
+pingcount	src/watchdog.c	/^int pingcount = 3;$/;"	v
+pingmode	include/extern.h	/^struct pingmode$/;"	s
+plist	src/shutdown.c	/^static PROC *plist;$/;"	v	file:
+ppathcnf	include/nfsmount.h	/^struct ppathcnf {$/;"	s
+ppathcnf	include/nfsmount.h	/^typedef struct ppathcnf ppathcnf;$/;"	t	typeref:struct:ppathcnf
+ppathcnf	src/nfsmount.h	/^struct ppathcnf {$/;"	s
+ppathcnf	src/nfsmount.h	/^typedef struct ppathcnf ppathcnf;$/;"	t	typeref:struct:ppathcnf
+prev	include/fstab.h	/^     struct mntentchn *nxt, *prev;$/;"	m	struct:mntentchn	typeref:struct:mntentchn::
+print_all	src/mount.c	/^print_all (string_list types)$/;"	f	file:
+print_one	src/mount.c	/^print_one (const struct mntentchn *mc) {$/;"	f	file:
+procclose	src/mount.c	/^procclose(void) {$/;"	f	file:
+process	src/test_binary.c	/^struct process$/;"	s	file:
+process_head	src/test_binary.c	/^static struct process *process_head = NULL;$/;"	v	typeref:struct:process	file:
+procfs	src/mount.c	/^FILE *procfs;$/;"	v
+procnext	src/mount.c	/^procnext(void) {$/;"	f	file:
+procopen	src/mount.c	/^procopen(void) {$/;"	f	file:
+progname	src/watchdog.c	/^char *tempname = NULL, *devname = NULL, *admin = "root", *progname;$/;"	v
+progname	src/wd_keepalive.c	/^char *devname = NULL, *progname = NULL;$/;"	v
+prototypes	configure	/^   function prototypes and stuff, but not '\\xHH' hex character constants.$/;"	f
+rbinary	src/watchdog.c	/^char *tbinary, *rbinary, *admin;$/;"	v
+read_config	src/watchdog.c	/^static void read_config(char *filename, char *progname)$/;"	f	file:
+read_config	src/wd_keepalive.c	/^static void read_config(char *filename, char *progname)$/;"	f	file:
+read_fstab	src/fstab.c	/^read_fstab() {$/;"	f	file:
+read_mntentchn	src/fstab.c	/^read_mntentchn(mntFILE *mfp, const char *fnam, struct mntentchn *mc0) {$/;"	f	file:
+read_mounttable	src/fstab.c	/^read_mounttable() {$/;"	f	file:
+readonly	src/mount.c	/^int readonly = 0;$/;"	v
+readproc	src/shutdown.c	/^static int readproc()$/;"	f	file:
+readwrite	src/mount.c	/^int readwrite = 0;$/;"	v
+realtime	src/watchdog.c	/^int mlocked = FALSE, realtime = FALSE;$/;"	v
+realtime	src/wd_keepalive.c	/^int mlocked = FALSE, realtime = FALSE;$/;"	v
+remount	src/umount.c	/^int remount = 0;$/;"	v
+remove_process	src/test_binary.c	/^static void remove_process (pid_t pid)$/;"	f	file:
+repair	src/watchdog.c	/^static int repair(char *rbinary, int result, char *name)$/;"	f	file:
+ret2dog	src/shutdown.c	/^jmp_buf ret2dog;$/;"	v
+retrans	include/nfs_mount4.h	/^	int		retrans;		\/* 1 *\/$/;"	m	struct:nfs_mount_data
+root	include/nfs_mount4.h	/^	struct nfs3_fh	root;			\/* 4 *\/$/;"	m	struct:nfs_mount_data	typeref:struct:nfs_mount_data::nfs3_fh
+rsize	include/nfs_mount4.h	/^	int		rsize;			\/* 1 *\/$/;"	m	struct:nfs_mount_data
+s_boot_segment	include/linux_fs.h	/^    u_char     s_boot_segment[512];     \/*  1st sector reserved for boot *\/$/;"	m	struct:xiafs_super_block
+s_dummy	include/linux_fs.h	/^	u_char   s_dummy[16];$/;"	m	struct:minix_super_block
+s_dummy	include/linux_fs.h	/^	u_char   s_dummy[56];$/;"	m	struct:ext2_super_block
+s_dummy	include/linux_fs.h	/^	u_char   s_dummy[56];$/;"	m	struct:ext_super_block
+s_dummy	include/linux_fs.h	/^    u_char     s_dummy[0x55c];$/;"	m	struct:ufs_super_block
+s_dummy	include/linux_fs.h	/^    u_char     s_dummy[60];$/;"	m	struct:xiafs_super_block
+s_magic	include/linux_fs.h	/^	u_char   s_magic[2];$/;"	m	struct:ext2_super_block
+s_magic	include/linux_fs.h	/^	u_char   s_magic[2];$/;"	m	struct:ext_super_block
+s_magic	include/linux_fs.h	/^	u_char   s_magic[2];$/;"	m	struct:minix_super_block
+s_magic	include/linux_fs.h	/^    u_char     s_magic[4];$/;"	m	struct:ufs_super_block
+s_magic	include/linux_fs.h	/^    u_char     s_magic[4];$/;"	m	struct:xiafs_super_block
+schedprio	src/watchdog.c	/^int tint = 10, logtick = 1, ticker = 1, schedprio = 1;$/;"	v
+schedprio	src/wd_keepalive.c	/^int watchdog = -1, tint = 10, schedprio = 1;$/;"	v
+set_loop	src/lomount.c	/^set_loop (const char *device, const char *file, int offset,$/;"	f
+set_proc_name	src/mount.c	/^set_proc_name (char *spec)$/;"	f	file:
+setlkw_timeout	src/fstab.c	/^setlkw_timeout (int sig) {$/;"	f	file:
+sid	src/shutdown.c	/^    int sid;			\/* Session ID.                    *\/$/;"	m	struct:_proc_	file:
+sigterm_handler	src/shutdown.c	/^void sigterm_handler(int arg)$/;"	f
+sigterm_handler	src/wd_keepalive.c	/^void sigterm_handler(int arg) {$/;"	f
+size	include/nfs_mount4.h	/^        unsigned short          size;$/;"	m	struct:nfs3_fh
+skip	src/mount.c	/^  int  skip;			\/* skip in mtab option string *\/$/;"	m	struct:opt_map	file:
+skip	src/mount.c	/^  int skip;$/;"	m	struct:string_opt_map	file:
+skip_nonspaces	src/mntent.c	/^skip_nonspaces(char *s) {$/;"	f	file:
+skip_spaces	src/mntent.c	/^skip_spaces(char *s) {$/;"	f	file:
+sloppy	src/mount.c	/^int sloppy = 0;$/;"	v
+sock_fp	include/extern.h	/^	int sock_fp;$/;"	m	struct:pingmode
+softboot	src/watchdog.c	/^int softboot = FALSE, watchdog = -1, load = -1, mem = -1, temp = -1;$/;"	v
+spool	src/watchdog.c	/^static int spool(char *line, int *i, int offset)$/;"	f	file:
+spool	src/wd_keepalive.c	/^static int spool(char *line, int *i, int offset)$/;"	f	file:
+stat	src/nfsmount.c	/^	enum nfs_stat stat;$/;"	m	struct:__anon6	typeref:enum:__anon6::nfs_stat	file:
+streq	include/sundries.h	20;"	d
+streq	src/fstab.c	17;"	d	file:
+string_list	include/sundries.h	/^typedef struct string_list$/;"	s
+string_list	include/sundries.h	/^} *string_list;$/;"	t	typeref:struct:string_list
+string_opt_map	src/mount.c	/^struct string_opt_map {$/;"	s	file:
+string_opt_map	src/mount.c	/^} string_opt_map[] = {$/;"	v	typeref:struct:string_opt_map
+swapped	src/mount.c	/^swapped(unsigned short a) {$/;"	f	file:
+sync_system	src/watchdog.c	/^static int sync_system(int sync_it)$/;"	f	file:
+tag	src/mount.c	/^  char *tag;$/;"	m	struct:string_opt_map	file:
+target	src/watchdog.c	/^struct list *file = NULL, *target = NULL, *pidfile = NULL, *iface = NULL;$/;"	v	typeref:struct:
+tbinary	src/watchdog.c	/^char *tbinary, *rbinary, *admin;$/;"	v
+temp	src/watchdog.c	/^int softboot = FALSE, watchdog = -1, load = -1, mem = -1, temp = -1;$/;"	v
+tempname	src/watchdog.c	/^char *tempname = NULL, *devname = NULL, *admin = "root", *progname;$/;"	v
+terminate	src/shutdown.c	/^void terminate(void)$/;"	f
+terminate	src/wd_keepalive.c	/^void terminate(void) {$/;"	f
+tested	src/mount.c	/^tested(const char *device) {$/;"	f	file:
+this_was_main_int_mount_c	src/umount.c	/^this_was_main_int_mount_c (int argc, char *argv[])$/;"	f
+ticker	src/watchdog.c	/^int tint = 10, logtick = 1, ticker = 1, schedprio = 1;$/;"	v
+time	src/test_binary.c	/^    time_t time;$/;"	m	struct:process	file:
+timeo	include/nfs_mount4.h	/^	int		timeo;			\/* 1 *\/$/;"	m	struct:nfs_mount_data
+timeout	src/watchdog.c	/^time_t timeout = 0;$/;"	v
+timestamps	src/watchdog.c	/^char *timestamps, *heartbeat;$/;"	v
+tint	src/watchdog.c	/^int tint = 10, logtick = 1, ticker = 1, schedprio = 1;$/;"	v
+tint	src/wd_keepalive.c	/^int watchdog = -1, tint = 10, schedprio = 1;$/;"	v
+tl	include/sundries.h	/^  struct string_list *tl;$/;"	m	struct:string_list	typeref:struct:string_list::string_list
+to	include/extern.h	/^	struct sockaddr to;$/;"	m	struct:pingmode	typeref:struct:pingmode::sockaddr
+try_mount5	src/mount.c	/^try_mount5 (char *spec, char *node, char **type, int flags, char *mount_opts) {$/;"	f	file:
+try_mount_one	src/mount.c	/^try_mount_one (char *spec0, char *node0, char *type0, char *opts0,$/;"	f	file:
+type	include/linux_fs.h	/^	char type[ISODCL (  9,   9)]; \/* 711 *\/$/;"	m	struct:hs_volume_descriptor
+type	include/linux_fs.h	/^	char type[ISODCL(1,1)]; \/* 711 *\/$/;"	m	struct:iso_volume_descriptor
+ufs_super_block	include/linux_fs.h	/^struct ufs_super_block {$/;"	s
+ufsmagic	include/linux_fs.h	67;"	d
+umount_all	src/umount.c	/^umount_all (string_list types) {$/;"	f
+umount_mount_quiet	src/umount.c	/^int umount_mount_quiet = 0;$/;"	v
+umount_nomtab	src/umount.c	/^int umount_nomtab = 0;$/;"	v
+umount_one	src/umount.c	/^umount_one (const char *spec, const char *node, const char *type,$/;"	f	file:
+umount_suid	src/umount.c	/^int umount_suid = 0;$/;"	v
+umount_usage_string	src/umount.c	/^char *umount_usage_string = "\\$/;"	v
+umount_verbose	src/umount.c	/^int umount_verbose = 0;$/;"	v
+unlock_mtab	src/fstab.c	/^unlock_mtab (void) {$/;"	f
+unmangle	src/mntent.c	/^unmangle(char *s) {$/;"	f	file:
+update_mtab	src/fstab.c	/^update_mtab (const char *dir, struct mntent *instead) {$/;"	f
+usage	src/mount.c	/^usage (FILE *fp, int n)$/;"	f	file:
+usage	src/umount.c	/^usage (FILE *fp, int n)$/;"	f	file:
+usage	src/watchdog.c	/^static void usage(void)$/;"	f	file:
+usage	src/wd_keepalive.c	/^static void usage(void)$/;"	f	file:
+v_ifdown	src/ifdown.c	/^char *v_ifdown = "@(#)ifdown.c  1.10  21-Apr-1997  miquels@cistron.nl";$/;"	v
+valptr	src/mount.c	/^  char **valptr;$/;"	m	struct:string_opt_map	file:
+var_mtab_does_not_exist	src/fstab.c	/^static int var_mtab_does_not_exist = 0;$/;"	v	file:
+var_mtab_is_a_symlink	src/fstab.c	/^static int var_mtab_is_a_symlink = 0;$/;"	v	file:
+verbose	src/watchdog.c	/^int verbose = FALSE;$/;"	v
+version	include/linux_fs.h	/^	char version[ISODCL ( 15,  15)]; \/* 711 *\/$/;"	m	struct:hs_volume_descriptor
+version	include/linux_fs.h	/^	char version[ISODCL(7,7)];$/;"	m	struct:iso_volume_descriptor
+version	include/nfs_mount4.h	/^	int		version;		\/* 1 *\/$/;"	m	struct:nfs_mount_data
+version	src/version.c	/^char version[] = "mount-2.8a";$/;"	v
+watchdog	src/watchdog.c	/^int softboot = FALSE, watchdog = -1, load = -1, mem = -1, temp = -1;$/;"	v
+watchdog	src/wd_keepalive.c	/^int watchdog = -1, tint = 10, schedprio = 1;$/;"	v
+watchdog_info	include/watchdog.h	/^struct watchdog_info {$/;"	s
+wd_action	src/watchdog.c	/^static void wd_action(int result, char *rbinary, char *name)$/;"	f	file:
+wdog_options	include/extern.h	/^union wdog_options$/;"	u
+write_heartbeat	src/keep_alive.c	/^int write_heartbeat(void)$/;"	f
+wsize	include/nfs_mount4.h	/^	int		wsize;			\/* 1 *\/$/;"	m	struct:nfs_mount_data
+xdr_dir	src/umount.c	/^static int xdr_dir(XDR *xdrsp, char *dirp)$/;"	f	file:
+xdr_dirpath	src/nfsmount_xdr.c	/^xdr_dirpath (XDR *xdrs, dirpath *objp)$/;"	f
+xdr_exportnode	src/nfsmount_xdr.c	/^xdr_exportnode (XDR *xdrs, exportnode *objp)$/;"	f
+xdr_exports	src/nfsmount_xdr.c	/^xdr_exports (XDR *xdrs, exports *objp)$/;"	f
+xdr_fhandle	src/nfsmount_xdr.c	/^xdr_fhandle (XDR *xdrs, fhandle objp)$/;"	f
+xdr_fhandle3	src/nfsmount_xdr.c	/^xdr_fhandle3 (XDR *xdrs, fhandle3 *objp)$/;"	f
+xdr_fhstatus	src/nfsmount_xdr.c	/^xdr_fhstatus (XDR *xdrs, fhstatus *objp)$/;"	f
+xdr_groupnode	src/nfsmount_xdr.c	/^xdr_groupnode (XDR *xdrs, groupnode *objp)$/;"	f
+xdr_groups	src/nfsmount_xdr.c	/^xdr_groups (XDR *xdrs, groups *objp)$/;"	f
+xdr_mountbody	src/nfsmount_xdr.c	/^xdr_mountbody (XDR *xdrs, mountbody *objp)$/;"	f
+xdr_mountlist	src/nfsmount_xdr.c	/^xdr_mountlist (XDR *xdrs, mountlist *objp)$/;"	f
+xdr_mountres3	src/nfsmount_xdr.c	/^xdr_mountres3 (XDR *xdrs, mountres3 *objp)$/;"	f
+xdr_mountres3_ok	src/nfsmount_xdr.c	/^xdr_mountres3_ok (XDR *xdrs, mountres3_ok *objp)$/;"	f
+xdr_mountstat3	src/nfsmount_xdr.c	/^xdr_mountstat3 (XDR *xdrs, mountstat3 *objp)$/;"	f
+xdr_name	src/nfsmount_xdr.c	/^xdr_name (XDR *xdrs, name *objp)$/;"	f
+xdr_ppathcnf	src/nfsmount_xdr.c	/^xdr_ppathcnf (XDR *xdrs, ppathcnf *objp)$/;"	f
+xiafs_super_block	include/linux_fs.h	/^struct xiafs_super_block {$/;"	s
+xiafsmagic	include/linux_fs.h	57;"	d
+xmalloc	src/sundries.c	/^xmalloc (size_t size) {$/;"	f
+xstrconcat2	src/sundries.c	/^xstrconcat2 (const char *s, const char *t) {$/;"	f
+xstrconcat3	src/sundries.c	/^xstrconcat3 (const char *s, const char *t, const char *u) {$/;"	f
+xstrconcat4	src/sundries.c	/^xstrconcat4 (const char *s, const char *t, const char *u, const char *v) {$/;"	f
+xstrdup	src/sundries.c	/^xstrdup (const char *s) {$/;"	f
+xstrndup	src/sundries.c	/^xstrndup (const char *s, int n) {$/;"	f

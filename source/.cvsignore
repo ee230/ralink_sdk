@@ -1,0 +1,7 @@
+.config
+.cvsignore
+.oldconfig
+autoconf.h
+config.in
+images
+romfs

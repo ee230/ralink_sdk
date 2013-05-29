@@ -1,0 +1,67 @@
+# Galician translation of watchdog's debconf templates
+# This file is distributed under the same license as the watchdog package.
+# Jacobo Tarrio <jtarrio@debian.org>, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: watchdog\n"
+"Report-Msgid-Bugs-To: meskes@debian.org\n"
+"POT-Creation-Date: 2007-07-16 08:48+0200\n"
+"PO-Revision-Date: 2007-07-02 17:48+0200\n"
+"Last-Translator: Jacobo Tarrio <jtarrio@debian.org>\n"
+"Language-Team: Galician <proxecto@trasno.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid "Start watchdog at boot time?"
+msgstr "¿Iniciar watchdog co ordenador?"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid ""
+"Please specify whether watchdog should be started as part of the boot "
+"process. This can be changed later by editing /etc/default/watchdog."
+msgstr ""
+"Indique se quere que watchdog se inicie coma unha parte do proceso de inicio "
+"do sistema. Isto pódese cambiar máis tarde editando /etc/default/watchdog."
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid "Restart watchdog on upgrades?"
+msgstr "¿Reiniciar watchdog ao actualizalo?"
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid ""
+"If the kernel is configured with the CONFIG_WATCHDOG_NOWAYOUT option (which "
+"is not the default setting), restarting watchdog will cause a spurious "
+"reboot (the kernel will assume that the watchdog daemon crashed)."
+msgstr ""
+"Se o núcleo está configurado coa opción CONFIG_WATCHDOG_NOWAYOUT (que non é "
+"a opción por defecto), reiniciar watchdog ha facer que se reinicie o sistema "
+"(o núcleo ha supoñer que o servizo watchdog fallou)."
+
+#. Type: string
+#. Description
+#: ../templates:4001
+msgid "Watchdog module to preload:"
+msgstr "Módulo de watchdog a precargar:"
+
+#. Type: string
+#. Description
+#: ../templates:4001
+msgid ""
+"Please choose which watchdog module should be preloaded before starting "
+"watchdog. The 'softdog' module should be suited for all installations. Enter "
+"'none' if you don't want the script to load a module."
+msgstr ""
+"Indique que modulo de watchdog se debe precargar antes de iniciar watchdig. "
+"O módulo \"softdog\" é válido para tódalas instalacións. Introduza \"none\" "
+"se non quere que o script cargue ningún módulo."

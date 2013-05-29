@@ -1,0 +1,70 @@
+This is the README file I have created that tell how to set up mpstat for an smp
+linux machine, and what is needed to run the ALPHA version of mpstat for Linux.
+
+
+System Requirements:
+	1) Linux 2.2.9 or later. Earlier version may need a patch (?) 
+	to show per cpu maj an min faults
+   
+	2) The /proc directory MUST exist
+
+	3) It is designed for SMP kernels, but may work with non SMP machines.
+
+	4) if kernel version is less thant 2.2.9 check for tsk->processor in 
+	/usr/src/linux-2.2.9/fs/proc/array.c
+
+Howto:
+	1) For 2.2 SMP kernel type make then make intsall.
+	If all goes well mpstat will be intsalled in /usr/bin.
+
+	2) For 2.4 kernel type make linux24 and then make install.
+
+	3) For 2.2.x non SMP kernels type make nosmp, then make install.
+	
+	4) For 2.4 non SMP kernels type make nosmp24, then make install.
+
+	If all goes well then you simple run mpstat like so
+
+	mpstat
+
+	or
+		
+	mpstat 5 
+
+	(where 5 is the number of seconds that you want it to display output 
+	for).
+
+Known Bugs:
+
+	None yet.
+
+Done:
+	1) displays the cpu id for smp kernels
+	2) displays major and minor faults per cpu.
+	3) displays %user,%system, and %idle times.
+	4) displays interrupts per CPU
+	5) displays context switches.
+
+Todo:
+	Currently not all data is split between the cpus
+
+	to get the following info from the kernel:
+
+	1) involuntary context switches 
+	2) thread migrations - I don't see this one happening as Linux
+	   treats threads as processes.
+	3) spins on mutexes (mutual exclusion locks )
+	4) reader/writer locks not aquired on first try 
+	5) system calls
+	6) percent wait time (or nice?)
+	7) context switches per cpu
+
+IF YOU CAN SUPPLY ME WITH ANY INFO ON ANY OF THESE AND HOW TO OBTAIN THIS INFO
+PLEASE EMAIL ME AND TELL ME HOW.
+
+please send questions or comments to 
+
+joeja@mindspring.com
+
+
+

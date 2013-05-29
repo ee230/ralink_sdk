@@ -1,0 +1,449 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.6	//
+ADMIN	watchdog.c	52;"	d	file:
+CC	Makefile	/^CC=\/opt\/buildroot-gcc342\/bin\/mipsel-linux-uclibc-gcc$/;"	m
+CHANGE	watchdog.c	53;"	d	file:
+DEVICE	watchdog.c	54;"	d	file:
+DEVICE	wd_keepalive.c	40;"	d	file:
+DEVICE_TIMEOUT	watchdog.c	55;"	d	file:
+DISKMAJOR	mount.c	1051;"	d	file:
+DO_PS_FIDDLING	mount.c	71;"	d	file:
+EDQUOT	nfsmount.c	789;"	d	file:
+EXE	Makefile	/^EXE = watchdog wd_keepalive$/;"	m
+FALSE	wd_keepalive.c	38;"	d	file:
+FHSIZE	nfsmount.h	56;"	d
+FHSIZE3	nfsmount.h	57;"	d
+FILENAME	watchdog.c	56;"	d	file:
+FREEMEM	memory.c	19;"	d	file:
+FREESWAP	memory.c	20;"	d	file:
+HAVE_inet_aton	nfsmount.c	60;"	d	file:
+HBSTAMPS	watchdog.c	75;"	d	file:
+HEARTBEAT	watchdog.c	74;"	d	file:
+INTERFACE	watchdog.c	57;"	d	file:
+INTERVAL	watchdog.c	58;"	d	file:
+INTERVAL	wd_keepalive.c	41;"	d	file:
+LOGTICK	watchdog.c	59;"	d	file:
+MAKE_VERSION	nfsmount.c	71;"	d	file:
+MAXLOAD1	watchdog.c	60;"	d	file:
+MAXLOAD15	watchdog.c	62;"	d	file:
+MAXLOAD5	watchdog.c	61;"	d	file:
+MAXTEMP	watchdog.c	63;"	d	file:
+MAX_IFS	ifdown.c	28;"	d	file:
+MAX_NFSPROT	nfsmount.c	73;"	d	file:
+MINMEM	watchdog.c	64;"	d	file:
+MNT3ERR_ACCES	nfsmount.h	/^	MNT3ERR_ACCES = 13,$/;"	e	enum:mountstat3
+MNT3ERR_INVAL	nfsmount.h	/^	MNT3ERR_INVAL = 22,$/;"	e	enum:mountstat3
+MNT3ERR_IO	nfsmount.h	/^	MNT3ERR_IO = 5,$/;"	e	enum:mountstat3
+MNT3ERR_NAMETOOLONG	nfsmount.h	/^	MNT3ERR_NAMETOOLONG = 63,$/;"	e	enum:mountstat3
+MNT3ERR_NOENT	nfsmount.h	/^	MNT3ERR_NOENT = 2,$/;"	e	enum:mountstat3
+MNT3ERR_NOTDIR	nfsmount.h	/^	MNT3ERR_NOTDIR = 20,$/;"	e	enum:mountstat3
+MNT3ERR_NOTSUPP	nfsmount.h	/^	MNT3ERR_NOTSUPP = 10004,$/;"	e	enum:mountstat3
+MNT3ERR_PERM	nfsmount.h	/^	MNT3ERR_PERM = 1,$/;"	e	enum:mountstat3
+MNT3ERR_SERVERFAULT	nfsmount.h	/^	MNT3ERR_SERVERFAULT = 10006,$/;"	e	enum:mountstat3
+MNTNAMLEN	nfsmount.h	55;"	d
+MNTPATHLEN	nfsmount.h	54;"	d
+MNT_OK	nfsmount.h	/^	MNT_OK = 0,$/;"	e	enum:mountstat3
+MOUNTPORT	nfsmount.h	53;"	d
+MOUNTPROC3_DUMP	nfsmount.h	251;"	d
+MOUNTPROC3_DUMP	nfsmount.h	272;"	d
+MOUNTPROC3_EXPORT	nfsmount.h	260;"	d
+MOUNTPROC3_EXPORT	nfsmount.h	281;"	d
+MOUNTPROC3_MNT	nfsmount.h	248;"	d
+MOUNTPROC3_MNT	nfsmount.h	269;"	d
+MOUNTPROC3_NULL	nfsmount.h	245;"	d
+MOUNTPROC3_NULL	nfsmount.h	266;"	d
+MOUNTPROC3_UMNT	nfsmount.h	254;"	d
+MOUNTPROC3_UMNT	nfsmount.h	275;"	d
+MOUNTPROC3_UMNTALL	nfsmount.h	257;"	d
+MOUNTPROC3_UMNTALL	nfsmount.h	278;"	d
+MOUNTPROC_DUMP	nfsmount.h	159;"	d
+MOUNTPROC_DUMP	nfsmount.h	183;"	d
+MOUNTPROC_EXPORT	nfsmount.h	168;"	d
+MOUNTPROC_EXPORT	nfsmount.h	192;"	d
+MOUNTPROC_EXPORTALL	nfsmount.h	171;"	d
+MOUNTPROC_EXPORTALL	nfsmount.h	195;"	d
+MOUNTPROC_MNT	nfsmount.h	156;"	d
+MOUNTPROC_MNT	nfsmount.h	180;"	d
+MOUNTPROC_NULL	nfsmount.h	153;"	d
+MOUNTPROC_NULL	nfsmount.h	177;"	d
+MOUNTPROC_PATHCONF	nfsmount.h	217;"	d
+MOUNTPROC_PATHCONF	nfsmount.h	237;"	d
+MOUNTPROC_UMNT	nfsmount.h	162;"	d
+MOUNTPROC_UMNT	nfsmount.h	186;"	d
+MOUNTPROC_UMNTALL	nfsmount.h	165;"	d
+MOUNTPROC_UMNTALL	nfsmount.h	189;"	d
+MOUNTPROG	nfsmount.h	149;"	d
+MOUNTVERS	nfsmount.h	150;"	d
+MOUNTVERS_POSIX	nfsmount.h	200;"	d
+MOUNT_V3	nfsmount.h	242;"	d
+MS_LOOP	mount.c	122;"	d	file:
+MS_NOAUTO	mount.c	120;"	d	file:
+MS_NOMTAB	mount.c	128;"	d	file:
+MS_NOSYS	mount.c	125;"	d	file:
+MS_SECURE	mount.c	131;"	d	file:
+MS_USER	mount.c	121;"	d	file:
+NETDEV_LINE_LEN	iface.c	17;"	d	file:
+NFS_FHSIZE	nfsmount.c	66;"	d	file:
+NFS_PORT	nfsmount.c	63;"	d	file:
+NSIG	shutdown.c	48;"	d	file:
+OBJS	Makefile	/^OBJS = file_stat.o file_table.o fstab.o iface.o ifdown.o keep_alive.o load.o \\$/;"	m
+PING	watchdog.c	66;"	d	file:
+PINGCOUNT	watchdog.c	67;"	d	file:
+PRIORITY	watchdog.c	68;"	d	file:
+PRIORITY	wd_keepalive.c	42;"	d	file:
+PROC	shutdown.c	/^} PROC;$/;"	t	typeref:struct:_proc_	file:
+PROC_DEVICES	lomount.c	7;"	d	file:
+PROC_FILESYSTEMS	mount.c	68;"	d	file:
+PROC_MOUNTS	fstab.c	19;"	d	file:
+PROC_NAME	mount.c	74;"	d	file:
+REALTIME	watchdog.c	69;"	d	file:
+REALTIME	wd_keepalive.c	43;"	d	file:
+REPAIRBIN	watchdog.c	70;"	d	file:
+SERVERPIDFILE	watchdog.c	65;"	d	file:
+SIZE	mount.c	69;"	d	file:
+TEMP	watchdog.c	71;"	d	file:
+TESTBIN	watchdog.c	72;"	d	file:
+TESTTIMEOUT	watchdog.c	73;"	d	file:
+TIMEOUT	nfsmount_clnt.c	/^static struct timeval TIMEOUT = { 25, 0 };$/;"	v	typeref:struct:timeval	file:
+TRUE	wd_keepalive.c	37;"	d	file:
+_BSD_SOURCE	shutdown.c	8;"	d	file:
+_NFSMOUNT_H_RPCGEN	nfsmount.h	7;"	d
+_XOPEN_SOURCE	shutdown.c	7;"	d	file:
+__USE_GNU	watchdog.c	29;"	d	file:
+__USE_GNU	wd_keepalive.c	27;"	d	file:
+_proc_	shutdown.c	/^typedef struct _proc_ {$/;"	s	file:
+_rpcsvc_mount_h	nfsmount.h	51;"	d
+_running	watchdog.c	/^volatile sig_atomic_t _running = 1;$/;"	v
+_running	wd_keepalive.c	/^volatile sig_atomic_t _running = 1;$/;"	v
+add_list	watchdog.c	/^static void add_list(struct list **list, char *name)$/;"	f	file:
+add_process	test_binary.c	/^static void add_process (pid_t pid)$/;"	f	file:
+admin	watchdog.c	/^char *tbinary, *rbinary, *admin;$/;"	v
+admin	watchdog.c	/^char *tempname = NULL, *devname = NULL, *admin = "root", *progname;$/;"	v
+all	mount.c	/^int all = 0;$/;"	v
+already	mount.c	/^already (char *spec, char *node) {$/;"	f	file:
+argc0	mount.c	/^static int argc0;$/;"	v	file:
+argv0	mount.c	/^static char** argv0;$/;"	v	file:
+auth_flavours	nfsmount.h	/^	} auth_flavours;$/;"	m	struct:mountres3_ok	typeref:struct:mountres3_ok::__anon3
+auth_flavours_len	nfsmount.h	/^		u_int auth_flavours_len;$/;"	m	struct:mountres3_ok::__anon3
+auth_flavours_val	nfsmount.h	/^		int *auth_flavours_val;$/;"	m	struct:mountres3_ok::__anon3
+block_signals	sundries.c	/^block_signals (int how) {$/;"	f
+canonicalize	sundries.c	/^canonicalize (const char *path) {$/;"	f
+check_bin	test_binary.c	/^int check_bin(char *tbinary, time_t timeout)$/;"	f
+check_file_stat	file_stat.c	/^int check_file_stat(struct list *file)$/;"	f
+check_file_table	file_table.c	/^int check_file_table(void)$/;"	f
+check_iface	iface.c	/^int check_iface(struct list *dev)$/;"	f
+check_load	load.c	/^int check_load(void)$/;"	f
+check_memory	memory.c	/^int check_memory(void)$/;"	f
+check_net	net.c	/^int check_net(char *target, int sock_fp, struct sockaddr to, unsigned char *packet, int time, int count)$/;"	f
+check_pidfile	pidfile.c	/^int check_pidfile(struct list *file)$/;"	f
+check_processes	test_binary.c	/^static int check_processes (time_t timeout)$/;"	f	file:
+check_temp	temp.c	/^int check_temp(void)$/;"	f
+clear_string_opts	mount.c	/^clear_string_opts(void) {$/;"	f	file:
+close_all	shutdown.c	/^static void close_all()$/;"	f	file:
+close_all	wd_keepalive.c	/^static void close_all()$/;"	f	file:
+complain	umount.c	/^static void complain(int err, const char *dev) {$/;"	f	file:
+cons	sundries.c	/^cons (char *a, const string_list b) {$/;"	f
+create_mtab	mount.c	/^create_mtab (void) {$/;"	f	file:
+crypt_type	lomount.c	/^crypt_type (const char *name)$/;"	f	file:
+crypt_type_struct	lomount.c	/^struct crypt_type_struct {$/;"	s	file:
+crypt_type_tbl	lomount.c	/^} crypt_type_tbl[] = {$/;"	v	typeref:struct:crypt_type_struct
+del_loop	lomount.c	/^del_loop (const char *device) {$/;"	f
+del_loop	lomount.c	/^del_loop (const char *device)$/;"	f
+devname	watchdog.c	/^char *tempname = NULL, *devname = NULL, *admin = "root", *progname;$/;"	v
+devname	wd_keepalive.c	/^char *devname = NULL, *progname = NULL;$/;"	v
+devtimeout	watchdog.c	/^int devtimeout = TIMER_MARGIN;$/;"	v
+die	sundries.c	/^die (int err, const char *fmt, ...) {$/;"	f
+dirpath	nfsmount.h	/^typedef char *dirpath;$/;"	t
+do_check	watchdog.c	/^static void do_check(int res, char *rbinary, char *name)$/;"	f	file:
+do_shutdown	shutdown.c	/^void do_shutdown(int errorcode)$/;"	f
+envp0	mount.c	/^static char** envp0;$/;"	v	file:
+errnum	nfsmount.c	/^	int errnum;$/;"	m	struct:__anon5	file:
+error	sundries.c	/^error (const char *fmt, ...) {$/;"	f
+ex_dir	nfsmount.h	/^	dirpath ex_dir;$/;"	m	struct:exportnode
+ex_groups	nfsmount.h	/^	groups ex_groups;$/;"	m	struct:exportnode
+ex_next	nfsmount.h	/^	exports ex_next;$/;"	m	struct:exportnode
+exportnode	nfsmount.h	/^struct exportnode {$/;"	s
+exportnode	nfsmount.h	/^typedef struct exportnode exportnode;$/;"	t	typeref:struct:exportnode
+exports	nfsmount.h	/^typedef struct exportnode *exports;$/;"	t	typeref:struct:exportnode
+fake	mount.c	/^int fake = 0;$/;"	v
+fhandle	nfsmount.h	/^	fhandle3 fhandle;$/;"	m	struct:mountres3_ok
+fhandle	nfsmount.h	/^typedef char fhandle[FHSIZE];$/;"	t
+fhandle3	nfsmount.h	/^} fhandle3;$/;"	t	typeref:struct:__anon1
+fhandle3_len	nfsmount.h	/^	u_int fhandle3_len;$/;"	m	struct:__anon1
+fhandle3_val	nfsmount.h	/^	char *fhandle3_val;$/;"	m	struct:__anon1
+fhs_fhandle	nfsmount.h	/^		fhandle fhs_fhandle;$/;"	m	union:fhstatus::__anon2
+fhs_status	nfsmount.h	/^	mountstat3 fhs_status;$/;"	m	struct:mountres3
+fhs_status	nfsmount.h	/^	u_int fhs_status;$/;"	m	struct:fhstatus
+fhstatus	nfsmount.h	/^struct fhstatus {$/;"	s
+fhstatus	nfsmount.h	/^typedef struct fhstatus fhstatus;$/;"	t	typeref:struct:fhstatus
+fhstatus_u	nfsmount.h	/^	} fhstatus_u;$/;"	m	struct:fhstatus	typeref:union:fhstatus::__anon2
+file	watchdog.c	/^struct list *file = NULL, *target = NULL, *pidfile = NULL, *iface = NULL;$/;"	v	typeref:struct:list
+find_kernel_nfs_mount_version	nfsmount.c	/^find_kernel_nfs_mount_version(void) {$/;"	f	file:
+find_unused_loop_device	lomount.c	/^find_unused_loop_device (void) {$/;"	f
+find_unused_loop_device	lomount.c	/^find_unused_loop_device (void)$/;"	f
+fix_opts_string	mount.c	/^fix_opts_string (int flags, char *extra_opts)$/;"	f	file:
+force	umount.c	/^int force = 0;$/;"	v
+fstab	fstab.c	/^struct mntentchn mounttable, fstab;$/;"	v	typeref:struct:
+fstab_head	fstab.c	/^fstab_head() {$/;"	f
+fstype	mount.c	/^fstype(const char *device)$/;"	f	file:
+get_mountport	nfsmount.c	/^get_mountport(struct sockaddr_in *server_addr,$/;"	f	file:
+get_mtab_info	fstab.c	/^get_mtab_info(void) {$/;"	f	file:
+getfsfile	fstab.c	/^getfsfile (const char *file) {$/;"	f
+getfsspec	fstab.c	/^getfsspec (const char *spec)$/;"	f
+getmntfile	fstab.c	/^getmntfile (const char *name) {$/;"	f
+getmntoptfile	fstab.c	/^getmntoptfile (const char *file)$/;"	f
+got_fstab	fstab.c	/^static int got_fstab = 0;$/;"	v	file:
+got_mtab	fstab.c	/^static int got_mtab = 0;$/;"	v	file:
+gr_name	nfsmount.h	/^	name gr_name;$/;"	m	struct:groupnode
+gr_next	nfsmount.h	/^	groups gr_next;$/;"	m	struct:groupnode
+groupnode	nfsmount.h	/^struct groupnode {$/;"	s
+groupnode	nfsmount.h	/^typedef struct groupnode groupnode;$/;"	t	typeref:struct:groupnode
+groups	nfsmount.h	/^typedef struct groupnode *groups;$/;"	t	typeref:struct:groupnode
+handler	fstab.c	/^handler (int sig) {$/;"	f	file:
+have_mtab_info	fstab.c	/^static int have_mtab_info = 0;$/;"	v	file:
+hb	watchdog.c	/^FILE *hb;$/;"	v
+hbstamps	watchdog.c	/^int maxtemp = 120, hbstamps = 300, lastts, nrts;$/;"	v
+heartbeat	watchdog.c	/^char *timestamps, *heartbeat;$/;"	v
+id	lomount.c	/^  int id;$/;"	m	struct:crypt_type_struct	file:
+iface	watchdog.c	/^struct list *file = NULL, *target = NULL, *pidfile = NULL, *iface = NULL;$/;"	v	typeref:struct:
+ifdown	ifdown.c	/^int ifdown(void)$/;"	f
+in_cksum	net.c	/^static int in_cksum(unsigned short *addr, int len)$/;"	f	file:
+inv	mount.c	/^  int  inv;			\/* true if flag value should be inverted *\/$/;"	m	struct:opt_map	file:
+is_in_proc	mount.c	/^is_in_proc(char *type) {$/;"	f	file:
+is_space_or_tab	mntent.c	/^is_space_or_tab (char c) {$/;"	f	file:
+isoctal	mntent.c	68;"	d	file:
+keep_alive	keep_alive.c	/^int keep_alive(void)$/;"	f
+killall5	shutdown.c	/^static void killall5(int sig)$/;"	f	file:
+lastts	watchdog.c	/^int maxtemp = 120, hbstamps = 300, lastts, nrts;$/;"	v
+linux_version_code	nfsmount.c	/^linux_version_code(void) {$/;"	f	file:
+load	watchdog.c	/^int softboot = FALSE, watchdog = -1, load = -1, mem = -1, temp = -1;$/;"	v
+lock	fstab.c	/^static int lock = -1;$/;"	v	file:
+lock_mtab	fstab.c	/^lock_mtab (void) {$/;"	f
+log_end	shutdown.c	/^static void log_end()$/;"	f	file:
+log_end	wd_keepalive.c	/^static void log_end()$/;"	f	file:
+logtick	watchdog.c	/^int tint = 10, logtick = 1, ticker = 1, schedprio = 1;$/;"	v
+longopts	mount.c	/^static struct option longopts[] =$/;"	v	typeref:struct:option	file:
+longopts	umount.c	/^static struct option longopts[] =$/;"	v	typeref:struct:option	file:
+magic_known	mount.c	/^char *magic_known[] = { "minix", "ext", "ext2", "xiafs", "iso9660", "romfs",$/;"	v
+main	watchdog.c	/^int main(int argc, char *const argv[])$/;"	f
+main	wd_keepalive.c	/^int main(int argc, char *const argv[])$/;"	f
+main_but_defunct	mount.c	/^main_but_defunct (int argc, char *argv[]) {$/;"	f
+mangle	mntent.c	/^mangle(const char *s) {$/;"	f	file:
+mask	mount.c	/^  int  mask;			\/* flag mask value *\/$/;"	m	struct:opt_map	file:
+matching_type	sundries.c	/^matching_type (const char *type, string_list types) {$/;"	f
+maxload1	watchdog.c	/^int maxload1 = 0, maxload5 = 0, maxload15 = 0, minpages = 0;$/;"	v
+maxload15	watchdog.c	/^int maxload1 = 0, maxload5 = 0, maxload15 = 0, minpages = 0;$/;"	v
+maxload5	watchdog.c	/^int maxload1 = 0, maxload5 = 0, maxload15 = 0, minpages = 0;$/;"	v
+maxtemp	watchdog.c	/^int maxtemp = 120, hbstamps = 300, lastts, nrts;$/;"	v
+mem	watchdog.c	/^int softboot = FALSE, watchdog = -1, load = -1, mem = -1, temp = -1;$/;"	v
+minpages	watchdog.c	/^int maxload1 = 0, maxload5 = 0, maxload15 = 0, minpages = 0;$/;"	v
+ml_directory	nfsmount.h	/^	dirpath ml_directory;$/;"	m	struct:mountbody
+ml_hostname	nfsmount.h	/^	name ml_hostname;$/;"	m	struct:mountbody
+ml_next	nfsmount.h	/^	mountlist ml_next;$/;"	m	struct:mountbody
+mlocked	watchdog.c	/^int mlocked = FALSE, realtime = FALSE;$/;"	v
+mlocked	wd_keepalive.c	/^int mlocked = FALSE, realtime = FALSE;$/;"	v
+mnt_off	shutdown.c	/^static void mnt_off()$/;"	f	file:
+mount5	mount.c	/^mount5 (char *special, char *dir, char *type, int flags, void *data) {$/;"	f	file:
+mount_all	mount.c	/^mount_all (string_list types, char *options) {$/;"	f	file:
+mount_mount_quiet	mount.c	/^int mount_mount_quiet=0;$/;"	v
+mount_nomtab	mount.c	/^int mount_nomtab = 0;$/;"	v
+mount_one	mount.c	/^mount_one (char *spec, char *node, char *type, char *opts, char *cmdlineopts,$/;"	f
+mount_suid	mount.c	/^int mount_suid = 0;$/;"	v
+mount_usage_string	mount.c	/^const char *mount_usage_string = "\\$/;"	v
+mount_verbose	mount.c	/^int mount_verbose = 0;$/;"	v
+mountbody	nfsmount.h	/^struct mountbody {$/;"	s
+mountbody	nfsmount.h	/^typedef struct mountbody mountbody;$/;"	t	typeref:struct:mountbody
+mountcount	mount.c	/^static int mountcount = 0;$/;"	v	file:
+mounted	mount.c	/^mounted (char *spec, char *node) {$/;"	f	file:
+mountinfo	nfsmount.h	/^		mountres3_ok mountinfo;$/;"	m	union:mountres3::__anon4
+mountlist	nfsmount.h	/^typedef struct mountbody *mountlist;$/;"	t	typeref:struct:mountbody
+mountproc_dump_1	nfsmount_clnt.c	/^mountproc_dump_1(argp, clnt)$/;"	f
+mountproc_dump_2	nfsmount_clnt.c	/^mountproc_dump_2(argp, clnt)$/;"	f
+mountproc_export_1	nfsmount_clnt.c	/^mountproc_export_1(argp, clnt)$/;"	f
+mountproc_export_2	nfsmount_clnt.c	/^mountproc_export_2(argp, clnt)$/;"	f
+mountproc_exportall_1	nfsmount_clnt.c	/^mountproc_exportall_1(argp, clnt)$/;"	f
+mountproc_exportall_2	nfsmount_clnt.c	/^mountproc_exportall_2(argp, clnt)$/;"	f
+mountproc_mnt_1	nfsmount_clnt.c	/^mountproc_mnt_1(argp, clnt)$/;"	f
+mountproc_mnt_2	nfsmount_clnt.c	/^mountproc_mnt_2(argp, clnt)$/;"	f
+mountproc_null_1	nfsmount_clnt.c	/^mountproc_null_1(argp, clnt)$/;"	f
+mountproc_null_2	nfsmount_clnt.c	/^mountproc_null_2(argp, clnt)$/;"	f
+mountproc_pathconf_2	nfsmount_clnt.c	/^mountproc_pathconf_2(argp, clnt)$/;"	f
+mountproc_umnt_1	nfsmount_clnt.c	/^mountproc_umnt_1(argp, clnt)$/;"	f
+mountproc_umnt_2	nfsmount_clnt.c	/^mountproc_umnt_2(argp, clnt)$/;"	f
+mountproc_umntall_1	nfsmount_clnt.c	/^mountproc_umntall_1(argp, clnt)$/;"	f
+mountproc_umntall_2	nfsmount_clnt.c	/^mountproc_umntall_2(argp, clnt)$/;"	f
+mountres3	nfsmount.h	/^struct mountres3 {$/;"	s
+mountres3	nfsmount.h	/^typedef struct mountres3 mountres3;$/;"	t	typeref:struct:mountres3
+mountres3_ok	nfsmount.h	/^struct mountres3_ok {$/;"	s
+mountres3_ok	nfsmount.h	/^typedef struct mountres3_ok mountres3_ok;$/;"	t	typeref:struct:mountres3_ok
+mountres3_u	nfsmount.h	/^	} mountres3_u;$/;"	m	struct:mountres3	typeref:union:mountres3::__anon4
+mountstat3	nfsmount.h	/^enum mountstat3 {$/;"	g
+mountstat3	nfsmount.h	/^typedef enum mountstat3 mountstat3;$/;"	t	typeref:enum:mountstat3
+mounttable	fstab.c	/^struct mntentchn mounttable, fstab;$/;"	v	typeref:struct:mntentchn
+mtab_does_not_exist	fstab.c	/^mtab_does_not_exist(void) {$/;"	f
+mtab_head	fstab.c	/^mtab_head() {$/;"	f
+mtab_is_a_symlink	fstab.c	/^mtab_is_a_symlink(void) {$/;"	f
+mtab_is_writable	fstab.c	/^mtab_is_writable() {$/;"	f
+mutter	lomount.c	/^mutter(void) {$/;"	f	file:
+my_addmntent	mntent.c	/^my_addmntent (mntFILE *mfp, struct mntent *mnt) {$/;"	f
+my_endmntent	mntent.c	/^my_endmntent (mntFILE *mfp) {$/;"	f
+my_getmntent	mntent.c	/^my_getmntent (mntFILE *mfp) {$/;"	f
+my_setmntent	mntent.c	/^my_setmntent (const char *file, char *mode) {$/;"	f
+name	lomount.c	/^  char *name;$/;"	m	struct:crypt_type_struct	file:
+name	nfsmount.h	/^typedef char *name;$/;"	t
+need_escaping	mntent.c	/^static char need_escaping[] = { ' ', '\\t', '\\n', '\\\\' };$/;"	v	file:
+next	shutdown.c	/^    struct _proc_ *next;	\/* Pointer to next struct.        *\/$/;"	m	struct:_proc_	typeref:struct:_proc_::_proc_	file:
+next	test_binary.c	/^    struct process *next;$/;"	m	struct:process	typeref:struct:process::process	file:
+nfs_errtbl	nfsmount.c	/^} nfs_errtbl[] = {$/;"	v	typeref:struct:__anon5	file:
+nfs_mount_version	nfsmount.c	/^int nfs_mount_version = NFS_MOUNT_VERSION;$/;"	v
+nfs_strerror	nfsmount.c	/^static char *nfs_strerror(int stat)$/;"	f	file:
+nfs_umount_rpc_call	umount.c	/^nfs_umount_rpc_call(const char *spec, const char *opts)$/;"	f	file:
+nfsmount	nfsmount.c	/^int nfsmount(const char *spec, const char *node, int *flags,$/;"	f
+no_act	watchdog.c	/^static int no_act = FALSE;$/;"	v	file:
+nrts	watchdog.c	/^int maxtemp = 120, hbstamps = 300, lastts, nrts;$/;"	v
+old_lockfile	fstab.c	/^static int old_lockfile = 1;$/;"	v	file:
+old_option	watchdog.c	/^static void old_option(int c, char *filename)$/;"	f	file:
+opt	mount.c	/^  const char *opt;		\/* option name *\/$/;"	m	struct:opt_map	file:
+opt_encryption	mount.c	/^char *opt_loopdev, *opt_vfstype, *opt_offset, *opt_encryption;$/;"	v
+opt_loopdev	mount.c	/^char *opt_loopdev, *opt_vfstype, *opt_offset, *opt_encryption;$/;"	v
+opt_map	mount.c	/^const struct opt_map opt_map[] = {$/;"	v	typeref:struct:opt_map
+opt_map	mount.c	/^struct opt_map$/;"	s	file:
+opt_offset	mount.c	/^char *opt_loopdev, *opt_vfstype, *opt_offset, *opt_encryption;$/;"	v
+opt_vfstype	mount.c	/^char *opt_loopdev, *opt_vfstype, *opt_offset, *opt_encryption;$/;"	v
+optfork	mount.c	/^int optfork = 0;$/;"	v
+panic	shutdown.c	/^static void panic(void)$/;"	f	file:
+parse_list	sundries.c	/^parse_list (char *strings) {$/;"	f
+parse_opt	mount.c	/^parse_opt (const char *opt, int *mask, char *extra_opts)$/;"	f	file:
+parse_opts	mount.c	/^parse_opts (char *opts, int *flags, char **extra_opts)$/;"	f	file:
+parse_string_opt	mount.c	/^parse_string_opt(char *s) {$/;"	f	file:
+pc_link_max	nfsmount.h	/^	int pc_link_max;$/;"	m	struct:ppathcnf
+pc_mask	nfsmount.h	/^	short pc_mask[2];$/;"	m	struct:ppathcnf
+pc_max_canon	nfsmount.h	/^	short pc_max_canon;$/;"	m	struct:ppathcnf
+pc_max_input	nfsmount.h	/^	short pc_max_input;$/;"	m	struct:ppathcnf
+pc_name_max	nfsmount.h	/^	short pc_name_max;$/;"	m	struct:ppathcnf
+pc_path_max	nfsmount.h	/^	short pc_path_max;$/;"	m	struct:ppathcnf
+pc_pipe_buf	nfsmount.h	/^	short pc_pipe_buf;$/;"	m	struct:ppathcnf
+pc_vdisable	nfsmount.h	/^	u_char pc_vdisable;$/;"	m	struct:ppathcnf
+pc_xxx	nfsmount.h	/^	char pc_xxx;$/;"	m	struct:ppathcnf
+pid	shutdown.c	/^    pid_t pid;			\/* Process ID.                    *\/$/;"	m	struct:_proc_	file:
+pid	test_binary.c	/^    pid_t pid;$/;"	m	struct:process	file:
+pid	watchdog.c	/^pid_t pid;$/;"	v
+pidfile	watchdog.c	/^struct list *file = NULL, *target = NULL, *pidfile = NULL, *iface = NULL;$/;"	v	typeref:struct:
+pingcount	watchdog.c	/^int pingcount = 3;$/;"	v
+plist	shutdown.c	/^static PROC *plist;$/;"	v	file:
+ppathcnf	nfsmount.h	/^struct ppathcnf {$/;"	s
+ppathcnf	nfsmount.h	/^typedef struct ppathcnf ppathcnf;$/;"	t	typeref:struct:ppathcnf
+print_all	mount.c	/^print_all (string_list types)$/;"	f	file:
+print_one	mount.c	/^print_one (const struct mntentchn *mc) {$/;"	f	file:
+procclose	mount.c	/^procclose(void) {$/;"	f	file:
+process	test_binary.c	/^struct process$/;"	s	file:
+process_head	test_binary.c	/^static struct process *process_head = NULL;$/;"	v	typeref:struct:process	file:
+procfs	mount.c	/^FILE *procfs;$/;"	v
+procnext	mount.c	/^procnext(void) {$/;"	f	file:
+procopen	mount.c	/^procopen(void) {$/;"	f	file:
+progname	watchdog.c	/^char *tempname = NULL, *devname = NULL, *admin = "root", *progname;$/;"	v
+progname	wd_keepalive.c	/^char *devname = NULL, *progname = NULL;$/;"	v
+rbinary	watchdog.c	/^char *tbinary, *rbinary, *admin;$/;"	v
+read_config	watchdog.c	/^static void read_config(char *filename, char *progname)$/;"	f	file:
+read_config	wd_keepalive.c	/^static void read_config(char *filename, char *progname)$/;"	f	file:
+read_fstab	fstab.c	/^read_fstab() {$/;"	f	file:
+read_mntentchn	fstab.c	/^read_mntentchn(mntFILE *mfp, const char *fnam, struct mntentchn *mc0) {$/;"	f	file:
+read_mounttable	fstab.c	/^read_mounttable() {$/;"	f	file:
+readonly	mount.c	/^int readonly = 0;$/;"	v
+readproc	shutdown.c	/^static int readproc()$/;"	f	file:
+readwrite	mount.c	/^int readwrite = 0;$/;"	v
+realtime	watchdog.c	/^int mlocked = FALSE, realtime = FALSE;$/;"	v
+realtime	wd_keepalive.c	/^int mlocked = FALSE, realtime = FALSE;$/;"	v
+remount	umount.c	/^int remount = 0;$/;"	v
+remove_process	test_binary.c	/^static void remove_process (pid_t pid)$/;"	f	file:
+repair	watchdog.c	/^static int repair(char *rbinary, int result, char *name)$/;"	f	file:
+ret2dog	shutdown.c	/^jmp_buf ret2dog;$/;"	v
+schedprio	watchdog.c	/^int tint = 10, logtick = 1, ticker = 1, schedprio = 1;$/;"	v
+schedprio	wd_keepalive.c	/^int watchdog = -1, tint = 10, schedprio = 1;$/;"	v
+set_loop	lomount.c	/^set_loop (const char *device, const char *file, int offset,$/;"	f
+set_proc_name	mount.c	/^set_proc_name (char *spec)$/;"	f	file:
+setlkw_timeout	fstab.c	/^setlkw_timeout (int sig) {$/;"	f	file:
+sid	shutdown.c	/^    int sid;			\/* Session ID.                    *\/$/;"	m	struct:_proc_	file:
+sigterm_handler	shutdown.c	/^void sigterm_handler(int arg)$/;"	f
+sigterm_handler	wd_keepalive.c	/^void sigterm_handler(int arg) {$/;"	f
+skip	mount.c	/^  int  skip;			\/* skip in mtab option string *\/$/;"	m	struct:opt_map	file:
+skip	mount.c	/^  int skip;$/;"	m	struct:string_opt_map	file:
+skip_nonspaces	mntent.c	/^skip_nonspaces(char *s) {$/;"	f	file:
+skip_spaces	mntent.c	/^skip_spaces(char *s) {$/;"	f	file:
+sloppy	mount.c	/^int sloppy = 0;$/;"	v
+softboot	watchdog.c	/^int softboot = FALSE, watchdog = -1, load = -1, mem = -1, temp = -1;$/;"	v
+spool	watchdog.c	/^static int spool(char *line, int *i, int offset)$/;"	f	file:
+spool	wd_keepalive.c	/^static int spool(char *line, int *i, int offset)$/;"	f	file:
+stat	nfsmount.c	/^	enum nfs_stat stat;$/;"	m	struct:__anon5	typeref:enum:__anon5::nfs_stat	file:
+streq	fstab.c	17;"	d	file:
+string_opt_map	mount.c	/^struct string_opt_map {$/;"	s	file:
+string_opt_map	mount.c	/^} string_opt_map[] = {$/;"	v	typeref:struct:string_opt_map
+swapped	mount.c	/^swapped(unsigned short a) {$/;"	f	file:
+sync_system	watchdog.c	/^static int sync_system(int sync_it)$/;"	f	file:
+tag	mount.c	/^  char *tag;$/;"	m	struct:string_opt_map	file:
+target	watchdog.c	/^struct list *file = NULL, *target = NULL, *pidfile = NULL, *iface = NULL;$/;"	v	typeref:struct:
+tbinary	watchdog.c	/^char *tbinary, *rbinary, *admin;$/;"	v
+temp	watchdog.c	/^int softboot = FALSE, watchdog = -1, load = -1, mem = -1, temp = -1;$/;"	v
+tempname	watchdog.c	/^char *tempname = NULL, *devname = NULL, *admin = "root", *progname;$/;"	v
+terminate	shutdown.c	/^void terminate(void)$/;"	f
+terminate	wd_keepalive.c	/^void terminate(void) {$/;"	f
+tested	mount.c	/^tested(const char *device) {$/;"	f	file:
+this_was_main_int_mount_c	umount.c	/^this_was_main_int_mount_c (int argc, char *argv[])$/;"	f
+ticker	watchdog.c	/^int tint = 10, logtick = 1, ticker = 1, schedprio = 1;$/;"	v
+time	test_binary.c	/^    time_t time;$/;"	m	struct:process	file:
+timeout	watchdog.c	/^time_t timeout = 0;$/;"	v
+timestamps	watchdog.c	/^char *timestamps, *heartbeat;$/;"	v
+tint	watchdog.c	/^int tint = 10, logtick = 1, ticker = 1, schedprio = 1;$/;"	v
+tint	wd_keepalive.c	/^int watchdog = -1, tint = 10, schedprio = 1;$/;"	v
+try_mount5	mount.c	/^try_mount5 (char *spec, char *node, char **type, int flags, char *mount_opts) {$/;"	f	file:
+try_mount_one	mount.c	/^try_mount_one (char *spec0, char *node0, char *type0, char *opts0,$/;"	f	file:
+umount_all	umount.c	/^umount_all (string_list types) {$/;"	f
+umount_mount_quiet	umount.c	/^int umount_mount_quiet = 0;$/;"	v
+umount_nomtab	umount.c	/^int umount_nomtab = 0;$/;"	v
+umount_one	umount.c	/^umount_one (const char *spec, const char *node, const char *type,$/;"	f	file:
+umount_suid	umount.c	/^int umount_suid = 0;$/;"	v
+umount_usage_string	umount.c	/^char *umount_usage_string = "\\$/;"	v
+umount_verbose	umount.c	/^int umount_verbose = 0;$/;"	v
+unlock_mtab	fstab.c	/^unlock_mtab (void) {$/;"	f
+unmangle	mntent.c	/^unmangle(char *s) {$/;"	f	file:
+update_mtab	fstab.c	/^update_mtab (const char *dir, struct mntent *instead) {$/;"	f
+usage	mount.c	/^usage (FILE *fp, int n)$/;"	f	file:
+usage	umount.c	/^usage (FILE *fp, int n)$/;"	f	file:
+usage	watchdog.c	/^static void usage(void)$/;"	f	file:
+usage	wd_keepalive.c	/^static void usage(void)$/;"	f	file:
+v_ifdown	ifdown.c	/^char *v_ifdown = "@(#)ifdown.c  1.10  21-Apr-1997  miquels@cistron.nl";$/;"	v
+valptr	mount.c	/^  char **valptr;$/;"	m	struct:string_opt_map	file:
+var_mtab_does_not_exist	fstab.c	/^static int var_mtab_does_not_exist = 0;$/;"	v	file:
+var_mtab_is_a_symlink	fstab.c	/^static int var_mtab_is_a_symlink = 0;$/;"	v	file:
+verbose	watchdog.c	/^int verbose = FALSE;$/;"	v
+version	version.c	/^char version[] = "mount-2.8a";$/;"	v
+watchdog	watchdog.c	/^int softboot = FALSE, watchdog = -1, load = -1, mem = -1, temp = -1;$/;"	v
+watchdog	wd_keepalive.c	/^int watchdog = -1, tint = 10, schedprio = 1;$/;"	v
+wd_action	watchdog.c	/^static void wd_action(int result, char *rbinary, char *name)$/;"	f	file:
+write_heartbeat	keep_alive.c	/^int write_heartbeat(void)$/;"	f
+xdr_dir	umount.c	/^static int xdr_dir(XDR *xdrsp, char *dirp)$/;"	f	file:
+xdr_dirpath	nfsmount_xdr.c	/^xdr_dirpath (XDR *xdrs, dirpath *objp)$/;"	f
+xdr_exportnode	nfsmount_xdr.c	/^xdr_exportnode (XDR *xdrs, exportnode *objp)$/;"	f
+xdr_exports	nfsmount_xdr.c	/^xdr_exports (XDR *xdrs, exports *objp)$/;"	f
+xdr_fhandle	nfsmount_xdr.c	/^xdr_fhandle (XDR *xdrs, fhandle objp)$/;"	f
+xdr_fhandle3	nfsmount_xdr.c	/^xdr_fhandle3 (XDR *xdrs, fhandle3 *objp)$/;"	f
+xdr_fhstatus	nfsmount_xdr.c	/^xdr_fhstatus (XDR *xdrs, fhstatus *objp)$/;"	f
+xdr_groupnode	nfsmount_xdr.c	/^xdr_groupnode (XDR *xdrs, groupnode *objp)$/;"	f
+xdr_groups	nfsmount_xdr.c	/^xdr_groups (XDR *xdrs, groups *objp)$/;"	f
+xdr_mountbody	nfsmount_xdr.c	/^xdr_mountbody (XDR *xdrs, mountbody *objp)$/;"	f
+xdr_mountlist	nfsmount_xdr.c	/^xdr_mountlist (XDR *xdrs, mountlist *objp)$/;"	f
+xdr_mountres3	nfsmount_xdr.c	/^xdr_mountres3 (XDR *xdrs, mountres3 *objp)$/;"	f
+xdr_mountres3_ok	nfsmount_xdr.c	/^xdr_mountres3_ok (XDR *xdrs, mountres3_ok *objp)$/;"	f
+xdr_mountstat3	nfsmount_xdr.c	/^xdr_mountstat3 (XDR *xdrs, mountstat3 *objp)$/;"	f
+xdr_name	nfsmount_xdr.c	/^xdr_name (XDR *xdrs, name *objp)$/;"	f
+xdr_ppathcnf	nfsmount_xdr.c	/^xdr_ppathcnf (XDR *xdrs, ppathcnf *objp)$/;"	f
+xmalloc	sundries.c	/^xmalloc (size_t size) {$/;"	f
+xstrconcat2	sundries.c	/^xstrconcat2 (const char *s, const char *t) {$/;"	f
+xstrconcat3	sundries.c	/^xstrconcat3 (const char *s, const char *t, const char *u) {$/;"	f
+xstrconcat4	sundries.c	/^xstrconcat4 (const char *s, const char *t, const char *u, const char *v) {$/;"	f
+xstrdup	sundries.c	/^xstrdup (const char *s) {$/;"	f
+xstrndup	sundries.c	/^xstrndup (const char *s, int n) {$/;"	f

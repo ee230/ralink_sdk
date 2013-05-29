@@ -1,0 +1,144 @@
+diff -BurN router/stupid-ftpdmips/ftpcommand.c gateway/stupid-ftpdmips/ftpcommand.c
+--- router/stupid-ftpdmips/ftpcommand.c	2004-11-11 10:32:33.000000000 +0300
++++ gateway/stupid-ftpdmips/ftpcommand.c	2005-05-12 21:41:53.164746320 +0400
+@@ -30,6 +30,7 @@
+ #endif
+ #include <signal.h>
+ #include <errno.h>
++#include <sys/sendfile.h>
+ 
+ #include "ftpcommand.h"
+ #include "stupid-ftpd.h"
+@@ -126,7 +127,7 @@
+ 
+   if (file[0]!=0) {
+     // Removed by PaN if ((fp=fopen(file,"r"))!=NULL) {
+-    if ((fp=open(file, O_RDONLY | O_SYNC | O_USBDEV)) >= 0) {
++    if ((fp=open(file, O_RDONLY)) >= 0) {
+       n=0;
+       // Removed by PaN while (fgets(buffer,sizeof(buffer)-1,fp)!=NULL) {
+       while ( read(fp,buffer,sizeof(buffer)-1) > 0 ) {
+@@ -201,7 +202,7 @@
+   cmd[strlen(allowed)]=0;
+ 
+ #ifdef DEBUG
+-  //printf("Comparing (%s) '%s'=='%s'\n",
++  printf("Comparing (%s) '%s'=='%s'\n",
+ 	 realchangeroot ? "real" : "virtual",
+ 	 cmd,allowed);
+ #endif
+@@ -513,7 +514,7 @@
+   struct hostent *hp;
+   // Removed by PaN FILE *fp;
+   int fp;
+-  char cmd[2048],path[2048];
++  char cmd[32768],path[2048];
+   unsigned long addr;
+   int soc;
+   unsigned int socksize,n;
+@@ -572,7 +573,7 @@
+   }
+   
+   // Removed by PaN if ((fp=fopen(path,"r"))==NULL) {
+-  if ((fp=open(path,O_RDONLY | O_SYNC | O_USBDEV )) < 0) { // Added by PaN
++  if ((fp=open(path,O_RDONLY)) < 0) { // Added by PaN
+     close(soc);
+     return RET_501;
+   }
+@@ -594,6 +595,20 @@
+     out_prompt();
+   }
+ 
++#if 0
++	if (transfertimeout) {
++		tv.tv_sec = transfertimeout;
++		tv.tv_usec = 0;
++		setsockopt(soc, SOL_SOCKET, SO_SNDTIMEO, &tv, sizeof(tv));
++	}
++
++	if (sendfile(soc, fp, NULL, bytestot - bytesnow) < 0) 
++	{
++		close(fp);
++		close(soc);
++		return RET_501;
++	}
++#else
+   tm_start=time(NULL)-1;
+   // Removed by PaN while ((n=fread(cmd,1,sizeof(cmd),fp))>0) {
+   while ((n=read(fp,cmd,sizeof(cmd)))>0) {
+@@ -627,7 +642,7 @@
+       }
+     }
+   }
+-
++#endif
+   // Removed by PaN fclose(fp);
+   close(fp);	// Added by PaN
+   
+@@ -641,7 +656,8 @@
+   struct hostent *hp;
+   //FILE *fp;
+   int fp;
+-  char cmd[2048],path[2048],path2[2048];
++  char cmd[32768],path[2048],path2[2048];
++  char *p = param;
+   unsigned long addr;
+   int soc,ret;
+   unsigned int socksize,n;
+@@ -654,12 +670,14 @@
+   if (pchild[nr]->pasvsock<=0 && pchild[nr]->dataport==0) return 1;
+   if (param==NULL) return 1;
+ 
+-  if (strrchr(param,'/'))
+-    param=strrchr(param,'/')+1;
++  if (strrchr(param,'/')) {
++    param=strrchr(param,'/');
++    *param++ = 0;
++  }
+   if (strlen(param)==0) return 1;
+ 
+   strcpy(cmd,".");
+-  if (checkpath(nr,cmd,path)) return 1;
++  if (checkpath(nr, (p == param) ? cmd : p,path)) return 1;
+ 
+   if (strlen(path)+strlen(param)+1>sizeof(path)) return 1;
+   strcat(path,param);
+@@ -697,7 +715,7 @@
+   /* overwrite protection */
+   if (!(pchild[nr]->perm & PERM_OVERWRITE)) {
+     // Removed by PaN fp=fopen(path,"r");
+-    fp=open(path, O_RDONLY | O_SYNC | O_USBDEV);	// Added by PaN
++    fp=open(path, O_RDONLY);	// Added by PaN
+     //Removed by PaN if (fp!=NULL) {
+     if (fp>=0) {	// Added by PaN
+       // Removed by PaN fclose(fp);
+@@ -741,7 +759,7 @@
+ #endif
+ 
+   // Removed by PaN if ((fp=fopen(path,"w"))==NULL) {
+-  if ((fp=open(path, O_WRONLY | O_CREAT | O_SYNC | O_USBDEV ))<0) {	// Added by PaN
++  if ((fp=open(path, O_WRONLY | O_CREAT | O_TRUNC, 0666))<0) {	// Added by PaN
+     close(soc);
+     return 1;
+   }
+@@ -1637,7 +1655,7 @@
+       kill_connection(nr);
+       break;
+     default:
+-      handle_suspects(nr);
++      user_return(nr,RET_503);
+       break;
+     }
+   }
+diff -BurN router/stupid-ftpdmips/stupid-ftpd.c gateway/stupid-ftpdmips/stupid-ftpd.c
+--- router/stupid-ftpdmips/stupid-ftpd.c	2004-11-11 10:32:33.000000000 +0300
++++ gateway/stupid-ftpdmips/stupid-ftpd.c	2005-01-27 23:42:04.000000000 +0300
+@@ -159,7 +159,7 @@
+       case USR_ONLINE:
+ 	if (pchild[n]->pid==0 || waitpid(pchild[n]->pid,NULL,WNOHANG)<0) {
+ 	  pchild[n]->pid=0;
+-	  if (t-pchild[n]->idletime>=idletimeout) {
++	  if (idletimeout && t-pchild[n]->idletime>=idletimeout) {
+ 	    handle_timeout(n);
+ 	  }
+ 	} else pchild[n]->idletime=t;

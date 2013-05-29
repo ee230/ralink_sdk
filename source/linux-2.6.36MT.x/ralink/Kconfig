@@ -1,0 +1,133 @@
+menu "Ralink Module"
+
+###########
+# Debuging
+###########
+source "drivers/net/rt_rdm/Kconfig"
+
+#############
+# Wire
+#############
+source "drivers/net/raeth/Kconfig"
+
+#############
+# Wireless
+#############
+menuconfig WIFI_DRIVER
+	bool "WiFi Driver Support"
+
+if WIFI_DRIVER
+choice
+	prompt "Choose First WiFi Interface"
+	config  FIRST_IF_NONE
+	bool "None"
+	config  FIRST_IF_RT3092
+	bool "RT3092"
+	depends on RT3090_AP || RT3090_AP_INCLUDE
+	config  FIRST_IF_RT5392
+	bool "RT5392"
+	depends on RT5392_AP || RT5392_AP_INCLUDE
+	config  FIRST_IF_RT5592
+	bool "RT5592"
+	depends on RT5592_AP || RT5592_AP_INCLUDE
+	config  FIRST_IF_RT3593
+	bool "RT3593"
+	depends on RT3593_AP || RT3593_AP_INCLUDE
+	config  FIRST_IF_RT3572
+	bool "RT3572"
+	depends on RT3572_AP || RT3572_AP_INCLUDE
+	config  FIRST_IF_RT5572
+	bool "RT5572"
+	depends on RT5572_AP || RT5572_AP_INCLUDE
+endchoice
+choice
+	prompt "Choose Second WiFi Interface"
+	config  SECOND_IF_NONE
+	bool "None"
+	config  SECOND_IF_RT3092
+	bool "RT3092"
+	depends on RT3090_AP || RT3090_AP_INCLUDE
+	config  SECOND_IF_RT5392
+	bool "RT5392"
+	depends on RT5392_AP || RT5392_AP_INCLUDE
+	config  SECOND_IF_RT5592
+	bool "RT5592"
+	depends on RT5592_AP || RT5592_AP_INCLUDE
+	config  SECOND_IF_RT3593
+	bool "RT3593"
+	depends on RT3593_AP || RT3593_AP_INCLUDE
+	config  SECOND_IF_RT3572
+	bool "RT3572"
+	depends on RT3572_AP || RT3572_AP_INCLUDE
+	config  SECOND_IF_RT5572
+	bool "RT5572"
+	depends on RT5572_AP || RT5572_AP_INCLUDE
+endchoice
+
+#source "drivers/net/wireless/RTPCI_ap/Kconfig"
+
+#source "drivers/net/wireless/RT3090_ap/Kconfig"
+
+#source "drivers/net/wireless/RT5392_ap/Kconfig"
+
+#source "drivers/net/wireless/RT5592_ap/Kconfig"
+
+#source "drivers/net/wireless/RT3593_ap/Kconfig"
+
+#source "drivers/net/wireless/RT3572_ap/Kconfig"
+
+#source "drivers/net/wireless/RT5572_ap/Kconfig"
+
+config  RT_FIRST_CARD
+	int
+	depends on ! FIRST_IF_NONE
+	default 3090 if FIRST_IF_RT3092
+	default 5392 if FIRST_IF_RT5392
+	default 5592 if FIRST_IF_RT5592
+	default 3593 if FIRST_IF_RT3593
+	default 3572 if FIRST_IF_RT3572
+	default 5572 if FIRST_IF_RT5572
+
+config  RT_SECOND_CARD
+	int
+	depends on ! SECOND_IF_NONE
+	default 3090 if SECOND_IF_RT3092
+	default 5392 if SECOND_IF_RT5392
+	default 5592 if SECOND_IF_RT5592
+	default 3593 if SECOND_IF_RT3593
+	default 3572 if SECOND_IF_RT3572
+	default 5572 if SECOND_IF_RT5572
+
+config  RTDEV
+	bool
+	depends on ! SECOND_IF_NONE
+	default y
+
+config  RT_FIRST_IF_RF_OFFSET
+	hex
+	depends on ! FIRST_IF_NONE
+	default 0x40000
+
+config  RT_SECOND_IF_RF_OFFSET
+	hex
+	depends on ! SECOND_IF_NONE
+	default 0x48000
+
+endif # WIFI_DRIVER
+
+#######
+# NAT
+#######
+choice
+prompt "Ralink NAT Type"
+	
+config  RA_NAT_NONE
+bool "None"
+config  RA_NAT_HW
+bool "Hardware"
+endchoice
+
+source "net/nat/hw_nat/Kconfig"
+
+endmenu
+

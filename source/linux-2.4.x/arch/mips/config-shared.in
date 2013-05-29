@@ -1,0 +1,601 @@
+mainmenu_name "Linux/MIPS Kernel Configuration"
+
+mainmenu_option next_comment
+comment 'Code maturity level options'
+bool 'Prompt for development and/or incomplete code/drivers' CONFIG_EXPERIMENTAL
+endmenu
+
+mainmenu_option next_comment
+comment 'Loadable module support'
+bool 'Enable loadable module support' CONFIG_MODULES
+if [ "$CONFIG_MODULES" = "y" ]; then
+   bool '  Set version information on all module symbols' CONFIG_MODVERSIONS
+   bool '  Kernel module loader' CONFIG_KMOD
+fi
+endmenu
+
+#
+# Keep these alphabetically sorted
+#
+mainmenu_option next_comment
+comment 'Machine selection'
+
+bool 'Support for Ralink RT2880 board' CONFIG_RALINK_RT2880
+if [ "$CONFIG_RALINK_RT2880" = "y" ]; then
+
+          choice 'RT2880 Chip Type' \
+               "RT2880-FPGA  CONFIG_RT2880_FPGA\
+                RT2880-ASIC   CONFIG_RT2880_ASIC
+               " RT2880-ASIC
+
+	  choice 'DRAM Size' \
+	      "16M  CONFIG_RT2880_DRAM_16M \
+	       32M  CONFIG_RT2880_DRAM_32M \
+	       64M  CONFIG_RT2880_DRAM_64M 
+	      " 16M
+
+	  bool 'Dual Image' CONFIG_DUAL_IMAGE
+
+ 	  choice 'Flash Size' \
+	       "2M  CONFIG_RT2880_FLASH_2M \
+	        4M  CONFIG_RT2880_FLASH_4M \
+	        8M  CONFIG_RT2880_FLASH_8M \
+	        16M CONFIG_RT2880_FLASH_16M 
+	       " 4M
+   
+
+	  if [ "$CONFIG_RT2880_DRAM_16M" = "y" ]; then
+	     define_int CONFIG_RT2880_RAM_SIZE  16
+          elif  [ "$CONFIG_RT2880_DRAM_32M" = "y" ]; then
+	     define_int CONFIG_RT2880_RAM_SIZE  32
+          elif  [ "$CONFIG_RT2880_DRAM_64M" = "y" ]; then
+	     define_int CONFIG_RT2880_RAM_SIZE  64
+          else
+	     define_int CONFIG_RT2880_RAM_SIZE  16
+          fi
+
+	  if [ "$CONFIG_RT2880_FLASH_2M" = "y" ]; then
+	    define_hex CONFIG_MTD_PHYSMAP_START BFC00000
+	    define_hex CONFIG_MTD_PHYSMAP_LEN 200000
+	    define_int CONFIG_MTD_PHYSMAP_BUSWIDTH 2
+          elif  [ "$CONFIG_RT2880_FLASH_4M" = "y" ]; then
+	    define_hex CONFIG_MTD_PHYSMAP_START BFC00000
+	    define_hex CONFIG_MTD_PHYSMAP_LEN 400000
+	    define_int CONFIG_MTD_PHYSMAP_BUSWIDTH 2
+          elif  [ "$CONFIG_RT2880_FLASH_8M" = "y" ]; then
+	    define_hex CONFIG_MTD_PHYSMAP_START BF400000
+	    define_hex CONFIG_MTD_PHYSMAP_LEN 800000
+	    define_int CONFIG_MTD_PHYSMAP_BUSWIDTH 2
+          elif  [ "$CONFIG_RT2880_FLASH_16M" = "y" ]; then
+	    define_hex CONFIG_MTD_PHYSMAP_START BEC00000
+	    define_hex CONFIG_MTD_PHYSMAP_LEN 1000000
+	    define_int CONFIG_MTD_PHYSMAP_BUSWIDTH 2
+	  fi
+
+
+   choice 'RT2880 Root File System' \
+          "RootFS_in_Flash CONFIG_RT2880_ROOTFS_IN_FLASH \
+           RootFS_in_RAM   CONFIG_RT2880_ROOTFS_IN_RAM  \
+	   Manually	    CONFIG_RT2880_ROOTFS_MANUALLY
+	  "RootFS_in_RAM
+
+	   CONFIG_BLK_DEV_INITRD=$CONFIG_RT2880_ROOTFS_IN_RAM
+	   CONFIG_BLK_DEV_RAM=$CONFIG_RT2880_ROOTFS_IN_RAM
+	   CONFIG_EMBEDDED_RAMDISK=$CONFIG_RT2880_ROOTFS_IN_RAM
+
+  if [ "$CONFIG_RT2880_ROOTFS_IN_RAM" = "y" ]; then
+           define_bool CONFIG_CMDLINE_BOOL n
+           int '  Default RAM disk size' CONFIG_BLK_DEV_RAM_SIZE 8192
+  fi
+
+  if [ "$CONFIG_RT2880_ROOTFS_IN_FLASH" = "y" ]; then
+	   define_bool CONFIG_CMDLINE_BOOL n
+	   hex 'MTD Kernel Partition Size (Unit:Bytes)' CONFIG_MTD_KERNEL_PART_SIZ B0000
+  fi
+
+  if [ "$CONFIG_RT2880_ROOTFS_MANUALLY" = "y" ]; then
+           bool 'Default bootloader kernel arguments' CONFIG_CMDLINE_BOOL
+	   if [ "$CONFIG_CMDLINE_BOOL" = "y" ] ; then
+	   string 'Initial kernel command string' CONFIG_CMDLINE ""
+	   fi
+  fi
+
+
+  tristate 'Ralink Timer' CONFIG_RALINK_TIMER
+  dep_mbool 'Ralink WatchDog Timer' CONFIG_RALINK_TIMER_WDG $CONFIG_RALINK_TIMER
+
+  if [ "$CONFIG_RALINK_TIMER_WDG" != "n" ]; then
+      bool ' Ralink WatchDog Reset Output' RALINK_TIMER_WDG_RESET_OUTPUT
+      int  ' WatchDog Timer (Unit:1Sec, Max=30Sec)' CONFIG_RALINK_WDG_TIMER 10
+      int  ' Refresh Interval (Unit:1Sec, Max=30Sec)' CONFIG_RALINK_WDG_REFRESH_INTERVAL 4
+  fi
+
+  dep_mbool 'Ralink DFS Timer' CONFIG_RALINK_TIMER_DFS $CONFIG_RALINK_TIMER
+
+fi
+
+	      define_bool CONFIG_RWSEM_GENERIC_SPINLOCK y
+	      define_bool CONFIG_RWSEM_XCHGADD_ALGORITHM n
+
+#
+# Select some configuration options automatically based on user selections.
+#
+
+	      if [ "$CONFIG_RALINK_RT2880" = "y" ]; then
+	      define_bool CONFIG_SERIAL y
+	      define_bool CONFIG_NEW_TIME_C y
+	      define_bool CONFIG_UART_RT2880 y
+	      define_bool CONFIG_NONCOHERENT_IO y
+#  define_bool CONFIG_RALINK_RT2880_SHUTTLE y
+	      define_bool CONFIG_RALINK_RT2880_MP y
+	      fi
+
+	      endmenu
+
+	      mainmenu_option next_comment
+	      comment 'CPU selection'
+
+	      choice 'CPU type' \
+		  "MIPS32	CONFIG_CPU_MIPS32 \
+		  MIPS64	CONFIG_CPU_MIPS64 \
+		  R3000	CONFIG_CPU_R3000 \
+		  R39XX	CONFIG_CPU_TX39XX \
+		  R41xx	CONFIG_CPU_VR41XX \
+		  R4300	CONFIG_CPU_R4300 \
+		  R4x00	CONFIG_CPU_R4X00 \
+		  R49XX	CONFIG_CPU_TX49XX \
+		  R5000	CONFIG_CPU_R5000 \
+		  R5432	CONFIG_CPU_R5432 \
+		  R6000	CONFIG_CPU_R6000 \
+		  R52xx	CONFIG_CPU_NEVADA \
+		  R8000	CONFIG_CPU_R8000 \
+		  R10000	CONFIG_CPU_R10000 \
+		  RM7000	CONFIG_CPU_RM7000 \
+		  RM9000	CONFIG_CPU_RM9000 \
+		  SB1	CONFIG_CPU_SB1" R4x00
+
+		  if [ "$CONFIG_CPU_R3000" = "n" -a "$CONFIG_CPU_TX39XX" = "n" -a \
+		      "$CONFIG_EXPERIMENTAL" = "y" ]; then
+		      choice 'Kernel page size'					\
+			  "4KB                    CONFIG_PAGE_SIZE_4KB		\
+			  16KB                   CONFIG_PAGE_SIZE_16KB		\
+			  64KB                   CONFIG_PAGE_SIZE_64KB" 4KB
+			  else
+			  define_bool CONFIG_PAGE_SIZE_4KB y
+			  fi
+
+			  if [ "$CONFIG_SMP_CAPABLE" = "y" ]; then
+			  bool '  Multi-Processing support' CONFIG_SMP
+			  fi
+
+			  if [ "$CONFIG_CPU_MIPS32" = "y" -o "$CONFIG_CPU_MIPS64" = "y" ]; then
+			  define_bool CONFIG_CPU_HAS_PREFETCH y
+			  bool '  Support for Virtual Tagged I-cache' CONFIG_VTAG_ICACHE
+			  fi
+
+			  if [ "$CONFIG_CPU_RM7000" = "y" ]; then
+   define_bool CONFIG_BOARD_SCACHE y
+   define_bool CONFIG_CPU_HAS_PREFETCH y
+   define_bool CONFIG_RM7000_CPU_SCACHE y
+fi
+if [ "$CONFIG_CPU_RM9000" = "y" ]; then
+   define_bool CONFIG_BOARD_SCACHE y
+   define_bool CONFIG_CPU_HAS_PREFETCH y
+   define_bool CONFIG_RM7000_CPU_SCACHE y
+fi
+
+if [ "$CONFIG_CPU_SB1" = "y" ]; then
+   bool '  Use DMA to clear/copy pages' CONFIG_SIBYTE_DMA_PAGEOPS
+   # SB1 Pass-specific options
+   if [ "$CONFIG_CPU_SB1_PASS_1" = "y" ]; then
+      define_bool CONFIG_SB1_PASS_1_WORKAROUNDS y
+   fi
+   if [ "$CONFIG_CPU_SB1_PASS_2" = "y" ]; then
+      define_bool CONFIG_SB1_PASS_2_WORKAROUNDS y
+      define_bool CONFIG_SB1_PASS_2_1_WORKAROUNDS y
+   else
+      # Avoid prefetches on Pass 2 (before 2.2)
+      bool '  Enable prefetches' CONFIG_CPU_HAS_PREFETCH
+   fi
+   if [ "$CONFIG_CPU_SB1_PASS_2_2" = "y" ]; then
+      # XXXKW for now, let 2.2 use same WORKAROUNDS flag as pre-2.2
+      define_bool CONFIG_SB1_PASS_2_WORKAROUNDS y
+   fi
+
+   define_bool CONFIG_VTAG_ICACHE y
+fi
+
+if [ "$CONFIG_CPU_R4X00"  = "y" -o \
+     "$CONFIG_CPU_R5000"  = "y" -o \
+     "$CONFIG_CPU_RM7000" = "y" -o \
+     "$CONFIG_CPU_RM9000" = "y" -o \
+     "$CONFIG_CPU_R10000" = "y" -o \
+     "$CONFIG_CPU_SB1"    = "y" -o \
+     "$CONFIG_CPU_MIPS32" = "y" -o \
+     "$CONFIG_CPU_MIPS64" = "y" ]; then
+   dep_bool '  Support for 64-bit physical address space' CONFIG_64BIT_PHYS_ADDR $CONFIG_MIPS32
+fi
+
+dep_bool 'Override CPU Options' CONFIG_CPU_ADVANCED $CONFIG_MIPS32
+if [ "$CONFIG_CPU_ADVANCED" = "y" ]; then
+   bool '  ll/sc Instructions available' CONFIG_CPU_HAS_LLSC
+   bool '  lld/scd Instructions available' CONFIG_CPU_HAS_LLDSCD
+   bool '  Writeback Buffer available' CONFIG_CPU_HAS_WB
+else
+   if [ "$CONFIG_CPU_R3000"  = "y" -o \
+        "$CONFIG_CPU_VR41XX" = "y" -o \
+        "$CONFIG_CPU_TX39XX" = "y" ]; then
+      if [ "$CONFIG_DECSTATION" = "y" ]; then
+	 define_bool CONFIG_CPU_HAS_LLSC n
+	 define_bool CONFIG_CPU_HAS_LLDSCD n
+	 define_bool CONFIG_CPU_HAS_WB y
+      else
+	 define_bool CONFIG_CPU_HAS_LLSC n
+	 define_bool CONFIG_CPU_HAS_LLDSCD n
+	 define_bool CONFIG_CPU_HAS_WB n
+      fi
+   else
+      if [ "$CONFIG_CPU_MIPS32" = "y" ]; then
+	 define_bool CONFIG_CPU_HAS_LLSC y
+	 define_bool CONFIG_CPU_HAS_LLDSCD n
+	 define_bool CONFIG_CPU_HAS_WB n
+      else
+	 define_bool CONFIG_CPU_HAS_LLSC y
+	 define_bool CONFIG_CPU_HAS_LLDSCD y
+	 define_bool CONFIG_CPU_HAS_WB n
+      fi
+   fi
+fi
+if [ "$CONFIG_CPU_R3000" = "y" ]; then
+   define_bool CONFIG_CPU_HAS_SYNC n
+else
+   define_bool CONFIG_CPU_HAS_SYNC y
+fi
+endmenu
+
+#
+# Choose endianess of code to generate.  It's a frequent trap for users so the
+# config file tries it's best to choose the right endianess for those systems
+# where we know about their endianess.  We only ask the user for systems
+# known to be bi-endian; for those systems the defconfig file should defaults
+# to the common endianess used for that system.
+#
+mainmenu_option next_comment
+comment 'General setup'
+if [ "$CONFIG_ACER_PICA_61" = "y" -o \
+     "$CONFIG_CASIO_E55" = "y" -o \
+     "$CONFIG_DDB5074" = "y" -o \
+     "$CONFIG_DDB5476" = "y" -o \
+     "$CONFIG_DDB5477" = "y" -o \
+     "$CONFIG_DECSTATION" = "y" -o \
+     "$CONFIG_HP_LASERJET" = "y" -o \
+     "$CONFIG_IBM_WORKPAD" = "y" -o \
+     "$CONFIG_LASAT" = "y" -o \
+     "$CONFIG_MIPS_COBALT" = "y" -o \
+     "$CONFIG_MIPS_ITE8172" = "y" -o \
+     "$CONFIG_MIPS_IVR" = "y" -o \
+     "$CONFIG_MIPS_PB1000" = "y" -o \
+     "$CONFIG_MIPS_PB1100" = "y" -o \
+     "$CONFIG_MIPS_PB1500" = "y" -o \
+     "$CONFIG_MIPS_PB1550" = "y" -o \
+     "$CONFIG_MIPS_PB1200" = "y" -o \
+     "$CONFIG_MIPS_DB1000" = "y" -o \
+     "$CONFIG_MIPS_DB1100" = "y" -o \
+     "$CONFIG_MIPS_DB1500" = "y" -o \
+     "$CONFIG_MIPS_DB1550" = "y" -o \
+     "$CONFIG_MIPS_DB1200" = "y" -o \
+     "$CONFIG_NEC_OSPREY" = "y" -o \
+     "$CONFIG_NEC_EAGLE" = "y" -o \
+     "$CONFIG_NINO" = "y" -o \
+     "$CONFIG_OLIVETTI_M700" = "y" -o \
+     "$CONFIG_SNI_RM200_PCI" = "y" -o \
+     "$CONFIG_VICTOR_MPC30X" = "y" -o \
+     "$CONFIG_ZAO_CAPCELLA" = "y" ]; then
+   define_bool CONFIG_CPU_LITTLE_ENDIAN y
+else
+   if [ "$CONFIG_BAGET_MIPS" = "y" -o \
+	"$CONFIG_MIPS_EV64120" = "y" -o \
+	"$CONFIG_MIPS_EV96100" = "y" -o \
+	"$CONFIG_MOMENCO_OCELOT" = "y" -o \
+	"$CONFIG_MOMENCO_OCELOT_G" = "y" -o \
+	"$CONFIG_SGI_IP22" = "y" -o \
+	"$CONFIG_SGI_IP27" = "y" -o \
+	"$CONFIG_TOSHIBA_JMR3927" = "y" ]; then
+      define_bool CONFIG_CPU_LITTLE_ENDIAN n
+   else
+      bool 'Generate little endian code' CONFIG_CPU_LITTLE_ENDIAN
+   fi
+fi
+
+dep_bool 'Use 64-bit ELF format for building' CONFIG_BUILD_ELF64 $CONFIG_MIPS64
+
+if [ "$CONFIG_CPU_LITTLE_ENDIAN" = "n" ]; then
+   bool 'Include IRIX binary compatibility' CONFIG_BINFMT_IRIX
+fi
+
+if [ "$CONFIG_CPU_R10000" = "y" ]; then
+   dep_bool 'Support for large 64-bit configurations' CONFIG_MIPS_INSANE_LARGE $CONFIG_MIPS64
+fi
+
+if [ "$CONFIG_ARC32" = "y" ]; then
+   bool 'ARC console support' CONFIG_ARC_CONSOLE
+fi
+
+bool 'Networking support' CONFIG_NET
+
+if [ "$CONFIG_ACER_PICA_61" = "y" -o \
+     "$CONFIG_CASIO_E55" = "y" -o \
+     "$CONFIG_DECSTATION" = "y" -o \
+     "$CONFIG_IBM_WORKPAD" = "y" -o \
+     "$CONFIG_MIPS_MAGNUM_4000" = "y" -o \
+     "$CONFIG_MIPS_SEAD" = "y" -o \
+     "$CONFIG_NINO" = "y" -o \
+     "$CONFIG_OLIVETTI_M700" = "y" -o \
+     "$CONFIG_SGI_IP22" = "y" ]; then
+   define_bool CONFIG_PCI n
+else
+   bool 'PCI bus support' CONFIG_PCI
+   dep_bool '    New PCI bus code' CONFIG_PCI_NEW $CONFIG_PCI
+   if [ "$CONFIG_HP_LASERJET" = "y" -o \
+        "$CONFIG_LASAT" = "y" -o \
+        "$CONFIG_MIPS_ATLAS" = "y" -o \
+        "$CONFIG_MIPS_COBALT" = "y" -o \
+        "$CONFIG_MIPS_DB1000" = "y" -o \
+        "$CONFIG_MIPS_DB1100" = "y" -o \
+        "$CONFIG_MIPS_EV64120" = "y" -o \
+        "$CONFIG_MIPS_HYDROGEN3" = "y" -o \
+        "$CONFIG_MIPS_MALTA" = "y" -o \
+        "$CONFIG_MIPS_PB1100" = "y" -o \
+        "$CONFIG_MOMENCO_OCELOT" = "y" -o \
+        "$CONFIG_NEC_OSPREY" = "y" -o \
+        "$CONFIG_PMC_YOSEMITE" = "y" -o \
+        "$CONFIG_SIBYTE_SWARM" = "y" -o \
+	"$CONFIG_SNI_RM200_PCI" = "y" ]; then
+      define_bool CONFIG_PCI_AUTO n
+   else
+      define_bool CONFIG_PCI_AUTO y
+   fi
+fi
+if [ "$CONFIG_SIBYTE_SB1250" = "y" -o \
+     "$CONFIG_SIBYTE_BCM1125H" = "y" ]; then
+   if [ "$CONFIG_PCI" = "y" ]; then
+      define_bool CONFIG_SIBYTE_HAS_LDT y
+   fi
+fi
+
+if [ "$CONFIG_SGI_IP22" = "y" -o "$CONFIG_MIPS_MAGNUM_4000" = "y" -o \
+     "$CONFIG_OLIVETTI_M700" = "y" -o "$CONFIG_SNI_RM200_PCI" = "y" ]; then
+   bool 'EISA bus support' CONFIG_EISA
+fi
+
+source drivers/pci/Config.in
+
+if [ "$CONFIG_EISA" = "y" -a "$CONFIG_ISA" != "y" ]; then
+   define_bool CONFIG_ISA y
+fi
+if [ "$CONFIG_ISA" != "y" ]; then
+   define_bool CONFIG_ISA n
+fi
+
+dep_bool 'TURBOchannel support' CONFIG_TC $CONFIG_DECSTATION
+#dep_bool 'Access.Bus support' CONFIG_ACCESSBUS $CONFIG_TC
+
+define_bool CONFIG_MCA n
+define_bool CONFIG_SBUS n
+
+bool 'Support for hot-pluggable devices' CONFIG_HOTPLUG
+
+if [ "$CONFIG_HOTPLUG" = "y" ] ; then
+   source drivers/pcmcia/Config.in
+   source drivers/hotplug/Config.in
+else
+   define_bool CONFIG_PCMCIA n
+   define_bool CONFIG_HOTPLUG_PCI n
+fi
+
+bool 'System V IPC' CONFIG_SYSVIPC
+bool 'BSD Process Accounting' CONFIG_BSD_PROCESS_ACCT
+bool 'Sysctl support' CONFIG_SYSCTL
+define_bool CONFIG_KCORE_ELF y
+define_bool CONFIG_KCORE_AOUT n
+define_bool CONFIG_BINFMT_AOUT n
+bool 'Kernel support for ELF binaries' CONFIG_BINFMT_ELF
+dep_bool 'Kernel support for Linux/MIPS 32-bit binary compatibility' CONFIG_MIPS32_COMPAT $CONFIG_MIPS64
+dep_bool 'Kernel support for o32 binaries' CONFIG_MIPS32_O32 $CONFIG_MIPS32_COMPAT
+dep_bool 'Kernel support for n32 binaries' CONFIG_MIPS32_N32 $CONFIG_MIPS32_COMPAT
+if [ "$CONFIG_MIPS32_O32" = "y" -o \
+     "$CONFIG_MIPS32_N32" = "y" ]; then
+   define_bool CONFIG_BINFMT_ELF32 y
+else
+   define_bool CONFIG_BINFMT_ELF32 n
+fi
+
+tristate 'Kernel support for MISC binaries' CONFIG_BINFMT_MISC
+bool 'Select task to kill on out of memory condition' CONFIG_OOM_KILLER
+
+bool 'Default bootloader kernel arguments' CONFIG_CMDLINE_BOOL
+if [ "$CONFIG_CMDLINE_BOOL" = "y" ] ; then
+  string 'Initial kernel command string' CONFIG_CMDLINE ""
+fi
+
+if [ "$CONFIG_SOC_AU1X00" = "y" ]; then
+   bool 'Power Management support' CONFIG_PM
+fi
+endmenu
+
+source drivers/mtd/Config.in
+
+#added by Steven Liu
+source drivers/flash/Config.in
+#--
+
+source drivers/parport/Config.in
+
+source drivers/pnp/Config.in
+
+source drivers/block/Config.in
+if [ "$CONFIG_BLK_DEV_INITRD" = "y" ]; then
+   mainmenu_option next_comment
+   comment 'MIPS initrd options'
+   bool '  Embed root filesystem ramdisk into the kernel' CONFIG_EMBEDDED_RAMDISK
+   if [ "$CONFIG_EMBEDDED_RAMDISK" = "y" ]; then
+      string '    Filename of gziped ramdisk image' CONFIG_EMBEDDED_RAMDISK_IMAGE ramdisk.gz
+   fi
+   endmenu
+fi
+
+source drivers/md/Config.in
+
+if [ "$CONFIG_NET" = "y" ]; then
+   source net/Config.in
+fi
+
+source drivers/telephony/Config.in
+
+mainmenu_option next_comment
+comment 'ATA/IDE/MFM/RLL support'
+
+tristate 'ATA/IDE/MFM/RLL support' CONFIG_IDE
+
+if [ "$CONFIG_IDE" != "n" ]; then
+   source drivers/ide/Config.in
+else
+   define_bool CONFIG_BLK_DEV_HD n
+fi
+endmenu
+
+mainmenu_option next_comment
+comment 'SCSI support'
+
+tristate 'SCSI support' CONFIG_SCSI
+
+if [ "$CONFIG_SCSI" != "n" ]; then
+   source drivers/scsi/Config.in
+fi
+endmenu
+
+source drivers/message/fusion/Config.in
+
+source drivers/ieee1394/Config.in
+
+if [ "$CONFIG_PCI" = "y" -a "$CONFIG_MIPS32" = "y" ]; then
+   source drivers/message/i2o/Config.in
+fi
+
+if [ "$CONFIG_NET" = "y" ]; then
+   mainmenu_option next_comment
+   comment 'Network device support'
+
+   bool 'Network device support' CONFIG_NETDEVICES
+   if [ "$CONFIG_NETDEVICES" = "y" ]; then
+      source drivers/net/Config.in
+      if [ "$CONFIG_ATM" = "y" -o "$CONFIG_ATM" = "m" ]; then
+	 source drivers/atm/Config.in
+      fi
+   fi
+   endmenu
+fi
+
+source net/ax25/Config.in
+
+source net/irda/Config.in
+
+if [ "$CONFIG_NET" != "n" ]; then
+   mainmenu_option next_comment
+   comment 'ISDN subsystem'
+
+   tristate 'ISDN support' CONFIG_ISDN
+   if [ "$CONFIG_ISDN" != "n" ]; then
+      source drivers/isdn/Config.in
+   fi
+   endmenu
+fi
+
+if [ "$CONFIG_ISA" = "y" ]; then
+   mainmenu_option next_comment
+   comment 'Old CD-ROM drivers (not SCSI, not IDE)'
+
+   bool 'Support non-SCSI/IDE/ATAPI CDROM drives' CONFIG_CD_NO_IDESCSI
+   if [ "$CONFIG_CD_NO_IDESCSI" != "n" ]; then
+      source drivers/cdrom/Config.in
+   fi
+   endmenu
+fi
+
+#
+# input before char - char/joystick depends on it. As does USB.
+#
+source drivers/input/Config.in
+source drivers/char/Config.in
+
+#source drivers/misc/Config.in
+
+source fs/Config.in
+
+source drivers/media/Config.in
+
+if [ "$CONFIG_VT" = "y" ]; then
+   mainmenu_option next_comment
+   comment 'Console drivers'
+   bool 'VGA text console' CONFIG_VGA_CONSOLE
+   if [ "$CONFIG_SGI_IP22" = "y" ]; then
+      tristate 'SGI Newport Console support' CONFIG_SGI_NEWPORT_CONSOLE
+      if [ "$CONFIG_SGI_NEWPORT_CONSOLE" = "y" ]; then
+         define_bool CONFIG_FONT_8x16 y
+      fi
+      define_bool CONFIG_DUMMY_CONSOLE y
+   fi
+   if [ "$CONFIG_EXPERIMENTAL" = "y" ]; then
+      tristate 'MDA text console (dual-headed) (EXPERIMENTAL)' CONFIG_MDA_CONSOLE
+      source drivers/video/Config.in
+   fi
+   endmenu
+fi
+
+mainmenu_option next_comment
+comment 'Sound'
+
+tristate 'Sound card support' CONFIG_SOUND
+if [ "$CONFIG_SOUND" != "n" ]; then
+   source drivers/sound/Config.in
+fi
+endmenu
+
+source drivers/usb/Config.in
+
+source net/bluetooth/Config.in
+
+mainmenu_option next_comment
+comment 'Kernel hacking'
+
+bool 'Are you using a crosscompiler' CONFIG_CROSSCOMPILE
+bool 'Enable run-time debugging' CONFIG_RUNTIME_DEBUG
+bool 'Remote GDB kernel debugging' CONFIG_KGDB
+dep_bool '  Console output to GDB' CONFIG_GDB_CONSOLE $CONFIG_KGDB
+if [ "$CONFIG_KGDB" = "y" ]; then
+   define_bool CONFIG_DEBUG_INFO y
+else
+   bool 'Debugging symbols' CONFIG_DEBUG_INFO
+fi
+if [ "$CONFIG_SIBYTE_SB1xxx_SOC" = "y" ]; then
+   dep_bool 'Compile for Corelis Debugger' CONFIG_SB1XXX_CORELIS $CONFIG_DEBUG_INFO
+fi
+bool 'Magic SysRq key' CONFIG_MAGIC_SYSRQ
+if [ "$CONFIG_SMP" != "y" ]; then
+   bool 'Run uncached' CONFIG_MIPS_UNCACHED
+else
+   if [ "$CONFIG_MIPS32" = "y" ]; then
+      int  'Maximum number of CPUs (2-32)' CONFIG_NR_CPUS 32
+   else
+      if [ "$CONFIG_MIPS64" = "y" ]; then
+	 int  'Maximum number of CPUs (2-64)' CONFIG_NR_CPUS 64
+      fi
+   fi
+fi
+
+int 'Kernel messages buffer length shift (0 = default)' CONFIG_LOG_BUF_SHIFT 0
+
+endmenu
+
+source crypto/Config.in
+source lib/Config.in

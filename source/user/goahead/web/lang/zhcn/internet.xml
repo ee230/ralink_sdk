@@ -1,0 +1,182 @@
+<po>
+  <message msgid="inet apply" msgstr="确定" />
+  <message msgid="inet cancel" msgstr="取消" />
+  <message msgid="inet enable" msgstr="启用" />
+  <message msgid="inet disable" msgstr="停用" />
+
+  <message msgid="inet mac" msgstr="MAC 地址" />
+  <message msgid="inet ip" msgstr="IP 地址" />
+  <message msgid="inet server" msgstr="服务器 IP" />
+  <message msgid="inet netmask" msgstr="子网络遮罩" />
+  <message msgid="inet lan2" msgstr="局域网 2" />
+  <message msgid="inet lan2 ip" msgstr="局域网 2 IP 地址" />
+  <message msgid="inet lan2 netmask" msgstr="局域网 2 子网络遮罩" />
+  <message msgid="inet gateway" msgstr="预设信关" />
+  <message msgid="inet pri dns" msgstr="惯用 DNS 服务器" />
+  <message msgid="inet sec dns" msgstr="其他 DNS 服务器" />
+  <message msgid="inet user" msgstr="使用者名称" />
+  <message msgid="inet password" msgstr="口令" />
+  <message msgid="inet pass2" msgstr="确认口令" />
+  <message msgid="inet hostname" msgstr="网络名称" />
+
+  <message msgid="wan title" msgstr="广域网络设置" />
+  <message msgid="wan introduction" msgstr="您可以依您的环境选择适当的联机模式，并侦对不同的联机模式设置参数。" />
+  <message msgid="wan connection type" msgstr="广域网络联机模式:" />
+  <message msgid="wan connection type static" msgstr="静态 (固定 IP)" />
+  <message msgid="wan connection type dhcp" msgstr="动态 (自动取得)" />
+  <message msgid="wan connection type pppoe" msgstr="PPPoE (ADSL)" />
+  <message msgid="wan connection type l2tp" msgstr="L2TP" />
+  <message msgid="wan connection type pptp" msgstr="PPTP" />
+  <message msgid="wan protocol opmode" msgstr="运行模式" />
+  <message msgid="wan protocol opmode keepalive" msgstr="永久连线" />
+  <message msgid="wan protocol opmode ondemand" msgstr="动态需求" />
+  <message msgid="wan protocol opmode manual" msgstr="手动" />
+
+  <message msgid="wan static mode" msgstr="静态模式" />
+  <message msgid="wan dhcp mode" msgstr="DHCP 模式" />
+  <message msgid="wan pppoe mode" msgstr="PPPoE 模式" />
+  <message msgid="wan l2tp mode" msgstr="L2TP 模式" />
+  <message msgid="wan pptp mode" msgstr="PPTP 模式" />
+  <message msgid="wan 3G mode" msgstr="3G 模式" />
+  <message msgid="wan 3G modem" msgstr="USB 3G 调制解调器" />
+  <message msgid="wan address mode" msgstr="IP 地址模式" />
+  <message msgid="wan address mode static" msgstr="静态" />
+  <message msgid="wan address mode dynamic" msgstr="动态 " />
+  
+
+  <message msgid="wan mac clone" msgstr="MAC 复制" />
+
+  <message msgid="lan title" msgstr="局域网设置" />
+  <message msgid="lan introduction" msgstr="您可以启用/停止以及设置所有的网络功能。" />
+  <message msgid="lan setup" msgstr="局域网设置" />
+  <message msgid="lan dhcp type" msgstr="DHCP 类型" />
+  <message msgid="lan dhcp type server" msgstr="服务器" />
+  <message msgid="lan dhcp start" msgstr="起始 IP 地址" />
+  <message msgid="lan dhcp end" msgstr="结束 IP 地址" />
+  <message msgid="lan dhcp lease" msgstr="释放时间" />
+  <message msgid="lan dhcp static" msgstr="静态指定" />
+  <message msgid="lan stp" msgstr="802.1d Spanning Tree" />
+  <message msgid="lan lltd" msgstr="LLTD" />
+  <message msgid="lan igmpp" msgstr="IGMP Proxy" />
+  <message msgid="lan upnp" msgstr="UPNP" />
+  <message msgid="lan radvd" msgstr="Router Advertisement" />
+  <message msgid="lan pppoer" msgstr="PPPoE Relay" />
+  <message msgid="lan dnsp" msgstr="DNS Proxy" />
+
+  <message msgid="dhcp title" msgstr="DHCP 客户端列表" />
+  <message msgid="dhcp introduction" msgstr="您可以在此检视所有 DHCP 客户端。" />
+  <message msgid="dhcp clients" msgstr="DHCP 客户端" />
+  <message msgid="dhcp expire" msgstr="过期" />
+
+  <message msgid="vpn title" msgstr="VPN Passthrough" />
+  <message msgid="vpn introduction" msgstr="VPN passthrought 设置，包含: L2TP, IPSec, 以及 PPTP passthrough" />
+  <message msgid="vpn pass thru" msgstr="VPN Pass Through" />
+  <message msgid="vpn l2tp pass thru" msgstr="L2TP Passthrough" />
+  <message msgid="vpn ipsec pass thru" msgstr="IPSec Passthrough" />
+  <message msgid="vpn pptp pass thru" msgstr="PPTP Passthrough" />
+
+  <message msgid="routing title" msgstr="静态路由配置" />
+  <message msgid="routing Introduction" msgstr="您可以在此新增/移除订制的静态路由规则,或者启用动态路由规则交换协议" />
+  <message msgid="routing add rule" msgstr="新增静态路由规则" />
+  <message msgid="routing routing dest" msgstr="目标IP住址" />
+  <message msgid="routing range" msgstr="类型" />
+  <message msgid="routing netmask" msgstr="子网掩码" />
+  <message msgid="routing gateway" msgstr="闸道器IP住址" />
+  <message msgid="routing interface" msgstr="网络接口" />
+  <message msgid="routing custom" msgstr="订制" />
+  <message msgid="routing comment" msgstr="注解" />
+  <message msgid="routing submit" msgstr="提交" />
+  <message msgid="routing reset" msgstr="重置" />
+  <message msgid="routing Number" msgstr="編号" />
+  <message msgid="routing del title" msgstr="当前的路由规则" />
+  <message msgid="routing del dest" msgstr="目标IP住址" />
+  <message msgid="routing del netmask" msgstr="子网掩码" />
+  <message msgid="routing del gateway" msgstr="闸道器IP住址" />
+  <message msgid="routing del flags" msgstr="旗号" />
+  <message msgid="routing del metric" msgstr="路由度量" />
+  <message msgid="routing del ref" msgstr="参照" />
+  <message msgid="routing del use" msgstr="使用" />
+  <message msgid="routing del interface" msgstr="网络接口" />
+  <message msgid="routing del comment" msgstr="注解" />
+  <message msgid="routing del" msgstr="删除" />
+  <message msgid="routing del reset" msgstr="重置" />
+  <message msgid="routing host" msgstr="主机" />
+  <message msgid="routing net" msgstr="网络" />
+  <message msgid="routing LAN" msgstr="局部网络" />
+  <message msgid="routing WAN" msgstr="广域网络" />    
+
+  <message msgid="routing dynamic Title" msgstr="动态路由配置" />
+  <message msgid="routing dynamic Title2" msgstr="动态路由协议" />
+  <message msgid="routing dynamic rip disable" msgstr="停用" />
+  <message msgid="routing dynamic rip enable" msgstr="启用" />
+  <message msgid="routing dynamic rip apply" msgstr="确定" />
+  <message msgid="routing dynamic rip reset" msgstr="取消" />
+
+  <message msgid="qos title" msgstr="服务质量(QoS)" />
+  <message msgid="qos upload title" msgstr="QoS 上传設置" />
+  <message msgid="qos download title" msgstr="QoS 下传設置" />
+  <message msgid="qos model" msgstr="QoS 模式:" />
+  <message msgid="qos reservebandwidth" msgstr="保留带宽:" />
+  <message msgid="qos intro" msgstr="您可以此新增/移除服务质量(QoS)的规则,确保为每种流量提供的不同的带宽和优先权" />
+  <message msgid="qos setup" msgstr="服务质量(QoS)配置" />
+  <message msgid="qos str" msgstr="服务质量(QoS)" />
+  <message msgid="qos disable" msgstr="停用" />
+  <message msgid="qos enable" msgstr="启用" />
+  <message msgid="qos dscpmarkeronly" msgstr="DSCP only" />
+  <message msgid="qos enable bidirection" msgstr="Internet上下传" />
+  <message msgid="qos enable upload only" msgstr="上传到Internet" />
+  <message msgid="qos enable download only" msgstr="從Internet下载" />
+  <message msgid="qos portbased qos" msgstr="埠QoS模式" />
+  <message msgid="qos upload bandwidth" msgstr="上传带宽:" />
+  <message msgid="qos bandwidth custom" msgstr="自定义" />
+  <message msgid="qos download bandwidth" msgstr="下载带宽:" />
+  <message msgid="qos setup submit" msgstr="提交" />
+  <message msgid="qos setup reset" msgstr="重置" />
+  <message msgid="qos group" msgstr="群组" />
+  <message msgid="qos group attr" msgstr="属性" />
+  <message msgid="qos group modify" msgstr="修改" />
+  <message msgid="qos rule no" msgstr="编号" />
+  <message msgid="qos rule name" msgstr="名称" />
+  <message msgid="qos rule prio" msgstr="所属群组" />
+  <message msgid="qos rule info" msgstr="信息" />
+  <message msgid="qos loaddefault" msgstr="装载系统默认值" />
+  <message msgid="qos rule add" msgstr="新增上传規則" />
+  <message msgid="qos rule del" msgstr="选择删除" />
+  <message msgid="qos rule dl add" msgstr="新增下载規則" />
+  <message msgid="qos rule dl del" msgstr="选择刪除" />
+  <message msgid="qos Rate" msgstr="保证最小带宽:" />
+  <message msgid="qos Ceil" msgstr="可借用最大带宽:" />
+  <message msgid="qos AF Name" msgstr="群组名称" />
+  <message msgid="qos AF Upload Bandwidth" msgstr="% 的上传带宽" />
+  <message msgid="qos upload" msgstr="上传" />
+  <message msgid="qos download" msgstr="下载" />
+  <message msgid="qos port setup" msgstr="QoS埠設置" />
+  <message msgid="qos wifi" msgstr="无线网络" />
+  <message msgid="qos port0" msgstr="埠0" />
+  <message msgid="qos port1" msgstr="埠1" />
+  <message msgid="qos port2" msgstr="埠2" />
+  <message msgid="qos port3" msgstr="埠3" />
+  <message msgid="qos port4" msgstr="埠4" />  
+
+
+  <message msgid="qos Highest" msgstr="最高" />
+  <message msgid="qos High" msgstr="高" />
+  <message msgid="qos Default" msgstr="默认" />
+  <message msgid="qos Low" msgstr="最低" />
+
+  <message msgid="qos classifier title" msgstr="QoS规则設置" />
+  <message msgid="qos classifier name" msgstr="名称" />
+  <message msgid="qos classifier group" msgstr="所属群组" />
+  <message msgid="qos classifier mac" msgstr="MAC地址" />
+  <message msgid="qos classifier dip" msgstr="目的端IP地址" />
+  <message msgid="qos classifier sip" msgstr="来源端IP地址" />
+  <message msgid="qos classifier pktlen" msgstr="封包長度" />
+  <message msgid="qos classifier dscp" msgstr="DSCP" />
+  <message msgid="qos classifier proto" msgstr="协定" />
+  <message msgid="qos classifier dport" msgstr="目的端端口" />
+  <message msgid="qos classifier sport" msgstr="来源端端口" />
+  <message msgid="qos classifier l7" msgstr="应用" />
+  <message msgid="qos classifier remark" msgstr="重标志DSCP为:" />
+  <message msgid="qos classifier auto" msgstr="自动" />
+  <message msgid="qos classifier dir" msgstr="方向" />
+</po>

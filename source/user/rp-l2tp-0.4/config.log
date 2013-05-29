@@ -1,0 +1,61 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:529: checking for gcc
+configure:642: checking whether the C compiler (gcc  ) works
+configure:658: gcc -o conftest    conftest.c  1>&5
+configure:684: checking whether the C compiler (gcc  ) is a cross-compiler
+configure:689: checking whether we are using GNU C
+configure:698: gcc -E conftest.c
+configure:717: checking whether gcc accepts -g
+configure:779: checking for a BSD compatible install
+configure:834: checking for ranlib
+configure:863: checking for dlopen in -ldl
+configure:882: gcc -o conftest -g -O2   conftest.c -ldl   1>&5
+configure:911: checking how to run the C preprocessor
+configure:932: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:991: checking for ANSI C header files
+configure:1004: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1071: gcc -o conftest -g -O2   conftest.c -ldl  1>&5
+configure: In function 'main':
+configure:1066: warning: incompatible implicit declaration of built-in function 'exit'
+configure:1098: checking for fcntl.h
+configure:1108: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1098: checking for sys/ioctl.h
+configure:1108: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1098: checking for sys/time.h
+configure:1108: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1098: checking for syslog.h
+configure:1108: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1098: checking for unistd.h
+configure:1108: gcc -E  conftest.c >/dev/null 2>conftest.out
+configure:1136: checking for libevent directory
+configure:1152: checking for working const
+configure:1206: gcc -c -g -O2  conftest.c 1>&5
+configure:1227: checking for pid_t
+configure:1260: checking for size_t
+configure:1293: checking whether time.h and sys/time.h may both be included
+configure:1307: gcc -c -g -O2  conftest.c 1>&5
+configure:1330: checking whether gcc needs -traditional
+configure:1376: checking for 8-bit clean memcmp
+configure:1394: gcc -o conftest -g -O2   conftest.c -ldl  1>&5
+configure: In function 'main':
+configure:1389: warning: incompatible implicit declaration of built-in function 'exit'
+configure:1412: checking return type of signal handlers
+configure:1434: gcc -c -g -O2  conftest.c 1>&5
+configure:1453: checking for vprintf
+configure:1481: gcc -o conftest -g -O2   conftest.c -ldl  1>&5
+configure:1465: warning: conflicting types for built-in function 'vprintf'
+configure:1560: checking for gethostname
+configure:1588: gcc -o conftest -g -O2   conftest.c -ldl  1>&5
+configure:1560: checking for gettimeofday
+configure:1588: gcc -o conftest -g -O2   conftest.c -ldl  1>&5
+configure:1560: checking for socket
+configure:1588: gcc -o conftest -g -O2   conftest.c -ldl  1>&5
+configure:1560: checking for strdup
+configure:1588: gcc -o conftest -g -O2   conftest.c -ldl  1>&5
+configure:1572: warning: conflicting types for built-in function 'strdup'
+configure:1560: checking for strerror
+configure:1588: gcc -o conftest -g -O2   conftest.c -ldl  1>&5
+configure:1560: checking for strtol
+configure:1588: gcc -o conftest -g -O2   conftest.c -ldl  1>&5

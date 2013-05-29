@@ -1,0 +1,7 @@
+.cvsignore
+gdbserver
+gdbreplay
+mips-linux.c
+mips64-linux.c
+stamp-xml
+xml-builtin.c

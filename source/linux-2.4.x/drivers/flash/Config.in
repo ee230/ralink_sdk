@@ -1,0 +1,24 @@
+mainmenu_option next_comment
+comment 'Ralink Common Flash Driver'
+bool '    Ralink Common Flash R/W API' CONFIG_RALINK_FLASH_API
+if [ "$CONFIG_RALINK_FLASH_API" = "y" ]; then
+   comment '2MB Flash'
+   bool '    EON      EN29LV160A'    CONFIG_FLASH_EN29LV160A
+   bool '    Mxic     MX29LV160'     CONFIG_FLASH_MX29LV160
+   bool '    Spansion S29AL016X'     CONFIG_FLASH_S29AL016X
+   bool '    Samsung  K8D3X16U'      CONFIG_FLASH_K8D3X16U
+   comment '4MB Flash'
+   bool '    EON      EN29LV320'     CONFIG_FLASH_EN29LV320
+   bool '    Mxic     MX29LV320'     CONFIG_FLASH_MX29LV320
+   bool '    Spansion S29AL032X'     CONFIG_FLASH_S29AL032X
+   bool '    Spansion S29GL032N'     CONFIG_FLASH_S29GL032N
+   bool '    SST      SST39VF320X'   CONFIG_FLASH_SST39VF320X
+   bool '    ESMT     F49L320X'      CONFIG_FLASH_F49L320
+   comment '8MB Flash'
+   bool '    Mxic     MX29LV640'     CONFIG_FLASH_MX29LV640
+   bool '    Spansion S29GL064N'     CONFIG_FLASH_S29GL064N
+   comment '16MB Flash'
+   bool '    Mxic     MX29LV128'     CONFIG_FLASH_MX29LV128
+fi
+
+endmenu

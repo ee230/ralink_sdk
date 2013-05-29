@@ -1,0 +1,20 @@
+--- Makefile	Thu Jun 24 22:13:16 1999
++++ make	Sun Jul  4 00:50:12 1999
+@@ -9,7 +9,7 @@
+ INCLUDES = -I/usr/include/ncurses -I/usr/X11R6/include 
+ TARGET = mpstat
+ FILES = functions.c mpstat.c
+-INSTALLDIR = /usr/bin/
++INSTALLDIR = /var/tmp/mpstat-root/usr/bin/
+ 
+ all:
+ 	$(CC) $(OPTIMIZATIONS) $(INCLUDES) $(SMPFLAGS) $(CFLAGS) $(FILES) -o $(TARGET)
+@@ -18,7 +18,7 @@
+ 	$(CC) $(OPTIMIZATIONS) $(INCLUDES) $(CFLAGS) $(FILES) -o $(TARGET)
+ 
+ install:
+-	install $(TARGET) $(INSTALLDIR)
++	install -D $(TARGET) $(INSTALLDIR)
+ 
+ 
+ 

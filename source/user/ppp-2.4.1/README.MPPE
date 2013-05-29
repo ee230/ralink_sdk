@@ -1,0 +1,54 @@
+Just a few quick notes.
+
+MPPE support was started by Árpád Magosányi <mag@bunuel.tii.matav.hu>
+in 1994, and was finished by Tim Hockin, Cobalt Networks
+Inc. <thockin@cobaltnet.com> in 1999.  If you helped, and I don't know
+it (which could be) please notify the maintainer of this code, and it
+will be rectified.  As far as I know, only Linux is supported (sorry -
+it's all we had available).
+
+MPPE - Microsoft Point-to-Point Encryption uses rc4 (40 or 128 bit
+key) as a bi-directional encryption algorithm.  The rc4 session keys
+are based on your MS-CHAP authentication info, so you must use chapms
+or chapms-v2.  The session keys are derived from your MS-CHAP info
+using SHA, the Secure Hash Algorithm.
+
+This is NOT a particularly secure mode of operation, especially not
+when using MS-CHAP version 1.  For maximum possible security using
+MPPE, it is advised in the RFC's to use the highest mode of encryption
+that is legal, and to enable stateless mode (which renogotiates keys
+with every packet).  Even with these precautions, MPPE is not very
+secure, but anything is better than nothing, right?
+
+That said, it seems to work pretty well, for what it is.  MSChap-v2
+support was added by someone along the way, and MPPE needed some
+finishing.  It appears to work with Windows (tm) clients, with
+encryption specified.  It also works with a Windows server when
+pptp-linux is used as a VPN client in conjunction with this pppd.
+
+Copyright for some code is owned by Eric Young (see
+./include/openssl/sha.h for details).
+
+Rc4 is owned by RSA Data Security, and you may have to pay to use it,
+or not use it at all, depending on your place of residence.  No author
+listed in this file claims any responsibility for misuse of this
+software.  Since the ppp-2.4 package no longer includes scripts for
+patching the Linux kernel source, the kernel patches (which may
+include the rc4 implementation) are distributed in a separate patch.
+Pppd itself does not need rc4 because the encryption is implemented in
+a kernel "compression" module, not in pppd.
+
+How to use it:
+* Compile this pppd, and the associated kernel modules.
+* Add +chapms and/or +chapms-v2 to your pppd command line, unless you 
+    do not require the peer to authenticate itself to you.
+* Add mppe-40 and/or mppe-128 and/or mppe-stateless to your pppd command line.
+* Either load ppp_mppe.o manually or put this line in your /etc/conf.modules.
+	alias 	ppp-compress-18 	ppp_mppe
+* Go for it.
+
+
+For further reading:
+	Use the source, Luke.
+	draft-ietf-pppext-mppe-05.txt (any RFC site should have this)
+	draft-ietf-pppext-mppe-keys-03.txt (ditto)

@@ -1,0 +1,8 @@
+Is it better to do the memory test with real allocation?
+
+I got several bug reports that ping-mode does not work with IP_ALIASES. But since
+I found no way to reproduce this I saw no chance to fix it yet.
+
+Make softboot configurable via watchdog.conf.
+
+Test which applications are running.

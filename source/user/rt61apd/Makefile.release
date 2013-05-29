@@ -1,0 +1,11 @@
+all: rt61apd
+
+rt61apd: $(OBJS)
+	$(CC) -o rt61apd $(OBJS)
+
+clean:
+	rm -f core *~ *.o  *.d
+
+romfs:
+	$(ROMFSINST) /bin/rt61apd
+

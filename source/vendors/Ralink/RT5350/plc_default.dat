@@ -1,0 +1,11 @@
+#The word of "Default" must not be removed
+Default
+WebInit=1
+MacAddress=00:0C:43:11:22:33
+NPW=HomePlugAV
+DPW=3052-3883-3352-2880
+BackupCCo=0
+CCo=0
+UnAssoCCo=0
+STA=0
+UnAssoSTA=0

@@ -1,0 +1,8 @@
+#
+# /etc/sysconfig/watchdog
+#
+# Controls the behaviour of the watchdog
+#
+# VERBOSE  - Enables or disables verbose operation (logging to syslog)
+#
+VERBOSE=no

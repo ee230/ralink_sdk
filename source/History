@@ -1,0 +1,58 @@
+Ralink AP SDK - History
+
+Version 4.0.1.0
+===============
+
+- [IPv6] Avoid both eth2.2 and eth2 set same IPV6 address after receiving RA packet in gateway mode.
+- [IPv6] Fix HNAT misbinding issue (RT6855/6)
+- [IPv6] Fix ping fail(ping ::1) issue of loopback interface when we try to enable and disable disable_ipv6 parameter in /proc directory (RT6855/6)
+- [Switch] Fix legacy switch(RT3052/RT3352/RT5350) settings vlan 12345 error
+- [PPPoE] Kernel panic after PAP fail (RT6855/6)
+- [PPTP] Kernel panic after PPTP peer terminated the link (RT6855/6)
+- [SPI Flash] There are some noise if we try to program flash while I2S is playing music (RT3052/RT3883/RT3352/RT5350)
+- [GPIO] Fix GPIO interrupt handler cannot be trigged correctly (RT6855/6)
+- [GUI] Fix WPS bug for test plan
+- [NET] Recover irqs_disabled() check under SKB Recycle to fix warning messages, but it decreases RT6855/6's maximum peek throughput
+- [Uboot] RT6855/6 does watchdog reset at cold start to fix timer interrupt issue
+
+Version 4.0.0.0
+===============
+
+PLATFORM:
+
+- support RT3052/RT3883/RT3352/RT5350 (linux-2.6.21.x)
+- support RT6855/RT6856 (linux-2.6.36MT.x)
+
+NEW FUNCTIONS:
+
+- [IPv6 ready logo Phase II] RT6855/RT6856
+- [IPv6] support IPv6 Rapid Deployment
+- [IPv6] support IPv6 DS-Lite
+- [GUI] support two giga phy port
+- [GUI] display AP Client site_survey
+
+IMPROVEMENT:
+
+- [IPv6] support ipv6 tftp server
+- [PPTP/L2TP] performace tunning at Linux 2.6.21 (PPTP improve 25%, L2TP improve 10% compare to SDK 3.6)
+- [SAMBA] significant performance fine tune on full loading scenario (dual-band concurrent AP with USB access)
+- [NAND Flash] config page size and address cycle based on chip mode
+- [I2S] Add MMAP for user/kernel
+- [GUI] support WPS 2.0 
+
+Bug fixed:
+
+- [Kernel NVRAM] memory leakage / initiate failed / free cache / wirte data exceed 1024
+- [RAETH] fix STP drop issue on RT3052 chipst ONLY
+- [RAETH] fix switch abnormal after ifconfig down&up
+- [RAETH] fix PDMA hang issue under heavy load test
+- [RAETH] fix TSO bug if USB storage is enabled
+- [USB device] system will hang whiling loading gadget driver. Turning off power-saving on both port0 and port1
+- [USB device] force host to do re-enumeration to solve "unrecognize device" when re-plug-in in windows platform.
+- [IPv6] kernel panic bug if enable ipv6 privacy extension or router prereference
+- [IPv6] fix NS packet loss for ipv6 DAD
+- [GUI] flush conntrack table while restart/deleting rules
+- [NAND Flash] fix nand flash not work for MTD_ANY mode
+- [IGMPPROXY] fixed the overflow FATAL bug while handling bit47=1 mac address
+- [GPIO] fixed RT3352/RT5350 extended GPIO pins mapping
+

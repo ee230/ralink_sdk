@@ -1,0 +1,16 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+bindir=${exec_prefix}/bin
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+datadir=${prefix}/share
+mandir=${prefix}/share/info
+infodir=${prefix}/share/info
+
+Name: Snort
+Description: Snort dynamic plugins/detection/rules
+URL: www.snort.org
+Version: 2.8.5.2
+Libs: -L${libdir} -lcurl -L../../lib/pcre-8.01/.libs -L../../../lib/pcre-8.01/.libs -L../../../../lib/pcre-8.01/.libs -L../../../../../lib/pcre-8.01/.libs -L../../../lib/libpcap-1.0.0 -L../../../../lib/libpcap-1.0.0 -L../../../../../lib/libpcap-1.0.0 -lpcre  -L../../lib/libpcap-1.0.0/  -L../../lib/pcre-8.01/.libs -ldl -lpcre -lpcap -lnsl -lm -lm  -ldl
+Cflags: -I../../../lib/pcre-8.01 -I../../../../lib/pcre-8.01 -I../../../../../lib/pcre-8.01 -I../../../../../../lib/libpcap-1.0.0 -I../../../../../lib/libpcap-1.0.0 -I../../../../lib/libpcap-1.0.0 -I../../../lib/libpcap-1.0.0 -I../../lib/libpcap-1.0.0 -Wall -I../../lib/libpcap-1.0.0/ -I../../lib/pcre-8.01/ -DDYNAMIC_PLUGIN
+

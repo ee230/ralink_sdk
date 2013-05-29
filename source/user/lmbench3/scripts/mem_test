@@ -1,0 +1,15 @@
+#!/bin/sh
+
+if [ "$1" -eq "" ] 
+then
+echo "bw_mem [bytes(>512bytes)]"
+return 
+fi
+
+for type in rd wr rdwr cp fwr frd fcp bzero bcopy; do
+echo "================"
+echo "bw_mem "$1" "$type""
+echo "================"
+bw_mem "$1" "$type"
+done
+

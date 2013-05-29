@@ -1,0 +1,50 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: watchdog_5.4-2\n"
+"Report-Msgid-Bugs-To: meskes@debian.org\n"
+"POT-Creation-Date: 2007-07-16 08:48+0200\n"
+"PO-Revision-Date: 2007-12-22 16:12+0200\n"
+"Last-Translator: Esko Arajärvi <edu@iki.fi>\n"
+"Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Finnish\n"
+"X-Poedit-Country: Finland\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid "Start watchdog at boot time?"
+msgstr "Käynnistetäänkö watchdog käynnistettäessä tietokone?"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid "Please specify whether watchdog should be started as part of the boot process. This can be changed later by editing /etc/default/watchdog."
+msgstr "Valitse tulisiko watchdog käynnistää osana tietokoneen käynnistystä. Tätä asetusta voidaan muuttaa myöhemmin muokkaamalla tiedostoa /etc/default/watchdog."
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid "Restart watchdog on upgrades?"
+msgstr "Käynnistetäänkö watchdog uudelleen päivitysten yhteydessä?"
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid "If the kernel is configured with the CONFIG_WATCHDOG_NOWAYOUT option (which is not the default setting), restarting watchdog will cause a spurious reboot (the kernel will assume that the watchdog daemon crashed)."
+msgstr "Jos ydin on käännetty asetuksen CONFIG_WATCHDOG_NOWAYOUT kanssa (mikä ei ole oletusasetus), watchdogin käynnistäminen uudelleen aiheuttaa tarpeettoman tietokoneen uudelleenkäynnistyksen (ydin olettaa watchdog-taustaohjelman kaatuneen)."
+
+#. Type: string
+#. Description
+#: ../templates:4001
+msgid "Watchdog module to preload:"
+msgstr "Ennakkoon ladattava watchdog-moduuli:"
+
+#. Type: string
+#. Description
+#: ../templates:4001
+msgid "Please choose which watchdog module should be preloaded before starting watchdog. The 'softdog' module should be suited for all installations. Enter 'none' if you don't want the script to load a module."
+msgstr "Valitse mikä watchdog-moduuli tulisi ladata ennen watchdogin käynnistämistä. Moduulin ”softdog” tulisi sopia kaikkiin asennuksiin. Valitse ”none”, jos et haluat ladata mitään moduulia."
+

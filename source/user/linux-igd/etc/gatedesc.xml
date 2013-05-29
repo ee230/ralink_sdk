@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<root xmlns="urn:schemas-upnp-org:device-1-0">
+	<specVersion>
+		<major>1</major>
+		<minor>0</minor>
+	</specVersion>
+	<device>
+		<deviceType>urn:schemas-upnp-org:device:InternetGatewayDevice:1</deviceType>
+		<presentationURL>/</presentationURL>
+		<friendlyName>RT2880 Linux Internet Gateway Device</friendlyName>
+		<manufacturer>Ralink Linux UPnP IGD Project</manufacturer>
+		<manufacturerURL>http://www.ralink.com.tw</manufacturerURL>
+		<modelDescription>RT2880 802.11 SoC Solution</modelDescription>
+		<modelName>RT2880 IGD Version 1.00</modelName>
+		<modelNumber>RT2880 C</modelNumber>
+		<serialNumber>1.00</serialNumber>
+		<UDN>uuid:75802409-bccb-40e7-8e6c-fa095ecce13e</UDN>
+		<iconList>
+			<icon>
+				<mimetype>image/gif</mimetype>
+				<width>118</width>
+				<height>119</height>
+				<depth>8</depth>
+				<url>/ligd.gif</url>
+			</icon>
+		</iconList>
+		<serviceList>
+			<service>
+				<serviceType>urn:schemas-upnp-org:service:Layer3Forwarding:1</serviceType>
+				<serviceId>urn:upnp-org:serviceId:L3Forwarding1</serviceId>
+				<controlURL>/upnp/control/L3Forwarding1</controlURL>
+				<eventSubURL>/upnp/control/L3Forwarding1</eventSubURL>
+				<SCPDURL>/l3fwdSCPD.xml</SCPDURL>
+			</service>
+		</serviceList>
+		<deviceList>
+			<device>
+				<deviceType>urn:schemas-upnp-org:device:WANDevice:1</deviceType>
+				<friendlyName>WANDevice</friendlyName>
+				<manufacturer>Linux UPnP IGD Project</manufacturer>
+				<manufacturerURL>http://linux-igd.sourceforge.net</manufacturerURL>
+				<modelDescription>WAN Device on Linux IGD</modelDescription>
+				<modelName>Linux IGD</modelName>
+				<modelNumber>1.00</modelNumber>
+				<modelURL>http://linux-igd.sourceforge.net</modelURL>
+				<serialNumber>1.00</serialNumber>
+				<UDN>uuid:c4131cbd-0408-463d-91b0-38dd1ee22fd6</UDN>
+				<UPC>Linux IGD</UPC>
+				<serviceList>
+					<service>
+						<serviceType>urn:schemas-upnp-org:service:WANCommonInterfaceConfig:1</serviceType>
+						<serviceId>urn:upnp-org:serviceId:WANCommonIFC1</serviceId>
+						<controlURL>/upnp/control/WANCommonIFC1</controlURL>
+						<eventSubURL>/upnp/control/WANCommonIFC1</eventSubURL>
+						<SCPDURL>/gateicfgSCPD.xml</SCPDURL>
+					</service>
+				</serviceList>
+				<deviceList>
+					<device>
+						<deviceType>urn:schemas-upnp-org:device:WANConnectionDevice:1</deviceType>
+						<friendlyName>WANConnectionDevice</friendlyName>
+						<manufacturer>Linux UPnP IGD Project</manufacturer>
+						<manufacturerURL>http://linux-igd.sourceforge.net</manufacturerURL>
+						<modelDescription>WanConnectionDevice on Linux IGD</modelDescription>
+						<modelName>Linux IGD</modelName>
+						<modelNumber>0.95</modelNumber>
+						<modelURL>http://linux-igd.sourceforge.net</modelURL>
+						<serialNumber>0.95</serialNumber>
+						<UDN>uuid:5f75f342-9f96-4ecc-9dbd-6f981efc3f14</UDN>
+						<UPC>Linux IGD</UPC>
+						<serviceList>
+							<service>
+								<serviceType>urn:schemas-upnp-org:service:WANIPConnection:1</serviceType>
+								<serviceId>urn:upnp-org:serviceId:WANIPConn1</serviceId>
+								<controlURL>/upnp/control/WANIPConn1</controlURL>
+								<eventSubURL>/upnp/control/WANIPConn1</eventSubURL>
+								<SCPDURL>/gateconnSCPD.xml</SCPDURL>
+							</service>
+						</serviceList>
+					</device>
+				</deviceList>
+			</device>
+		</deviceList>
+	</device>
+</root>

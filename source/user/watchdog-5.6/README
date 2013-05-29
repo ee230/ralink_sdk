@@ -1,0 +1,47 @@
+Watchdog is a daemon that checks if your system is still working. If
+programs in user space are not longer executed it will reboot the system.
+However, this will not always work.
+
+From the kernel:
+
+>	Watchdog Timer Interfaces For The Linux Operating System
+>
+>		Alan Cox <alan@lxorguk.ukuu.org.uk>
+>
+>	    Custom Linux Driver And Program Development
+>
+>[...]
+>
+>All four interfaces provide /dev/watchdog, which when open must be written
+>to within a minute or the machine will reboot. Each write delays the reboot
+>time another minute. In the case of the software watchdog the ability to 
+>reboot will depend on the state of the machines and interrupts. The hardware
+>boards physically pull the machine down off their own onboard timers and
+>will reboot from almost anything.
+
+This tool proved very useful for me, because I always run the latest kernel
+and the latest libc release, but rely on the machine to be up and running
+for email.
+
+Note, that you have to enable the software watchdog driver in your kernel
+for the program to be able to hard reset the system unless you have a
+hardware watchdog of course. Make sure you don't compile watchdog with a
+different timer margin than the kernel driver.
+
+As of version 4.0 watchdog is able to make itself a real-time application.
+It will lock all its pages in memory and set it´s scheduler to round-robin.
+This will take up to 900 pages of memory but guarantees you that watchdog
+will get its share of processor time. If you ever experienced a hard reset
+just because watchdog wasn´t scheduled for a minute, you will probably have
+no problem with the 900 pages which is not so much anyway.
+
+Of course this is not needed for machines running on low load.
+
+Don't be surprised if you see any zombie processes laying around. This is
+normal. They will be removed the next time watchdog wakes up. Of course a
+new zombie is created then, too. This zombie process is a result of the
+process table check.
+
+Michael
+meskes@debian.org
+

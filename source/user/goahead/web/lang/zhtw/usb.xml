@@ -1,0 +1,87 @@
+﻿<po>
+  <message msgid="usb disable" msgstr="停用" />
+  <message msgid="usb enable" msgstr="啟用" />
+  <message msgid="usb add" msgstr="新增" />
+  <message msgid="usb edit" msgstr="編輯" />
+  <message msgid="usb del" msgstr="刪除" />>
+  <message msgid="usb apply" msgstr="確定" />
+  <message msgid="usb cancel" msgstr="取消" />
+  <message msgid="usb reset" msgstr="重置" />
+  <message msgid="usb format" msgstr="格式化" />
+  <message msgid="usb reallocate" msgstr="重新分割" />
+  <message msgid="usb remove" msgstr="移除磁碟" />
+
+  <message msgid="storage adm title" msgstr="管理" />
+  <message msgid="storage adm introduction" msgstr="" />
+  <message msgid="storage adm user" msgstr="使用者管理" />
+  <message msgid="storage disk title" msgstr="磁碟管理" />
+  <message msgid="storage disk display" msgstr="資料夾顯示" />
+  <message msgid="storage disk dirpath" msgstr="目錄路徑" />
+  <message msgid="storage disk dirpart" msgstr="磁槽" />
+  <message msgid="storage part display" msgstr="磁槽狀態" />
+  <message msgid="storage part path" msgstr="路徑" />
+  <message msgid="storage user name" msgstr="使用者名稱" />
+  <message msgid="storage user ftp" msgstr="允許使用FTP" />
+  <message msgid="storage user smb" msgstr="允許使用Samba" />
+
+  <message msgid="adduser basic" msgstr="基本設定" />
+  <message msgid="adduser name" msgstr="使用者名稱" />
+  <message msgid="adduser password" msgstr="密碼" />
+  <message msgid="adduser ftp" msgstr="Ftp 設定" />
+  <message msgid="adduser smb" msgstr="Samba 設定" />
+  
+  <message msgid="ftp title" msgstr="FTP 設定" />
+  <message msgid="ftp introduction" msgstr="" />
+  <message msgid="ftp server setup" msgstr="FTP 伺服器設定" />
+  <message msgid="ftp server enable" msgstr="FTP 伺服器" />
+  <message msgid="ftp server name" msgstr="FTP 伺服器名稱" />
+  <message msgid="ftp server anonymous" msgstr="匿名登入" />
+  <message msgid="ftp server port" msgstr="FTP 埠" />
+  <message msgid="ftp server maxsessions" msgstr="最多登入連線數" />
+  <message msgid="ftp server adddir" msgstr="新增目錄" />
+  <message msgid="ftp server rename" msgstr="重新命名檔案/目錄" />
+  <message msgid="ftp server remove" msgstr="移除檔案/目錄" />
+  <message msgid="ftp server read" msgstr="讀取檔案" />
+  <message msgid="ftp server write" msgstr="寫入檔案" />
+  <message msgid="ftp server download" msgstr="下載" />
+  <message msgid="ftp server upload" msgstr="上傳" />
+  
+  <message msgid="smb title" msgstr="SAMBA 設定" />
+  <message msgid="smb introduction" msgstr="" />
+  <message msgid="smb server setup" msgstr="SAMBA 伺服器設定" />
+  <message msgid="smb server enable" msgstr="SAMBA 伺服器" />
+  <message msgid="smb server workgroup" msgstr="工作群組" />
+  <message msgid="smb server netbios" msgstr="NetBIOS 名稱" />
+  <message msgid="smb server dirlist" msgstr="共享目錄" />
+  <message msgid="smb server dirname" msgstr="目錄名稱" />
+  <message msgid="smb server dirpath" msgstr="目錄路徑" />
+  <message msgid="smb server allowuser" msgstr="允許存取的使用者" />
+  <message msgid="smb adddir name" msgstr="目錄名稱" />
+  <message msgid="smb adddir accessusers" msgstr="存取的使用者" />
+  <message msgid="smb adddir accesspath" msgstr="存取路徑" />
+  
+  <message msgid="webcam title" msgstr="網路相機設定" />
+  <message msgid="webcam introduction" msgstr="" />
+  <message msgid="webcam settings" msgstr="網路相機建置" />
+  <message msgid="webcam capability" msgstr="功能" />
+  <message msgid="webcam resolution" msgstr="解析度" />
+  <message msgid="webcam fps" msgstr="每秒頁數" />
+  <message msgid="webcam port" msgstr="傳輸埠" />
+  
+  <message msgid="printer title" msgstr="列印伺服器設定" />
+  <message msgid="printer introduction" msgstr="" />
+  <message msgid="printer settings" msgstr="列印伺服器設定" />
+  <message msgid="printer capability" msgstr="功能" />
+  
+  <message msgid="usbiNIC title" msgstr="USB iNIC 設定" />
+  <message msgid="usbiNIC introduction" msgstr="" />
+  <message msgid="usbiNIC settings" msgstr="USB iNIC 設定" />
+  <message msgid="usbiNIC capability" msgstr="功能" />
+  
+  <message msgid="itunes title" msgstr="iTunes伺服器" />
+  <message msgid="itunes introduction" msgstr="" />
+  <message msgid="itunes settings" msgstr="iTunes伺服器設定" />
+  <message msgid="itunes capability" msgstr="功能" />
+  <message msgid="itunes showDisk" msgstr="媒體櫃選擇" />
+  <message msgid="itunes srv_name" msgstr="伺服器名稱" />
+</po>

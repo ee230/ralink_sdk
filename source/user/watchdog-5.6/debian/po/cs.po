@@ -1,0 +1,68 @@
+# Czech translation of watchdog debconf messages
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the watchdog package.
+# Miroslav Kure <kurem@debian.cz>, 2006, 2007.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: watchdog\n"
+"Report-Msgid-Bugs-To: meskes@debian.org\n"
+"POT-Creation-Date: 2007-07-16 08:48+0200\n"
+"PO-Revision-Date: 2007-07-07 21:31+0200\n"
+"Last-Translator: Miroslav Kure <kurem@debian.cz>\n"
+"Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid "Start watchdog at boot time?"
+msgstr "Spustit watchdog při zavádění systému?"
+
+#. Type: boolean
+#. Description
+#: ../templates:2001
+msgid ""
+"Please specify whether watchdog should be started as part of the boot "
+"process. This can be changed later by editing /etc/default/watchdog."
+msgstr ""
+"Vyberte si, zda se má watchdog spouštět během zavádění systému. Své "
+"rozhodnutí můžete později změnit úpravou souboru /etc/default/watchdog."
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid "Restart watchdog on upgrades?"
+msgstr "Restartovat watchdog při aktualizaci?"
+
+#. Type: boolean
+#. Description
+#: ../templates:3001
+msgid ""
+"If the kernel is configured with the CONFIG_WATCHDOG_NOWAYOUT option (which "
+"is not the default setting), restarting watchdog will cause a spurious "
+"reboot (the kernel will assume that the watchdog daemon crashed)."
+msgstr ""
+"Pokud je jádro sestaveno s parametrem CONFIG_WATCHDOG_NOWAYOUT (což není "
+"výchozí nastavení), restart watchdogu způsobí zbytečný restart počítače, "
+"protože si jádro Bude myslet, že daemon watchdogu havaroval."
+
+#. Type: string
+#. Description
+#: ../templates:4001
+msgid "Watchdog module to preload:"
+msgstr "Modul watchdogu, který se má nahrát:"
+
+#. Type: string
+#. Description
+#: ../templates:4001
+msgid ""
+"Please choose which watchdog module should be preloaded before starting "
+"watchdog. The 'softdog' module should be suited for all installations. Enter "
+"'none' if you don't want the script to load a module."
+msgstr ""
+"Vyberte prosím, který modul watchdogu se má nahrát ještě před spuštěním "
+"watchdogu. Modul „softdog“ je vhodný pro všechny instalace. Nechcete-li, aby "
+"skript nahrál modul, zadejte „none“."

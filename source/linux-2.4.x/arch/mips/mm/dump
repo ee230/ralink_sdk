@@ -1,0 +1,6155 @@
+
+c-r4k.o:     file format elf32-tradlittlemips
+c-r4k.o
+architecture: mips:6000, flags 0x00000011:
+HAS_RELOC, HAS_SYMS
+start address 0x00000000
+private flags = 10001001: [abi=O32] [mips2] [not 32bitmode]
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00001bf0  00000000  00000000  00000040  2**4
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  1 .data         00000040  00000000  00000000  00001c30  2**4
+                  CONTENTS, ALLOC, LOAD, RELOC, DATA
+  2 .bss          00000030  00000000  00000000  00001c70  2**4
+                  ALLOC
+  3 .reginfo      00000018  00000000  00000000  00001c70  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA, LINK_ONCE_SAME_SIZE
+  4 .pdr          00000520  00000000  00000000  00001c88  2**2
+                  CONTENTS, RELOC, READONLY
+  5 .mdebug.abi32 00000000  00000000  00000000  000021a8  2**0
+                  CONTENTS, READONLY
+  6 .debug_abbrev 00000579  00000000  00000000  000021a8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_info   00015a57  00000000  00000000  00002721  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  8 .debug_line   000028d3  00000000  00000000  00018178  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+  9 .rodata       00000440  00000000  00000000  0001aa50  2**4
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, DATA
+ 10 __ex_table    00000020  00000000  00000000  0001ae90  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, DATA
+ 11 .text.init    000013c0  00000000  00000000  0001aeb0  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 12 .debug_frame  0000033c  00000000  00000000  0001c270  2**2
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 13 .debug_pubnames 0000003c  00000000  00000000  0001c5ac  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 14 .debug_aranges 00000040  00000000  00000000  0001c5e8  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 15 .debug_ranges 00000048  00000000  00000000  0001c628  2**0
+                  CONTENTS, RELOC, READONLY, DEBUGGING
+ 16 .debug_str    00000b3c  00000000  00000000  0001c670  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 17 .comment      0000002c  00000000  00000000  0001d1ac  2**0
+                  CONTENTS, READONLY
+SYMBOL TABLE:
+00000000 l    d  .text	00000000 
+00000000 l    d  .data	00000000 
+00000000 l    d  .bss	00000000 
+00000000 l    d  .mdebug.abi32	00000000 
+00000000 l    d  .debug_abbrev	00000000 
+00000000 l    d  .debug_info	00000000 
+00000000 l    d  .debug_line	00000000 
+00000000 l     F .text	00000000 no_sc_noop
+00000000 l     O .data	00000010 no_sc_ops
+00000008 l     F .text	00000000 r4k_blast_dcache_page_indexed_setup
+000010f4 l     F .text	00000000 blast_dcache32_page_indexed
+00000010 l     O .bss	00000004 r4k_blast_dcache_page_indexed
+00000b2c l     F .text	00000000 blast_dcache16_page_indexed
+00000058 l     F .text	00000000 r4k_flush_cache_all
+00000014 l     O .bss	00000004 r4k_blast_dcache
+00000020 l     O .bss	00000004 r4k_blast_icache
+000000a4 l     F .text	00000000 r4k___flush_cache_all
+00000028 l     O .bss	00000004 r4k_blast_scache
+00000118 l     F .text	00000000 r4k_flush_cache_range
+00000170 l     F .text	00000000 r4k_flush_cache_mm
+00000204 l     F .text	00000000 r4k_flush_cache_page
+00000004 l     O .bss	00000004 dcache_size
+0000001c l     O .bss	00000004 r4k_blast_icache_page_indexed
+0000000c l     O .bss	00000004 r4k_blast_dcache_page
+00000018 l     O .bss	00000004 r4k_blast_icache_page
+00000410 l     F .text	00000000 r4k_flush_data_cache_page
+00000434 l     F .text	00000000 r4k_flush_icache_range
+00000000 l    d  __ex_table	00000000 
+00000000 l     O .bss	00000004 icache_size
+0000051c l     F .text	00000000 r4k_flush_icache_page
+00000024 l     O .bss	00000004 r4k_blast_scache_page
+00000770 l     F .text	00000000 r4k_dma_cache_wback_inv
+00000008 l     O .bss	00000004 scache_size
+00000858 l     F .text	00000000 r4k_dma_cache_inv
+00000934 l     F .text	00000000 r4k_flush_cache_sigtramp
+00000964 l     F .text	00000000 r4k_flush_icache_all
+00000014 l     O .data	00000024 way_string
+00000000 l    d  .text.init	00000000 
+00000000 l     F .text.init	00000000 probe_pcache
+00000b80 l     F .text.init	00000000 probe_scache
+00000ccc l     F .text.init	00000000 setup_scache
+000019c4 l     F .text	00000000 blast_scache128
+00001838 l     F .text	00000000 blast_scache64
+00001440 l     F .text	00000000 blast_scache32
+00000e78 l     F .text	00000000 blast_scache16
+00001ab4 l     F .text	00000000 blast_scache128_page
+00001928 l     F .text	00000000 blast_scache64_page
+00001530 l     F .text	00000000 blast_scache32_page
+00000f68 l     F .text	00000000 blast_scache16_page
+000015cc l     F .text	00000000 blast_icache64
+000011d4 l     F .text	00000000 blast_icache32
+00000c0c l     F .text	00000000 blast_icache16
+00001758 l     F .text	00000000 blast_icache64_page_indexed
+00001360 l     F .text	00000000 blast_icache32_page_indexed
+00000d98 l     F .text	00000000 blast_icache16_page_indexed
+000016bc l     F .text	00000000 blast_icache64_page
+000012c4 l     F .text	00000000 blast_icache32_page
+00000cfc l     F .text	00000000 blast_icache16_page
+00001004 l     F .text	00000000 blast_dcache32
+000009a0 l     F .text	00000000 blast_dcache16
+00001b54 l     F .text	00000000 r4k_blast_dcache_page_dc32
+00000a90 l     F .text	00000000 blast_dcache16_page
+00000000 l    d  .debug_frame	00000000 
+00000000 l    d  .debug_pubnames	00000000 
+00000000 l    d  .debug_aranges	00000000 
+00000000 l    d  .debug_ranges	00000000 
+00000000 l    d  .debug_str	00000000 
+00000000 l    d  .rodata	00000000 
+00000000 l    d  .reginfo	00000000 
+00000000 l    d  .pdr	00000000 
+00000000 l    d  .comment	00000000 
+00000010 g     O .data	00000004 bcops
+00000000         *UND*	00000000 cpu_data
+00000000         *UND*	00000000 local_flush_tlb_all
+00000000         *UND*	00000000 zone_table
+0000002c g     O .bss	00000004 cache_temp
+00000000         *UND*	00000000 printk
+00000000         *UND*	00000000 panic
+00000000         *UND*	00000000 stext
+00000e88 g     F .text.init	00000000 ld_mmu_r4xx0
+00000000         *UND*	00000000 except_vec2_generic
+00000000         *UND*	00000000 _flush_cache_all
+00000000         *UND*	00000000 _flush_cache_page
+00000000         *UND*	00000000 _flush_cache_mm
+00000000         *UND*	00000000 _flush_cache_range
+00000000         *UND*	00000000 _flush_icache_page
+00000000         *UND*	00000000 _flush_icache_all
+00000000         *UND*	00000000 _flush_cache_sigtramp
+00000000         *UND*	00000000 _flush_icache_range
+00000000         *UND*	00000000 shm_align_mask
+00000000         *UND*	00000000 _flush_data_cache_page
+00000000         *UND*	00000000 _dma_cache_wback
+00000000         *UND*	00000000 _dma_cache_inv
+00000000         *UND*	00000000 ___flush_cache_all
+00000000         *UND*	00000000 _dma_cache_wback_inv
+00000000         *UND*	00000000 build_clear_page
+00000000         *UND*	00000000 build_copy_page
+00000000       O *UND*	00000000 memcpy
+
+
+Disassembly of section .text:
+
+00000000 <no_sc_noop>:
+	"5-way", "6-way", "7-way", "8-way"
+};
+
+static void __init probe_pcache(void)
+{
+       0:	03e00008 	jr	ra
+       4:	00000000 	nop
+
+00000008 <r4k_blast_dcache_page_indexed_setup>:
+       8:	3c030000 	lui	v1,0x0
+			8: R_MIPS_HI16	cpu_data
+       c:	94630040 	lhu	v1,64(v1)
+			c: R_MIPS_LO16	cpu_data
+      10:	24020010 	li	v0,16
+      14:	1062000a 	beq	v1,v0,40 <r4k_blast_dcache_page_indexed_setup+0x38>
+	struct cpuinfo_mips *c = &current_cpu_data;
+      18:	24020020 	li	v0,32
+      1c:	10620003 	beq	v1,v0,2c <r4k_blast_dcache_page_indexed_setup+0x24>
+	unsigned int config = read_c0_config();
+      20:	00000000 	nop
+	unsigned int prid = read_c0_prid();
+      24:	03e00008 	jr	ra
+	unsigned long config1;
+	unsigned int lsize;
+
+	switch (c->cputype) {
+      28:	00000000 	nop
+      2c:	3c020000 	lui	v0,0x0
+			2c: R_MIPS_HI16	.text
+      30:	244210f4 	addiu	v0,v0,4340
+			30: R_MIPS_LO16	.text
+      34:	3c010000 	lui	at,0x0
+			34: R_MIPS_HI16	.bss
+      38:	08000014 	j	50 <r4k_blast_dcache_page_indexed_setup+0x48>
+			38: R_MIPS_26	.text
+      3c:	ac220010 	sw	v0,16(at)
+			3c: R_MIPS_LO16	.bss
+      40:	3c020000 	lui	v0,0x0
+			40: R_MIPS_HI16	.text
+      44:	24420b2c 	addiu	v0,v0,2860
+			44: R_MIPS_LO16	.text
+      48:	3c010000 	lui	at,0x0
+			48: R_MIPS_HI16	.bss
+      4c:	ac220010 	sw	v0,16(at)
+			4c: R_MIPS_LO16	.bss
+      50:	03e00008 	jr	ra
+	case CPU_R4600:			/* QED style two way caches? */
+	case CPU_R4700:
+	case CPU_R5000:
+	case CPU_NEVADA:
+		icache_size = 1 << (12 + ((config & CONF_IC) >> 9));
+      54:	00000000 	nop
+
+00000058 <r4k_flush_cache_all>:
+      58:	3c020000 	lui	v0,0x0
+			58: R_MIPS_HI16	cpu_data
+      5c:	8c420050 	lw	v0,80(v0)
+			5c: R_MIPS_LO16	cpu_data
+		c->icache.linesz = 16 << ((config & CONF_IB) >> 5);
+      60:	27bdffe8 	addiu	sp,sp,-24
+      64:	30420004 	andi	v0,v0,0x4
+      68:	14400004 	bnez	v0,7c <r4k_flush_cache_all+0x24>
+      6c:	afbf0010 	sw	ra,16(sp)
+      70:	8fbf0010 	lw	ra,16(sp)
+      74:	03e00008 	jr	ra
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+      78:	27bd0018 	addiu	sp,sp,24
+		c->icache.ways = 2;
+      7c:	3c020000 	lui	v0,0x0
+			7c: R_MIPS_HI16	.bss
+      80:	8c420014 	lw	v0,20(v0)
+			80: R_MIPS_LO16	.bss
+      84:	0040f809 	jalr	v0
+      88:	00000000 	nop
+      8c:	3c030000 	lui	v1,0x0
+			8c: R_MIPS_HI16	.bss
+ */
+
+static inline int generic_ffs(int x)
+{
+	int r = 1;
+      90:	8c630020 	lw	v1,32(v1)
+			90: R_MIPS_LO16	.bss
+
+	if (!x)
+      94:	0060f809 	jalr	v1
+      98:	00000000 	nop
+		return 0;
+	if (!(x & 0xffff)) {
+      9c:	0800001d 	j	74 <r4k_flush_cache_all+0x1c>
+			9c: R_MIPS_26	.text
+      a0:	8fbf0010 	lw	ra,16(sp)
+
+000000a4 <r4k___flush_cache_all>:
+      a4:	3c020000 	lui	v0,0x0
+			a4: R_MIPS_HI16	.bss
+
+	if (!x)
+		return 0;
+	if (!(x & 0xffff)) {
+		x >>= 16;
+      a8:	8c420014 	lw	v0,20(v0)
+			a8: R_MIPS_LO16	.bss
+		r += 16;
+      ac:	27bdffe8 	addiu	sp,sp,-24
+	}
+	if (!(x & 0xff)) {
+      b0:	afbf0010 	sw	ra,16(sp)
+      b4:	0040f809 	jalr	v0
+      b8:	00000000 	nop
+		x >>= 16;
+		r += 16;
+	}
+	if (!(x & 0xff)) {
+		x >>= 8;
+      bc:	3c030000 	lui	v1,0x0
+			bc: R_MIPS_HI16	.bss
+		r += 8;
+      c0:	8c630020 	lw	v1,32(v1)
+			c0: R_MIPS_LO16	.bss
+	}
+	if (!(x & 0xf)) {
+      c4:	0060f809 	jalr	v1
+      c8:	00000000 	nop
+      cc:	3c020000 	lui	v0,0x0
+			cc: R_MIPS_HI16	cpu_data
+		x >>= 8;
+		r += 8;
+	}
+	if (!(x & 0xf)) {
+		x >>= 4;
+      d0:	8c420020 	lw	v0,32(v0)
+			d0: R_MIPS_LO16	cpu_data
+		r += 4;
+      d4:	2442fff6 	addiu	v0,v0,-10
+	}
+	if (!(x & 3)) {
+      d8:	2c43000c 	sltiu	v1,v0,12
+      dc:	1060000c 	beqz	v1,110 <r4k___flush_cache_all+0x6c>
+      e0:	8fbf0010 	lw	ra,16(sp)
+		x >>= 2;
+      e4:	00021080 	sll	v0,v0,0x2
+		r += 2;
+      e8:	3c030000 	lui	v1,0x0
+			e8: R_MIPS_HI16	.rodata
+	}
+	if (!(x & 1)) {
+      ec:	00621821 	addu	v1,v1,v0
+      f0:	8c630000 	lw	v1,0(v1)
+			f0: R_MIPS_LO16	.rodata
+      f4:	00600008 	jr	v1
+		x >>= 1;
+		r += 1;
+	}
+      f8:	00000000 	nop
+		c->icache.waybit = ffs(icache_size/2) - 1;
+
+		dcache_size = 1 << (12 + ((config & CONF_DC) >> 6));
+      fc:	3c020000 	lui	v0,0x0
+			fc: R_MIPS_HI16	.bss
+     100:	8c420028 	lw	v0,40(v0)
+			100: R_MIPS_LO16	.bss
+     104:	0040f809 	jalr	v0
+		c->dcache.linesz = 16 << ((config & CONF_DB) >> 4);
+		c->dcache.ways = 2;
+		c->dcache.waybit= ffs(dcache_size/2) - 1;
+
+		c->options |= MIPS_CPU_CACHE_CDEX_P;
+		break;
+
+	case CPU_R5432:
+	case CPU_R5500:
+		icache_size = 1 << (12 + ((config & CONF_IC) >> 9));
+		c->icache.linesz = 16 << ((config & CONF_IB) >> 5);
+		c->icache.ways = 2;
+		c->icache.waybit= 0;
+
+		dcache_size = 1 << (12 + ((config & CONF_DC) >> 6));
+		c->dcache.linesz = 16 << ((config & CONF_DB) >> 4);
+		c->dcache.ways = 2;
+		c->dcache.waybit = 0;
+
+		c->options |= MIPS_CPU_CACHE_CDEX_P;
+		break;
+
+	case CPU_TX49XX:
+		icache_size = 1 << (12 + ((config & CONF_IC) >> 9));
+		c->icache.linesz = 16 << ((config & CONF_IB) >> 5);
+		c->icache.ways = 4;
+		c->icache.waybit= 0;
+
+		dcache_size = 1 << (12 + ((config & CONF_DC) >> 6));
+		c->dcache.linesz = 16 << ((config & CONF_DB) >> 4);
+		c->dcache.ways = 4;
+		c->dcache.waybit = 0;
+
+		c->options |= MIPS_CPU_CACHE_CDEX_P;
+		break;
+
+	case CPU_R4000PC:
+	case CPU_R4000SC:
+	case CPU_R4000MC:
+	case CPU_R4400PC:
+	case CPU_R4400SC:
+	case CPU_R4400MC:
+	case CPU_R4300:
+		icache_size = 1 << (12 + ((config & CONF_IC) >> 9));
+		c->icache.linesz = 16 << ((config & CONF_IB) >> 5);
+		c->icache.ways = 1;
+		c->icache.waybit = 0; 	/* doesn't matter */
+
+		dcache_size = 1 << (12 + ((config & CONF_DC) >> 6));
+		c->dcache.linesz = 16 << ((config & CONF_DB) >> 4);
+		c->dcache.ways = 1;
+		c->dcache.waybit = 0;	/* does not matter */
+
+		c->options |= MIPS_CPU_CACHE_CDEX_P;
+		break;
+
+	case CPU_R10000:
+	case CPU_R12000:
+		icache_size = 1 << (12 + ((config & R10K_CONF_IC) >> 29));
+		c->icache.linesz = 64;
+		c->icache.ways = 2;
+		c->icache.waybit = 0;
+
+		dcache_size = 1 << (12 + ((config & R10K_CONF_DC) >> 26));
+		c->dcache.linesz = 32;
+		c->dcache.ways = 2;
+		c->dcache.waybit = 0;
+
+		c->options |= MIPS_CPU_PREFETCH;
+		break;
+
+	case CPU_VR4133:
+		write_c0_config(config & ~CONF_EB);
+	case CPU_VR4131:
+		/* Workaround for cache instruction bug of VR4131 */
+		if (c->processor_id == 0x0c80U || c->processor_id == 0x0c81U ||
+		    c->processor_id == 0x0c82U) {
+			config &= ~0x00000030U;
+			config |= 0x00410000U;
+			write_c0_config(config);
+		}
+		icache_size = 1 << (10 + ((config & CONF_IC) >> 9));
+		c->icache.linesz = 16 << ((config & CONF_IB) >> 5);
+		c->icache.ways = 2;
+		c->icache.waybit = ffs(icache_size/2) - 1;
+
+		dcache_size = 1 << (10 + ((config & CONF_DC) >> 6));
+		c->dcache.linesz = 16 << ((config & CONF_DB) >> 4);
+     108:	00000000 	nop
+     10c:	8fbf0010 	lw	ra,16(sp)
+     110:	03e00008 	jr	ra
+     114:	27bd0018 	addiu	sp,sp,24
+
+00000118 <r4k_flush_cache_range>:
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+     118:	3c020000 	lui	v0,0x0
+			118: R_MIPS_HI16	cpu_data
+     11c:	8c420050 	lw	v0,80(v0)
+			11c: R_MIPS_LO16	cpu_data
+     120:	27bdffe8 	addiu	sp,sp,-24
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+     124:	30420004 	andi	v0,v0,0x4
+     128:	10400004 	beqz	v0,13c <r4k_flush_cache_range+0x24>
+		c->dcache.ways = 2;
+     12c:	afbf0010 	sw	ra,16(sp)
+     130:	8c820078 	lw	v0,120(a0)
+     134:	14400004 	bnez	v0,148 <r4k_flush_cache_range+0x30>
+     138:	00000000 	nop
+     13c:	8fbf0010 	lw	ra,16(sp)
+ */
+
+static inline int generic_ffs(int x)
+{
+	int r = 1;
+     140:	03e00008 	jr	ra
+
+	if (!x)
+     144:	27bd0018 	addiu	sp,sp,24
+     148:	3c020000 	lui	v0,0x0
+			148: R_MIPS_HI16	.bss
+	int r = 1;
+
+	if (!x)
+		return 0;
+	if (!(x & 0xffff)) {
+     14c:	8c420014 	lw	v0,20(v0)
+			14c: R_MIPS_LO16	.bss
+     150:	0040f809 	jalr	v0
+     154:	00000000 	nop
+		x >>= 16;
+     158:	3c030000 	lui	v1,0x0
+			158: R_MIPS_HI16	.bss
+		r += 16;
+     15c:	8c630020 	lw	v1,32(v1)
+			15c: R_MIPS_LO16	.bss
+	}
+	if (!(x & 0xff)) {
+     160:	0060f809 	jalr	v1
+     164:	00000000 	nop
+     168:	08000050 	j	140 <r4k_flush_cache_range+0x28>
+			168: R_MIPS_26	.text
+		x >>= 8;
+     16c:	8fbf0010 	lw	ra,16(sp)
+
+00000170 <r4k_flush_cache_mm>:
+		r += 8;
+     170:	3c020000 	lui	v0,0x0
+			170: R_MIPS_HI16	cpu_data
+	}
+	if (!(x & 0xf)) {
+     174:	8c420050 	lw	v0,80(v0)
+			174: R_MIPS_LO16	cpu_data
+     178:	27bdffe8 	addiu	sp,sp,-24
+     17c:	30420004 	andi	v0,v0,0x4
+		x >>= 8;
+		r += 8;
+	}
+	if (!(x & 0xf)) {
+		x >>= 4;
+     180:	10400004 	beqz	v0,194 <r4k_flush_cache_mm+0x24>
+		r += 4;
+     184:	afbf0010 	sw	ra,16(sp)
+	}
+	if (!(x & 3)) {
+     188:	8c820078 	lw	v0,120(a0)
+     18c:	14400004 	bnez	v0,1a0 <r4k_flush_cache_mm+0x30>
+     190:	00000000 	nop
+		x >>= 2;
+     194:	8fbf0010 	lw	ra,16(sp)
+		r += 2;
+     198:	03e00008 	jr	ra
+	}
+	if (!(x & 1)) {
+     19c:	27bd0018 	addiu	sp,sp,24
+     1a0:	3c020000 	lui	v0,0x0
+			1a0: R_MIPS_HI16	.bss
+     1a4:	8c420014 	lw	v0,20(v0)
+			1a4: R_MIPS_LO16	.bss
+	}
+	if (!(x & 1)) {
+		x >>= 1;
+		r += 1;
+	}
+     1a8:	0040f809 	jalr	v0
+		c->dcache.waybit = ffs(dcache_size/2) - 1;
+
+		c->options |= MIPS_CPU_CACHE_CDEX_P;
+     1ac:	00000000 	nop
+     1b0:	3c030000 	lui	v1,0x0
+			1b0: R_MIPS_HI16	.bss
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+     1b4:	8c630020 	lw	v1,32(v1)
+			1b4: R_MIPS_LO16	.bss
+     1b8:	0060f809 	jalr	v1
+     1bc:	00000000 	nop
+     1c0:	3c040000 	lui	a0,0x0
+			1c0: R_MIPS_HI16	cpu_data
+		break;
+
+	case CPU_VR41XX:
+	case CPU_VR4111:
+	case CPU_VR4121:
+	case CPU_VR4122:
+	case CPU_VR4181:
+	case CPU_VR4181A:
+		icache_size = 1 << (10 + ((config & CONF_IC) >> 9));
+		c->icache.linesz = 16 << ((config & CONF_IB) >> 5);
+		c->icache.ways = 1;
+		c->icache.waybit = 0; 	/* doesn't matter */
+
+		dcache_size = 1 << (10 + ((config & CONF_DC) >> 6));
+		c->dcache.linesz = 16 << ((config & CONF_DB) >> 4);
+		c->dcache.ways = 1;
+		c->dcache.waybit = 0;	/* does not matter */
+
+		c->options |= MIPS_CPU_CACHE_CDEX_P;
+		break;
+
+	case CPU_RM7000:
+		rm7k_erratum31();
+
+	case CPU_RM9000:
+		icache_size = 1 << (12 + ((config & CONF_IC) >> 9));
+		c->icache.linesz = 16 << ((config & CONF_IB) >> 5);
+		c->icache.ways = 4;
+		c->icache.waybit = ffs(icache_size / c->icache.ways) - 1;
+
+		dcache_size = 1 << (12 + ((config & CONF_DC) >> 6));
+		c->dcache.linesz = 16 << ((config & CONF_DB) >> 4);
+		c->dcache.ways = 4;
+		c->dcache.waybit = ffs(dcache_size / c->dcache.ways) - 1;
+
+#if !defined(CONFIG_SMP) || !defined(RM9000_CDEX_SMP_WAR)
+		c->options |= MIPS_CPU_CACHE_CDEX_P;
+#endif
+		c->options |= MIPS_CPU_PREFETCH;
+		break;
+
+	default:
+		if (!(config & MIPS_CONF_M))
+			panic("Don't know how to probe P-caches on this cpu.");
+
+		/*
+		 * So we seem to be a MIPS32 or MIPS64 CPU
+		 * So let's probe the I-cache ...
+		 */
+		config1 = read_c0_config1();
+
+		if ((lsize = ((config1 >> 19) & 7)))
+			c->icache.linesz = 2 << lsize;
+		else
+			c->icache.linesz = lsize;
+		c->icache.sets = 64 << ((config1 >> 22) & 7);
+		c->icache.ways = 1 + ((config1 >> 16) & 7);
+
+		icache_size = c->icache.sets *
+		              c->icache.ways *
+		              c->icache.linesz;
+		c->icache.waybit = ffs(icache_size/c->icache.ways) - 1;
+
+		if (config & 0x8)		/* VI bit */
+			c->icache.flags |= MIPS_CACHE_VTAG;
+
+		printk("icache: sets:%d, ways:%d, linesz:%d ,total:%d, waybit:%d, flags:0x%x\n", 
+		c->icache.sets, c->icache.ways, c->icache.linesz, icache_size, c->icache.waybit, c->icache.flags);
+
+		/*
+		 * Now probe the MIPS32 / MIPS64 data cache.
+		 */
+		c->dcache.flags = 0;
+
+		if ((lsize = ((config1 >> 10) & 7)))
+			c->dcache.linesz = 2 << lsize;
+		else
+			c->dcache.linesz= lsize;
+		c->dcache.sets = 64 << ((config1 >> 13) & 7);
+		c->dcache.ways = 1 + ((config1 >> 7) & 7);
+
+		dcache_size = c->dcache.sets *
+		              c->dcache.ways *
+		              c->dcache.linesz;
+		c->dcache.waybit = ffs(dcache_size/c->dcache.ways) - 1;
+
+		printk("dcache: sets:%d, ways:%d, linesz:%d ,total:%d, waybit:%d, flags:0x%x\n", 
+		c->dcache.sets, c->dcache.ways, c->dcache.linesz, dcache_size, c->dcache.waybit, c->dcache.flags);
+
+		c->options |= MIPS_CPU_PREFETCH;
+		break;
+	}
+
+	/*
+	 * Processor configuration sanity check for the R4000SC erratum
+	 * #5.  With page sizes larger than 32kB there is no possibility
+	 * to get a VCE exception anymore so we don't care about this
+	 * misconfiguration.  The case is rather theoretical anyway;
+	 * presumably no vendor is shipping his hardware in the "bad"
+	 * configuration.
+	 */
+	if ((prid & 0xff00) == PRID_IMP_R4000 && (prid & 0xff) < 0x40 &&
+     1c4:	8c840020 	lw	a0,32(a0)
+			1c4: R_MIPS_LO16	cpu_data
+     1c8:	2483fff6 	addiu	v1,a0,-10
+     1cc:	3882000e 	xori	v0,a0,0xe
+     1d0:	2c630002 	sltiu	v1,v1,2
+     1d4:	2c420001 	sltiu	v0,v0,1
+     1d8:	00621825 	or	v1,v1,v0
+	    !(config & CONF_SC) && c->icache.linesz != 16 &&
+	    PAGE_SIZE <= 0x8000)
+		panic("Improper R4000SC processor configuration detected");
+
+	/* compute a couple of other cache variables */
+	c->icache.waysize = icache_size / c->icache.ways;
+     1dc:	14600003 	bnez	v1,1ec <r4k_flush_cache_mm+0x7c>
+     1e0:	2402000f 	li	v0,15
+     1e4:	5482ffec 	bnel	a0,v0,198 <r4k_flush_cache_mm+0x28>
+     1e8:	8fbf0010 	lw	ra,16(sp)
+	c->dcache.waysize = dcache_size / c->dcache.ways;
+
+	c->icache.sets = icache_size / (c->icache.linesz * c->icache.ways);
+     1ec:	3c020000 	lui	v0,0x0
+			1ec: R_MIPS_HI16	.bss
+     1f0:	8c420028 	lw	v0,40(v0)
+			1f0: R_MIPS_LO16	.bss
+     1f4:	0040f809 	jalr	v0
+     1f8:	00000000 	nop
+     1fc:	08000066 	j	198 <r4k_flush_cache_mm+0x28>
+			1fc: R_MIPS_26	.text
+     200:	8fbf0010 	lw	ra,16(sp)
+
+00000204 <r4k_flush_cache_page>:
+     204:	27bdffe0 	addiu	sp,sp,-32
+     208:	afb20018 	sw	s2,24(sp)
+	c->dcache.sets = dcache_size / (c->dcache.linesz * c->dcache.ways);
+
+	printk("i waysize = %d, d waysize = %d, i sets= %d, d sets=%d\n", 
+     20c:	afb10014 	sw	s1,20(sp)
+     210:	afbf001c 	sw	ra,28(sp)
+     214:	afb00010 	sw	s0,16(sp)
+     218:	8c860000 	lw	a2,0(a0)
+     21c:	8c830014 	lw	v1,20(a0)
+     220:	00808821 	move	s1,a0
+     224:	8cc20078 	lw	v0,120(a2)
+     228:	10400052 	beqz	v0,374 <r4k_flush_cache_page+0x170>
+     22c:	30720004 	andi	s2,v1,0x4
+     230:	2402f000 	li	v0,-4096
+     234:	00a28024 	and	s0,a1,v0
+     238:	8cc3000c 	lw	v1,12(a2)
+     23c:	00101582 	srl	v0,s0,0x16
+     240:	00021080 	sll	v0,v0,0x2
+     244:	00621821 	addu	v1,v1,v0
+     248:	8c640000 	lw	a0,0(v1)
+     24c:	00101282 	srl	v0,s0,0xa
+     250:	30420ffc 	andi	v0,v0,0xffc
+     254:	00822021 	addu	a0,a0,v0
+     258:	8c840000 	lw	a0,0(a0)
+     25c:	30820001 	andi	v0,a0,0x1
+     260:	50400045 	beqzl	v0,378 <r4k_flush_cache_page+0x174>
+     264:	8fbf001c 	lw	ra,28(sp)
+     268:	8f820050 	lw	v0,80(gp)
+     26c:	10c20053 	beq	a2,v0,3bc <r4k_flush_cache_page+0x1b8>
+     270:	30820080 	andi	v0,a0,0x80
+     274:	3c020000 	lui	v0,0x0
+			274: R_MIPS_HI16	.bss
+		c->icache.waysize, c->dcache.waysize, c->icache.sets, c->dcache.sets);
+	/*
+	 * R10000 and R12000 P-caches are odd in a positive way.  They're 32kB
+	 * 2-way virtually indexed so normally would suffer from aliases.  So
+	 * normally they'd suffer from aliases but magic in the hardware deals
+	 * with that for us so we don't need to take care ourselves.
+	 */
+	switch (c->cputype) {
+     278:	8c420004 	lw	v0,4(v0)
+			278: R_MIPS_LO16	.bss
+     27c:	3c040000 	lui	a0,0x0
+			27c: R_MIPS_HI16	cpu_data
+     280:	8c840050 	lw	a0,80(a0)
+			280: R_MIPS_LO16	cpu_data
+     284:	2442ffff 	addiu	v0,v0,-1
+     288:	02021024 	and	v0,s0,v0
+     28c:	30830004 	andi	v1,a0,0x4
+     290:	3c108000 	lui	s0,0x8000
+     294:	02028021 	addu	s0,s0,v0
+     298:	14600006 	bnez	v1,2b4 <r4k_flush_cache_page+0xb0>
+     29c:	00000000 	nop
+	case CPU_R10000:
+	case CPU_R12000:
+		break;
+	case CPU_24K:
+		if (!(read_c0_config7() & (1 << 16)))
+	default:
+			if (c->dcache.waysize > PAGE_SIZE)
+     2a0:	12400035 	beqz	s2,378 <r4k_flush_cache_page+0x174>
+     2a4:	8fbf001c 	lw	ra,28(sp)
+     2a8:	30820008 	andi	v0,a0,0x8
+     2ac:	14400005 	bnez	v0,2c4 <r4k_flush_cache_page+0xc0>
+     2b0:	00000000 	nop
+				c->dcache.flags |= MIPS_CACHE_ALIASES;
+     2b4:	3c020000 	lui	v0,0x0
+			2b4: R_MIPS_HI16	.bss
+     2b8:	8c420010 	lw	v0,16(v0)
+			2b8: R_MIPS_LO16	.bss
+     2bc:	0040f809 	jalr	v0
+     2c0:	02002021 	move	a0,s0
+	}
+
+	switch (c->cputype) {
+     2c4:	1240002c 	beqz	s2,378 <r4k_flush_cache_page+0x174>
+     2c8:	8fbf001c 	lw	ra,28(sp)
+     2cc:	3c020000 	lui	v0,0x0
+			2cc: R_MIPS_HI16	cpu_data
+     2d0:	8c42003c 	lw	v0,60(v0)
+			2d0: R_MIPS_LO16	cpu_data
+     2d4:	30420002 	andi	v0,v0,0x2
+     2d8:	10400032 	beqz	v0,3a4 <r4k_flush_cache_page+0x1a0>
+	case CPU_20KC:
+		/*
+		 * Some older 20Kc chips doesn't have the 'VI' bit in
+		 * the config register.
+		 */
+		c->icache.flags |= MIPS_CACHE_VTAG;
+		break;
+
+	case CPU_AU1500:
+		c->icache.flags |= MIPS_CACHE_IC_F_DC;
+		break;
+	}
+
+	printk("Primary instruction cache %ldkB, %s, %s, linesize %d bytes.\n",
+     2dc:	00000000 	nop
+     2e0:	8e310000 	lw	s1,0(s1)
+     2e4:	8e220078 	lw	v0,120(s1)
+     2e8:	10400024 	beqz	v0,37c <r4k_flush_cache_page+0x178>
+     2ec:	8fb20018 	lw	s2,24(sp)
+drop_mmu_context(struct mm_struct *mm, unsigned cpu)
+{
+	unsigned long flags;
+
+	local_irq_save(flags);
+     2f0:	40126000 	mfc0	s2,$12
+     2f4:	00000000 	nop
+     2f8:	36410001 	ori	at,s2,0x1
+     2fc:	38210001 	xori	at,at,0x1
+     300:	40816000 	mtc0	at,$12
+     304:	00000040 	sll	zero,zero,0x1
+     308:	00000040 	sll	zero,zero,0x1
+     30c:	00000040 	sll	zero,zero,0x1
+ * @addr: Address to start counting from
+ */
+static inline int test_bit(int nr, volatile void *addr)
+{
+	return 1UL & (((const volatile unsigned long *) addr)[nr >> SZLONG_LOG] >> (nr & SZLONG_MASK));
+     310:	8e22006c 	lw	v0,108(s1)
+     314:	30420001 	andi	v0,v0,0x1
+     318:	5040000d 	beqzl	v0,350 <r4k_flush_cache_page+0x14c>
+     31c:	ae200078 	sw	zero,120(s1)
+
+static inline void
+get_new_mmu_context(struct mm_struct *mm, unsigned long cpu)
+{
+	unsigned long asid = asid_cache(cpu);
+     320:	3c100000 	lui	s0,0x0
+			320: R_MIPS_HI16	cpu_data
+     324:	8e100010 	lw	s0,16(s0)
+			324: R_MIPS_LO16	cpu_data
+
+	if (! ((asid += ASID_INC) & ASID_MASK) ) {
+     328:	26100001 	addiu	s0,s0,1
+     32c:	320200ff 	andi	v0,s0,0xff
+     330:	10400016 	beqz	v0,38c <r4k_flush_cache_page+0x188>
+     334:	00000000 	nop
+	       icache_size >> 10,
+	       cpu_has_vtag_icache ? "virtually tagged" : "physically tagged",
+	       way_string[c->icache.ways], c->icache.linesz);
+
+	printk("Primary data cache %ldkB, %s, linesize %d bytes.\n",
+     338:	3c010000 	lui	at,0x0
+			338: R_MIPS_HI16	cpu_data
+     33c:	ac300010 	sw	s0,16(at)
+			33c: R_MIPS_LO16	cpu_data
+	local_irq_save(flags);
+
+	if (test_bit(cpu, &mm->cpu_vm_mask))  {
+		get_new_mmu_context(mm, cpu);
+		write_c0_entryhi(cpu_asid(cpu, mm));
+     340:	320200ff 	andi	v0,s0,0xff
+     344:	ae300078 	sw	s0,120(s1)
+     348:	40825000 	mtc0	v0,$10
+     34c:	00000000 	nop
+	} else {
+		/* will get a new context next time */
+		cpu_context(cpu, mm) = 0;
+	}
+
+	local_irq_restore(flags);
+     350:	40016000 	mfc0	at,$12
+     354:	32520001 	andi	s2,s2,0x1
+     358:	34210001 	ori	at,at,0x1
+     35c:	38210001 	xori	at,at,0x1
+     360:	02419025 	or	s2,s2,at
+     364:	40926000 	mtc0	s2,$12
+     368:	00000040 	sll	zero,zero,0x1
+     36c:	00000040 	sll	zero,zero,0x1
+     370:	00000040 	sll	zero,zero,0x1
+     374:	8fbf001c 	lw	ra,28(sp)
+     378:	8fb20018 	lw	s2,24(sp)
+     37c:	8fb10014 	lw	s1,20(sp)
+     380:	8fb00010 	lw	s0,16(sp)
+     384:	03e00008 	jr	ra
+     388:	27bd0020 	addiu	sp,sp,32
+     38c:	0c000000 	jal	0 <no_sc_noop>
+			38c: R_MIPS_26	local_flush_tlb_all
+     390:	00000000 	nop
+
+	if (! ((asid += ASID_INC) & ASID_MASK) ) {
+		flush_icache_all();
+		local_flush_tlb_all();	/* start new asid cycle */
+		if (!asid)		/* fix version if needed */
+     394:	5200ffe8 	beqzl	s0,338 <r4k_flush_cache_page+0x134>
+     398:	24100100 	li	s0,256
+			asid = ASID_FIRST_VERSION;
+     39c:	080000ce 	j	338 <r4k_flush_cache_page+0x134>
+			39c: R_MIPS_26	.text
+     3a0:	00000000 	nop
+     3a4:	3c020000 	lui	v0,0x0
+			3a4: R_MIPS_HI16	.bss
+     3a8:	8c42001c 	lw	v0,28(v0)
+			3a8: R_MIPS_LO16	.bss
+     3ac:	0040f809 	jalr	v0
+     3b0:	02002021 	move	a0,s0
+     3b4:	080000de 	j	378 <r4k_flush_cache_page+0x174>
+			3b4: R_MIPS_26	.text
+     3b8:	8fbf001c 	lw	ra,28(sp)
+     3bc:	1040ffad 	beqz	v0,274 <r4k_flush_cache_page+0x70>
+     3c0:	00000000 	nop
+     3c4:	3c030000 	lui	v1,0x0
+			3c4: R_MIPS_HI16	cpu_data
+     3c8:	8c630050 	lw	v1,80(v1)
+			3c8: R_MIPS_LO16	cpu_data
+     3cc:	30620004 	andi	v0,v1,0x4
+     3d0:	14400006 	bnez	v0,3ec <r4k_flush_cache_page+0x1e8>
+     3d4:	00000000 	nop
+     3d8:	1240ffe7 	beqz	s2,378 <r4k_flush_cache_page+0x174>
+     3dc:	8fbf001c 	lw	ra,28(sp)
+     3e0:	30620008 	andi	v0,v1,0x8
+     3e4:	14400005 	bnez	v0,3fc <r4k_flush_cache_page+0x1f8>
+     3e8:	00000000 	nop
+     3ec:	3c020000 	lui	v0,0x0
+			3ec: R_MIPS_HI16	.bss
+     3f0:	8c42000c 	lw	v0,12(v0)
+			3f0: R_MIPS_LO16	.bss
+     3f4:	0040f809 	jalr	v0
+     3f8:	02002021 	move	a0,s0
+     3fc:	5240ffde 	beqzl	s2,378 <r4k_flush_cache_page+0x174>
+     400:	8fbf001c 	lw	ra,28(sp)
+     404:	3c020000 	lui	v0,0x0
+			404: R_MIPS_HI16	.bss
+     408:	080000eb 	j	3ac <r4k_flush_cache_page+0x1a8>
+			408: R_MIPS_26	.text
+     40c:	8c420018 	lw	v0,24(v0)
+			40c: R_MIPS_LO16	.bss
+
+00000410 <r4k_flush_data_cache_page>:
+     410:	3c020000 	lui	v0,0x0
+			410: R_MIPS_HI16	.bss
+     414:	8c42000c 	lw	v0,12(v0)
+			414: R_MIPS_LO16	.bss
+     418:	27bdffe8 	addiu	sp,sp,-24
+     41c:	afbf0010 	sw	ra,16(sp)
+     420:	0040f809 	jalr	v0
+     424:	00000000 	nop
+     428:	8fbf0010 	lw	ra,16(sp)
+     42c:	03e00008 	jr	ra
+     430:	27bd0018 	addiu	sp,sp,24
+
+00000434 <r4k_flush_icache_range>:
+     434:	3c020000 	lui	v0,0x0
+			434: R_MIPS_HI16	cpu_data
+     438:	8c420050 	lw	v0,80(v0)
+			438: R_MIPS_LO16	cpu_data
+     43c:	27bdffd8 	addiu	sp,sp,-40
+     440:	afb3001c 	sw	s3,28(sp)
+     444:	30420008 	andi	v0,v0,0x8
+     448:	00809821 	move	s3,a0
+     44c:	afb20018 	sw	s2,24(sp)
+     450:	afb10014 	sw	s1,20(sp)
+     454:	afb00010 	sw	s0,16(sp)
+     458:	afbf0020 	sw	ra,32(sp)
+     45c:	00a09021 	move	s2,a1
+     460:	3c040000 	lui	a0,0x0
+			460: R_MIPS_HI16	cpu_data
+     464:	94840040 	lhu	a0,64(a0)
+			464: R_MIPS_LO16	cpu_data
+     468:	3c110000 	lui	s1,0x0
+			468: R_MIPS_HI16	cpu_data
+     46c:	9631002c 	lhu	s1,44(s1)
+			46c: R_MIPS_LO16	cpu_data
+     470:	1440000c 	bnez	v0,4a4 <r4k_flush_icache_range+0x70>
+     474:	00b38023 	subu	s0,a1,s3
+     478:	3c020000 	lui	v0,0x0
+			478: R_MIPS_HI16	.bss
+     47c:	8c420004 	lw	v0,4(v0)
+			47c: R_MIPS_LO16	.bss
+     480:	0050102b 	sltu	v0,v0,s0
+     484:	1440001f 	bnez	v0,504 <r4k_flush_icache_range+0xd0>
+     488:	00041823 	negu	v1,a0
+     48c:	24a2ffff 	addiu	v0,a1,-1
+     490:	00432824 	and	a1,v0,v1
+     494:	02631024 	and	v0,s3,v1
+     498:	bc550000 	0xbc550000
+     49c:	1445fffe 	bne	v0,a1,498 <r4k_flush_icache_range+0x64>
+     4a0:	00441021 	addu	v0,v0,a0
+     4a4:	3c020000 	lui	v0,0x0
+			4a4: R_MIPS_HI16	.bss
+     4a8:	8c420000 	lw	v0,0(v0)
+			4a8: R_MIPS_LO16	.bss
+     4ac:	0050102b 	sltu	v0,v0,s0
+     4b0:	1440000e 	bnez	v0,4ec <r4k_flush_icache_range+0xb8>
+     4b4:	00111023 	negu	v0,s1
+     4b8:	2643ffff 	addiu	v1,s2,-1
+     4bc:	00622824 	and	a1,v1,v0
+     4c0:	02621024 	and	v0,s3,v0
+ * The next two are for badland addresses like signal trampolines.
+ */
+static inline void protected_flush_icache_line(unsigned long addr)
+{
+	__asm__ __volatile__(
+     4c4:	bc500000 	0xbc500000
+     4c8:	1445fffe 	bne	v0,a1,4c4 <r4k_flush_icache_range+0x90>
+     4cc:	00511021 	addu	v0,v0,s1
+     4d0:	8fbf0020 	lw	ra,32(sp)
+     4d4:	8fb3001c 	lw	s3,28(sp)
+     4d8:	8fb20018 	lw	s2,24(sp)
+     4dc:	8fb10014 	lw	s1,20(sp)
+     4e0:	8fb00010 	lw	s0,16(sp)
+     4e4:	03e00008 	jr	ra
+     4e8:	27bd0028 	addiu	sp,sp,40
+     4ec:	3c020000 	lui	v0,0x0
+			4ec: R_MIPS_HI16	.bss
+     4f0:	8c420020 	lw	v0,32(v0)
+			4f0: R_MIPS_LO16	.bss
+     4f4:	0040f809 	jalr	v0
+     4f8:	00000000 	nop
+     4fc:	08000135 	j	4d4 <r4k_flush_icache_range+0xa0>
+			4fc: R_MIPS_26	.text
+     500:	8fbf0020 	lw	ra,32(sp)
+     504:	3c020000 	lui	v0,0x0
+			504: R_MIPS_HI16	.bss
+     508:	8c420014 	lw	v0,20(v0)
+			508: R_MIPS_LO16	.bss
+     50c:	0040f809 	jalr	v0
+     510:	00000000 	nop
+     514:	08000129 	j	4a4 <r4k_flush_icache_range+0x70>
+			514: R_MIPS_26	.text
+     518:	00000000 	nop
+
+0000051c <r4k_flush_icache_page>:
+     51c:	27bdffe0 	addiu	sp,sp,-32
+     520:	afb10014 	sw	s1,20(sp)
+     524:	afb00010 	sw	s0,16(sp)
+     528:	afbf001c 	sw	ra,28(sp)
+     52c:	afb20018 	sw	s2,24(sp)
+     530:	8c820014 	lw	v0,20(a0)
+     534:	00808821 	move	s1,a0
+     538:	30420004 	andi	v0,v0,0x4
+     53c:	10400036 	beqz	v0,618 <r4k_flush_icache_page+0xfc>
+     540:	00a08021 	move	s0,a1
+     544:	3c020000 	lui	v0,0x0
+			544: R_MIPS_HI16	cpu_data
+     548:	8c420014 	lw	v0,20(v0)
+			548: R_MIPS_LO16	cpu_data
+     54c:	3c030002 	lui	v1,0x2
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+     550:	00431024 	and	v0,v0,v1
+     554:	54400064 	bnezl	v0,6e8 <r4k_flush_icache_page+0x1cc>
+     558:	90a2001b 	lbu	v0,27(a1)
+     55c:	3c020000 	lui	v0,0x0
+			55c: R_MIPS_HI16	cpu_data
+     560:	8c420050 	lw	v0,80(v0)
+			560: R_MIPS_LO16	cpu_data
+     564:	30420008 	andi	v0,v0,0x8
+     568:	5040003d 	beqzl	v0,660 <r4k_flush_icache_page+0x144>
+     56c:	90a2001b 	lbu	v0,27(a1)
+     570:	3c020000 	lui	v0,0x0
+			570: R_MIPS_HI16	cpu_data
+     574:	8c42003c 	lw	v0,60(v0)
+			574: R_MIPS_LO16	cpu_data
+     578:	30420002 	andi	v0,v0,0x2
+ */
+
+static inline int generic_ffs(int x)
+{
+	int r = 1;
+     57c:	10400032 	beqz	v0,648 <r4k_flush_icache_page+0x12c>
+     580:	00000000 	nop
+     584:	8e310000 	lw	s1,0(s1)
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+     588:	8e220078 	lw	v0,120(s1)
+	int r = 1;
+
+	if (!x)
+     58c:	10400023 	beqz	v0,61c <r4k_flush_icache_page+0x100>
+     590:	8fbf001c 	lw	ra,28(sp)
+		return 0;
+	if (!(x & 0xffff)) {
+     594:	40126000 	mfc0	s2,$12
+     598:	00000000 	nop
+     59c:	36410001 	ori	at,s2,0x1
+		x >>= 16;
+     5a0:	38210001 	xori	at,at,0x1
+		r += 16;
+     5a4:	40816000 	mtc0	at,$12
+	}
+	if (!(x & 0xff)) {
+     5a8:	00000040 	sll	zero,zero,0x1
+     5ac:	00000040 	sll	zero,zero,0x1
+     5b0:	00000040 	sll	zero,zero,0x1
+		x >>= 8;
+     5b4:	8e22006c 	lw	v0,108(s1)
+		r += 8;
+     5b8:	30420001 	andi	v0,v0,0x1
+	}
+	if (!(x & 0xf)) {
+     5bc:	5040000d 	beqzl	v0,5f4 <r4k_flush_icache_page+0xd8>
+     5c0:	ae200078 	sw	zero,120(s1)
+
+static inline void
+get_new_mmu_context(struct mm_struct *mm, unsigned long cpu)
+{
+	unsigned long asid = asid_cache(cpu);
+     5c4:	3c100000 	lui	s0,0x0
+			5c4: R_MIPS_HI16	cpu_data
+		x >>= 8;
+		r += 8;
+	}
+	if (!(x & 0xf)) {
+		x >>= 4;
+     5c8:	8e100010 	lw	s0,16(s0)
+			5c8: R_MIPS_LO16	cpu_data
+		r += 4;
+     5cc:	26100001 	addiu	s0,s0,1
+	}
+	if (!(x & 3)) {
+     5d0:	320200ff 	andi	v0,s0,0xff
+     5d4:	10400016 	beqz	v0,630 <r4k_flush_icache_page+0x114>
+     5d8:	00000000 	nop
+		x >>= 2;
+     5dc:	3c010000 	lui	at,0x0
+			5dc: R_MIPS_HI16	cpu_data
+		r += 2;
+     5e0:	ac300010 	sw	s0,16(at)
+			5e0: R_MIPS_LO16	cpu_data
+	}
+	if (!(x & 1)) {
+     5e4:	320200ff 	andi	v0,s0,0xff
+		local_flush_tlb_all();	/* start new asid cycle */
+		if (!asid)		/* fix version if needed */
+			asid = ASID_FIRST_VERSION;
+	}
+	cpu_context(cpu, mm) = asid_cache(cpu) = asid;
+     5e8:	ae300078 	sw	s0,120(s1)
+}
+
+/*
+ * Initialize the context related info for a new mm_struct
+ * instance.
+ */
+static inline int
+init_new_context(struct task_struct *tsk, struct mm_struct *mm)
+{
+	int i;
+
+	for (i = 0; i < smp_num_cpus; i++)
+		cpu_context(i, mm) = 0;
+	return 0;
+}
+
+static inline void switch_mm(struct mm_struct *prev, struct mm_struct *next,
+                             struct task_struct *tsk, unsigned cpu)
+{
+	unsigned long flags;
+
+	local_irq_save(flags);
+
+	/* Check if our ASID is of an older version and thus invalid */
+	if ((cpu_context(cpu, next) ^ asid_cache(cpu)) & ASID_VERSION_MASK)
+		get_new_mmu_context(next, cpu);
+
+	write_c0_entryhi(cpu_context(cpu, next));
+	TLBMISS_HANDLER_SETUP_PGD(next->pgd);
+
+	/*
+	 * Mark current->active_mm as not "active" anymore.
+	 * We don't want to mislead possible IPI tlb flush routines.
+	 */
+	clear_bit(cpu, &prev->cpu_vm_mask);
+	set_bit(cpu, &next->cpu_vm_mask);
+
+	local_irq_restore(flags);
+}
+
+/*
+ * Destroy context related info for an mm_struct that is about
+ * to be put to rest.
+ */
+static inline void destroy_context(struct mm_struct *mm)
+{
+}
+
+/*
+ * After we have set current->mm to a new value, this activates
+ * the context for the new mm so we see the new mappings.
+ */
+static inline void
+activate_mm(struct mm_struct *prev, struct mm_struct *next)
+{
+	unsigned long flags;
+	int cpu = smp_processor_id();
+
+	local_irq_save(flags);
+
+	/* Unconditionally get a new ASID.  */
+	get_new_mmu_context(next, cpu);
+
+	write_c0_entryhi(cpu_context(cpu, next));
+	TLBMISS_HANDLER_SETUP_PGD(next->pgd);
+
+	/* mark mmu ownership change */
+	clear_bit(cpu, &prev->cpu_vm_mask);
+	set_bit(cpu, &next->cpu_vm_mask);
+
+	local_irq_restore(flags);
+}
+
+/*
+ * If mm is currently active_mm, we can't really drop it.  Instead,
+ * we will get a new one for it.
+ */
+static inline void
+drop_mmu_context(struct mm_struct *mm, unsigned cpu)
+{
+	unsigned long flags;
+
+	local_irq_save(flags);
+
+	if (test_bit(cpu, &mm->cpu_vm_mask))  {
+		get_new_mmu_context(mm, cpu);
+		write_c0_entryhi(cpu_asid(cpu, mm));
+     5ec:	40825000 	mtc0	v0,$10
+	}
+	if (!(x & 1)) {
+		x >>= 1;
+		r += 1;
+	}
+     5f0:	00000000 	nop
+     5f4:	40016000 	mfc0	at,$12
+     5f8:	32520001 	andi	s2,s2,0x1
+     5fc:	34210001 	ori	at,at,0x1
+     600:	38210001 	xori	at,at,0x1
+     604:	02419025 	or	s2,s2,at
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+     608:	40926000 	mtc0	s2,$12
+     60c:	00000040 	sll	zero,zero,0x1
+     610:	00000040 	sll	zero,zero,0x1
+     614:	00000040 	sll	zero,zero,0x1
+     618:	8fbf001c 	lw	ra,28(sp)
+     61c:	8fb20018 	lw	s2,24(sp)
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+     620:	8fb10014 	lw	s1,20(sp)
+     624:	8fb00010 	lw	s0,16(sp)
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+     628:	03e00008 	jr	ra
+     62c:	27bd0020 	addiu	sp,sp,32
+     630:	0c000000 	jal	0 <no_sc_noop>
+			630: R_MIPS_26	local_flush_tlb_all
+     634:	00000000 	nop
+
+	if (! ((asid += ASID_INC) & ASID_MASK) ) {
+		flush_icache_all();
+		local_flush_tlb_all();	/* start new asid cycle */
+		if (!asid)		/* fix version if needed */
+     638:	5200ffe8 	beqzl	s0,5dc <r4k_flush_icache_page+0xc0>
+ */
+
+static inline int generic_ffs(int x)
+{
+	int r = 1;
+     63c:	24100100 	li	s0,256
+     640:	08000177 	j	5dc <r4k_flush_icache_page+0xc0>
+			640: R_MIPS_26	.text
+     644:	00000000 	nop
+     648:	3c020000 	lui	v0,0x0
+			648: R_MIPS_HI16	.bss
+
+	if (!x)
+     64c:	8c420020 	lw	v0,32(v0)
+			64c: R_MIPS_LO16	.bss
+     650:	0040f809 	jalr	v0
+		return 0;
+	if (!(x & 0xffff)) {
+     654:	00000000 	nop
+     658:	08000187 	j	61c <r4k_flush_icache_page+0x100>
+			658: R_MIPS_26	.text
+     65c:	8fbf001c 	lw	ra,28(sp)
+		x >>= 16;
+     660:	00021080 	sll	v0,v0,0x2
+		r += 16;
+     664:	3c030000 	lui	v1,0x0
+			664: R_MIPS_HI16	zone_table
+	}
+	if (!(x & 0xff)) {
+     668:	00621821 	addu	v1,v1,v0
+     66c:	8c630000 	lw	v1,0(v1)
+			66c: R_MIPS_LO16	zone_table
+struct zone_struct;
+extern struct zone_struct *zone_table[];
+
+static inline zone_t *page_zone(struct page *page)
+{
+     670:	8c6500c0 	lw	a1,192(v1)
+		x >>= 16;
+		r += 16;
+	}
+	if (!(x & 0xff)) {
+		x >>= 8;
+     674:	8c6400c4 	lw	a0,196(v1)
+		r += 8;
+     678:	02052823 	subu	a1,s0,a1
+	}
+	if (!(x & 0xf)) {
+     67c:	00052883 	sra	a1,a1,0x2
+     680:	00051940 	sll	v1,a1,0x5
+     684:	00651823 	subu	v1,v1,a1
+		x >>= 4;
+     688:	00031940 	sll	v1,v1,0x5
+		r += 4;
+     68c:	00651821 	addu	v1,v1,a1
+	}
+	if (!(x & 3)) {
+     690:	000330c0 	sll	a2,v1,0x3
+     694:	00661821 	addu	v1,v1,a2
+     698:	000313c0 	sll	v0,v1,0xf
+		x >>= 2;
+     69c:	00431023 	subu	v0,v0,v1
+		r += 2;
+     6a0:	00021080 	sll	v0,v0,0x2
+	}
+	if (!(x & 1)) {
+     6a4:	00451021 	addu	v0,v0,a1
+     6a8:	00021300 	sll	v0,v0,0xc
+     6ac:	00822023 	subu	a0,a0,v0
+		x >>= 1;
+		r += 1;
+	}
+     6b0:	3c020000 	lui	v0,0x0
+			6b0: R_MIPS_HI16	.bss
+     6b4:	8c42000c 	lw	v0,12(v0)
+			6b4: R_MIPS_LO16	.bss
+struct zone_struct;
+extern struct zone_struct *zone_table[];
+
+static inline zone_t *page_zone(struct page *page)
+{
+     6b8:	3c018000 	lui	at,0x8000
+     6bc:	00242021 	addu	a0,at,a0
+     6c0:	0040f809 	jalr	v0
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+     6c4:	00000000 	nop
+     6c8:	c2030018 	ll	v1,24(s0)
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+     6cc:	2401dfff 	li	at,-8193
+     6d0:	00611824 	and	v1,v1,at
+     6d4:	e2030018 	sc	v1,24(s0)
+     6d8:	1060fffb 	beqz	v1,6c8 <r4k_flush_icache_page+0x1ac>
+     6dc:	00000000 	nop
+     6e0:	0800015c 	j	570 <r4k_flush_icache_page+0x54>
+			6e0: R_MIPS_26	.text
+     6e4:	00000000 	nop
+     6e8:	00021080 	sll	v0,v0,0x2
+     6ec:	3c030000 	lui	v1,0x0
+			6ec: R_MIPS_HI16	zone_table
+     6f0:	00621821 	addu	v1,v1,v0
+     6f4:	8c630000 	lw	v1,0(v1)
+			6f4: R_MIPS_LO16	zone_table
+     6f8:	8c6500c0 	lw	a1,192(v1)
+     6fc:	8c6400c4 	lw	a0,196(v1)
+     700:	02052823 	subu	a1,s0,a1
+     704:	00052883 	sra	a1,a1,0x2
+     708:	00051940 	sll	v1,a1,0x5
+     70c:	00651823 	subu	v1,v1,a1
+     710:	00031940 	sll	v1,v1,0x5
+     714:	00651821 	addu	v1,v1,a1
+     718:	000330c0 	sll	a2,v1,0x3
+     71c:	00661821 	addu	v1,v1,a2
+     720:	000313c0 	sll	v0,v1,0xf
+     724:	00431023 	subu	v0,v0,v1
+     728:	00021080 	sll	v0,v0,0x2
+     72c:	00451021 	addu	v0,v0,a1
+     730:	00021300 	sll	v0,v0,0xc
+     734:	00822023 	subu	a0,a0,v0
+     738:	3c020000 	lui	v0,0x0
+			738: R_MIPS_HI16	.bss
+     73c:	8c420024 	lw	v0,36(v0)
+			73c: R_MIPS_LO16	.bss
+     740:	3c018000 	lui	at,0x8000
+     744:	00242021 	addu	a0,at,a0
+     748:	0040f809 	jalr	v0
+     74c:	00000000 	nop
+     750:	c2030018 	ll	v1,24(s0)
+     754:	2401dfff 	li	at,-8193
+     758:	00611824 	and	v1,v1,at
+     75c:	e2030018 	sc	v1,24(s0)
+     760:	1060fffb 	beqz	v1,750 <r4k_flush_icache_page+0x234>
+     764:	00000000 	nop
+     768:	08000187 	j	61c <r4k_flush_icache_page+0x100>
+			768: R_MIPS_26	.text
+     76c:	8fbf001c 	lw	ra,28(sp)
+
+00000770 <r4k_dma_cache_wback_inv>:
+     770:	27bdffe8 	addiu	sp,sp,-24
+     774:	10a00035 	beqz	a1,84c <r4k_dma_cache_wback_inv+0xdc>
+     778:	afbf0010 	sw	ra,16(sp)
+     77c:	3c020000 	lui	v0,0x0
+			77c: R_MIPS_HI16	cpu_data
+     780:	8c420014 	lw	v0,20(v0)
+			780: R_MIPS_LO16	cpu_data
+     784:	3c030002 	lui	v1,0x2
+     788:	00431024 	and	v0,v0,v1
+     78c:	10400018 	beqz	v0,7f0 <r4k_dma_cache_wback_inv+0x80>
+     790:	00000000 	nop
+     794:	3c020000 	lui	v0,0x0
+			794: R_MIPS_HI16	.bss
+     798:	8c420008 	lw	v0,8(v0)
+			798: R_MIPS_LO16	.bss
+     79c:	3c060000 	lui	a2,0x0
+			79c: R_MIPS_HI16	cpu_data
+     7a0:	94c60054 	lhu	a2,84(a2)
+			7a0: R_MIPS_LO16	cpu_data
+     7a4:	00a2102b 	sltu	v0,a1,v0
+     7a8:	1040000b 	beqz	v0,7d8 <r4k_dma_cache_wback_inv+0x68>
+     7ac:	00851021 	addu	v0,a0,a1
+     7b0:	00061823 	negu	v1,a2
+     7b4:	2442ffff 	addiu	v0,v0,-1
+     7b8:	00432824 	and	a1,v0,v1
+     7bc:	00832024 	and	a0,a0,v1
+}
+
+static inline void flush_scache_line(unsigned long addr)
+{
+	cache_op(Hit_Writeback_Inv_SD, addr);
+     7c0:	bc970000 	0xbc970000
+     7c4:	1485fffe 	bne	a0,a1,7c0 <r4k_dma_cache_wback_inv+0x50>
+     7c8:	00862021 	addu	a0,a0,a2
+     7cc:	8fbf0010 	lw	ra,16(sp)
+     7d0:	03e00008 	jr	ra
+     7d4:	27bd0018 	addiu	sp,sp,24
+     7d8:	3c020000 	lui	v0,0x0
+			7d8: R_MIPS_HI16	.bss
+     7dc:	8c420028 	lw	v0,40(v0)
+			7dc: R_MIPS_LO16	.bss
+     7e0:	0040f809 	jalr	v0
+     7e4:	00000000 	nop
+     7e8:	080001f4 	j	7d0 <r4k_dma_cache_wback_inv+0x60>
+			7e8: R_MIPS_26	.text
+     7ec:	8fbf0010 	lw	ra,16(sp)
+     7f0:	3c020000 	lui	v0,0x0
+			7f0: R_MIPS_HI16	.bss
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+     7f4:	8c420004 	lw	v0,4(v0)
+			7f4: R_MIPS_LO16	.bss
+     7f8:	00a2102b 	sltu	v0,a1,v0
+     7fc:	10400010 	beqz	v0,840 <r4k_dma_cache_wback_inv+0xd0>
+     800:	00000000 	nop
+     804:	3c060000 	lui	a2,0x0
+			804: R_MIPS_HI16	cpu_data
+     808:	94c60040 	lhu	a2,64(a2)
+			808: R_MIPS_LO16	cpu_data
+ */
+
+static inline int generic_ffs(int x)
+{
+	int r = 1;
+     80c:	00851021 	addu	v0,a0,a1
+
+	if (!x)
+     810:	2442ffff 	addiu	v0,v0,-1
+     814:	00061823 	negu	v1,a2
+	int r = 1;
+
+	if (!x)
+		return 0;
+	if (!(x & 0xffff)) {
+     818:	00432824 	and	a1,v0,v1
+     81c:	00832024 	and	a0,a0,v1
+     820:	8c820000 	lw	v0,0(a0)
+
+	if (!x)
+		return 0;
+	if (!(x & 0xffff)) {
+		x >>= 16;
+     824:	3c010000 	lui	at,0x0
+			824: R_MIPS_HI16	cache_temp
+		r += 16;
+     828:	ac220000 	sw	v0,0(at)
+			828: R_MIPS_LO16	cache_temp
+	}
+	if (!(x & 0xff)) {
+     82c:	bc950000 	0xbc950000
+     830:	1085ffe6 	beq	a0,a1,7cc <r4k_dma_cache_wback_inv+0x5c>
+     834:	00862021 	addu	a0,a0,a2
+		x >>= 16;
+		r += 16;
+	}
+	if (!(x & 0xff)) {
+		x >>= 8;
+     838:	08000209 	j	824 <r4k_dma_cache_wback_inv+0xb4>
+			838: R_MIPS_26	.text
+		r += 8;
+     83c:	8c820000 	lw	v0,0(a0)
+	}
+	if (!(x & 0xf)) {
+     840:	3c020000 	lui	v0,0x0
+			840: R_MIPS_HI16	.bss
+     844:	080001f8 	j	7e0 <r4k_dma_cache_wback_inv+0x70>
+			844: R_MIPS_26	.text
+     848:	8c420014 	lw	v0,20(v0)
+			848: R_MIPS_LO16	.bss
+		x >>= 4;
+     84c:	0200000d 	break	0x200
+		r += 4;
+     850:	080001df 	j	77c <r4k_dma_cache_wback_inv+0xc>
+			850: R_MIPS_26	.text
+	}
+	if (!(x & 3)) {
+     854:	00000000 	nop
+
+00000858 <r4k_dma_cache_inv>:
+     858:	27bdffe8 	addiu	sp,sp,-24
+     85c:	10a00032 	beqz	a1,928 <r4k_dma_cache_inv+0xd0>
+		x >>= 4;
+		r += 4;
+	}
+	if (!(x & 3)) {
+		x >>= 2;
+     860:	afbf0010 	sw	ra,16(sp)
+		r += 2;
+     864:	3c020000 	lui	v0,0x0
+			864: R_MIPS_HI16	cpu_data
+	}
+	if (!(x & 1)) {
+     868:	8c420014 	lw	v0,20(v0)
+			868: R_MIPS_LO16	cpu_data
+     86c:	3c030002 	lui	v1,0x2
+     870:	00431024 	and	v0,v0,v1
+		x >>= 1;
+		r += 1;
+	}
+     874:	10400018 	beqz	v0,8d8 <r4k_dma_cache_inv+0x80>
+     878:	00000000 	nop
+     87c:	3c020000 	lui	v0,0x0
+			87c: R_MIPS_HI16	.bss
+     880:	8c420008 	lw	v0,8(v0)
+			880: R_MIPS_LO16	.bss
+     884:	3c060000 	lui	a2,0x0
+			884: R_MIPS_HI16	cpu_data
+     888:	94c60054 	lhu	a2,84(a2)
+			888: R_MIPS_LO16	cpu_data
+     88c:	00a2102b 	sltu	v0,a1,v0
+     890:	1040000b 	beqz	v0,8c0 <r4k_dma_cache_inv+0x68>
+     894:	00851021 	addu	v0,a0,a1
+     898:	2442ffff 	addiu	v0,v0,-1
+     89c:	00061823 	negu	v1,a2
+     8a0:	00432824 	and	a1,v0,v1
+     8a4:	00831024 	and	v0,a0,v1
+     8a8:	bc570000 	0xbc570000
+     8ac:	1445fffe 	bne	v0,a1,8a8 <r4k_dma_cache_inv+0x50>
+     8b0:	00461021 	addu	v0,v0,a2
+     8b4:	8fbf0010 	lw	ra,16(sp)
+     8b8:	03e00008 	jr	ra
+     8bc:	27bd0018 	addiu	sp,sp,24
+     8c0:	3c020000 	lui	v0,0x0
+			8c0: R_MIPS_HI16	.bss
+     8c4:	8c420028 	lw	v0,40(v0)
+			8c4: R_MIPS_LO16	.bss
+     8c8:	0040f809 	jalr	v0
+     8cc:	00000000 	nop
+     8d0:	0800022e 	j	8b8 <r4k_dma_cache_inv+0x60>
+			8d0: R_MIPS_26	.text
+     8d4:	8fbf0010 	lw	ra,16(sp)
+     8d8:	3c020000 	lui	v0,0x0
+			8d8: R_MIPS_HI16	.bss
+     8dc:	8c420004 	lw	v0,4(v0)
+			8dc: R_MIPS_LO16	.bss
+     8e0:	00a2102b 	sltu	v0,a1,v0
+     8e4:	1040000d 	beqz	v0,91c <r4k_dma_cache_inv+0xc4>
+     8e8:	00000000 	nop
+     8ec:	3c060000 	lui	a2,0x0
+			8ec: R_MIPS_HI16	cpu_data
+     8f0:	94c60040 	lhu	a2,64(a2)
+			8f0: R_MIPS_LO16	cpu_data
+     8f4:	00851021 	addu	v0,a0,a1
+     8f8:	2442ffff 	addiu	v0,v0,-1
+     8fc:	00061823 	negu	v1,a2
+     900:	00432824 	and	a1,v0,v1
+     904:	00831024 	and	v0,a0,v1
+}
+
+static inline void flush_dcache_line(unsigned long addr)
+{
+	cache_op(Hit_Writeback_Inv_D, addr);
+     908:	bc550000 	0xbc550000
+     90c:	1045ffe9 	beq	v0,a1,8b4 <r4k_dma_cache_inv+0x5c>
+     910:	00461021 	addu	v0,v0,a2
+     914:	08000242 	j	908 <r4k_dma_cache_inv+0xb0>
+			914: R_MIPS_26	.text
+     918:	00000000 	nop
+ */
+
+static inline int generic_ffs(int x)
+{
+	int r = 1;
+     91c:	3c020000 	lui	v0,0x0
+			91c: R_MIPS_HI16	.bss
+
+	if (!x)
+     920:	08000232 	j	8c8 <r4k_dma_cache_inv+0x70>
+			920: R_MIPS_26	.text
+     924:	8c420014 	lw	v0,20(v0)
+			924: R_MIPS_LO16	.bss
+     928:	0200000d 	break	0x200
+     92c:	08000219 	j	864 <r4k_dma_cache_inv+0xc>
+			92c: R_MIPS_26	.text
+     930:	00000000 	nop
+
+00000934 <r4k_flush_cache_sigtramp>:
+     934:	3c050000 	lui	a1,0x0
+			934: R_MIPS_HI16	cpu_data
+     938:	24a5002c 	addiu	a1,a1,44
+			938: R_MIPS_LO16	cpu_data
+     93c:	94a20014 	lhu	v0,20(a1)
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+     940:	94a30000 	lhu	v1,0(a1)
+ * caches.  We're talking about one cacheline unnecessarily getting invalidated
+ * here so the penaltiy isn't overly hard.
+ */
+static inline void protected_writeback_dcache_line(unsigned long addr)
+{
+     944:	00021023 	negu	v0,v0
+     948:	00821024 	and	v0,a0,v0
+	__asm__ __volatile__(
+     94c:	bc550000 	0xbc550000
+static inline int generic_ffs(int x)
+{
+	int r = 1;
+
+	if (!x)
+     950:	00031823 	negu	v1,v1
+     954:	00832024 	and	a0,a0,v1
+		return 0;
+	if (!(x & 0xffff)) {
+     958:	bc900000 	0xbc900000
+     95c:	03e00008 	jr	ra
+     960:	00000000 	nop
+
+00000964 <r4k_flush_icache_all>:
+
+	if (!x)
+		return 0;
+	if (!(x & 0xffff)) {
+		x >>= 16;
+     964:	3c020000 	lui	v0,0x0
+			964: R_MIPS_HI16	cpu_data
+		r += 16;
+     968:	8c42003c 	lw	v0,60(v0)
+			968: R_MIPS_LO16	cpu_data
+	}
+	if (!(x & 0xff)) {
+     96c:	27bdffe8 	addiu	sp,sp,-24
+     970:	30420002 	andi	v0,v0,0x2
+     974:	14400004 	bnez	v0,988 <r4k_flush_icache_all+0x24>
+		x >>= 16;
+		r += 16;
+	}
+	if (!(x & 0xff)) {
+		x >>= 8;
+     978:	afbf0010 	sw	ra,16(sp)
+		r += 8;
+     97c:	8fbf0010 	lw	ra,16(sp)
+	}
+	if (!(x & 0xf)) {
+     980:	03e00008 	jr	ra
+     984:	27bd0018 	addiu	sp,sp,24
+     988:	3c020000 	lui	v0,0x0
+			988: R_MIPS_HI16	.bss
+		x >>= 8;
+		r += 8;
+	}
+	if (!(x & 0xf)) {
+		x >>= 4;
+     98c:	8c420020 	lw	v0,32(v0)
+			98c: R_MIPS_LO16	.bss
+		r += 4;
+     990:	0040f809 	jalr	v0
+	}
+	if (!(x & 3)) {
+     994:	00000000 	nop
+     998:	08000260 	j	980 <r4k_flush_icache_all+0x1c>
+			998: R_MIPS_26	.text
+     99c:	8fbf0010 	lw	ra,16(sp)
+
+000009a0 <blast_dcache16>:
+		x >>= 2;
+     9a0:	3c040000 	lui	a0,0x0
+			9a0: R_MIPS_HI16	cpu_data
+		r += 2;
+     9a4:	8c84004c 	lw	a0,76(a0)
+			9a4: R_MIPS_LO16	cpu_data
+	}
+	if (!(x & 1)) {
+     9a8:	3c020000 	lui	v0,0x0
+			9a8: R_MIPS_HI16	cpu_data
+     9ac:	94420042 	lhu	v0,66(v0)
+			9ac: R_MIPS_LO16	cpu_data
+
+static inline void blast_dcache16(void)
+{
+	unsigned long start = KSEG0;
+	unsigned long end = start + current_cpu_data.dcache.waysize;
+     9b0:	3c030000 	lui	v1,0x0
+			9b0: R_MIPS_HI16	cpu_data
+	}
+	if (!(x & 1)) {
+		x >>= 1;
+		r += 1;
+	}
+     9b4:	8c630048 	lw	v1,72(v1)
+			9b4: R_MIPS_LO16	cpu_data
+     9b8:	00002821 	move	a1,zero
+     9bc:	00823804 	sllv	a3,v0,a0
+     9c0:	24020001 	li	v0,1
+
+static inline void blast_dcache16(void)
+{
+	unsigned long start = KSEG0;
+	unsigned long end = start + current_cpu_data.dcache.waysize;
+     9c4:	3c018000 	lui	at,0x8000
+     9c8:	00231821 	addu	v1,at,v1
+	unsigned long ws_end = current_cpu_data.dcache.ways << 
+	                       current_cpu_data.dcache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+     9cc:	10e0002e 	beqz	a3,a88 <blast_dcache16+0xe8>
+     9d0:	00824004 	sllv	t0,v0,a0
+     9d4:	3c028000 	lui	v0,0x8000
+     9d8:	0043302b 	sltu	a2,v0,v1
+	                       current_cpu_data.dcache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+		for (addr = start; addr < end; addr += 0x200)
+     9dc:	10c00026 	beqz	a2,a78 <blast_dcache16+0xd8>
+     9e0:	3c048000 	lui	a0,0x8000
+			cache16_unroll32(addr|ws,Index_Writeback_Inv_D);
+     9e4:	00851025 	or	v0,a0,a1
+     9e8:	bc410000 	0xbc410000
+     9ec:	bc410010 	0xbc410010
+     9f0:	bc410020 	0xbc410020
+     9f4:	bc410030 	0xbc410030
+     9f8:	bc410040 	0xbc410040
+     9fc:	bc410050 	0xbc410050
+     a00:	bc410060 	0xbc410060
+     a04:	bc410070 	0xbc410070
+     a08:	bc410080 	0xbc410080
+     a0c:	bc410090 	0xbc410090
+     a10:	bc4100a0 	0xbc4100a0
+     a14:	bc4100b0 	0xbc4100b0
+     a18:	bc4100c0 	0xbc4100c0
+     a1c:	bc4100d0 	0xbc4100d0
+     a20:	bc4100e0 	0xbc4100e0
+     a24:	bc4100f0 	0xbc4100f0
+     a28:	bc410100 	0xbc410100
+     a2c:	bc410110 	0xbc410110
+     a30:	bc410120 	0xbc410120
+     a34:	bc410130 	0xbc410130
+     a38:	bc410140 	0xbc410140
+     a3c:	bc410150 	0xbc410150
+     a40:	bc410160 	0xbc410160
+     a44:	bc410170 	0xbc410170
+     a48:	bc410180 	0xbc410180
+     a4c:	bc410190 	0xbc410190
+     a50:	bc4101a0 	0xbc4101a0
+     a54:	bc4101b0 	0xbc4101b0
+     a58:	bc4101c0 	0xbc4101c0
+     a5c:	bc4101d0 	0xbc4101d0
+     a60:	bc4101e0 	0xbc4101e0
+     a64:	bc4101f0 	0xbc4101f0
+     a68:	24840200 	addiu	a0,a0,512
+     a6c:	0083102b 	sltu	v0,a0,v1
+     a70:	1440ffdd 	bnez	v0,9e8 <blast_dcache16+0x48>
+ */
+
+static inline int generic_ffs(int x)
+{
+	int r = 1;
+     a74:	00851025 	or	v0,a0,a1
+
+	if (!x)
+     a78:	00a82821 	addu	a1,a1,t0
+     a7c:	00a7102b 	sltu	v0,a1,a3
+     a80:	1440ffd6 	bnez	v0,9dc <blast_dcache16+0x3c>
+     a84:	00000000 	nop
+     a88:	03e00008 	jr	ra
+     a8c:	00000000 	nop
+
+00000a90 <blast_dcache16_page>:
+
+static inline void blast_dcache16_page(unsigned long page)
+{
+	unsigned long start = page;
+	unsigned long end = start + PAGE_SIZE;
+     a90:	24831000 	addiu	v1,a0,4096
+
+	do {
+		cache16_unroll32(start,Hit_Writeback_Inv_D);
+     a94:	bc950000 	0xbc950000
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+     a98:	bc950010 	0xbc950010
+     a9c:	bc950020 	0xbc950020
+     aa0:	bc950030 	0xbc950030
+     aa4:	bc950040 	0xbc950040
+	int r = 1;
+
+	if (!x)
+     aa8:	bc950050 	0xbc950050
+     aac:	bc950060 	0xbc950060
+		return 0;
+	if (!(x & 0xffff)) {
+     ab0:	bc950070 	0xbc950070
+     ab4:	bc950080 	0xbc950080
+		x >>= 16;
+     ab8:	bc950090 	0xbc950090
+		r += 16;
+     abc:	bc9500a0 	0xbc9500a0
+	}
+	if (!(x & 0xff)) {
+     ac0:	bc9500b0 	0xbc9500b0
+     ac4:	bc9500c0 	0xbc9500c0
+     ac8:	bc9500d0 	0xbc9500d0
+		x >>= 8;
+     acc:	bc9500e0 	0xbc9500e0
+		r += 8;
+     ad0:	bc9500f0 	0xbc9500f0
+	}
+	if (!(x & 0xf)) {
+     ad4:	bc950100 	0xbc950100
+     ad8:	bc950110 	0xbc950110
+     adc:	bc950120 	0xbc950120
+		x >>= 4;
+     ae0:	bc950130 	0xbc950130
+		r += 4;
+     ae4:	bc950140 	0xbc950140
+	}
+	if (!(x & 3)) {
+     ae8:	bc950150 	0xbc950150
+     aec:	bc950160 	0xbc950160
+     af0:	bc950170 	0xbc950170
+		x >>= 2;
+     af4:	bc950180 	0xbc950180
+		r += 2;
+     af8:	bc950190 	0xbc950190
+	}
+	if (!(x & 1)) {
+     afc:	bc9501a0 	0xbc9501a0
+     b00:	bc9501b0 	0xbc9501b0
+     b04:	bc9501c0 	0xbc9501c0
+		x >>= 1;
+		r += 1;
+	}
+     b08:	bc9501d0 	0xbc9501d0
+     b0c:	bc9501e0 	0xbc9501e0
+     b10:	bc9501f0 	0xbc9501f0
+	unsigned long end = start + PAGE_SIZE;
+
+	do {
+		cache16_unroll32(start,Hit_Writeback_Inv_D);
+		start += 0x200;
+     b14:	24840200 	addiu	a0,a0,512
+	} while (start < end);
+     b18:	0083102b 	sltu	v0,a0,v1
+     b1c:	1440ffdd 	bnez	v0,a94 <blast_dcache16_page+0x4>
+     b20:	00000000 	nop
+     b24:	03e00008 	jr	ra
+     b28:	00000000 	nop
+
+00000b2c <blast_dcache16_page_indexed>:
+}
+
+static inline void blast_dcache16_page_indexed(unsigned long page)
+{
+	unsigned long start = page;
+	unsigned long end = start + PAGE_SIZE;
+	unsigned long ws_inc = 1UL << current_cpu_data.dcache.waybit;
+     b2c:	3c050000 	lui	a1,0x0
+			b2c: R_MIPS_HI16	cpu_data
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+     b30:	8ca5004c 	lw	a1,76(a1)
+			b30: R_MIPS_LO16	cpu_data
+     b34:	3c030000 	lui	v1,0x0
+			b34: R_MIPS_HI16	cpu_data
+     b38:	94630042 	lhu	v1,66(v1)
+			b38: R_MIPS_LO16	cpu_data
+static inline void blast_dcache16_page_indexed(unsigned long page)
+{
+	unsigned long start = page;
+	unsigned long end = start + PAGE_SIZE;
+	unsigned long ws_inc = 1UL << current_cpu_data.dcache.waybit;
+     b3c:	24020001 	li	v0,1
+     b40:	00a24804 	sllv	t1,v0,a1
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+     b44:	00a31804 	sllv	v1,v1,a1
+     b48:	24871000 	addiu	a3,a0,4096
+	unsigned long ws_end = current_cpu_data.dcache.ways <<
+	                       current_cpu_data.dcache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+     b4c:	1060002d 	beqz	v1,c04 <blast_dcache16_page_indexed+0xd8>
+     b50:	00003021 	move	a2,zero
+     b54:	0087402b 	sltu	t0,a0,a3
+	                       current_cpu_data.dcache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+		for (addr = start; addr < end; addr += 0x200) 
+     b58:	11000026 	beqz	t0,bf4 <blast_dcache16_page_indexed+0xc8>
+     b5c:	00802821 	move	a1,a0
+			cache16_unroll32(addr|ws,Index_Writeback_Inv_D);
+     b60:	00a61025 	or	v0,a1,a2
+     b64:	bc410000 	0xbc410000
+     b68:	bc410010 	0xbc410010
+     b6c:	bc410020 	0xbc410020
+     b70:	bc410030 	0xbc410030
+     b74:	bc410040 	0xbc410040
+     b78:	bc410050 	0xbc410050
+     b7c:	bc410060 	0xbc410060
+	       dcache_size >> 10, way_string[c->dcache.ways], c->dcache.linesz);
+}
+
+/*
+ * If you even _breathe_ on this function, look at the gcc output and make sure
+ * it does not pop things on and off the stack for the cache sizing loop that
+ * executes in KSEG1 space or else you will crash and burn badly.  You have
+ * been warned.
+ */
+static int __init probe_scache(void)
+{
+	extern unsigned long stext;
+	unsigned long flags, addr, begin, end, pow2;
+	unsigned int config = read_c0_config();
+     b80:	bc410070 	0xbc410070
+	struct cpuinfo_mips *c = &current_cpu_data;
+	int tmp;
+
+	if (config & CONF_SC)
+     b84:	bc410080 	0xbc410080
+     b88:	bc410090 	0xbc410090
+     b8c:	bc4100a0 	0xbc4100a0
+     b90:	bc4100b0 	0xbc4100b0
+     b94:	bc4100c0 	0xbc4100c0
+     b98:	bc4100d0 	0xbc4100d0
+		return 0;
+
+	begin = (unsigned long) &stext;
+	begin &= ~((4 * 1024 * 1024) - 1);
+     b9c:	bc4100e0 	0xbc4100e0
+     ba0:	bc4100f0 	0xbc4100f0
+     ba4:	bc410100 	0xbc410100
+     ba8:	bc410110 	0xbc410110
+	end = begin + (4 * 1024 * 1024);
+     bac:	bc410120 	0xbc410120
+     bb0:	bc410130 	0xbc410130
+
+	/*
+	 * This is such a bitch, you'd think they would make it easy to do
+	 * this.  Away you daemons of stupidity!
+	 */
+	local_irq_save(flags);
+     bb4:	bc410140 	0xbc410140
+     bb8:	bc410150 	0xbc410150
+     bbc:	bc410160 	0xbc410160
+     bc0:	bc410170 	0xbc410170
+     bc4:	bc410180 	0xbc410180
+     bc8:	bc410190 	0xbc410190
+     bcc:	bc4101a0 	0xbc4101a0
+     bd0:	bc4101b0 	0xbc4101b0
+
+	/* Fill each size-multiple cache line with a valid tag. */
+	pow2 = (64 * 1024);
+	for (addr = begin; addr < end; addr = (begin + pow2)) {
+     bd4:	bc4101c0 	0xbc4101c0
+     bd8:	bc4101d0 	0xbc4101d0
+     bdc:	bc4101e0 	0xbc4101e0
+     be0:	bc4101f0 	0xbc4101f0
+		unsigned long *p = (unsigned long *) addr;
+		__asm__ __volatile__("nop" : : "r" (*p)); /* whee... */
+     be4:	24a50200 	addiu	a1,a1,512
+     be8:	00a7102b 	sltu	v0,a1,a3
+		pow2 <<= 1;
+     bec:	1440ffdd 	bnez	v0,b64 <blast_dcache16_page_indexed+0x38>
+     bf0:	00a61025 	or	v0,a1,a2
+	unsigned long ws_end = current_cpu_data.dcache.ways <<
+	                       current_cpu_data.dcache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+     bf4:	00c93021 	addu	a2,a2,t1
+     bf8:	00c3102b 	sltu	v0,a2,v1
+     bfc:	1440ffd6 	bnez	v0,b58 <blast_dcache16_page_indexed+0x2c>
+	}
+
+	/* Load first line with zero (therefore invalid) tag. */
+	write_c0_taglo(0);
+     c00:	00000000 	nop
+     c04:	03e00008 	jr	ra
+	write_c0_taghi(0);
+     c08:	00000000 	nop
+
+00000c0c <blast_icache16>:
+	__asm__ __volatile__("nop; nop; nop; nop;"); /* avoid the hazard */
+     c0c:	3c040000 	lui	a0,0x0
+			c0c: R_MIPS_HI16	cpu_data
+     c10:	8c840038 	lw	a0,56(a0)
+			c10: R_MIPS_LO16	cpu_data
+{
+	unsigned long start = KSEG0;
+	unsigned long end = start + current_cpu_data.icache.waysize;
+	unsigned long ws_inc = 1UL << current_cpu_data.icache.waybit;
+	unsigned long ws_end = current_cpu_data.icache.ways <<
+     c14:	3c020000 	lui	v0,0x0
+			c14: R_MIPS_HI16	cpu_data
+     c18:	9442002e 	lhu	v0,46(v0)
+			c18: R_MIPS_LO16	cpu_data
+	cache_op(Index_Store_Tag_I, begin);
+     c1c:	3c030000 	lui	v1,0x0
+			c1c: R_MIPS_HI16	cpu_data
+	cache_op(Index_Store_Tag_D, begin);
+     c20:	8c630034 	lw	v1,52(v1)
+			c20: R_MIPS_LO16	cpu_data
+	cache_op(Index_Store_Tag_SD, begin);
+     c24:	00002821 	move	a1,zero
+
+	/* Now search for the wrap around point. */
+	pow2 = (128 * 1024);
+	tmp = 0;
+	for (addr = begin + (128 * 1024); addr < end; addr = begin + pow2) {
+     c28:	00823804 	sllv	a3,v0,a0
+static inline void blast_icache16(void)
+{
+	unsigned long start = KSEG0;
+	unsigned long end = start + current_cpu_data.icache.waysize;
+	unsigned long ws_inc = 1UL << current_cpu_data.icache.waybit;
+     c2c:	24020001 	li	v0,1
+     c30:	3c018000 	lui	at,0x8000
+     c34:	00231821 	addu	v1,at,v1
+	unsigned long ws_end = current_cpu_data.icache.ways <<
+	                       current_cpu_data.icache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+     c38:	10e0002e 	beqz	a3,cf4 <blast_icache16+0xe8>
+		cache_op(Index_Load_Tag_SD, addr);
+     c3c:	00824004 	sllv	t0,v0,a0
+		__asm__ __volatile__("nop; nop; nop; nop;"); /* hazard... */
+     c40:	3c028000 	lui	v0,0x8000
+     c44:	0043302b 	sltu	a2,v0,v1
+	                       current_cpu_data.icache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+		for (addr = start; addr < end; addr += 0x200) 
+     c48:	10c00026 	beqz	a2,ce4 <blast_icache16+0xd8>
+     c4c:	3c048000 	lui	a0,0x8000
+		if (!read_c0_taglo())
+     c50:	00851025 	or	v0,a0,a1
+     c54:	bc400000 	0xbc400000
+     c58:	bc400010 	0xbc400010
+     c5c:	bc400020 	0xbc400020
+			break;
+		pow2 <<= 1;
+     c60:	bc400030 	0xbc400030
+     c64:	bc400040 	0xbc400040
+     c68:	bc400050 	0xbc400050
+     c6c:	bc400060 	0xbc400060
+	}
+	local_irq_restore(flags);
+     c70:	bc400070 	0xbc400070
+     c74:	bc400080 	0xbc400080
+     c78:	bc400090 	0xbc400090
+     c7c:	bc4000a0 	0xbc4000a0
+     c80:	bc4000b0 	0xbc4000b0
+     c84:	bc4000c0 	0xbc4000c0
+     c88:	bc4000d0 	0xbc4000d0
+     c8c:	bc4000e0 	0xbc4000e0
+     c90:	bc4000f0 	0xbc4000f0
+	addr -= begin;
+
+	scache_size = addr;
+	c->scache.linesz = 16 << ((config & R4K_CONF_SB) >> 22);
+     c94:	bc400100 	0xbc400100
+     c98:	bc400110 	0xbc400110
+     c9c:	bc400120 	0xbc400120
+     ca0:	bc400130 	0xbc400130
+     ca4:	bc400140 	0xbc400140
+	c->scache.ways = 1;
+     ca8:	bc400150 	0xbc400150
+     cac:	bc400160 	0xbc400160
+     cb0:	bc400170 	0xbc400170
+     cb4:	bc400180 	0xbc400180
+     cb8:	bc400190 	0xbc400190
+	c->dcache.waybit = 0;		/* does not matter */
+     cbc:	bc4001a0 	0xbc4001a0
+
+	return 1;
+     cc0:	bc4001b0 	0xbc4001b0
+}
+     cc4:	bc4001c0 	0xbc4001c0
+     cc8:	bc4001d0 	0xbc4001d0
+
+typedef int (*probe_func_t)(unsigned long);
+extern int r5k_sc_init(void);
+extern int rm7k_sc_init(void);
+
+static void __init setup_scache(void)
+{
+     ccc:	bc4001e0 	0xbc4001e0
+     cd0:	bc4001f0 	0xbc4001f0
+	                       current_cpu_data.icache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+		for (addr = start; addr < end; addr += 0x200) 
+     cd4:	24840200 	addiu	a0,a0,512
+	struct cpuinfo_mips *c = &current_cpu_data;
+     cd8:	0083102b 	sltu	v0,a0,v1
+     cdc:	1440ffdd 	bnez	v0,c54 <blast_icache16+0x48>
+	unsigned int config = read_c0_config();
+     ce0:	00851025 	or	v0,a0,a1
+	probe_func_t probe_scache_kseg1;
+	int sc_present = 0;
+
+	/*
+	 * Do the probing thing on R4000SC and R4400SC processors.  Other
+	 * processors don't have a S-cache that would be relevant to the
+	 * Linux memory managment.
+	 */
+	switch (c->cputype) {
+     ce4:	00a82821 	addu	a1,a1,t0
+     ce8:	00a7102b 	sltu	v0,a1,a3
+     cec:	1440ffd6 	bnez	v0,c48 <blast_icache16+0x3c>
+     cf0:	00000000 	nop
+     cf4:	03e00008 	jr	ra
+     cf8:	00000000 	nop
+
+00000cfc <blast_icache16_page>:
+
+static inline void blast_icache16_page(unsigned long page)
+{
+	unsigned long start = page;
+	unsigned long end = start + PAGE_SIZE;
+     cfc:	24831000 	addiu	v1,a0,4096
+
+	do {
+		cache16_unroll32(start,Hit_Invalidate_I);
+     d00:	bc900000 	0xbc900000
+     d04:	bc900010 	0xbc900010
+     d08:	bc900020 	0xbc900020
+     d0c:	bc900030 	0xbc900030
+     d10:	bc900040 	0xbc900040
+	case CPU_R4000SC:
+	case CPU_R4000MC:
+	case CPU_R4400SC:
+	case CPU_R4400MC:
+		probe_scache_kseg1 = (probe_func_t) (KSEG1ADDR(&probe_scache));
+     d14:	bc900050 	0xbc900050
+     d18:	bc900060 	0xbc900060
+     d1c:	bc900070 	0xbc900070
+     d20:	bc900080 	0xbc900080
+     d24:	bc900090 	0xbc900090
+     d28:	bc9000a0 	0xbc9000a0
+     d2c:	bc9000b0 	0xbc9000b0
+		sc_present = probe_scache_kseg1(config);
+     d30:	bc9000c0 	0xbc9000c0
+     d34:	bc9000d0 	0xbc9000d0
+		if (sc_present)
+     d38:	bc9000e0 	0xbc9000e0
+     d3c:	bc9000f0 	0xbc9000f0
+			c->options |= MIPS_CPU_CACHE_CDEX_S;
+     d40:	bc900100 	0xbc900100
+     d44:	bc900110 	0xbc900110
+     d48:	bc900120 	0xbc900120
+     d4c:	bc900130 	0xbc900130
+		break;
+
+	case CPU_R10000:
+	case CPU_R12000:
+		scache_size = 0x80000 << ((config & R10K_CONF_SS) >> 16);
+		c->scache.linesz = 64 << ((config >> 13) & 1);
+		c->scache.ways = 2;
+		c->scache.waybit= 0;
+		sc_present = 1;
+		break;
+
+	case CPU_R5000:
+	case CPU_NEVADA:
+#ifdef CONFIG_R5000_CPU_SCACHE
+		r5k_sc_init();
+#endif
+                return;
+
+	case CPU_RM7000:
+	case CPU_RM9000:
+#ifdef CONFIG_RM7000_CPU_SCACHE
+		rm7k_sc_init();
+#endif
+		return;
+
+	default:
+		sc_present = 0;
+	}
+
+	if (!sc_present){
+     d50:	bc900140 	0xbc900140
+     d54:	bc900150 	0xbc900150
+		printk("[%s]:%d\n", __FUNCTION__,__LINE__);
+     d58:	bc900160 	0xbc900160
+     d5c:	bc900170 	0xbc900170
+     d60:	bc900180 	0xbc900180
+     d64:	bc900190 	0xbc900190
+     d68:	bc9001a0 	0xbc9001a0
+     d6c:	bc9001b0 	0xbc9001b0
+		return;
+	}
+
+	if ((c->isa_level == MIPS_CPU_ISA_M32 ||
+	     c->isa_level == MIPS_CPU_ISA_M64) &&
+	    !(c->scache.flags & MIPS_CACHE_NOT_PRESENT))
+		panic("Dunno how to handle MIPS32 / MIPS64 second level cache");
+
+	/* compute a couple of other cache variables */
+	c->scache.waysize = scache_size / c->scache.ways;
+
+	c->scache.sets = scache_size / (c->scache.linesz * c->scache.ways);
+
+	printk("Unified secondary cache %ldkB %s, linesize %d bytes.\n",
+	       scache_size >> 10, way_string[c->scache.ways], c->scache.linesz);
+
+	c->options |= MIPS_CPU_SUBSET_CACHES;
+}
+     d70:	bc9001c0 	0xbc9001c0
+     d74:	bc9001d0 	0xbc9001d0
+     d78:	bc9001e0 	0xbc9001e0
+     d7c:	bc9001f0 	0xbc9001f0
+     d80:	24840200 	addiu	a0,a0,512
+
+	do {
+		cache16_unroll32(start,Hit_Invalidate_I);
+		start += 0x200;
+	} while (start < end);
+     d84:	0083102b 	sltu	v0,a0,v1
+     d88:	1440ffdd 	bnez	v0,d00 <blast_icache16_page+0x4>
+     d8c:	00000000 	nop
+     d90:	03e00008 	jr	ra
+     d94:	00000000 	nop
+
+00000d98 <blast_icache16_page_indexed>:
+}
+
+static inline void blast_icache16_page_indexed(unsigned long page)
+{
+	unsigned long start = page;
+	unsigned long end = start + PAGE_SIZE;
+	unsigned long ws_inc = 1UL << current_cpu_data.icache.waybit;
+     d98:	3c050000 	lui	a1,0x0
+			d98: R_MIPS_HI16	cpu_data
+     d9c:	8ca50038 	lw	a1,56(a1)
+			d9c: R_MIPS_LO16	cpu_data
+	unsigned long ws_end = current_cpu_data.icache.ways <<
+     da0:	3c030000 	lui	v1,0x0
+			da0: R_MIPS_HI16	cpu_data
+     da4:	9463002e 	lhu	v1,46(v1)
+			da4: R_MIPS_LO16	cpu_data
+     da8:	24020001 	li	v0,1
+     dac:	00a24804 	sllv	t1,v0,a1
+     db0:	00a31804 	sllv	v1,v1,a1
+     db4:	24871000 	addiu	a3,a0,4096
+     db8:	1060002d 	beqz	v1,e70 <blast_icache16_page_indexed+0xd8>
+     dbc:	00003021 	move	a2,zero
+     dc0:	0087402b 	sltu	t0,a0,a3
+	                       current_cpu_data.icache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+		for (addr = start; addr < end; addr += 0x200) 
+     dc4:	11000026 	beqz	t0,e60 <blast_icache16_page_indexed+0xc8>
+     dc8:	00802821 	move	a1,a0
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+		for (addr = start; addr < end; addr += 0x200) 
+			cache16_unroll32(addr|ws,Index_Invalidate_I);
+     dcc:	00a61025 	or	v0,a1,a2
+     dd0:	bc400000 	0xbc400000
+     dd4:	bc400010 	0xbc400010
+     dd8:	bc400020 	0xbc400020
+     ddc:	bc400030 	0xbc400030
+     de0:	bc400040 	0xbc400040
+     de4:	bc400050 	0xbc400050
+     de8:	bc400060 	0xbc400060
+     dec:	bc400070 	0xbc400070
+     df0:	bc400080 	0xbc400080
+     df4:	bc400090 	0xbc400090
+     df8:	bc4000a0 	0xbc4000a0
+     dfc:	bc4000b0 	0xbc4000b0
+     e00:	bc4000c0 	0xbc4000c0
+     e04:	bc4000d0 	0xbc4000d0
+     e08:	bc4000e0 	0xbc4000e0
+     e0c:	bc4000f0 	0xbc4000f0
+     e10:	bc400100 	0xbc400100
+     e14:	bc400110 	0xbc400110
+     e18:	bc400120 	0xbc400120
+     e1c:	bc400130 	0xbc400130
+     e20:	bc400140 	0xbc400140
+     e24:	bc400150 	0xbc400150
+     e28:	bc400160 	0xbc400160
+     e2c:	bc400170 	0xbc400170
+     e30:	bc400180 	0xbc400180
+     e34:	bc400190 	0xbc400190
+     e38:	bc4001a0 	0xbc4001a0
+     e3c:	bc4001b0 	0xbc4001b0
+     e40:	bc4001c0 	0xbc4001c0
+     e44:	bc4001d0 	0xbc4001d0
+     e48:	bc4001e0 	0xbc4001e0
+     e4c:	bc4001f0 	0xbc4001f0
+     e50:	24a50200 	addiu	a1,a1,512
+     e54:	00a7102b 	sltu	v0,a1,a3
+     e58:	1440ffdd 	bnez	v0,dd0 <blast_icache16_page_indexed+0x38>
+     e5c:	00a61025 	or	v0,a1,a2
+	unsigned long ws_end = current_cpu_data.icache.ways <<
+	                       current_cpu_data.icache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+     e60:	00c93021 	addu	a2,a2,t1
+     e64:	00c3102b 	sltu	v0,a2,v1
+     e68:	1440ffd6 	bnez	v0,dc4 <blast_icache16_page_indexed+0x2c>
+     e6c:	00000000 	nop
+     e70:	03e00008 	jr	ra
+     e74:	00000000 	nop
+
+00000e78 <blast_scache16>:
+static inline void blast_scache16(void)
+{
+	unsigned long start = KSEG0;
+	unsigned long end = start + current_cpu_data.scache.waysize;
+	unsigned long ws_inc = 1UL << current_cpu_data.scache.waybit;
+     e78:	3c040000 	lui	a0,0x0
+			e78: R_MIPS_HI16	cpu_data
+     e7c:	8c840060 	lw	a0,96(a0)
+			e7c: R_MIPS_LO16	cpu_data
+{
+	unsigned long start = KSEG0;
+	unsigned long end = start + current_cpu_data.scache.waysize;
+	unsigned long ws_inc = 1UL << current_cpu_data.scache.waybit;
+	unsigned long ws_end = current_cpu_data.scache.ways << 
+     e80:	3c020000 	lui	v0,0x0
+			e80: R_MIPS_HI16	cpu_data
+     e84:	94420056 	lhu	v0,86(v0)
+			e84: R_MIPS_LO16	cpu_data
+
+static inline void coherency_setup(void)
+{
+	change_c0_config(CONF_CM_CMASK, CONF_CM_DEFAULT); /* change 2 to CONF_CM_DEFAULT, restore by bobtseng */
+	// change_c0_config(CONF_CM_CMASK, 2); /* change 2 to CONF_CM_DEFAULT, restore by bobtseng */
+
+	/*
+	 * c0_status.cu=0 specifies that updates by the sc instruction use
+	 * the coherency mode specified by the TLB; 1 means cachable
+	 * coherent update on write will be used.  Not all processors have
+	 * this bit and; some wire it to zero, others like Toshiba had the
+	 * silly idea of putting something else there ...
+	 */
+	switch (current_cpu_data.cputype) {
+	case CPU_R4000PC:
+	case CPU_R4000SC:
+	case CPU_R4000MC:
+	case CPU_R4400PC:
+	case CPU_R4400SC:
+	case CPU_R4400MC:
+		clear_c0_config(CONF_CU);
+		break;
+	}
+
+}
+
+void __init ld_mmu_r4xx0(void)
+{
+	extern void build_clear_page(void);
+	extern void build_copy_page(void);
+	extern char except_vec2_generic;
+	struct cpuinfo_mips *c = &current_cpu_data;
+
+	/* Default cache error handler for R4000 and R5000 family */
+	memcpy((void *)(KSEG0 + 0x100), &except_vec2_generic, 0x80);
+     e88:	3c030000 	lui	v1,0x0
+			e88: R_MIPS_HI16	cpu_data
+     e8c:	8c63005c 	lw	v1,92(v1)
+			e8c: R_MIPS_LO16	cpu_data
+     e90:	00002821 	move	a1,zero
+     e94:	00823804 	sllv	a3,v0,a0
+static inline void blast_scache16(void)
+{
+	unsigned long start = KSEG0;
+	unsigned long end = start + current_cpu_data.scache.waysize;
+	unsigned long ws_inc = 1UL << current_cpu_data.scache.waybit;
+     e98:	24020001 	li	v0,1
+     e9c:	3c018000 	lui	at,0x8000
+     ea0:	00231821 	addu	v1,at,v1
+	unsigned long ws_end = current_cpu_data.scache.ways << 
+	                       current_cpu_data.scache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+     ea4:	10e0002e 	beqz	a3,f60 <blast_scache16+0xe8>
+     ea8:	00824004 	sllv	t0,v0,a0
+     eac:	3c028000 	lui	v0,0x8000
+     eb0:	0043302b 	sltu	a2,v0,v1
+		for (addr = start; addr < end; addr += 0x200)
+     eb4:	10c00026 	beqz	a2,f50 <blast_scache16+0xd8>
+     eb8:	3c048000 	lui	a0,0x8000
+			cache16_unroll32(addr|ws,Index_Writeback_Inv_SD);
+     ebc:	00851025 	or	v0,a0,a1
+     ec0:	bc430000 	0xbc430000
+     ec4:	bc430010 	0xbc430010
+     ec8:	bc430020 	0xbc430020
+     ecc:	bc430030 	0xbc430030
+     ed0:	bc430040 	0xbc430040
+     ed4:	bc430050 	0xbc430050
+     ed8:	bc430060 	0xbc430060
+     edc:	bc430070 	0xbc430070
+     ee0:	bc430080 	0xbc430080
+     ee4:	bc430090 	0xbc430090
+     ee8:	bc4300a0 	0xbc4300a0
+     eec:	bc4300b0 	0xbc4300b0
+     ef0:	bc4300c0 	0xbc4300c0
+     ef4:	bc4300d0 	0xbc4300d0
+     ef8:	bc4300e0 	0xbc4300e0
+     efc:	bc4300f0 	0xbc4300f0
+	memcpy((void *)(KSEG1 + 0x100), &except_vec2_generic, 0x80);
+     f00:	bc430100 	0xbc430100
+     f04:	bc430110 	0xbc430110
+     f08:	bc430120 	0xbc430120
+     f0c:	bc430130 	0xbc430130
+     f10:	bc430140 	0xbc430140
+     f14:	bc430150 	0xbc430150
+     f18:	bc430160 	0xbc430160
+     f1c:	bc430170 	0xbc430170
+     f20:	bc430180 	0xbc430180
+     f24:	bc430190 	0xbc430190
+     f28:	bc4301a0 	0xbc4301a0
+     f2c:	bc4301b0 	0xbc4301b0
+     f30:	bc4301c0 	0xbc4301c0
+     f34:	bc4301d0 	0xbc4301d0
+     f38:	bc4301e0 	0xbc4301e0
+     f3c:	bc4301f0 	0xbc4301f0
+	                       current_cpu_data.scache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+		for (addr = start; addr < end; addr += 0x200)
+     f40:	24840200 	addiu	a0,a0,512
+     f44:	0083102b 	sltu	v0,a0,v1
+     f48:	1440ffdd 	bnez	v0,ec0 <blast_scache16+0x48>
+     f4c:	00851025 	or	v0,a0,a1
+     f50:	00a82821 	addu	a1,a1,t0
+     f54:	00a7102b 	sltu	v0,a1,a3
+     f58:	1440ffd6 	bnez	v0,eb4 <blast_scache16+0x3c>
+     f5c:	00000000 	nop
+     f60:	03e00008 	jr	ra
+     f64:	00000000 	nop
+
+00000f68 <blast_scache16_page>:
+			cache16_unroll32(addr|ws,Index_Writeback_Inv_SD);
+}
+
+static inline void blast_scache16_page(unsigned long page)
+{
+	unsigned long start = page;
+	unsigned long end = page + PAGE_SIZE;
+     f68:	24831000 	addiu	v1,a0,4096
+
+	probe_pcache();
+     f6c:	bc970000 	0xbc970000
+     f70:	bc970010 	0xbc970010
+	setup_scache();
+     f74:	bc970020 	0xbc970020
+     f78:	bc970030 	0xbc970030
+     f7c:	bc970040 	0xbc970040
+     f80:	bc970050 	0xbc970050
+     f84:	bc970060 	0xbc970060
+     f88:	bc970070 	0xbc970070
+     f8c:	bc970080 	0xbc970080
+     f90:	bc970090 	0xbc970090
+     f94:	bc9700a0 	0xbc9700a0
+     f98:	bc9700b0 	0xbc9700b0
+
+	r4k_blast_dcache_page_setup();
+	r4k_blast_dcache_page_indexed_setup();
+     f9c:	bc9700c0 	0xbc9700c0
+     fa0:	bc9700d0 	0xbc9700d0
+     fa4:	bc9700e0 	0xbc9700e0
+     fa8:	bc9700f0 	0xbc9700f0
+     fac:	bc970100 	0xbc970100
+     fb0:	bc970110 	0xbc970110
+     fb4:	bc970120 	0xbc970120
+     fb8:	bc970130 	0xbc970130
+     fbc:	bc970140 	0xbc970140
+     fc0:	bc970150 	0xbc970150
+     fc4:	bc970160 	0xbc970160
+     fc8:	bc970170 	0xbc970170
+     fcc:	bc970180 	0xbc970180
+     fd0:	bc970190 	0xbc970190
+     fd4:	bc9701a0 	0xbc9701a0
+     fd8:	bc9701b0 	0xbc9701b0
+     fdc:	bc9701c0 	0xbc9701c0
+     fe0:	bc9701d0 	0xbc9701d0
+     fe4:	bc9701e0 	0xbc9701e0
+     fe8:	bc9701f0 	0xbc9701f0
+     fec:	24840200 	addiu	a0,a0,512
+
+	do {
+		cache16_unroll32(start,Hit_Writeback_Inv_SD);
+		start += 0x200;
+	} while (start < end);
+     ff0:	0083102b 	sltu	v0,a0,v1
+     ff4:	1440ffdd 	bnez	v0,f6c <blast_scache16_page+0x4>
+     ff8:	00000000 	nop
+     ffc:	03e00008 	jr	ra
+    1000:	00000000 	nop
+
+00001004 <blast_dcache32>:
+    1004:	3c040000 	lui	a0,0x0
+			1004: R_MIPS_HI16	cpu_data
+    1008:	8c84004c 	lw	a0,76(a0)
+			1008: R_MIPS_LO16	cpu_data
+{
+	unsigned long start = KSEG0;
+	unsigned long end = start + current_cpu_data.dcache.waysize;
+	unsigned long ws_inc = 1UL << current_cpu_data.dcache.waybit;
+	unsigned long ws_end = current_cpu_data.dcache.ways <<
+    100c:	3c020000 	lui	v0,0x0
+			100c: R_MIPS_HI16	cpu_data
+    1010:	94420042 	lhu	v0,66(v0)
+			1010: R_MIPS_LO16	cpu_data
+
+static inline void blast_dcache32(void)
+{
+	unsigned long start = KSEG0;
+	unsigned long end = start + current_cpu_data.dcache.waysize;
+    1014:	3c030000 	lui	v1,0x0
+			1014: R_MIPS_HI16	cpu_data
+    1018:	8c630048 	lw	v1,72(v1)
+			1018: R_MIPS_LO16	cpu_data
+    101c:	00002821 	move	a1,zero
+    1020:	00823804 	sllv	a3,v0,a0
+static inline void blast_dcache32(void)
+{
+	unsigned long start = KSEG0;
+	unsigned long end = start + current_cpu_data.dcache.waysize;
+	unsigned long ws_inc = 1UL << current_cpu_data.dcache.waybit;
+    1024:	24020001 	li	v0,1
+    1028:	3c018000 	lui	at,0x8000
+    102c:	00231821 	addu	v1,at,v1
+	unsigned long ws_end = current_cpu_data.dcache.ways <<
+	                       current_cpu_data.dcache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+    1030:	10e0002e 	beqz	a3,10ec <blast_dcache32+0xe8>
+    1034:	00824004 	sllv	t0,v0,a0
+    1038:	3c028000 	lui	v0,0x8000
+    103c:	0043302b 	sltu	a2,v0,v1
+	                       current_cpu_data.dcache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+		for (addr = start; addr < end; addr += 0x400) 
+    1040:	10c00026 	beqz	a2,10dc <blast_dcache32+0xd8>
+    1044:	3c048000 	lui	a0,0x8000
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+		for (addr = start; addr < end; addr += 0x400) 
+			cache32_unroll32(addr|ws,Index_Writeback_Inv_D);
+    1048:	00851025 	or	v0,a0,a1
+    104c:	bc410000 	0xbc410000
+    1050:	bc410020 	0xbc410020
+    1054:	bc410040 	0xbc410040
+    1058:	bc410060 	0xbc410060
+    105c:	bc410080 	0xbc410080
+    1060:	bc4100a0 	0xbc4100a0
+    1064:	bc4100c0 	0xbc4100c0
+    1068:	bc4100e0 	0xbc4100e0
+    106c:	bc410100 	0xbc410100
+    1070:	bc410120 	0xbc410120
+    1074:	bc410140 	0xbc410140
+    1078:	bc410160 	0xbc410160
+    107c:	bc410180 	0xbc410180
+    1080:	bc4101a0 	0xbc4101a0
+    1084:	bc4101c0 	0xbc4101c0
+    1088:	bc4101e0 	0xbc4101e0
+    108c:	bc410200 	0xbc410200
+    1090:	bc410220 	0xbc410220
+    1094:	bc410240 	0xbc410240
+    1098:	bc410260 	0xbc410260
+    109c:	bc410280 	0xbc410280
+    10a0:	bc4102a0 	0xbc4102a0
+    10a4:	bc4102c0 	0xbc4102c0
+    10a8:	bc4102e0 	0xbc4102e0
+    10ac:	bc410300 	0xbc410300
+	r4k_blast_dcache_setup();
+	r4k_blast_icache_page_setup();
+	r4k_blast_icache_page_indexed_setup();
+	r4k_blast_icache_setup();
+	r4k_blast_scache_page_setup();
+	r4k_blast_scache_setup();
+
+	/*
+	 * Some MIPS32 and MIPS64 processors have physically indexed caches.
+	 * This code supports virtually indexed processors and will be
+	 * unnecessarily inefficient on physically indexed processors.
+	 */
+	shm_align_mask = max_t( unsigned long,
+    10b0:	bc410320 	0xbc410320
+    10b4:	bc410340 	0xbc410340
+    10b8:	bc410360 	0xbc410360
+    10bc:	bc410380 	0xbc410380
+    10c0:	bc4103a0 	0xbc4103a0
+    10c4:	bc4103c0 	0xbc4103c0
+    10c8:	bc4103e0 	0xbc4103e0
+	                       current_cpu_data.dcache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+		for (addr = start; addr < end; addr += 0x400) 
+    10cc:	24840400 	addiu	a0,a0,1024
+    10d0:	0083102b 	sltu	v0,a0,v1
+    10d4:	1440ffdd 	bnez	v0,104c <blast_dcache32+0x48>
+				c->dcache.sets * c->dcache.linesz - 1,
+				PAGE_SIZE - 1);
+
+	_flush_cache_all	= r4k_flush_cache_all;
+    10d8:	00851025 	or	v0,a0,a1
+	unsigned long ws_end = current_cpu_data.dcache.ways <<
+	                       current_cpu_data.dcache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+    10dc:	00a82821 	addu	a1,a1,t0
+    10e0:	00a7102b 	sltu	v0,a1,a3
+    10e4:	1440ffd6 	bnez	v0,1040 <blast_dcache32+0x3c>
+	___flush_cache_all	= r4k___flush_cache_all;
+	_flush_cache_mm		= r4k_flush_cache_mm;
+	_flush_cache_page	= r4k_flush_cache_page;
+    10e8:	00000000 	nop
+    10ec:	03e00008 	jr	ra
+    10f0:	00000000 	nop
+
+000010f4 <blast_dcache32_page_indexed>:
+static inline void blast_dcache32_page_indexed(unsigned long page)
+{
+	unsigned long start = page;
+	unsigned long end = start + PAGE_SIZE;
+	unsigned long ws_inc = 1UL << current_cpu_data.dcache.waybit;
+    10f4:	3c050000 	lui	a1,0x0
+			10f4: R_MIPS_HI16	cpu_data
+    10f8:	8ca5004c 	lw	a1,76(a1)
+			10f8: R_MIPS_LO16	cpu_data
+{
+	unsigned long start = page;
+	unsigned long end = start + PAGE_SIZE;
+	unsigned long ws_inc = 1UL << current_cpu_data.dcache.waybit;
+	unsigned long ws_end = current_cpu_data.dcache.ways <<
+    10fc:	3c030000 	lui	v1,0x0
+			10fc: R_MIPS_HI16	cpu_data
+	_flush_icache_page	= r4k_flush_icache_page;
+	_flush_cache_range	= r4k_flush_cache_range;
+    1100:	94630042 	lhu	v1,66(v1)
+			1100: R_MIPS_LO16	cpu_data
+static inline void blast_dcache32_page_indexed(unsigned long page)
+{
+	unsigned long start = page;
+	unsigned long end = start + PAGE_SIZE;
+	unsigned long ws_inc = 1UL << current_cpu_data.dcache.waybit;
+    1104:	24020001 	li	v0,1
+    1108:	00a24804 	sllv	t1,v0,a1
+{
+	unsigned long start = page;
+	unsigned long end = start + PAGE_SIZE;
+	unsigned long ws_inc = 1UL << current_cpu_data.dcache.waybit;
+	unsigned long ws_end = current_cpu_data.dcache.ways <<
+    110c:	00a31804 	sllv	v1,v1,a1
+    1110:	24871000 	addiu	a3,a0,4096
+	unsigned long ws_end = current_cpu_data.dcache.ways <<
+	                       current_cpu_data.dcache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+    1114:	1060002d 	beqz	v1,11cc <blast_dcache32_page_indexed+0xd8>
+    1118:	00003021 	move	a2,zero
+    111c:	0087402b 	sltu	t0,a0,a3
+
+	_flush_cache_sigtramp	= r4k_flush_cache_sigtramp;
+	_flush_icache_all	= r4k_flush_icache_all;
+    1120:	11000026 	beqz	t0,11bc <blast_dcache32_page_indexed+0xc8>
+    1124:	00802821 	move	a1,a0
+    1128:	00a61025 	or	v0,a1,a2
+    112c:	bc410000 	0xbc410000
+    1130:	bc410020 	0xbc410020
+    1134:	bc410040 	0xbc410040
+    1138:	bc410060 	0xbc410060
+    113c:	bc410080 	0xbc410080
+	_flush_data_cache_page	= r4k_flush_data_cache_page;
+	_flush_icache_range	= r4k_flush_icache_range;
+    1140:	bc4100a0 	0xbc4100a0
+    1144:	bc4100c0 	0xbc4100c0
+
+#ifdef CONFIG_NONCOHERENT_IO
+	_dma_cache_wback_inv	= r4k_dma_cache_wback_inv;
+    1148:	bc4100e0 	0xbc4100e0
+    114c:	bc410100 	0xbc410100
+    1150:	bc410120 	0xbc410120
+    1154:	bc410140 	0xbc410140
+    1158:	bc410160 	0xbc410160
+    115c:	bc410180 	0xbc410180
+    1160:	bc4101a0 	0xbc4101a0
+    1164:	bc4101c0 	0xbc4101c0
+    1168:	bc4101e0 	0xbc4101e0
+    116c:	bc410200 	0xbc410200
+	_dma_cache_wback	= r4k_dma_cache_wback_inv;
+	_dma_cache_inv		= r4k_dma_cache_inv;
+    1170:	bc410220 	0xbc410220
+    1174:	bc410240 	0xbc410240
+    1178:	bc410260 	0xbc410260
+    117c:	bc410280 	0xbc410280
+    1180:	bc4102a0 	0xbc4102a0
+    1184:	bc4102c0 	0xbc4102c0
+    1188:	bc4102e0 	0xbc4102e0
+    118c:	bc410300 	0xbc410300
+    1190:	bc410320 	0xbc410320
+    1194:	bc410340 	0xbc410340
+    1198:	bc410360 	0xbc410360
+    119c:	bc410380 	0xbc410380
+    11a0:	bc4103a0 	0xbc4103a0
+    11a4:	bc4103c0 	0xbc4103c0
+#endif
+
+	__flush_cache_all();
+    11a8:	bc4103e0 	0xbc4103e0
+	                       current_cpu_data.dcache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+		for (addr = start; addr < end; addr += 0x400) 
+    11ac:	24a50400 	addiu	a1,a1,1024
+}
+
+__BUILD_SET_C0(status)
+__BUILD_SET_C0(cause)
+__BUILD_SET_C0(config)
+    11b0:	00a7102b 	sltu	v0,a1,a3
+    11b4:	1440ffdd 	bnez	v0,112c <blast_dcache32_page_indexed+0x38>
+    11b8:	00a61025 	or	v0,a1,a2
+	unsigned long ws_end = current_cpu_data.dcache.ways <<
+	                       current_cpu_data.dcache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+    11bc:	00c93021 	addu	a2,a2,t1
+    11c0:	00c3102b 	sltu	v0,a2,v1
+    11c4:	1440ffd6 	bnez	v0,1120 <blast_dcache32_page_indexed+0x2c>
+    11c8:	00000000 	nop
+    11cc:	03e00008 	jr	ra
+    11d0:	00000000 	nop
+
+000011d4 <blast_icache32>:
+static inline void blast_icache32(void)
+{
+	unsigned long start = KSEG0;
+	unsigned long end = start + current_cpu_data.icache.waysize;
+	unsigned long ws_inc = 1UL << current_cpu_data.icache.waybit;
+    11d4:	3c040000 	lui	a0,0x0
+			11d4: R_MIPS_HI16	cpu_data
+    11d8:	8c840038 	lw	a0,56(a0)
+			11d8: R_MIPS_LO16	cpu_data
+	unsigned long ws_end = current_cpu_data.icache.ways <<
+    11dc:	3c020000 	lui	v0,0x0
+			11dc: R_MIPS_HI16	cpu_data
+    11e0:	9442002e 	lhu	v0,46(v0)
+			11e0: R_MIPS_LO16	cpu_data
+    11e4:	3c030000 	lui	v1,0x0
+			11e4: R_MIPS_HI16	cpu_data
+    11e8:	8c630034 	lw	v1,52(v1)
+			11e8: R_MIPS_LO16	cpu_data
+}
+
+__BUILD_SET_C0(status)
+__BUILD_SET_C0(cause)
+__BUILD_SET_C0(config)
+    11ec:	00002821 	move	a1,zero
+{
+	unsigned long start = KSEG0;
+	unsigned long end = start + current_cpu_data.icache.waysize;
+	unsigned long ws_inc = 1UL << current_cpu_data.icache.waybit;
+	unsigned long ws_end = current_cpu_data.icache.ways <<
+    11f0:	00823804 	sllv	a3,v0,a0
+    11f4:	24020001 	li	v0,1
+    11f8:	3c018000 	lui	at,0x8000
+	coherency_setup();
+
+	build_clear_page();
+    11fc:	00231821 	addu	v1,at,v1
+	unsigned long ws_end = current_cpu_data.icache.ways <<
+	                       current_cpu_data.icache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+    1200:	10e0002e 	beqz	a3,12bc <blast_icache32+0xe8>
+	build_copy_page();
+    1204:	00824004 	sllv	t0,v0,a0
+    1208:	3c028000 	lui	v0,0x8000
+    120c:	0043302b 	sltu	a2,v0,v1
+	                       current_cpu_data.icache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+		for (addr = start; addr < end; addr += 0x400) 
+    1210:	10c00026 	beqz	a2,12ac <blast_icache32+0xd8>
+    1214:	3c048000 	lui	a0,0x8000
+    1218:	00851025 	or	v0,a0,a1
+    121c:	bc400000 	0xbc400000
+    1220:	bc400020 	0xbc400020
+    1224:	bc400040 	0xbc400040
+    1228:	bc400060 	0xbc400060
+    122c:	bc400080 	0xbc400080
+    1230:	bc4000a0 	0xbc4000a0
+    1234:	bc4000c0 	0xbc4000c0
+    1238:	bc4000e0 	0xbc4000e0
+    123c:	bc400100 	0xbc400100
+    1240:	bc400120 	0xbc400120
+    1244:	bc400140 	0xbc400140
+    1248:	bc400160 	0xbc400160
+    124c:	bc400180 	0xbc400180
+    1250:	bc4001a0 	0xbc4001a0
+    1254:	bc4001c0 	0xbc4001c0
+    1258:	bc4001e0 	0xbc4001e0
+    125c:	bc400200 	0xbc400200
+    1260:	bc400220 	0xbc400220
+    1264:	bc400240 	0xbc400240
+    1268:	bc400260 	0xbc400260
+    126c:	bc400280 	0xbc400280
+    1270:	bc4002a0 	0xbc4002a0
+    1274:	bc4002c0 	0xbc4002c0
+    1278:	bc4002e0 	0xbc4002e0
+    127c:	bc400300 	0xbc400300
+    1280:	bc400320 	0xbc400320
+    1284:	bc400340 	0xbc400340
+    1288:	bc400360 	0xbc400360
+    128c:	bc400380 	0xbc400380
+    1290:	bc4003a0 	0xbc4003a0
+    1294:	bc4003c0 	0xbc4003c0
+    1298:	bc4003e0 	0xbc4003e0
+	                       current_cpu_data.icache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+		for (addr = start; addr < end; addr += 0x400) 
+    129c:	24840400 	addiu	a0,a0,1024
+    12a0:	0083102b 	sltu	v0,a0,v1
+    12a4:	1440ffdd 	bnez	v0,121c <blast_icache32+0x48>
+    12a8:	00851025 	or	v0,a0,a1
+    12ac:	00a82821 	addu	a1,a1,t0
+    12b0:	00a7102b 	sltu	v0,a1,a3
+    12b4:	1440ffd6 	bnez	v0,1210 <blast_icache32+0x3c>
+    12b8:	00000000 	nop
+    12bc:	03e00008 	jr	ra
+    12c0:	00000000 	nop
+
+000012c4 <blast_icache32_page>:
+
+static inline void blast_icache32_page(unsigned long page)
+{
+	unsigned long start = page;
+	unsigned long end = start + PAGE_SIZE;
+    12c4:	24831000 	addiu	v1,a0,4096
+
+	do {
+		cache32_unroll32(start,Hit_Invalidate_I);
+    12c8:	bc900000 	0xbc900000
+    12cc:	bc900020 	0xbc900020
+    12d0:	bc900040 	0xbc900040
+    12d4:	bc900060 	0xbc900060
+    12d8:	bc900080 	0xbc900080
+    12dc:	bc9000a0 	0xbc9000a0
+    12e0:	bc9000c0 	0xbc9000c0
+    12e4:	bc9000e0 	0xbc9000e0
+    12e8:	bc900100 	0xbc900100
+    12ec:	bc900120 	0xbc900120
+    12f0:	bc900140 	0xbc900140
+    12f4:	bc900160 	0xbc900160
+    12f8:	bc900180 	0xbc900180
+    12fc:	bc9001a0 	0xbc9001a0
+    1300:	bc9001c0 	0xbc9001c0
+    1304:	bc9001e0 	0xbc9001e0
+    1308:	bc900200 	0xbc900200
+    130c:	bc900220 	0xbc900220
+    1310:	bc900240 	0xbc900240
+    1314:	bc900260 	0xbc900260
+    1318:	bc900280 	0xbc900280
+    131c:	bc9002a0 	0xbc9002a0
+    1320:	bc9002c0 	0xbc9002c0
+    1324:	bc9002e0 	0xbc9002e0
+    1328:	bc900300 	0xbc900300
+    132c:	bc900320 	0xbc900320
+    1330:	bc900340 	0xbc900340
+    1334:	bc900360 	0xbc900360
+    1338:	bc900380 	0xbc900380
+    133c:	bc9003a0 	0xbc9003a0
+    1340:	bc9003c0 	0xbc9003c0
+    1344:	bc9003e0 	0xbc9003e0
+	unsigned long end = start + PAGE_SIZE;
+
+	do {
+		cache32_unroll32(start,Hit_Invalidate_I);
+		start += 0x400;
+    1348:	24840400 	addiu	a0,a0,1024
+    134c:	0083102b 	sltu	v0,a0,v1
+    1350:	1440ffdd 	bnez	v0,12c8 <blast_icache32_page+0x4>
+    1354:	00000000 	nop
+    1358:	03e00008 	jr	ra
+    135c:	00000000 	nop
+
+00001360 <blast_icache32_page_indexed>:
+static inline void blast_icache32_page_indexed(unsigned long page)
+{
+	unsigned long start = page;
+	unsigned long end = start + PAGE_SIZE;
+	unsigned long ws_inc = 1UL << current_cpu_data.icache.waybit;
+    1360:	3c050000 	lui	a1,0x0
+			1360: R_MIPS_HI16	cpu_data
+    1364:	8ca50038 	lw	a1,56(a1)
+			1364: R_MIPS_LO16	cpu_data
+	unsigned long ws_end = current_cpu_data.icache.ways <<
+    1368:	3c030000 	lui	v1,0x0
+			1368: R_MIPS_HI16	cpu_data
+    136c:	9463002e 	lhu	v1,46(v1)
+			136c: R_MIPS_LO16	cpu_data
+    1370:	24020001 	li	v0,1
+    1374:	00a24804 	sllv	t1,v0,a1
+    1378:	00a31804 	sllv	v1,v1,a1
+    137c:	24871000 	addiu	a3,a0,4096
+	                       current_cpu_data.icache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc)
+    1380:	1060002d 	beqz	v1,1438 <blast_icache32_page_indexed+0xd8>
+    1384:	00003021 	move	a2,zero
+    1388:	0087402b 	sltu	t0,a0,a3
+		for (addr = start; addr < end; addr += 0x400) 
+    138c:	11000026 	beqz	t0,1428 <blast_icache32_page_indexed+0xc8>
+    1390:	00802821 	move	a1,a0
+			cache32_unroll32(addr|ws,Index_Invalidate_I);
+    1394:	00a61025 	or	v0,a1,a2
+    1398:	bc400000 	0xbc400000
+    139c:	bc400020 	0xbc400020
+    13a0:	bc400040 	0xbc400040
+    13a4:	bc400060 	0xbc400060
+    13a8:	bc400080 	0xbc400080
+    13ac:	bc4000a0 	0xbc4000a0
+    13b0:	bc4000c0 	0xbc4000c0
+    13b4:	bc4000e0 	0xbc4000e0
+    13b8:	bc400100 	0xbc400100
+    13bc:	bc400120 	0xbc400120
+    13c0:	bc400140 	0xbc400140
+    13c4:	bc400160 	0xbc400160
+    13c8:	bc400180 	0xbc400180
+    13cc:	bc4001a0 	0xbc4001a0
+    13d0:	bc4001c0 	0xbc4001c0
+    13d4:	bc4001e0 	0xbc4001e0
+    13d8:	bc400200 	0xbc400200
+    13dc:	bc400220 	0xbc400220
+    13e0:	bc400240 	0xbc400240
+    13e4:	bc400260 	0xbc400260
+    13e8:	bc400280 	0xbc400280
+    13ec:	bc4002a0 	0xbc4002a0
+    13f0:	bc4002c0 	0xbc4002c0
+    13f4:	bc4002e0 	0xbc4002e0
+    13f8:	bc400300 	0xbc400300
+    13fc:	bc400320 	0xbc400320
+    1400:	bc400340 	0xbc400340
+    1404:	bc400360 	0xbc400360
+    1408:	bc400380 	0xbc400380
+    140c:	bc4003a0 	0xbc4003a0
+    1410:	bc4003c0 	0xbc4003c0
+    1414:	bc4003e0 	0xbc4003e0
+	                       current_cpu_data.icache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc)
+		for (addr = start; addr < end; addr += 0x400) 
+    1418:	24a50400 	addiu	a1,a1,1024
+    141c:	00a7102b 	sltu	v0,a1,a3
+    1420:	1440ffdd 	bnez	v0,1398 <blast_icache32_page_indexed+0x38>
+    1424:	00a61025 	or	v0,a1,a2
+    1428:	00c93021 	addu	a2,a2,t1
+    142c:	00c3102b 	sltu	v0,a2,v1
+    1430:	1440ffd6 	bnez	v0,138c <blast_icache32_page_indexed+0x2c>
+    1434:	00000000 	nop
+    1438:	03e00008 	jr	ra
+    143c:	00000000 	nop
+
+00001440 <blast_scache32>:
+			cache32_unroll32(addr|ws,Index_Invalidate_I);
+}
+
+static inline void blast_scache32(void)
+{
+	unsigned long start = KSEG0;
+	unsigned long end = start + current_cpu_data.scache.waysize;
+	unsigned long ws_inc = 1UL << current_cpu_data.scache.waybit;
+    1440:	3c040000 	lui	a0,0x0
+			1440: R_MIPS_HI16	cpu_data
+    1444:	8c840060 	lw	a0,96(a0)
+			1444: R_MIPS_LO16	cpu_data
+	unsigned long ws_end = current_cpu_data.scache.ways << 
+    1448:	3c020000 	lui	v0,0x0
+			1448: R_MIPS_HI16	cpu_data
+    144c:	94420056 	lhu	v0,86(v0)
+			144c: R_MIPS_LO16	cpu_data
+    1450:	3c030000 	lui	v1,0x0
+			1450: R_MIPS_HI16	cpu_data
+    1454:	8c63005c 	lw	v1,92(v1)
+			1454: R_MIPS_LO16	cpu_data
+	                       current_cpu_data.scache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+    1458:	00002821 	move	a1,zero
+    145c:	00823804 	sllv	a3,v0,a0
+    1460:	24020001 	li	v0,1
+    1464:	3c018000 	lui	at,0x8000
+    1468:	00231821 	addu	v1,at,v1
+    146c:	10e0002e 	beqz	a3,1528 <blast_scache32+0xe8>
+    1470:	00824004 	sllv	t0,v0,a0
+    1474:	3c028000 	lui	v0,0x8000
+    1478:	0043302b 	sltu	a2,v0,v1
+		for (addr = start; addr < end; addr += 0x400)
+    147c:	10c00026 	beqz	a2,1518 <blast_scache32+0xd8>
+    1480:	3c048000 	lui	a0,0x8000
+			cache32_unroll32(addr|ws,Index_Writeback_Inv_SD);
+    1484:	00851025 	or	v0,a0,a1
+    1488:	bc430000 	0xbc430000
+    148c:	bc430020 	0xbc430020
+    1490:	bc430040 	0xbc430040
+    1494:	bc430060 	0xbc430060
+    1498:	bc430080 	0xbc430080
+    149c:	bc4300a0 	0xbc4300a0
+    14a0:	bc4300c0 	0xbc4300c0
+    14a4:	bc4300e0 	0xbc4300e0
+    14a8:	bc430100 	0xbc430100
+    14ac:	bc430120 	0xbc430120
+    14b0:	bc430140 	0xbc430140
+    14b4:	bc430160 	0xbc430160
+    14b8:	bc430180 	0xbc430180
+    14bc:	bc4301a0 	0xbc4301a0
+    14c0:	bc4301c0 	0xbc4301c0
+    14c4:	bc4301e0 	0xbc4301e0
+    14c8:	bc430200 	0xbc430200
+    14cc:	bc430220 	0xbc430220
+    14d0:	bc430240 	0xbc430240
+    14d4:	bc430260 	0xbc430260
+    14d8:	bc430280 	0xbc430280
+    14dc:	bc4302a0 	0xbc4302a0
+    14e0:	bc4302c0 	0xbc4302c0
+    14e4:	bc4302e0 	0xbc4302e0
+    14e8:	bc430300 	0xbc430300
+    14ec:	bc430320 	0xbc430320
+    14f0:	bc430340 	0xbc430340
+    14f4:	bc430360 	0xbc430360
+    14f8:	bc430380 	0xbc430380
+    14fc:	bc4303a0 	0xbc4303a0
+    1500:	bc4303c0 	0xbc4303c0
+    1504:	bc4303e0 	0xbc4303e0
+    1508:	24840400 	addiu	a0,a0,1024
+    150c:	0083102b 	sltu	v0,a0,v1
+    1510:	1440ffdd 	bnez	v0,1488 <blast_scache32+0x48>
+    1514:	00851025 	or	v0,a0,a1
+    1518:	00a82821 	addu	a1,a1,t0
+    151c:	00a7102b 	sltu	v0,a1,a3
+    1520:	1440ffd6 	bnez	v0,147c <blast_scache32+0x3c>
+    1524:	00000000 	nop
+    1528:	03e00008 	jr	ra
+    152c:	00000000 	nop
+
+00001530 <blast_scache32_page>:
+}
+
+static inline void blast_scache32_page(unsigned long page)
+{
+	unsigned long start = page;
+	unsigned long end = page + PAGE_SIZE;
+    1530:	24831000 	addiu	v1,a0,4096
+
+	do {
+		cache32_unroll32(start,Hit_Writeback_Inv_SD);
+    1534:	bc970000 	0xbc970000
+    1538:	bc970020 	0xbc970020
+    153c:	bc970040 	0xbc970040
+    1540:	bc970060 	0xbc970060
+    1544:	bc970080 	0xbc970080
+    1548:	bc9700a0 	0xbc9700a0
+    154c:	bc9700c0 	0xbc9700c0
+    1550:	bc9700e0 	0xbc9700e0
+    1554:	bc970100 	0xbc970100
+    1558:	bc970120 	0xbc970120
+    155c:	bc970140 	0xbc970140
+    1560:	bc970160 	0xbc970160
+    1564:	bc970180 	0xbc970180
+    1568:	bc9701a0 	0xbc9701a0
+    156c:	bc9701c0 	0xbc9701c0
+    1570:	bc9701e0 	0xbc9701e0
+    1574:	bc970200 	0xbc970200
+    1578:	bc970220 	0xbc970220
+    157c:	bc970240 	0xbc970240
+    1580:	bc970260 	0xbc970260
+    1584:	bc970280 	0xbc970280
+    1588:	bc9702a0 	0xbc9702a0
+    158c:	bc9702c0 	0xbc9702c0
+    1590:	bc9702e0 	0xbc9702e0
+    1594:	bc970300 	0xbc970300
+    1598:	bc970320 	0xbc970320
+    159c:	bc970340 	0xbc970340
+    15a0:	bc970360 	0xbc970360
+    15a4:	bc970380 	0xbc970380
+    15a8:	bc9703a0 	0xbc9703a0
+    15ac:	bc9703c0 	0xbc9703c0
+    15b0:	bc9703e0 	0xbc9703e0
+		start += 0x400;
+    15b4:	24840400 	addiu	a0,a0,1024
+	} while (start < end);
+    15b8:	0083102b 	sltu	v0,a0,v1
+    15bc:	1440ffdd 	bnez	v0,1534 <blast_scache32_page+0x4>
+    15c0:	00000000 	nop
+    15c4:	03e00008 	jr	ra
+    15c8:	00000000 	nop
+
+000015cc <blast_icache64>:
+}
+
+static inline void blast_scache32_page_indexed(unsigned long page)
+{
+	unsigned long start = page;
+	unsigned long end = start + PAGE_SIZE;
+	unsigned long ws_inc = 1UL << current_cpu_data.scache.waybit;
+	unsigned long ws_end = current_cpu_data.scache.ways <<
+	                       current_cpu_data.scache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+		for (addr = start; addr < end; addr += 0x400) 
+			cache32_unroll32(addr|ws,Index_Writeback_Inv_SD);
+}
+
+#define cache64_unroll32(base,op)					\
+	__asm__ __volatile__(						\
+	"	.set noreorder					\n"	\
+	"	.set mips3					\n"	\
+	"	cache %1, 0x000(%0); cache %1, 0x040(%0)	\n"	\
+	"	cache %1, 0x080(%0); cache %1, 0x0c0(%0)	\n"	\
+	"	cache %1, 0x100(%0); cache %1, 0x140(%0)	\n"	\
+	"	cache %1, 0x180(%0); cache %1, 0x1c0(%0)	\n"	\
+	"	cache %1, 0x200(%0); cache %1, 0x240(%0)	\n"	\
+	"	cache %1, 0x280(%0); cache %1, 0x2c0(%0)	\n"	\
+	"	cache %1, 0x300(%0); cache %1, 0x340(%0)	\n"	\
+	"	cache %1, 0x380(%0); cache %1, 0x3c0(%0)	\n"	\
+	"	cache %1, 0x400(%0); cache %1, 0x440(%0)	\n"	\
+	"	cache %1, 0x480(%0); cache %1, 0x4c0(%0)	\n"	\
+	"	cache %1, 0x500(%0); cache %1, 0x540(%0)	\n"	\
+	"	cache %1, 0x580(%0); cache %1, 0x5c0(%0)	\n"	\
+	"	cache %1, 0x600(%0); cache %1, 0x640(%0)	\n"	\
+	"	cache %1, 0x680(%0); cache %1, 0x6c0(%0)	\n"	\
+	"	cache %1, 0x700(%0); cache %1, 0x740(%0)	\n"	\
+	"	cache %1, 0x780(%0); cache %1, 0x7c0(%0)	\n"	\
+	"	.set mips0					\n"	\
+	"	.set reorder					\n"	\
+		:							\
+		: "r" (base),						\
+		  "i" (op));
+
+static inline void blast_icache64(void)
+{
+	unsigned long start = KSEG0;
+	unsigned long end = start + current_cpu_data.icache.waysize;
+	unsigned long ws_inc = 1UL << current_cpu_data.icache.waybit;
+    15cc:	3c040000 	lui	a0,0x0
+			15cc: R_MIPS_HI16	cpu_data
+    15d0:	8c840038 	lw	a0,56(a0)
+			15d0: R_MIPS_LO16	cpu_data
+	unsigned long ws_end = current_cpu_data.icache.ways <<
+    15d4:	3c020000 	lui	v0,0x0
+			15d4: R_MIPS_HI16	cpu_data
+    15d8:	9442002e 	lhu	v0,46(v0)
+			15d8: R_MIPS_LO16	cpu_data
+    15dc:	3c030000 	lui	v1,0x0
+			15dc: R_MIPS_HI16	cpu_data
+    15e0:	8c630034 	lw	v1,52(v1)
+			15e0: R_MIPS_LO16	cpu_data
+	                       current_cpu_data.icache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+    15e4:	00002821 	move	a1,zero
+    15e8:	00823804 	sllv	a3,v0,a0
+    15ec:	24020001 	li	v0,1
+    15f0:	3c018000 	lui	at,0x8000
+    15f4:	00231821 	addu	v1,at,v1
+    15f8:	10e0002e 	beqz	a3,16b4 <blast_icache64+0xe8>
+    15fc:	00824004 	sllv	t0,v0,a0
+    1600:	3c028000 	lui	v0,0x8000
+    1604:	0043302b 	sltu	a2,v0,v1
+		for (addr = start; addr < end; addr += 0x800) 
+    1608:	10c00026 	beqz	a2,16a4 <blast_icache64+0xd8>
+    160c:	3c048000 	lui	a0,0x8000
+			cache64_unroll32(addr|ws,Index_Invalidate_I);
+    1610:	00851025 	or	v0,a0,a1
+    1614:	bc400000 	0xbc400000
+    1618:	bc400040 	0xbc400040
+    161c:	bc400080 	0xbc400080
+    1620:	bc4000c0 	0xbc4000c0
+    1624:	bc400100 	0xbc400100
+    1628:	bc400140 	0xbc400140
+    162c:	bc400180 	0xbc400180
+    1630:	bc4001c0 	0xbc4001c0
+    1634:	bc400200 	0xbc400200
+    1638:	bc400240 	0xbc400240
+    163c:	bc400280 	0xbc400280
+    1640:	bc4002c0 	0xbc4002c0
+    1644:	bc400300 	0xbc400300
+    1648:	bc400340 	0xbc400340
+    164c:	bc400380 	0xbc400380
+    1650:	bc4003c0 	0xbc4003c0
+    1654:	bc400400 	0xbc400400
+    1658:	bc400440 	0xbc400440
+    165c:	bc400480 	0xbc400480
+    1660:	bc4004c0 	0xbc4004c0
+    1664:	bc400500 	0xbc400500
+    1668:	bc400540 	0xbc400540
+    166c:	bc400580 	0xbc400580
+    1670:	bc4005c0 	0xbc4005c0
+    1674:	bc400600 	0xbc400600
+    1678:	bc400640 	0xbc400640
+    167c:	bc400680 	0xbc400680
+    1680:	bc4006c0 	0xbc4006c0
+    1684:	bc400700 	0xbc400700
+    1688:	bc400740 	0xbc400740
+    168c:	bc400780 	0xbc400780
+    1690:	bc4007c0 	0xbc4007c0
+    1694:	24840800 	addiu	a0,a0,2048
+    1698:	0083102b 	sltu	v0,a0,v1
+    169c:	1440ffdd 	bnez	v0,1614 <blast_icache64+0x48>
+    16a0:	00851025 	or	v0,a0,a1
+    16a4:	00a82821 	addu	a1,a1,t0
+    16a8:	00a7102b 	sltu	v0,a1,a3
+    16ac:	1440ffd6 	bnez	v0,1608 <blast_icache64+0x3c>
+    16b0:	00000000 	nop
+    16b4:	03e00008 	jr	ra
+    16b8:	00000000 	nop
+
+000016bc <blast_icache64_page>:
+}
+
+static inline void blast_icache64_page(unsigned long page)
+{
+	unsigned long start = page;
+	unsigned long end = start + PAGE_SIZE;
+    16bc:	24831000 	addiu	v1,a0,4096
+
+	do {
+		cache64_unroll32(start,Hit_Invalidate_I);
+    16c0:	bc900000 	0xbc900000
+    16c4:	bc900040 	0xbc900040
+    16c8:	bc900080 	0xbc900080
+    16cc:	bc9000c0 	0xbc9000c0
+    16d0:	bc900100 	0xbc900100
+    16d4:	bc900140 	0xbc900140
+    16d8:	bc900180 	0xbc900180
+    16dc:	bc9001c0 	0xbc9001c0
+    16e0:	bc900200 	0xbc900200
+    16e4:	bc900240 	0xbc900240
+    16e8:	bc900280 	0xbc900280
+    16ec:	bc9002c0 	0xbc9002c0
+    16f0:	bc900300 	0xbc900300
+    16f4:	bc900340 	0xbc900340
+    16f8:	bc900380 	0xbc900380
+    16fc:	bc9003c0 	0xbc9003c0
+    1700:	bc900400 	0xbc900400
+    1704:	bc900440 	0xbc900440
+    1708:	bc900480 	0xbc900480
+    170c:	bc9004c0 	0xbc9004c0
+    1710:	bc900500 	0xbc900500
+    1714:	bc900540 	0xbc900540
+    1718:	bc900580 	0xbc900580
+    171c:	bc9005c0 	0xbc9005c0
+    1720:	bc900600 	0xbc900600
+    1724:	bc900640 	0xbc900640
+    1728:	bc900680 	0xbc900680
+    172c:	bc9006c0 	0xbc9006c0
+    1730:	bc900700 	0xbc900700
+    1734:	bc900740 	0xbc900740
+    1738:	bc900780 	0xbc900780
+    173c:	bc9007c0 	0xbc9007c0
+		start += 0x800;
+    1740:	24840800 	addiu	a0,a0,2048
+	} while (start < end);
+    1744:	0083102b 	sltu	v0,a0,v1
+    1748:	1440ffdd 	bnez	v0,16c0 <blast_icache64_page+0x4>
+    174c:	00000000 	nop
+    1750:	03e00008 	jr	ra
+    1754:	00000000 	nop
+
+00001758 <blast_icache64_page_indexed>:
+}
+
+static inline void blast_icache64_page_indexed(unsigned long page)
+{
+	unsigned long start = page;
+	unsigned long end = start + PAGE_SIZE;
+	unsigned long ws_inc = 1UL << current_cpu_data.icache.waybit;
+    1758:	3c050000 	lui	a1,0x0
+			1758: R_MIPS_HI16	cpu_data
+    175c:	8ca50038 	lw	a1,56(a1)
+			175c: R_MIPS_LO16	cpu_data
+	unsigned long ws_end = current_cpu_data.icache.ways <<
+    1760:	3c030000 	lui	v1,0x0
+			1760: R_MIPS_HI16	cpu_data
+    1764:	9463002e 	lhu	v1,46(v1)
+			1764: R_MIPS_LO16	cpu_data
+    1768:	24020001 	li	v0,1
+    176c:	00a24804 	sllv	t1,v0,a1
+    1770:	00a31804 	sllv	v1,v1,a1
+    1774:	24871000 	addiu	a3,a0,4096
+	                       current_cpu_data.icache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc)
+    1778:	1060002d 	beqz	v1,1830 <blast_icache64_page_indexed+0xd8>
+    177c:	00003021 	move	a2,zero
+    1780:	0087402b 	sltu	t0,a0,a3
+		for (addr = start; addr < end; addr += 0x800) 
+    1784:	11000026 	beqz	t0,1820 <blast_icache64_page_indexed+0xc8>
+    1788:	00802821 	move	a1,a0
+			cache64_unroll32(addr|ws,Index_Invalidate_I);
+    178c:	00a61025 	or	v0,a1,a2
+    1790:	bc400000 	0xbc400000
+    1794:	bc400040 	0xbc400040
+    1798:	bc400080 	0xbc400080
+    179c:	bc4000c0 	0xbc4000c0
+    17a0:	bc400100 	0xbc400100
+    17a4:	bc400140 	0xbc400140
+    17a8:	bc400180 	0xbc400180
+    17ac:	bc4001c0 	0xbc4001c0
+    17b0:	bc400200 	0xbc400200
+    17b4:	bc400240 	0xbc400240
+    17b8:	bc400280 	0xbc400280
+    17bc:	bc4002c0 	0xbc4002c0
+    17c0:	bc400300 	0xbc400300
+    17c4:	bc400340 	0xbc400340
+    17c8:	bc400380 	0xbc400380
+    17cc:	bc4003c0 	0xbc4003c0
+    17d0:	bc400400 	0xbc400400
+    17d4:	bc400440 	0xbc400440
+    17d8:	bc400480 	0xbc400480
+    17dc:	bc4004c0 	0xbc4004c0
+    17e0:	bc400500 	0xbc400500
+    17e4:	bc400540 	0xbc400540
+    17e8:	bc400580 	0xbc400580
+    17ec:	bc4005c0 	0xbc4005c0
+    17f0:	bc400600 	0xbc400600
+    17f4:	bc400640 	0xbc400640
+    17f8:	bc400680 	0xbc400680
+    17fc:	bc4006c0 	0xbc4006c0
+    1800:	bc400700 	0xbc400700
+    1804:	bc400740 	0xbc400740
+    1808:	bc400780 	0xbc400780
+    180c:	bc4007c0 	0xbc4007c0
+    1810:	24a50800 	addiu	a1,a1,2048
+    1814:	00a7102b 	sltu	v0,a1,a3
+    1818:	1440ffdd 	bnez	v0,1790 <blast_icache64_page_indexed+0x38>
+    181c:	00a61025 	or	v0,a1,a2
+    1820:	00c93021 	addu	a2,a2,t1
+    1824:	00c3102b 	sltu	v0,a2,v1
+    1828:	1440ffd6 	bnez	v0,1784 <blast_icache64_page_indexed+0x2c>
+    182c:	00000000 	nop
+    1830:	03e00008 	jr	ra
+    1834:	00000000 	nop
+
+00001838 <blast_scache64>:
+}
+
+static inline void blast_scache64(void)
+{
+	unsigned long start = KSEG0;
+	unsigned long end = start + current_cpu_data.scache.waysize;
+	unsigned long ws_inc = 1UL << current_cpu_data.scache.waybit;
+    1838:	3c040000 	lui	a0,0x0
+			1838: R_MIPS_HI16	cpu_data
+    183c:	8c840060 	lw	a0,96(a0)
+			183c: R_MIPS_LO16	cpu_data
+	unsigned long ws_end = current_cpu_data.scache.ways << 
+    1840:	3c020000 	lui	v0,0x0
+			1840: R_MIPS_HI16	cpu_data
+    1844:	94420056 	lhu	v0,86(v0)
+			1844: R_MIPS_LO16	cpu_data
+    1848:	3c030000 	lui	v1,0x0
+			1848: R_MIPS_HI16	cpu_data
+    184c:	8c63005c 	lw	v1,92(v1)
+			184c: R_MIPS_LO16	cpu_data
+	                       current_cpu_data.scache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+    1850:	00002821 	move	a1,zero
+    1854:	00823804 	sllv	a3,v0,a0
+    1858:	24020001 	li	v0,1
+    185c:	3c018000 	lui	at,0x8000
+    1860:	00231821 	addu	v1,at,v1
+    1864:	10e0002e 	beqz	a3,1920 <blast_scache64+0xe8>
+    1868:	00824004 	sllv	t0,v0,a0
+    186c:	3c028000 	lui	v0,0x8000
+    1870:	0043302b 	sltu	a2,v0,v1
+		for (addr = start; addr < end; addr += 0x800)
+    1874:	10c00026 	beqz	a2,1910 <blast_scache64+0xd8>
+    1878:	3c048000 	lui	a0,0x8000
+			cache64_unroll32(addr|ws,Index_Writeback_Inv_SD);
+    187c:	00851025 	or	v0,a0,a1
+    1880:	bc430000 	0xbc430000
+    1884:	bc430040 	0xbc430040
+    1888:	bc430080 	0xbc430080
+    188c:	bc4300c0 	0xbc4300c0
+    1890:	bc430100 	0xbc430100
+    1894:	bc430140 	0xbc430140
+    1898:	bc430180 	0xbc430180
+    189c:	bc4301c0 	0xbc4301c0
+    18a0:	bc430200 	0xbc430200
+    18a4:	bc430240 	0xbc430240
+    18a8:	bc430280 	0xbc430280
+    18ac:	bc4302c0 	0xbc4302c0
+    18b0:	bc430300 	0xbc430300
+    18b4:	bc430340 	0xbc430340
+    18b8:	bc430380 	0xbc430380
+    18bc:	bc4303c0 	0xbc4303c0
+    18c0:	bc430400 	0xbc430400
+    18c4:	bc430440 	0xbc430440
+    18c8:	bc430480 	0xbc430480
+    18cc:	bc4304c0 	0xbc4304c0
+    18d0:	bc430500 	0xbc430500
+    18d4:	bc430540 	0xbc430540
+    18d8:	bc430580 	0xbc430580
+    18dc:	bc4305c0 	0xbc4305c0
+    18e0:	bc430600 	0xbc430600
+    18e4:	bc430640 	0xbc430640
+    18e8:	bc430680 	0xbc430680
+    18ec:	bc4306c0 	0xbc4306c0
+    18f0:	bc430700 	0xbc430700
+    18f4:	bc430740 	0xbc430740
+    18f8:	bc430780 	0xbc430780
+    18fc:	bc4307c0 	0xbc4307c0
+    1900:	24840800 	addiu	a0,a0,2048
+    1904:	0083102b 	sltu	v0,a0,v1
+    1908:	1440ffdd 	bnez	v0,1880 <blast_scache64+0x48>
+    190c:	00851025 	or	v0,a0,a1
+    1910:	00a82821 	addu	a1,a1,t0
+    1914:	00a7102b 	sltu	v0,a1,a3
+    1918:	1440ffd6 	bnez	v0,1874 <blast_scache64+0x3c>
+    191c:	00000000 	nop
+    1920:	03e00008 	jr	ra
+    1924:	00000000 	nop
+
+00001928 <blast_scache64_page>:
+}
+
+static inline void blast_scache64_page(unsigned long page)
+{
+	unsigned long start = page;
+	unsigned long end = page + PAGE_SIZE;
+    1928:	24831000 	addiu	v1,a0,4096
+
+	do {
+		cache64_unroll32(start,Hit_Writeback_Inv_SD);
+    192c:	bc970000 	0xbc970000
+    1930:	bc970040 	0xbc970040
+    1934:	bc970080 	0xbc970080
+    1938:	bc9700c0 	0xbc9700c0
+    193c:	bc970100 	0xbc970100
+    1940:	bc970140 	0xbc970140
+    1944:	bc970180 	0xbc970180
+    1948:	bc9701c0 	0xbc9701c0
+    194c:	bc970200 	0xbc970200
+    1950:	bc970240 	0xbc970240
+    1954:	bc970280 	0xbc970280
+    1958:	bc9702c0 	0xbc9702c0
+    195c:	bc970300 	0xbc970300
+    1960:	bc970340 	0xbc970340
+    1964:	bc970380 	0xbc970380
+    1968:	bc9703c0 	0xbc9703c0
+    196c:	bc970400 	0xbc970400
+    1970:	bc970440 	0xbc970440
+    1974:	bc970480 	0xbc970480
+    1978:	bc9704c0 	0xbc9704c0
+    197c:	bc970500 	0xbc970500
+    1980:	bc970540 	0xbc970540
+    1984:	bc970580 	0xbc970580
+    1988:	bc9705c0 	0xbc9705c0
+    198c:	bc970600 	0xbc970600
+    1990:	bc970640 	0xbc970640
+    1994:	bc970680 	0xbc970680
+    1998:	bc9706c0 	0xbc9706c0
+    199c:	bc970700 	0xbc970700
+    19a0:	bc970740 	0xbc970740
+    19a4:	bc970780 	0xbc970780
+    19a8:	bc9707c0 	0xbc9707c0
+		start += 0x800;
+    19ac:	24840800 	addiu	a0,a0,2048
+	} while (start < end);
+    19b0:	0083102b 	sltu	v0,a0,v1
+    19b4:	1440ffdd 	bnez	v0,192c <blast_scache64_page+0x4>
+    19b8:	00000000 	nop
+    19bc:	03e00008 	jr	ra
+    19c0:	00000000 	nop
+
+000019c4 <blast_scache128>:
+}
+
+static inline void blast_scache64_page_indexed(unsigned long page)
+{
+	unsigned long start = page;
+	unsigned long end = start + PAGE_SIZE;
+	unsigned long ws_inc = 1UL << current_cpu_data.scache.waybit;
+	unsigned long ws_end = current_cpu_data.scache.ways <<
+	                       current_cpu_data.scache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+		for (addr = start; addr < end; addr += 0x800) 
+			cache64_unroll32(addr|ws,Index_Writeback_Inv_SD);
+}
+
+#define cache128_unroll32(base,op)					\
+	__asm__ __volatile__(						\
+	"	.set noreorder					\n"	\
+	"	.set mips3					\n"	\
+	"	cache %1, 0x000(%0); cache %1, 0x080(%0)	\n"	\
+	"	cache %1, 0x100(%0); cache %1, 0x180(%0)	\n"	\
+	"	cache %1, 0x200(%0); cache %1, 0x280(%0)	\n"	\
+	"	cache %1, 0x300(%0); cache %1, 0x380(%0)	\n"	\
+	"	cache %1, 0x400(%0); cache %1, 0x480(%0)	\n"	\
+	"	cache %1, 0x500(%0); cache %1, 0x580(%0)	\n"	\
+	"	cache %1, 0x600(%0); cache %1, 0x680(%0)	\n"	\
+	"	cache %1, 0x700(%0); cache %1, 0x780(%0)	\n"	\
+	"	cache %1, 0x800(%0); cache %1, 0x880(%0)	\n"	\
+	"	cache %1, 0x900(%0); cache %1, 0x980(%0)	\n"	\
+	"	cache %1, 0xa00(%0); cache %1, 0xa80(%0)	\n"	\
+	"	cache %1, 0xb00(%0); cache %1, 0xb80(%0)	\n"	\
+	"	cache %1, 0xc00(%0); cache %1, 0xc80(%0)	\n"	\
+	"	cache %1, 0xd00(%0); cache %1, 0xd80(%0)	\n"	\
+	"	cache %1, 0xe00(%0); cache %1, 0xe80(%0)	\n"	\
+	"	cache %1, 0xf00(%0); cache %1, 0xf80(%0)	\n"	\
+	"	.set mips0					\n"	\
+	"	.set reorder					\n"	\
+		:							\
+		: "r" (base),						\
+		  "i" (op));
+
+static inline void blast_scache128(void)
+{
+	unsigned long start = KSEG0;
+	unsigned long end = start + current_cpu_data.scache.waysize;
+	unsigned long ws_inc = 1UL << current_cpu_data.scache.waybit;
+    19c4:	3c040000 	lui	a0,0x0
+			19c4: R_MIPS_HI16	cpu_data
+    19c8:	8c840060 	lw	a0,96(a0)
+			19c8: R_MIPS_LO16	cpu_data
+	unsigned long ws_end = current_cpu_data.scache.ways << 
+    19cc:	3c020000 	lui	v0,0x0
+			19cc: R_MIPS_HI16	cpu_data
+    19d0:	94420056 	lhu	v0,86(v0)
+			19d0: R_MIPS_LO16	cpu_data
+    19d4:	3c030000 	lui	v1,0x0
+			19d4: R_MIPS_HI16	cpu_data
+    19d8:	8c63005c 	lw	v1,92(v1)
+			19d8: R_MIPS_LO16	cpu_data
+	                       current_cpu_data.scache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+    19dc:	00002821 	move	a1,zero
+    19e0:	00823804 	sllv	a3,v0,a0
+    19e4:	24020001 	li	v0,1
+    19e8:	3c018000 	lui	at,0x8000
+    19ec:	00231821 	addu	v1,at,v1
+    19f0:	10e0002e 	beqz	a3,1aac <blast_scache128+0xe8>
+    19f4:	00824004 	sllv	t0,v0,a0
+    19f8:	3c028000 	lui	v0,0x8000
+    19fc:	0043302b 	sltu	a2,v0,v1
+		for (addr = start; addr < end; addr += 0x1000)
+    1a00:	10c00026 	beqz	a2,1a9c <blast_scache128+0xd8>
+    1a04:	3c048000 	lui	a0,0x8000
+			cache128_unroll32(addr|ws,Index_Writeback_Inv_SD);
+    1a08:	00851025 	or	v0,a0,a1
+    1a0c:	bc430000 	0xbc430000
+    1a10:	bc430080 	0xbc430080
+    1a14:	bc430100 	0xbc430100
+    1a18:	bc430180 	0xbc430180
+    1a1c:	bc430200 	0xbc430200
+    1a20:	bc430280 	0xbc430280
+    1a24:	bc430300 	0xbc430300
+    1a28:	bc430380 	0xbc430380
+    1a2c:	bc430400 	0xbc430400
+    1a30:	bc430480 	0xbc430480
+    1a34:	bc430500 	0xbc430500
+    1a38:	bc430580 	0xbc430580
+    1a3c:	bc430600 	0xbc430600
+    1a40:	bc430680 	0xbc430680
+    1a44:	bc430700 	0xbc430700
+    1a48:	bc430780 	0xbc430780
+    1a4c:	bc430800 	0xbc430800
+    1a50:	bc430880 	0xbc430880
+    1a54:	bc430900 	0xbc430900
+    1a58:	bc430980 	0xbc430980
+    1a5c:	bc430a00 	0xbc430a00
+    1a60:	bc430a80 	0xbc430a80
+    1a64:	bc430b00 	0xbc430b00
+    1a68:	bc430b80 	0xbc430b80
+    1a6c:	bc430c00 	0xbc430c00
+    1a70:	bc430c80 	0xbc430c80
+    1a74:	bc430d00 	0xbc430d00
+    1a78:	bc430d80 	0xbc430d80
+    1a7c:	bc430e00 	0xbc430e00
+    1a80:	bc430e80 	0xbc430e80
+    1a84:	bc430f00 	0xbc430f00
+    1a88:	bc430f80 	0xbc430f80
+    1a8c:	24841000 	addiu	a0,a0,4096
+    1a90:	0083102b 	sltu	v0,a0,v1
+    1a94:	1440ffdd 	bnez	v0,1a0c <blast_scache128+0x48>
+    1a98:	00851025 	or	v0,a0,a1
+    1a9c:	00a82821 	addu	a1,a1,t0
+    1aa0:	00a7102b 	sltu	v0,a1,a3
+    1aa4:	1440ffd6 	bnez	v0,1a00 <blast_scache128+0x3c>
+    1aa8:	00000000 	nop
+    1aac:	03e00008 	jr	ra
+    1ab0:	00000000 	nop
+
+00001ab4 <blast_scache128_page>:
+}
+
+static inline void blast_scache128_page(unsigned long page)
+{
+	unsigned long start = page;
+	unsigned long end = page + PAGE_SIZE;
+    1ab4:	24851000 	addiu	a1,a0,4096
+    1ab8:	00a01821 	move	v1,a1
+
+	do {
+		cache128_unroll32(start,Hit_Writeback_Inv_SD);
+    1abc:	bc970000 	0xbc970000
+    1ac0:	bc970080 	0xbc970080
+    1ac4:	bc970100 	0xbc970100
+    1ac8:	bc970180 	0xbc970180
+    1acc:	bc970200 	0xbc970200
+    1ad0:	bc970280 	0xbc970280
+    1ad4:	bc970300 	0xbc970300
+    1ad8:	bc970380 	0xbc970380
+    1adc:	bc970400 	0xbc970400
+    1ae0:	bc970480 	0xbc970480
+    1ae4:	bc970500 	0xbc970500
+    1ae8:	bc970580 	0xbc970580
+    1aec:	bc970600 	0xbc970600
+    1af0:	bc970680 	0xbc970680
+    1af4:	bc970700 	0xbc970700
+    1af8:	bc970780 	0xbc970780
+    1afc:	bc970800 	0xbc970800
+    1b00:	bc970880 	0xbc970880
+    1b04:	bc970900 	0xbc970900
+    1b08:	bc970980 	0xbc970980
+    1b0c:	bc970a00 	0xbc970a00
+    1b10:	bc970a80 	0xbc970a80
+    1b14:	bc970b00 	0xbc970b00
+    1b18:	bc970b80 	0xbc970b80
+    1b1c:	bc970c00 	0xbc970c00
+    1b20:	bc970c80 	0xbc970c80
+    1b24:	bc970d00 	0xbc970d00
+    1b28:	bc970d80 	0xbc970d80
+    1b2c:	bc970e00 	0xbc970e00
+    1b30:	bc970e80 	0xbc970e80
+    1b34:	bc970f00 	0xbc970f00
+    1b38:	bc970f80 	0xbc970f80
+		start += 0x1000;
+	} while (start < end);
+    1b3c:	0065102b 	sltu	v0,v1,a1
+    1b40:	00602021 	move	a0,v1
+    1b44:	1440ffdd 	bnez	v0,1abc <blast_scache128_page+0x8>
+    1b48:	24631000 	addiu	v1,v1,4096
+    1b4c:	03e00008 	jr	ra
+    1b50:	00000000 	nop
+
+00001b54 <r4k_blast_dcache_page_dc32>:
+    1b54:	24831000 	addiu	v1,a0,4096
+    1b58:	bc950000 	0xbc950000
+    1b5c:	bc950020 	0xbc950020
+    1b60:	bc950040 	0xbc950040
+    1b64:	bc950060 	0xbc950060
+    1b68:	bc950080 	0xbc950080
+    1b6c:	bc9500a0 	0xbc9500a0
+    1b70:	bc9500c0 	0xbc9500c0
+    1b74:	bc9500e0 	0xbc9500e0
+    1b78:	bc950100 	0xbc950100
+    1b7c:	bc950120 	0xbc950120
+    1b80:	bc950140 	0xbc950140
+    1b84:	bc950160 	0xbc950160
+    1b88:	bc950180 	0xbc950180
+    1b8c:	bc9501a0 	0xbc9501a0
+    1b90:	bc9501c0 	0xbc9501c0
+    1b94:	bc9501e0 	0xbc9501e0
+    1b98:	bc950200 	0xbc950200
+    1b9c:	bc950220 	0xbc950220
+    1ba0:	bc950240 	0xbc950240
+    1ba4:	bc950260 	0xbc950260
+    1ba8:	bc950280 	0xbc950280
+    1bac:	bc9502a0 	0xbc9502a0
+    1bb0:	bc9502c0 	0xbc9502c0
+    1bb4:	bc9502e0 	0xbc9502e0
+    1bb8:	bc950300 	0xbc950300
+    1bbc:	bc950320 	0xbc950320
+    1bc0:	bc950340 	0xbc950340
+    1bc4:	bc950360 	0xbc950360
+    1bc8:	bc950380 	0xbc950380
+    1bcc:	bc9503a0 	0xbc9503a0
+    1bd0:	bc9503c0 	0xbc9503c0
+    1bd4:	bc9503e0 	0xbc9503e0
+    1bd8:	24840400 	addiu	a0,a0,1024
+    1bdc:	0083102b 	sltu	v0,a0,v1
+    1be0:	1440ffdd 	bnez	v0,1b58 <r4k_blast_dcache_page_dc32+0x4>
+    1be4:	00000000 	nop
+    1be8:	03e00008 	jr	ra
+    1bec:	00000000 	nop
+Disassembly of section .text.init:
+
+00000000 <probe_pcache>:
+       0:	27bdffc8 	addiu	sp,sp,-56
+       4:	afb10024 	sw	s1,36(sp)
+       8:	afbf0030 	sw	ra,48(sp)
+       c:	afb3002c 	sw	s3,44(sp)
+      10:	afb20028 	sw	s2,40(sp)
+      14:	afb00020 	sw	s0,32(sp)
+      18:	3c110000 	lui	s1,0x0
+			18: R_MIPS_HI16	cpu_data
+      1c:	26310000 	addiu	s1,s1,0
+			1c: R_MIPS_LO16	cpu_data
+      20:	40128000 	mfc0	s2,$16
+      24:	40137800 	mfc0	s3,$15
+      28:	3c020000 	lui	v0,0x0
+			28: R_MIPS_HI16	cpu_data
+      2c:	8c420020 	lw	v0,32(v0)
+			2c: R_MIPS_LO16	cpu_data
+      30:	2442fff7 	addiu	v0,v0,-9
+      34:	2c430030 	sltiu	v1,v0,48
+      38:	1060021d 	beqz	v1,8b0 <probe_pcache+0x8b0>
+      3c:	00021080 	sll	v0,v0,0x2
+      40:	3c030000 	lui	v1,0x0
+			40: R_MIPS_HI16	.rodata
+      44:	00621821 	addu	v1,v1,v0
+      48:	8c630240 	lw	v1,576(v1)
+			48: R_MIPS_LO16	.rodata
+      4c:	00600008 	jr	v1
+      50:	00000000 	nop
+      54:	32420e00 	andi	v0,s2,0xe00
+      58:	00021242 	srl	v0,v0,0x9
+      5c:	2442000c 	addiu	v0,v0,12
+      60:	32430020 	andi	v1,s2,0x20
+      64:	24040001 	li	a0,1
+      68:	00442004 	sllv	a0,a0,v0
+      6c:	00031942 	srl	v1,v1,0x5
+      70:	24020010 	li	v0,16
+      74:	00621004 	sllv	v0,v0,v1
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+      78:	00042842 	srl	a1,a0,0x1
+      7c:	24030002 	li	v1,2
+      80:	a623002e 	sh	v1,46(s1)
+      84:	a622002c 	sh	v0,44(s1)
+      88:	3c010000 	lui	at,0x0
+			88: R_MIPS_HI16	.bss
+      8c:	ac240000 	sw	a0,0(at)
+			8c: R_MIPS_LO16	.bss
+ */
+
+static inline int generic_ffs(int x)
+{
+	int r = 1;
+      90:	24030001 	li	v1,1
+
+	if (!x)
+      94:	10a00019 	beqz	a1,fc <probe_pcache+0xfc>
+      98:	00003021 	move	a2,zero
+		return 0;
+	if (!(x & 0xffff)) {
+      9c:	30a2ffff 	andi	v0,a1,0xffff
+      a0:	14400004 	bnez	v0,b4 <probe_pcache+0xb4>
+      a4:	30a200ff 	andi	v0,a1,0xff
+
+	if (!x)
+		return 0;
+	if (!(x & 0xffff)) {
+		x >>= 16;
+      a8:	00052c03 	sra	a1,a1,0x10
+		r += 16;
+      ac:	24030011 	li	v1,17
+	}
+	if (!(x & 0xff)) {
+      b0:	30a200ff 	andi	v0,a1,0xff
+      b4:	14400004 	bnez	v0,c8 <probe_pcache+0xc8>
+      b8:	30a2000f 	andi	v0,a1,0xf
+		x >>= 16;
+		r += 16;
+	}
+	if (!(x & 0xff)) {
+		x >>= 8;
+      bc:	00052a03 	sra	a1,a1,0x8
+		r += 8;
+      c0:	24630008 	addiu	v1,v1,8
+	}
+	if (!(x & 0xf)) {
+      c4:	30a2000f 	andi	v0,a1,0xf
+      c8:	14400004 	bnez	v0,dc <probe_pcache+0xdc>
+      cc:	30a20003 	andi	v0,a1,0x3
+		x >>= 8;
+		r += 8;
+	}
+	if (!(x & 0xf)) {
+		x >>= 4;
+      d0:	00052903 	sra	a1,a1,0x4
+		r += 4;
+      d4:	24630004 	addiu	v1,v1,4
+	}
+	if (!(x & 3)) {
+      d8:	30a20003 	andi	v0,a1,0x3
+      dc:	14400004 	bnez	v0,f0 <probe_pcache+0xf0>
+      e0:	30a20001 	andi	v0,a1,0x1
+		x >>= 2;
+      e4:	00052883 	sra	a1,a1,0x2
+		r += 2;
+      e8:	24630002 	addiu	v1,v1,2
+	}
+	if (!(x & 1)) {
+      ec:	30a20001 	andi	v0,a1,0x1
+      f0:	2c420001 	sltiu	v0,v0,1
+      f4:	00621821 	addu	v1,v1,v0
+		x >>= 1;
+		r += 1;
+	}
+      f8:	00603021 	move	a2,v1
+      fc:	324201c0 	andi	v0,s2,0x1c0
+     100:	00021182 	srl	v0,v0,0x6
+     104:	2442000c 	addiu	v0,v0,12
+     108:	32430010 	andi	v1,s2,0x10
+     10c:	24050001 	li	a1,1
+     110:	00452804 	sllv	a1,a1,v0
+     114:	00031902 	srl	v1,v1,0x4
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+     118:	24c2ffff 	addiu	v0,a2,-1
+     11c:	24040010 	li	a0,16
+     120:	00642004 	sllv	a0,a0,v1
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+     124:	ae220038 	sw	v0,56(s1)
+     128:	00053042 	srl	a2,a1,0x1
+     12c:	24020002 	li	v0,2
+     130:	a6240040 	sh	a0,64(s1)
+     134:	a6220042 	sh	v0,66(s1)
+     138:	3c010000 	lui	at,0x0
+			138: R_MIPS_HI16	.bss
+     13c:	ac250004 	sw	a1,4(at)
+			13c: R_MIPS_LO16	.bss
+ */
+
+static inline int generic_ffs(int x)
+{
+	int r = 1;
+     140:	24040001 	li	a0,1
+
+	if (!x)
+     144:	10c00019 	beqz	a2,1ac <probe_pcache+0x1ac>
+     148:	00001821 	move	v1,zero
+	int r = 1;
+
+	if (!x)
+		return 0;
+	if (!(x & 0xffff)) {
+     14c:	30c2ffff 	andi	v0,a2,0xffff
+     150:	14400004 	bnez	v0,164 <probe_pcache+0x164>
+     154:	30c200ff 	andi	v0,a2,0xff
+		x >>= 16;
+     158:	00063403 	sra	a2,a2,0x10
+		r += 16;
+     15c:	24040011 	li	a0,17
+	}
+	if (!(x & 0xff)) {
+     160:	30c200ff 	andi	v0,a2,0xff
+     164:	14400004 	bnez	v0,178 <probe_pcache+0x178>
+     168:	30c2000f 	andi	v0,a2,0xf
+		x >>= 8;
+     16c:	00063203 	sra	a2,a2,0x8
+		r += 8;
+     170:	24840008 	addiu	a0,a0,8
+	}
+	if (!(x & 0xf)) {
+     174:	30c2000f 	andi	v0,a2,0xf
+     178:	14400004 	bnez	v0,18c <probe_pcache+0x18c>
+     17c:	30c20003 	andi	v0,a2,0x3
+		x >>= 8;
+		r += 8;
+	}
+	if (!(x & 0xf)) {
+		x >>= 4;
+     180:	00063103 	sra	a2,a2,0x4
+		r += 4;
+     184:	24840004 	addiu	a0,a0,4
+	}
+	if (!(x & 3)) {
+     188:	30c20003 	andi	v0,a2,0x3
+     18c:	14400004 	bnez	v0,1a0 <probe_pcache+0x1a0>
+     190:	30c20001 	andi	v0,a2,0x1
+		x >>= 2;
+     194:	00063083 	sra	a2,a2,0x2
+		r += 2;
+     198:	24840002 	addiu	a0,a0,2
+	}
+	if (!(x & 1)) {
+     19c:	30c20001 	andi	v0,a2,0x1
+     1a0:	2c420001 	sltiu	v0,v0,1
+     1a4:	00822021 	addu	a0,a0,v0
+	}
+	if (!(x & 1)) {
+		x >>= 1;
+		r += 1;
+	}
+     1a8:	00801821 	move	v1,a0
+     1ac:	3c020000 	lui	v0,0x0
+			1ac: R_MIPS_HI16	cpu_data
+     1b0:	8c420014 	lw	v0,20(v0)
+			1b0: R_MIPS_LO16	cpu_data
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+     1b4:	2463ffff 	addiu	v1,v1,-1
+     1b8:	ae23004c 	sw	v1,76(s1)
+     1bc:	34420800 	ori	v0,v0,0x800
+     1c0:	ae220014 	sw	v0,20(s1)
+     1c4:	3263ff00 	andi	v1,s3,0xff00
+     1c8:	24020400 	li	v0,1024
+     1cc:	1062007f 	beq	v1,v0,3cc <probe_pcache+0x3cc>
+     1d0:	326200ff 	andi	v0,s3,0xff
+     1d4:	3c070000 	lui	a3,0x0
+			1d4: R_MIPS_HI16	cpu_data
+     1d8:	94e7002c 	lhu	a3,44(a3)
+			1d8: R_MIPS_LO16	cpu_data
+     1dc:	3c030000 	lui	v1,0x0
+			1dc: R_MIPS_HI16	cpu_data
+     1e0:	9463002e 	lhu	v1,46(v1)
+			1e0: R_MIPS_LO16	cpu_data
+     1e4:	3c020000 	lui	v0,0x0
+			1e4: R_MIPS_HI16	.bss
+     1e8:	8c420000 	lw	v0,0(v0)
+			1e8: R_MIPS_LO16	.bss
+     1ec:	30e7ffff 	andi	a3,a3,0xffff
+     1f0:	50600001 	beqzl	v1,1f8 <probe_pcache+0x1f8>
+     1f4:	0007000d 	break	0x7
+     1f8:	0043001b 	divu	zero,v0,v1
+     1fc:	3c090000 	lui	t1,0x0
+			1fc: R_MIPS_HI16	cpu_data
+     200:	95290042 	lhu	t1,66(t1)
+			200: R_MIPS_LO16	cpu_data
+     204:	3c080000 	lui	t0,0x0
+			204: R_MIPS_HI16	.bss
+     208:	8d080004 	lw	t0,4(t0)
+			208: R_MIPS_LO16	.bss
+     20c:	3c040000 	lui	a0,0x0
+			20c: R_MIPS_HI16	.rodata
+     210:	24840078 	addiu	a0,a0,120
+			210: R_MIPS_LO16	.rodata
+     214:	00002812 	mflo	a1
+     218:	ae250034 	sw	a1,52(s1)
+     21c:	00000000 	nop
+     220:	0109001b 	divu	zero,t0,t1
+     224:	00003012 	mflo	a2
+     228:	ae260048 	sw	a2,72(s1)
+     22c:	00000000 	nop
+     230:	00e30018 	mult	a3,v1
+     234:	00003812 	mflo	a3
+     238:	3c030000 	lui	v1,0x0
+			238: R_MIPS_HI16	cpu_data
+     23c:	94630040 	lhu	v1,64(v1)
+			23c: R_MIPS_LO16	cpu_data
+     240:	0047001b 	divu	zero,v0,a3
+     244:	00001012 	mflo	v0
+     248:	3047ffff 	andi	a3,v0,0xffff
+     24c:	a6220030 	sh	v0,48(s1)
+     250:	00690018 	mult	v1,t1
+     254:	00001812 	mflo	v1
+	...
+     260:	0103001b 	divu	zero,t0,v1
+     264:	00004012 	mflo	t0
+     268:	3102ffff 	andi	v0,t0,0xffff
+     26c:	afa20010 	sw	v0,16(sp)
+     270:	0c000000 	jal	0 <probe_pcache>
+			270: R_MIPS_26	printk
+     274:	a6280044 	sh	t0,68(s1)
+     278:	3c040000 	lui	a0,0x0
+			278: R_MIPS_HI16	cpu_data
+     27c:	8c840020 	lw	a0,32(a0)
+			27c: R_MIPS_LO16	cpu_data
+     280:	2c820014 	sltiu	v0,a0,20
+     284:	14400006 	bnez	v0,2a0 <probe_pcache+0x2a0>
+     288:	2c820016 	sltiu	v0,a0,22
+     28c:	1440000e 	bnez	v0,2c8 <probe_pcache+0x2c8>
+     290:	2402002c 	li	v0,44
+     294:	2402003a 	li	v0,58
+     298:	10820045 	beq	a0,v0,3b0 <probe_pcache+0x3b0>
+     29c:	00000000 	nop
+     2a0:	3c020000 	lui	v0,0x0
+			2a0: R_MIPS_HI16	cpu_data
+     2a4:	8c420048 	lw	v0,72(v0)
+			2a4: R_MIPS_LO16	cpu_data
+     2a8:	2c421001 	sltiu	v0,v0,4097
+     2ac:	14400006 	bnez	v0,2c8 <probe_pcache+0x2c8>
+     2b0:	2402002c 	li	v0,44
+     2b4:	3c020000 	lui	v0,0x0
+			2b4: R_MIPS_HI16	cpu_data
+     2b8:	8c420050 	lw	v0,80(v0)
+			2b8: R_MIPS_LO16	cpu_data
+     2bc:	34420004 	ori	v0,v0,0x4
+     2c0:	ae220050 	sw	v0,80(s1)
+     2c4:	2402002c 	li	v0,44
+     2c8:	10820035 	beq	a0,v0,3a0 <probe_pcache+0x3a0>
+     2cc:	00000000 	nop
+     2d0:	2402002d 	li	v0,45
+     2d4:	1082002d 	beq	a0,v0,38c <probe_pcache+0x38c>
+     2d8:	00000000 	nop
+     2dc:	3c020000 	lui	v0,0x0
+			2dc: R_MIPS_HI16	cpu_data
+     2e0:	8c42003c 	lw	v0,60(v0)
+			2e0: R_MIPS_LO16	cpu_data
+     2e4:	3c030000 	lui	v1,0x0
+			2e4: R_MIPS_HI16	.bss
+     2e8:	8c630000 	lw	v1,0(v1)
+			2e8: R_MIPS_LO16	.bss
+     2ec:	3c060000 	lui	a2,0x0
+			2ec: R_MIPS_HI16	.rodata
+drop_mmu_context(struct mm_struct *mm, unsigned cpu)
+{
+	unsigned long flags;
+
+	local_irq_save(flags);
+     2f0:	24c600b0 	addiu	a2,a2,176
+			2f0: R_MIPS_LO16	.rodata
+     2f4:	30420002 	andi	v0,v0,0x2
+     2f8:	14400003 	bnez	v0,308 <probe_pcache+0x308>
+     2fc:	00032a82 	srl	a1,v1,0xa
+     300:	3c060000 	lui	a2,0x0
+			300: R_MIPS_HI16	.rodata
+     304:	24c600c4 	addiu	a2,a2,196
+			304: R_MIPS_LO16	.rodata
+     308:	3c020000 	lui	v0,0x0
+			308: R_MIPS_HI16	cpu_data
+     30c:	9442002e 	lhu	v0,46(v0)
+			30c: R_MIPS_LO16	cpu_data
+ * @addr: Address to start counting from
+ */
+static inline int test_bit(int nr, volatile void *addr)
+{
+	return 1UL & (((const volatile unsigned long *) addr)[nr >> SZLONG_LOG] >> (nr & SZLONG_MASK));
+     310:	3c030000 	lui	v1,0x0
+			310: R_MIPS_HI16	cpu_data
+     314:	9463002c 	lhu	v1,44(v1)
+			314: R_MIPS_LO16	cpu_data
+     318:	3c040000 	lui	a0,0x0
+			318: R_MIPS_HI16	.rodata
+     31c:	248400d8 	addiu	a0,a0,216
+			31c: R_MIPS_LO16	.rodata
+
+static inline void
+get_new_mmu_context(struct mm_struct *mm, unsigned long cpu)
+{
+	unsigned long asid = asid_cache(cpu);
+     320:	00021080 	sll	v0,v0,0x2
+     324:	3c070000 	lui	a3,0x0
+			324: R_MIPS_HI16	.data
+
+	if (! ((asid += ASID_INC) & ASID_MASK) ) {
+     328:	00e23821 	addu	a3,a3,v0
+     32c:	8ce70014 	lw	a3,20(a3)
+			32c: R_MIPS_LO16	.data
+     330:	0c000000 	jal	0 <probe_pcache>
+			330: R_MIPS_26	printk
+     334:	afa30010 	sw	v1,16(sp)
+     338:	3c030000 	lui	v1,0x0
+			338: R_MIPS_HI16	cpu_data
+     33c:	94630042 	lhu	v1,66(v1)
+			33c: R_MIPS_LO16	cpu_data
+	local_irq_save(flags);
+
+	if (test_bit(cpu, &mm->cpu_vm_mask))  {
+		get_new_mmu_context(mm, cpu);
+		write_c0_entryhi(cpu_asid(cpu, mm));
+     340:	3c050000 	lui	a1,0x0
+			340: R_MIPS_HI16	.bss
+     344:	8ca50004 	lw	a1,4(a1)
+			344: R_MIPS_LO16	.bss
+     348:	3c070000 	lui	a3,0x0
+			348: R_MIPS_HI16	cpu_data
+     34c:	94e70040 	lhu	a3,64(a3)
+			34c: R_MIPS_LO16	cpu_data
+	} else {
+		/* will get a new context next time */
+		cpu_context(cpu, mm) = 0;
+	}
+
+	local_irq_restore(flags);
+     350:	00031880 	sll	v1,v1,0x2
+     354:	3c060000 	lui	a2,0x0
+			354: R_MIPS_HI16	.data
+     358:	00c33021 	addu	a2,a2,v1
+     35c:	8cc60014 	lw	a2,20(a2)
+			35c: R_MIPS_LO16	.data
+     360:	3c040000 	lui	a0,0x0
+			360: R_MIPS_HI16	.rodata
+     364:	24840118 	addiu	a0,a0,280
+			364: R_MIPS_LO16	.rodata
+     368:	0c000000 	jal	0 <probe_pcache>
+			368: R_MIPS_26	printk
+     36c:	00052a82 	srl	a1,a1,0xa
+     370:	8fbf0030 	lw	ra,48(sp)
+     374:	8fb3002c 	lw	s3,44(sp)
+     378:	8fb20028 	lw	s2,40(sp)
+     37c:	8fb10024 	lw	s1,36(sp)
+     380:	8fb00020 	lw	s0,32(sp)
+     384:	03e00008 	jr	ra
+     388:	27bd0038 	addiu	sp,sp,56
+     38c:	3c020000 	lui	v0,0x0
+			38c: R_MIPS_HI16	cpu_data
+     390:	8c42003c 	lw	v0,60(v0)
+			390: R_MIPS_LO16	cpu_data
+
+	if (! ((asid += ASID_INC) & ASID_MASK) ) {
+		flush_icache_all();
+		local_flush_tlb_all();	/* start new asid cycle */
+		if (!asid)		/* fix version if needed */
+     394:	34420002 	ori	v0,v0,0x2
+     398:	080000b7 	j	2dc <probe_pcache+0x2dc>
+			398: R_MIPS_26	.text.init
+			asid = ASID_FIRST_VERSION;
+     39c:	ae22003c 	sw	v0,60(s1)
+     3a0:	3c020000 	lui	v0,0x0
+			3a0: R_MIPS_HI16	cpu_data
+     3a4:	8c42003c 	lw	v0,60(v0)
+			3a4: R_MIPS_LO16	cpu_data
+     3a8:	080000e6 	j	398 <probe_pcache+0x398>
+			3a8: R_MIPS_26	.text.init
+     3ac:	34420008 	ori	v0,v0,0x8
+     3b0:	40028007 	0x40028007
+     3b4:	3c030001 	lui	v1,0x1
+     3b8:	00431024 	and	v0,v0,v1
+     3bc:	1440ffc2 	bnez	v0,2c8 <probe_pcache+0x2c8>
+     3c0:	2402002c 	li	v0,44
+     3c4:	080000a8 	j	2a0 <probe_pcache+0x2a0>
+			3c4: R_MIPS_26	.text.init
+     3c8:	00000000 	nop
+     3cc:	2c420040 	sltiu	v0,v0,64
+     3d0:	1040ff80 	beqz	v0,1d4 <probe_pcache+0x1d4>
+     3d4:	3c020002 	lui	v0,0x2
+     3d8:	02421024 	and	v0,s2,v0
+     3dc:	1440ff7d 	bnez	v0,1d4 <probe_pcache+0x1d4>
+     3e0:	24020010 	li	v0,16
+     3e4:	3c070000 	lui	a3,0x0
+			3e4: R_MIPS_HI16	cpu_data
+     3e8:	94e7002c 	lhu	a3,44(a3)
+			3e8: R_MIPS_LO16	cpu_data
+     3ec:	30e3ffff 	andi	v1,a3,0xffff
+     3f0:	1062ff7a 	beq	v1,v0,1dc <probe_pcache+0x1dc>
+     3f4:	00000000 	nop
+     3f8:	3c040000 	lui	a0,0x0
+			3f8: R_MIPS_HI16	.rodata
+     3fc:	2484014c 	addiu	a0,a0,332
+			3fc: R_MIPS_LO16	.rodata
+     400:	0c000000 	jal	0 <probe_pcache>
+			400: R_MIPS_26	panic
+     404:	00000000 	nop
+     408:	3c060000 	lui	a2,0x0
+			408: R_MIPS_HI16	cpu_data
+     40c:	8cc60014 	lw	a2,20(a2)
+			40c: R_MIPS_LO16	cpu_data
+     410:	00121e82 	srl	v1,s2,0x1a
+     414:	3c020004 	lui	v0,0x4
+     418:	30630007 	andi	v1,v1,0x7
+     41c:	00122f42 	srl	a1,s2,0x1d
+     420:	24040001 	li	a0,1
+     424:	00c23025 	or	a2,a2,v0
+     428:	24a5000c 	addiu	a1,a1,12
+     42c:	24020040 	li	v0,64
+     430:	2463000c 	addiu	v1,v1,12
+     434:	00641804 	sllv	v1,a0,v1
+     438:	24070002 	li	a3,2
+     43c:	00a42004 	sllv	a0,a0,a1
+     440:	a622002c 	sh	v0,44(s1)
+     444:	24020020 	li	v0,32
+     448:	3c010000 	lui	at,0x0
+			448: R_MIPS_HI16	.bss
+     44c:	ac240000 	sw	a0,0(at)
+			44c: R_MIPS_LO16	.bss
+     450:	3c010000 	lui	at,0x0
+			450: R_MIPS_HI16	.bss
+     454:	ac230004 	sw	v1,4(at)
+			454: R_MIPS_LO16	.bss
+     458:	a6220040 	sh	v0,64(s1)
+     45c:	a6270042 	sh	a3,66(s1)
+     460:	ae260014 	sw	a2,20(s1)
+     464:	a627002e 	sh	a3,46(s1)
+     468:	ae200038 	sw	zero,56(s1)
+     46c:	08000071 	j	1c4 <probe_pcache+0x1c4>
+			46c: R_MIPS_26	.text.init
+     470:	ae20004c 	sw	zero,76(s1)
+     474:	32420e00 	andi	v0,s2,0xe00
+     478:	324301c0 	andi	v1,s2,0x1c0
+     47c:	00021242 	srl	v0,v0,0x9
+     480:	00031982 	srl	v1,v1,0x6
+     484:	32450020 	andi	a1,s2,0x20
+     488:	32460010 	andi	a2,s2,0x10
+     48c:	2442000c 	addiu	v0,v0,12
+     490:	00052942 	srl	a1,a1,0x5
+     494:	2463000c 	addiu	v1,v1,12
+     498:	24040010 	li	a0,16
+     49c:	00063102 	srl	a2,a2,0x4
+     4a0:	00c43004 	sllv	a2,a0,a2
+     4a4:	00a42004 	sllv	a0,a0,a1
+     4a8:	3c050000 	lui	a1,0x0
+			4a8: R_MIPS_HI16	cpu_data
+     4ac:	8ca50014 	lw	a1,20(a1)
+			4ac: R_MIPS_LO16	cpu_data
+     4b0:	24070001 	li	a3,1
+     4b4:	00471004 	sllv	v0,a3,v0
+     4b8:	00671804 	sllv	v1,a3,v1
+     4bc:	34a50800 	ori	a1,a1,0x800
+     4c0:	3c010000 	lui	at,0x0
+			4c0: R_MIPS_HI16	.bss
+ * The next two are for badland addresses like signal trampolines.
+ */
+static inline void protected_flush_icache_line(unsigned long addr)
+{
+	__asm__ __volatile__(
+     4c4:	ac220000 	sw	v0,0(at)
+			4c4: R_MIPS_LO16	.bss
+     4c8:	a624002c 	sh	a0,44(s1)
+     4cc:	3c010000 	lui	at,0x0
+			4cc: R_MIPS_HI16	.bss
+     4d0:	ac230004 	sw	v1,4(at)
+			4d0: R_MIPS_LO16	.bss
+     4d4:	a6260040 	sh	a2,64(s1)
+     4d8:	a6270042 	sh	a3,66(s1)
+     4dc:	08000119 	j	464 <probe_pcache+0x464>
+			4dc: R_MIPS_26	.text.init
+     4e0:	ae250014 	sw	a1,20(s1)
+     4e4:	4080e000 	mtc0	zero,$28
+     4e8:	00000000 	nop
+     4ec:	4080e800 	mtc0	zero,$29
+     4f0:	3c048000 	lui	a0,0x8000
+     4f4:	3c038000 	lui	v1,0x8000
+     4f8:	34841000 	ori	a0,a0,0x1000
+     4fc:	bc680000 	0xbc680000
+     500:	bc681000 	0xbc681000
+     504:	bc682000 	0xbc682000
+     508:	bc683000 	0xbc683000
+     50c:	bc740000 	0xbc740000
+     510:	bc741000 	0xbc741000
+     514:	bc742000 	0xbc742000
+     518:	bc743000 	0xbc743000
+     51c:	bc680000 	0xbc680000
+     520:	bc681000 	0xbc681000
+     524:	bc682000 	0xbc682000
+     528:	bc683000 	0xbc683000
+     52c:	24630020 	addiu	v1,v1,32
+     530:	0083102b 	sltu	v0,a0,v1
+     534:	1040fff1 	beqz	v0,4fc <probe_pcache+0x4fc>
+     538:	00000000 	nop
+     53c:	32420e00 	andi	v0,s2,0xe00
+     540:	00021242 	srl	v0,v0,0x9
+     544:	2442000c 	addiu	v0,v0,12
+     548:	24040001 	li	a0,1
+     54c:	00442004 	sllv	a0,a0,v0
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+     550:	24050004 	li	a1,4
+     554:	0085001b 	divu	zero,a0,a1
+     558:	32430020 	andi	v1,s2,0x20
+     55c:	00031942 	srl	v1,v1,0x5
+     560:	24020010 	li	v0,16
+     564:	00621004 	sllv	v0,v0,v1
+     568:	24030004 	li	v1,4
+     56c:	a623002e 	sh	v1,46(s1)
+     570:	3c010000 	lui	at,0x0
+			570: R_MIPS_HI16	.bss
+     574:	ac240000 	sw	a0,0(at)
+			574: R_MIPS_LO16	.bss
+     578:	a622002c 	sh	v0,44(s1)
+ */
+
+static inline int generic_ffs(int x)
+{
+	int r = 1;
+     57c:	24030001 	li	v1,1
+     580:	50a00001 	beqzl	a1,588 <probe_pcache+0x588>
+     584:	0007000d 	break	0x7
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+     588:	00003012 	mflo	a2
+	int r = 1;
+
+	if (!x)
+     58c:	10c00019 	beqz	a2,5f4 <probe_pcache+0x5f4>
+     590:	00002021 	move	a0,zero
+		return 0;
+	if (!(x & 0xffff)) {
+     594:	30c2ffff 	andi	v0,a2,0xffff
+     598:	14400004 	bnez	v0,5ac <probe_pcache+0x5ac>
+     59c:	30c200ff 	andi	v0,a2,0xff
+		x >>= 16;
+     5a0:	00063403 	sra	a2,a2,0x10
+		r += 16;
+     5a4:	24030011 	li	v1,17
+	}
+	if (!(x & 0xff)) {
+     5a8:	30c200ff 	andi	v0,a2,0xff
+     5ac:	14400004 	bnez	v0,5c0 <probe_pcache+0x5c0>
+     5b0:	30c2000f 	andi	v0,a2,0xf
+		x >>= 8;
+     5b4:	00063203 	sra	a2,a2,0x8
+		r += 8;
+     5b8:	24630008 	addiu	v1,v1,8
+	}
+	if (!(x & 0xf)) {
+     5bc:	30c2000f 	andi	v0,a2,0xf
+     5c0:	14400004 	bnez	v0,5d4 <probe_pcache+0x5d4>
+
+static inline void
+get_new_mmu_context(struct mm_struct *mm, unsigned long cpu)
+{
+	unsigned long asid = asid_cache(cpu);
+     5c4:	30c20003 	andi	v0,a2,0x3
+		x >>= 8;
+		r += 8;
+	}
+	if (!(x & 0xf)) {
+		x >>= 4;
+     5c8:	00063103 	sra	a2,a2,0x4
+		r += 4;
+     5cc:	24630004 	addiu	v1,v1,4
+	}
+	if (!(x & 3)) {
+     5d0:	30c20003 	andi	v0,a2,0x3
+     5d4:	14400004 	bnez	v0,5e8 <probe_pcache+0x5e8>
+     5d8:	30c20001 	andi	v0,a2,0x1
+		x >>= 2;
+     5dc:	00063083 	sra	a2,a2,0x2
+		r += 2;
+     5e0:	24630002 	addiu	v1,v1,2
+	}
+	if (!(x & 1)) {
+     5e4:	30c20001 	andi	v0,a2,0x1
+		local_flush_tlb_all();	/* start new asid cycle */
+		if (!asid)		/* fix version if needed */
+			asid = ASID_FIRST_VERSION;
+	}
+	cpu_context(cpu, mm) = asid_cache(cpu) = asid;
+     5e8:	2c420001 	sltiu	v0,v0,1
+}
+
+/*
+ * Initialize the context related info for a new mm_struct
+ * instance.
+ */
+static inline int
+init_new_context(struct task_struct *tsk, struct mm_struct *mm)
+{
+	int i;
+
+	for (i = 0; i < smp_num_cpus; i++)
+		cpu_context(i, mm) = 0;
+	return 0;
+}
+
+static inline void switch_mm(struct mm_struct *prev, struct mm_struct *next,
+                             struct task_struct *tsk, unsigned cpu)
+{
+	unsigned long flags;
+
+	local_irq_save(flags);
+
+	/* Check if our ASID is of an older version and thus invalid */
+	if ((cpu_context(cpu, next) ^ asid_cache(cpu)) & ASID_VERSION_MASK)
+		get_new_mmu_context(next, cpu);
+
+	write_c0_entryhi(cpu_context(cpu, next));
+	TLBMISS_HANDLER_SETUP_PGD(next->pgd);
+
+	/*
+	 * Mark current->active_mm as not "active" anymore.
+	 * We don't want to mislead possible IPI tlb flush routines.
+	 */
+	clear_bit(cpu, &prev->cpu_vm_mask);
+	set_bit(cpu, &next->cpu_vm_mask);
+
+	local_irq_restore(flags);
+}
+
+/*
+ * Destroy context related info for an mm_struct that is about
+ * to be put to rest.
+ */
+static inline void destroy_context(struct mm_struct *mm)
+{
+}
+
+/*
+ * After we have set current->mm to a new value, this activates
+ * the context for the new mm so we see the new mappings.
+ */
+static inline void
+activate_mm(struct mm_struct *prev, struct mm_struct *next)
+{
+	unsigned long flags;
+	int cpu = smp_processor_id();
+
+	local_irq_save(flags);
+
+	/* Unconditionally get a new ASID.  */
+	get_new_mmu_context(next, cpu);
+
+	write_c0_entryhi(cpu_context(cpu, next));
+	TLBMISS_HANDLER_SETUP_PGD(next->pgd);
+
+	/* mark mmu ownership change */
+	clear_bit(cpu, &prev->cpu_vm_mask);
+	set_bit(cpu, &next->cpu_vm_mask);
+
+	local_irq_restore(flags);
+}
+
+/*
+ * If mm is currently active_mm, we can't really drop it.  Instead,
+ * we will get a new one for it.
+ */
+static inline void
+drop_mmu_context(struct mm_struct *mm, unsigned cpu)
+{
+	unsigned long flags;
+
+	local_irq_save(flags);
+
+	if (test_bit(cpu, &mm->cpu_vm_mask))  {
+		get_new_mmu_context(mm, cpu);
+		write_c0_entryhi(cpu_asid(cpu, mm));
+     5ec:	00621821 	addu	v1,v1,v0
+	}
+	if (!(x & 1)) {
+		x >>= 1;
+		r += 1;
+	}
+     5f0:	00602021 	move	a0,v1
+     5f4:	324201c0 	andi	v0,s2,0x1c0
+     5f8:	00021182 	srl	v0,v0,0x6
+     5fc:	2442000c 	addiu	v0,v0,12
+     600:	24050001 	li	a1,1
+     604:	00452804 	sllv	a1,a1,v0
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+     608:	24060004 	li	a2,4
+     60c:	00a6001b 	divu	zero,a1,a2
+     610:	32420010 	andi	v0,s2,0x10
+     614:	00021102 	srl	v0,v0,0x4
+     618:	24030010 	li	v1,16
+     61c:	00431804 	sllv	v1,v1,v0
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+     620:	2484ffff 	addiu	a0,a0,-1
+     624:	24020004 	li	v0,4
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+     628:	ae240038 	sw	a0,56(s1)
+     62c:	a6230040 	sh	v1,64(s1)
+     630:	a6220042 	sh	v0,66(s1)
+     634:	3c010000 	lui	at,0x0
+			634: R_MIPS_HI16	.bss
+
+	if (! ((asid += ASID_INC) & ASID_MASK) ) {
+		flush_icache_all();
+		local_flush_tlb_all();	/* start new asid cycle */
+		if (!asid)		/* fix version if needed */
+     638:	ac250004 	sw	a1,4(at)
+			638: R_MIPS_LO16	.bss
+ */
+
+static inline int generic_ffs(int x)
+{
+	int r = 1;
+     63c:	24030001 	li	v1,1
+     640:	50c00001 	beqzl	a2,648 <probe_pcache+0x648>
+     644:	0007000d 	break	0x7
+     648:	00003812 	mflo	a3
+
+	if (!x)
+     64c:	10e00019 	beqz	a3,6b4 <probe_pcache+0x6b4>
+     650:	00002021 	move	a0,zero
+		return 0;
+	if (!(x & 0xffff)) {
+     654:	30e2ffff 	andi	v0,a3,0xffff
+     658:	14400004 	bnez	v0,66c <probe_pcache+0x66c>
+     65c:	30e200ff 	andi	v0,a3,0xff
+		x >>= 16;
+     660:	00073c03 	sra	a3,a3,0x10
+		r += 16;
+     664:	24030011 	li	v1,17
+	}
+	if (!(x & 0xff)) {
+     668:	30e200ff 	andi	v0,a3,0xff
+     66c:	14400004 	bnez	v0,680 <probe_pcache+0x680>
+struct zone_struct;
+extern struct zone_struct *zone_table[];
+
+static inline zone_t *page_zone(struct page *page)
+{
+     670:	30e2000f 	andi	v0,a3,0xf
+		x >>= 16;
+		r += 16;
+	}
+	if (!(x & 0xff)) {
+		x >>= 8;
+     674:	00073a03 	sra	a3,a3,0x8
+		r += 8;
+     678:	24630008 	addiu	v1,v1,8
+	}
+	if (!(x & 0xf)) {
+     67c:	30e2000f 	andi	v0,a3,0xf
+     680:	14400004 	bnez	v0,694 <probe_pcache+0x694>
+     684:	30e20003 	andi	v0,a3,0x3
+		x >>= 4;
+     688:	00073903 	sra	a3,a3,0x4
+		r += 4;
+     68c:	24630004 	addiu	v1,v1,4
+	}
+	if (!(x & 3)) {
+     690:	30e20003 	andi	v0,a3,0x3
+     694:	14400004 	bnez	v0,6a8 <probe_pcache+0x6a8>
+     698:	30e20001 	andi	v0,a3,0x1
+		x >>= 2;
+     69c:	00073883 	sra	a3,a3,0x2
+		r += 2;
+     6a0:	24630002 	addiu	v1,v1,2
+	}
+	if (!(x & 1)) {
+     6a4:	30e20001 	andi	v0,a3,0x1
+     6a8:	2c420001 	sltiu	v0,v0,1
+     6ac:	00621821 	addu	v1,v1,v0
+		x >>= 1;
+		r += 1;
+	}
+     6b0:	00602021 	move	a0,v1
+     6b4:	3c030000 	lui	v1,0x0
+			6b4: R_MIPS_HI16	cpu_data
+struct zone_struct;
+extern struct zone_struct *zone_table[];
+
+static inline zone_t *page_zone(struct page *page)
+{
+     6b8:	8c630014 	lw	v1,20(v1)
+			6b8: R_MIPS_LO16	cpu_data
+     6bc:	3c020004 	lui	v0,0x4
+     6c0:	34420800 	ori	v0,v0,0x800
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+     6c4:	2484ffff 	addiu	a0,a0,-1
+     6c8:	00621825 	or	v1,v1,v0
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+     6cc:	ae24004c 	sw	a0,76(s1)
+     6d0:	08000071 	j	1c4 <probe_pcache+0x1c4>
+			6d0: R_MIPS_26	.text.init
+     6d4:	ae230014 	sw	v1,20(s1)
+     6d8:	32450e00 	andi	a1,s2,0xe00
+     6dc:	324201c0 	andi	v0,s2,0x1c0
+     6e0:	00052a42 	srl	a1,a1,0x9
+     6e4:	00021182 	srl	v0,v0,0x6
+     6e8:	24a5000c 	addiu	a1,a1,12
+     6ec:	24030001 	li	v1,1
+     6f0:	2442000c 	addiu	v0,v0,12
+     6f4:	00431004 	sllv	v0,v1,v0
+     6f8:	00a31804 	sllv	v1,v1,a1
+     6fc:	3c050000 	lui	a1,0x0
+			6fc: R_MIPS_HI16	cpu_data
+     700:	8ca50014 	lw	a1,20(a1)
+			700: R_MIPS_LO16	cpu_data
+     704:	32460020 	andi	a2,s2,0x20
+     708:	32470010 	andi	a3,s2,0x10
+     70c:	00063142 	srl	a2,a2,0x5
+     710:	24040010 	li	a0,16
+     714:	00073902 	srl	a3,a3,0x4
+     718:	00e43804 	sllv	a3,a0,a3
+     71c:	34a50800 	ori	a1,a1,0x800
+     720:	00c42004 	sllv	a0,a0,a2
+     724:	24060002 	li	a2,2
+     728:	3c010000 	lui	at,0x0
+			728: R_MIPS_HI16	.bss
+     72c:	ac230000 	sw	v1,0(at)
+			72c: R_MIPS_LO16	.bss
+     730:	a624002c 	sh	a0,44(s1)
+     734:	3c010000 	lui	at,0x0
+			734: R_MIPS_HI16	.bss
+     738:	ac220004 	sw	v0,4(at)
+			738: R_MIPS_LO16	.bss
+     73c:	a6270040 	sh	a3,64(s1)
+     740:	a6260042 	sh	a2,66(s1)
+     744:	ae250014 	sw	a1,20(s1)
+     748:	0800011a 	j	468 <probe_pcache+0x468>
+			748: R_MIPS_26	.text.init
+     74c:	a626002e 	sh	a2,46(s1)
+     750:	32450e00 	andi	a1,s2,0xe00
+     754:	324201c0 	andi	v0,s2,0x1c0
+     758:	00052a42 	srl	a1,a1,0x9
+     75c:	00021182 	srl	v0,v0,0x6
+     760:	24a5000c 	addiu	a1,a1,12
+     764:	24030001 	li	v1,1
+     768:	2442000c 	addiu	v0,v0,12
+     76c:	00431004 	sllv	v0,v1,v0
+     770:	00a31804 	sllv	v1,v1,a1
+     774:	3c050000 	lui	a1,0x0
+			774: R_MIPS_HI16	cpu_data
+     778:	8ca50014 	lw	a1,20(a1)
+			778: R_MIPS_LO16	cpu_data
+     77c:	32460020 	andi	a2,s2,0x20
+     780:	32470010 	andi	a3,s2,0x10
+     784:	00063142 	srl	a2,a2,0x5
+     788:	24040010 	li	a0,16
+     78c:	00073902 	srl	a3,a3,0x4
+     790:	00e43804 	sllv	a3,a0,a3
+     794:	34a50800 	ori	a1,a1,0x800
+     798:	00c42004 	sllv	a0,a0,a2
+     79c:	080001ca 	j	728 <probe_pcache+0x728>
+			79c: R_MIPS_26	.text.init
+     7a0:	24060004 	li	a2,4
+     7a4:	3c020000 	lui	v0,0x0
+			7a4: R_MIPS_HI16	cpu_data
+     7a8:	8c420018 	lw	v0,24(v0)
+			7a8: R_MIPS_LO16	cpu_data
+     7ac:	2442f380 	addiu	v0,v0,-3200
+     7b0:	2c420003 	sltiu	v0,v0,3
+     7b4:	10400007 	beqz	v0,7d4 <probe_pcache+0x7d4>
+     7b8:	32420e00 	andi	v0,s2,0xe00
+     7bc:	2402ffcf 	li	v0,-49
+}
+
+static inline void flush_scache_line(unsigned long addr)
+{
+	cache_op(Hit_Writeback_Inv_SD, addr);
+     7c0:	02429024 	and	s2,s2,v0
+     7c4:	3c030041 	lui	v1,0x41
+     7c8:	02439025 	or	s2,s2,v1
+     7cc:	40928000 	mtc0	s2,$16
+     7d0:	32420e00 	andi	v0,s2,0xe00
+     7d4:	00021242 	srl	v0,v0,0x9
+     7d8:	2442000a 	addiu	v0,v0,10
+     7dc:	32430020 	andi	v1,s2,0x20
+     7e0:	24040001 	li	a0,1
+     7e4:	00442004 	sllv	a0,a0,v0
+     7e8:	00031942 	srl	v1,v1,0x5
+     7ec:	24020010 	li	v0,16
+     7f0:	00621004 	sllv	v0,v0,v1
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+     7f4:	00042842 	srl	a1,a0,0x1
+     7f8:	24030002 	li	v1,2
+     7fc:	a623002e 	sh	v1,46(s1)
+     800:	a622002c 	sh	v0,44(s1)
+     804:	3c010000 	lui	at,0x0
+			804: R_MIPS_HI16	.bss
+     808:	ac240000 	sw	a0,0(at)
+			808: R_MIPS_LO16	.bss
+ */
+
+static inline int generic_ffs(int x)
+{
+	int r = 1;
+     80c:	24030001 	li	v1,1
+
+	if (!x)
+     810:	10a00019 	beqz	a1,878 <probe_pcache+0x878>
+     814:	00003021 	move	a2,zero
+	int r = 1;
+
+	if (!x)
+		return 0;
+	if (!(x & 0xffff)) {
+     818:	30a2ffff 	andi	v0,a1,0xffff
+     81c:	14400004 	bnez	v0,830 <probe_pcache+0x830>
+     820:	30a200ff 	andi	v0,a1,0xff
+
+	if (!x)
+		return 0;
+	if (!(x & 0xffff)) {
+		x >>= 16;
+     824:	00052c03 	sra	a1,a1,0x10
+		r += 16;
+     828:	24030011 	li	v1,17
+	}
+	if (!(x & 0xff)) {
+     82c:	30a200ff 	andi	v0,a1,0xff
+     830:	14400004 	bnez	v0,844 <probe_pcache+0x844>
+     834:	30a2000f 	andi	v0,a1,0xf
+		x >>= 16;
+		r += 16;
+	}
+	if (!(x & 0xff)) {
+		x >>= 8;
+     838:	00052a03 	sra	a1,a1,0x8
+		r += 8;
+     83c:	24630008 	addiu	v1,v1,8
+	}
+	if (!(x & 0xf)) {
+     840:	30a2000f 	andi	v0,a1,0xf
+     844:	14400004 	bnez	v0,858 <probe_pcache+0x858>
+     848:	30a20003 	andi	v0,a1,0x3
+		x >>= 4;
+     84c:	00052903 	sra	a1,a1,0x4
+		r += 4;
+     850:	24630004 	addiu	v1,v1,4
+	}
+	if (!(x & 3)) {
+     854:	30a20003 	andi	v0,a1,0x3
+     858:	54400004 	bnezl	v0,86c <probe_pcache+0x86c>
+     85c:	30a20001 	andi	v0,a1,0x1
+		x >>= 4;
+		r += 4;
+	}
+	if (!(x & 3)) {
+		x >>= 2;
+     860:	00052883 	sra	a1,a1,0x2
+		r += 2;
+     864:	24630002 	addiu	v1,v1,2
+	}
+	if (!(x & 1)) {
+     868:	30a20001 	andi	v0,a1,0x1
+     86c:	2c420001 	sltiu	v0,v0,1
+     870:	00621821 	addu	v1,v1,v0
+		x >>= 1;
+		r += 1;
+	}
+     874:	00603021 	move	a2,v1
+     878:	324201c0 	andi	v0,s2,0x1c0
+     87c:	00021182 	srl	v0,v0,0x6
+     880:	08000042 	j	108 <probe_pcache+0x108>
+			880: R_MIPS_26	.text.init
+     884:	2442000a 	addiu	v0,v0,10
+     888:	32420e00 	andi	v0,s2,0xe00
+     88c:	324301c0 	andi	v1,s2,0x1c0
+     890:	00021242 	srl	v0,v0,0x9
+     894:	00031982 	srl	v1,v1,0x6
+     898:	32450020 	andi	a1,s2,0x20
+     89c:	32460010 	andi	a2,s2,0x10
+     8a0:	2442000a 	addiu	v0,v0,10
+     8a4:	00052942 	srl	a1,a1,0x5
+     8a8:	08000126 	j	498 <probe_pcache+0x498>
+			8a8: R_MIPS_26	.text.init
+     8ac:	2463000a 	addiu	v1,v1,10
+     8b0:	3c040000 	lui	a0,0x0
+			8b0: R_MIPS_HI16	.rodata
+     8b4:	0641fed2 	bgez	s2,400 <probe_pcache+0x400>
+     8b8:	24840180 	addiu	a0,a0,384
+			8b8: R_MIPS_LO16	.rodata
+     8bc:	40108001 	0x40108001
+     8c0:	00000000 	nop
+     8c4:	001014c2 	srl	v0,s0,0x13
+     8c8:	30430007 	andi	v1,v0,0x7
+     8cc:	50600004 	beqzl	v1,8e0 <probe_pcache+0x8e0>
+     8d0:	a620002c 	sh	zero,44(s1)
+     8d4:	24020002 	li	v0,2
+     8d8:	00621004 	sllv	v0,v0,v1
+     8dc:	a622002c 	sh	v0,44(s1)
+     8e0:	00101582 	srl	v0,s0,0x16
+     8e4:	30420007 	andi	v0,v0,0x7
+     8e8:	00102402 	srl	a0,s0,0x10
+     8ec:	24030040 	li	v1,64
+     8f0:	00431804 	sllv	v1,v1,v0
+     8f4:	30840007 	andi	a0,a0,0x7
+     8f8:	24840001 	addiu	a0,a0,1
+     8fc:	3062ffff 	andi	v0,v1,0xffff
+     900:	00440018 	mult	v0,a0
+     904:	3c070000 	lui	a3,0x0
+			904: R_MIPS_HI16	cpu_data
+}
+
+static inline void flush_dcache_line(unsigned long addr)
+{
+	cache_op(Hit_Writeback_Inv_D, addr);
+     908:	94e7002c 	lhu	a3,44(a3)
+			908: R_MIPS_LO16	cpu_data
+     90c:	a6230030 	sh	v1,48(s1)
+     910:	00802821 	move	a1,a0
+     914:	30e3ffff 	andi	v1,a3,0xffff
+     918:	a624002e 	sh	a0,46(s1)
+ */
+
+static inline int generic_ffs(int x)
+{
+	int r = 1;
+     91c:	24060001 	li	a2,1
+
+	if (!x)
+     920:	00004021 	move	t0,zero
+     924:	00001012 	mflo	v0
+	...
+     930:	00430018 	mult	v0,v1
+     934:	00001012 	mflo	v0
+     938:	3c010000 	lui	at,0x0
+			938: R_MIPS_HI16	.bss
+     93c:	ac220000 	sw	v0,0(at)
+			93c: R_MIPS_LO16	.bss
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+     940:	50a00001 	beqzl	a1,948 <probe_pcache+0x948>
+ * caches.  We're talking about one cacheline unnecessarily getting invalidated
+ * here so the penaltiy isn't overly hard.
+ */
+static inline void protected_writeback_dcache_line(unsigned long addr)
+{
+     944:	0007000d 	break	0x7
+     948:	0044001b 	divu	zero,v0,a0
+	__asm__ __volatile__(
+     94c:	00002012 	mflo	a0
+static inline int generic_ffs(int x)
+{
+	int r = 1;
+
+	if (!x)
+     950:	1080001a 	beqz	a0,9bc <probe_pcache+0x9bc>
+     954:	2502ffff 	addiu	v0,t0,-1
+		return 0;
+	if (!(x & 0xffff)) {
+     958:	3082ffff 	andi	v0,a0,0xffff
+     95c:	14400004 	bnez	v0,970 <probe_pcache+0x970>
+     960:	308200ff 	andi	v0,a0,0xff
+
+	if (!x)
+		return 0;
+	if (!(x & 0xffff)) {
+		x >>= 16;
+     964:	00042403 	sra	a0,a0,0x10
+		r += 16;
+     968:	24060011 	li	a2,17
+	}
+	if (!(x & 0xff)) {
+     96c:	308200ff 	andi	v0,a0,0xff
+     970:	14400004 	bnez	v0,984 <probe_pcache+0x984>
+     974:	3082000f 	andi	v0,a0,0xf
+		x >>= 16;
+		r += 16;
+	}
+	if (!(x & 0xff)) {
+		x >>= 8;
+     978:	00042203 	sra	a0,a0,0x8
+		r += 8;
+     97c:	24c60008 	addiu	a2,a2,8
+	}
+	if (!(x & 0xf)) {
+     980:	3082000f 	andi	v0,a0,0xf
+     984:	14400004 	bnez	v0,998 <probe_pcache+0x998>
+     988:	30820003 	andi	v0,a0,0x3
+		x >>= 8;
+		r += 8;
+	}
+	if (!(x & 0xf)) {
+		x >>= 4;
+     98c:	00042103 	sra	a0,a0,0x4
+		r += 4;
+     990:	24c60004 	addiu	a2,a2,4
+	}
+	if (!(x & 3)) {
+     994:	30820003 	andi	v0,a0,0x3
+     998:	14400004 	bnez	v0,9ac <probe_pcache+0x9ac>
+     99c:	30820001 	andi	v0,a0,0x1
+		x >>= 2;
+     9a0:	00042083 	sra	a0,a0,0x2
+		r += 2;
+     9a4:	24c60002 	addiu	a2,a2,2
+	}
+	if (!(x & 1)) {
+     9a8:	30820001 	andi	v0,a0,0x1
+     9ac:	2c420001 	sltiu	v0,v0,1
+
+static inline void blast_dcache16(void)
+{
+	unsigned long start = KSEG0;
+	unsigned long end = start + current_cpu_data.dcache.waysize;
+     9b0:	00c23021 	addu	a2,a2,v0
+	}
+	if (!(x & 1)) {
+		x >>= 1;
+		r += 1;
+	}
+     9b4:	00c04021 	move	t0,a2
+     9b8:	2502ffff 	addiu	v0,t0,-1
+     9bc:	32430008 	andi	v1,s2,0x8
+     9c0:	10600005 	beqz	v1,9d8 <probe_pcache+0x9d8>
+
+static inline void blast_dcache16(void)
+{
+	unsigned long start = KSEG0;
+	unsigned long end = start + current_cpu_data.dcache.waysize;
+     9c4:	ae220038 	sw	v0,56(s1)
+     9c8:	3c020000 	lui	v0,0x0
+			9c8: R_MIPS_HI16	cpu_data
+	unsigned long ws_end = current_cpu_data.dcache.ways << 
+	                       current_cpu_data.dcache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+     9cc:	8c42003c 	lw	v0,60(v0)
+			9cc: R_MIPS_LO16	cpu_data
+     9d0:	34420002 	ori	v0,v0,0x2
+     9d4:	ae22003c 	sw	v0,60(s1)
+     9d8:	3c020000 	lui	v0,0x0
+			9d8: R_MIPS_HI16	.bss
+	                       current_cpu_data.dcache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+		for (addr = start; addr < end; addr += 0x200)
+     9dc:	8c420000 	lw	v0,0(v0)
+			9dc: R_MIPS_LO16	.bss
+     9e0:	3c030000 	lui	v1,0x0
+			9e0: R_MIPS_HI16	cpu_data
+			cache16_unroll32(addr|ws,Index_Writeback_Inv_D);
+     9e4:	8c630038 	lw	v1,56(v1)
+			9e4: R_MIPS_LO16	cpu_data
+     9e8:	3c050000 	lui	a1,0x0
+			9e8: R_MIPS_HI16	cpu_data
+     9ec:	94a50030 	lhu	a1,48(a1)
+			9ec: R_MIPS_LO16	cpu_data
+     9f0:	afa20010 	sw	v0,16(sp)
+     9f4:	3c060000 	lui	a2,0x0
+			9f4: R_MIPS_HI16	cpu_data
+     9f8:	94c6002e 	lhu	a2,46(a2)
+			9f8: R_MIPS_LO16	cpu_data
+     9fc:	3c020000 	lui	v0,0x0
+			9fc: R_MIPS_HI16	cpu_data
+     a00:	8c42003c 	lw	v0,60(v0)
+			a00: R_MIPS_LO16	cpu_data
+     a04:	30e7ffff 	andi	a3,a3,0xffff
+     a08:	3c040000 	lui	a0,0x0
+			a08: R_MIPS_HI16	.rodata
+     a0c:	248401b0 	addiu	a0,a0,432
+			a0c: R_MIPS_LO16	.rodata
+     a10:	afa30014 	sw	v1,20(sp)
+     a14:	0c000000 	jal	0 <probe_pcache>
+			a14: R_MIPS_26	printk
+     a18:	afa20018 	sw	v0,24(sp)
+     a1c:	00101a82 	srl	v1,s0,0xa
+     a20:	30630007 	andi	v1,v1,0x7
+     a24:	1060004f 	beqz	v1,b64 <probe_pcache+0xb64>
+     a28:	ae200050 	sw	zero,80(s1)
+     a2c:	24020002 	li	v0,2
+     a30:	00621004 	sllv	v0,v0,v1
+     a34:	a6220040 	sh	v0,64(s1)
+     a38:	00101342 	srl	v0,s0,0xd
+     a3c:	30420007 	andi	v0,v0,0x7
+     a40:	001021c2 	srl	a0,s0,0x7
+     a44:	24030040 	li	v1,64
+     a48:	00431804 	sllv	v1,v1,v0
+     a4c:	30840007 	andi	a0,a0,0x7
+     a50:	24840001 	addiu	a0,a0,1
+     a54:	3062ffff 	andi	v0,v1,0xffff
+     a58:	00440018 	mult	v0,a0
+     a5c:	3c070000 	lui	a3,0x0
+			a5c: R_MIPS_HI16	cpu_data
+     a60:	94e70040 	lhu	a3,64(a3)
+			a60: R_MIPS_LO16	cpu_data
+     a64:	a6230044 	sh	v1,68(s1)
+     a68:	00802821 	move	a1,a0
+     a6c:	30e3ffff 	andi	v1,a3,0xffff
+     a70:	a6240042 	sh	a0,66(s1)
+ */
+
+static inline int generic_ffs(int x)
+{
+	int r = 1;
+     a74:	24060001 	li	a2,1
+
+	if (!x)
+     a78:	00004021 	move	t0,zero
+     a7c:	00001012 	mflo	v0
+	...
+     a88:	00430018 	mult	v0,v1
+     a8c:	00001012 	mflo	v0
+
+static inline void blast_dcache16_page(unsigned long page)
+{
+	unsigned long start = page;
+	unsigned long end = start + PAGE_SIZE;
+     a90:	3c010000 	lui	at,0x0
+			a90: R_MIPS_HI16	.bss
+
+	do {
+		cache16_unroll32(start,Hit_Writeback_Inv_D);
+     a94:	ac220004 	sw	v0,4(at)
+			a94: R_MIPS_LO16	.bss
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+     a98:	50a00001 	beqzl	a1,aa0 <probe_pcache+0xaa0>
+     a9c:	0007000d 	break	0x7
+     aa0:	0044001b 	divu	zero,v0,a0
+     aa4:	00002012 	mflo	a0
+	int r = 1;
+
+	if (!x)
+     aa8:	10800018 	beqz	a0,b0c <probe_pcache+0xb0c>
+     aac:	3082ffff 	andi	v0,a0,0xffff
+		return 0;
+	if (!(x & 0xffff)) {
+     ab0:	14400004 	bnez	v0,ac4 <probe_pcache+0xac4>
+     ab4:	308200ff 	andi	v0,a0,0xff
+		x >>= 16;
+     ab8:	00042403 	sra	a0,a0,0x10
+		r += 16;
+     abc:	24060011 	li	a2,17
+	}
+	if (!(x & 0xff)) {
+     ac0:	308200ff 	andi	v0,a0,0xff
+     ac4:	14400004 	bnez	v0,ad8 <probe_pcache+0xad8>
+     ac8:	3082000f 	andi	v0,a0,0xf
+		x >>= 8;
+     acc:	00042203 	sra	a0,a0,0x8
+		r += 8;
+     ad0:	24c60008 	addiu	a2,a2,8
+	}
+	if (!(x & 0xf)) {
+     ad4:	3082000f 	andi	v0,a0,0xf
+     ad8:	14400004 	bnez	v0,aec <probe_pcache+0xaec>
+     adc:	30820003 	andi	v0,a0,0x3
+		x >>= 4;
+     ae0:	00042103 	sra	a0,a0,0x4
+		r += 4;
+     ae4:	24c60004 	addiu	a2,a2,4
+	}
+	if (!(x & 3)) {
+     ae8:	30820003 	andi	v0,a0,0x3
+     aec:	14400004 	bnez	v0,b00 <probe_pcache+0xb00>
+     af0:	30820001 	andi	v0,a0,0x1
+		x >>= 2;
+     af4:	00042083 	sra	a0,a0,0x2
+		r += 2;
+     af8:	24c60002 	addiu	a2,a2,2
+	}
+	if (!(x & 1)) {
+     afc:	30820001 	andi	v0,a0,0x1
+     b00:	2c420001 	sltiu	v0,v0,1
+     b04:	00c23021 	addu	a2,a2,v0
+		x >>= 1;
+		r += 1;
+	}
+     b08:	00c04021 	move	t0,a2
+     b0c:	3c020000 	lui	v0,0x0
+			b0c: R_MIPS_HI16	.bss
+     b10:	8c420004 	lw	v0,4(v0)
+			b10: R_MIPS_LO16	.bss
+	unsigned long end = start + PAGE_SIZE;
+
+	do {
+		cache16_unroll32(start,Hit_Writeback_Inv_D);
+		start += 0x200;
+     b14:	3c050000 	lui	a1,0x0
+			b14: R_MIPS_HI16	cpu_data
+	} while (start < end);
+     b18:	94a50044 	lhu	a1,68(a1)
+			b18: R_MIPS_LO16	cpu_data
+     b1c:	3c060000 	lui	a2,0x0
+			b1c: R_MIPS_HI16	cpu_data
+     b20:	94c60042 	lhu	a2,66(a2)
+			b20: R_MIPS_LO16	cpu_data
+     b24:	afa20010 	sw	v0,16(sp)
+     b28:	3c020000 	lui	v0,0x0
+			b28: R_MIPS_HI16	cpu_data
+}
+
+static inline void blast_dcache16_page_indexed(unsigned long page)
+{
+	unsigned long start = page;
+	unsigned long end = start + PAGE_SIZE;
+	unsigned long ws_inc = 1UL << current_cpu_data.dcache.waybit;
+     b2c:	8c420050 	lw	v0,80(v0)
+			b2c: R_MIPS_LO16	cpu_data
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+     b30:	2503ffff 	addiu	v1,t0,-1
+     b34:	30e7ffff 	andi	a3,a3,0xffff
+     b38:	3c040000 	lui	a0,0x0
+			b38: R_MIPS_HI16	.rodata
+static inline void blast_dcache16_page_indexed(unsigned long page)
+{
+	unsigned long start = page;
+	unsigned long end = start + PAGE_SIZE;
+	unsigned long ws_inc = 1UL << current_cpu_data.dcache.waybit;
+     b3c:	248401f8 	addiu	a0,a0,504
+			b3c: R_MIPS_LO16	.rodata
+     b40:	afa30014 	sw	v1,20(sp)
+ * differs in spirit from the above ffz (man ffs).
+ */
+
+static inline int generic_ffs(int x)
+{
+     b44:	ae23004c 	sw	v1,76(s1)
+     b48:	0c000000 	jal	0 <probe_pcache>
+			b48: R_MIPS_26	printk
+	unsigned long ws_end = current_cpu_data.dcache.ways <<
+	                       current_cpu_data.dcache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+     b4c:	afa20018 	sw	v0,24(sp)
+     b50:	3c030000 	lui	v1,0x0
+			b50: R_MIPS_HI16	cpu_data
+     b54:	8c630014 	lw	v1,20(v1)
+			b54: R_MIPS_LO16	cpu_data
+	                       current_cpu_data.dcache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+		for (addr = start; addr < end; addr += 0x200) 
+     b58:	3c020004 	lui	v0,0x4
+     b5c:	080001b4 	j	6d0 <probe_pcache+0x6d0>
+			b5c: R_MIPS_26	.text.init
+			cache16_unroll32(addr|ws,Index_Writeback_Inv_D);
+     b60:	00621825 	or	v1,v1,v0
+     b64:	0800028e 	j	a38 <probe_pcache+0xa38>
+			b64: R_MIPS_26	.text.init
+     b68:	a6200040 	sh	zero,64(s1)
+     b6c:	2402dfff 	li	v0,-8193
+     b70:	02421024 	and	v0,s2,v0
+     b74:	40828000 	mtc0	v0,$16
+     b78:	080001e9 	j	7a4 <probe_pcache+0x7a4>
+			b78: R_MIPS_26	.text.init
+     b7c:	00000000 	nop
+
+00000b80 <probe_scache>:
+     b80:	40078000 	mfc0	a3,$16
+     b84:	3c020002 	lui	v0,0x2
+     b88:	00e21024 	and	v0,a3,v0
+     b8c:	3c080000 	lui	t0,0x0
+			b8c: R_MIPS_HI16	cpu_data
+     b90:	25080000 	addiu	t0,t0,0
+			b90: R_MIPS_LO16	cpu_data
+     b94:	1440004b 	bnez	v0,cc4 <probe_scache+0x144>
+     b98:	00001821 	move	v1,zero
+     b9c:	3c02ffc0 	lui	v0,0xffc0
+     ba0:	3c050000 	lui	a1,0x0
+			ba0: R_MIPS_HI16	stext
+     ba4:	24a50000 	addiu	a1,a1,0
+			ba4: R_MIPS_LO16	stext
+     ba8:	00a22824 	and	a1,a1,v0
+     bac:	3c060040 	lui	a2,0x40
+     bb0:	00c53021 	addu	a2,a2,a1
+     bb4:	40096000 	mfc0	t1,$12
+     bb8:	00000000 	nop
+     bbc:	35210001 	ori	at,t1,0x1
+     bc0:	38210001 	xori	at,at,0x1
+     bc4:	40816000 	mtc0	at,$12
+     bc8:	00000040 	sll	zero,zero,0x1
+     bcc:	00000040 	sll	zero,zero,0x1
+     bd0:	00000040 	sll	zero,zero,0x1
+     bd4:	00a6102b 	sltu	v0,a1,a2
+     bd8:	00a02021 	move	a0,a1
+     bdc:	10400008 	beqz	v0,c00 <probe_scache+0x80>
+     be0:	3c030001 	lui	v1,0x1
+     be4:	8c820000 	lw	v0,0(a0)
+     be8:	00000000 	nop
+     bec:	00031840 	sll	v1,v1,0x1
+     bf0:	00a32021 	addu	a0,a1,v1
+	unsigned long ws_end = current_cpu_data.dcache.ways <<
+	                       current_cpu_data.dcache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+     bf4:	0086102b 	sltu	v0,a0,a2
+     bf8:	5440fffb 	bnezl	v0,be8 <probe_scache+0x68>
+     bfc:	8c820000 	lw	v0,0(a0)
+     c00:	4080e000 	mtc0	zero,$28
+     c04:	00000000 	nop
+     c08:	4080e800 	mtc0	zero,$29
+	...
+     c1c:	bca80000 	0xbca80000
+     c20:	bca90000 	0xbca90000
+     c24:	bcab0000 	0xbcab0000
+     c28:	3c040002 	lui	a0,0x2
+static inline void blast_icache16(void)
+{
+	unsigned long start = KSEG0;
+	unsigned long end = start + current_cpu_data.icache.waysize;
+	unsigned long ws_inc = 1UL << current_cpu_data.icache.waybit;
+     c2c:	00852021 	addu	a0,a0,a1
+     c30:	0086102b 	sltu	v0,a0,a2
+     c34:	1040000e 	beqz	v0,c70 <probe_scache+0xf0>
+	unsigned long ws_end = current_cpu_data.icache.ways <<
+	                       current_cpu_data.icache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+     c38:	3c030002 	lui	v1,0x2
+     c3c:	bc870000 	0xbc870000
+	...
+     c50:	4002e000 	mfc0	v0,$28
+     c54:	00000000 	nop
+     c58:	10400005 	beqz	v0,c70 <probe_scache+0xf0>
+     c5c:	00031840 	sll	v1,v1,0x1
+     c60:	00a32021 	addu	a0,a1,v1
+     c64:	0086102b 	sltu	v0,a0,a2
+     c68:	1440fff4 	bnez	v0,c3c <probe_scache+0xbc>
+     c6c:	00000000 	nop
+     c70:	40016000 	mfc0	at,$12
+     c74:	31290001 	andi	t1,t1,0x1
+     c78:	34210001 	ori	at,at,0x1
+     c7c:	38210001 	xori	at,at,0x1
+     c80:	01214825 	or	t1,t1,at
+     c84:	40896000 	mtc0	t1,$12
+     c88:	00000040 	sll	zero,zero,0x1
+     c8c:	00000040 	sll	zero,zero,0x1
+     c90:	00000040 	sll	zero,zero,0x1
+     c94:	00071582 	srl	v0,a3,0x16
+     c98:	30420003 	andi	v0,v0,0x3
+     c9c:	24030010 	li	v1,16
+     ca0:	00431804 	sllv	v1,v1,v0
+     ca4:	00852023 	subu	a0,a0,a1
+     ca8:	24020001 	li	v0,1
+     cac:	a5030054 	sh	v1,84(t0)
+     cb0:	3c010000 	lui	at,0x0
+			cb0: R_MIPS_HI16	.bss
+     cb4:	ac240008 	sw	a0,8(at)
+			cb4: R_MIPS_LO16	.bss
+     cb8:	a5020056 	sh	v0,86(t0)
+     cbc:	ad00004c 	sw	zero,76(t0)
+     cc0:	24030001 	li	v1,1
+     cc4:	03e00008 	jr	ra
+     cc8:	00601021 	move	v0,v1
+
+00000ccc <setup_scache>:
+     ccc:	27bdffe8 	addiu	sp,sp,-24
+     cd0:	afb00010 	sw	s0,16(sp)
+	                       current_cpu_data.icache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+		for (addr = start; addr < end; addr += 0x200) 
+     cd4:	afbf0014 	sw	ra,20(sp)
+     cd8:	3c100000 	lui	s0,0x0
+			cd8: R_MIPS_HI16	cpu_data
+     cdc:	26100000 	addiu	s0,s0,0
+			cdc: R_MIPS_LO16	cpu_data
+     ce0:	40068000 	mfc0	a2,$16
+     ce4:	3c020000 	lui	v0,0x0
+			ce4: R_MIPS_HI16	cpu_data
+     ce8:	8c420020 	lw	v0,32(v0)
+			ce8: R_MIPS_LO16	cpu_data
+     cec:	2442fff6 	addiu	v0,v0,-10
+     cf0:	2c43002d 	sltiu	v1,v0,45
+     cf4:	10600016 	beqz	v1,d50 <setup_scache+0x84>
+     cf8:	00001821 	move	v1,zero
+
+static inline void blast_icache16_page(unsigned long page)
+{
+	unsigned long start = page;
+	unsigned long end = start + PAGE_SIZE;
+     cfc:	00021080 	sll	v0,v0,0x2
+
+	do {
+		cache16_unroll32(start,Hit_Invalidate_I);
+     d00:	3c030000 	lui	v1,0x0
+			d00: R_MIPS_HI16	.rodata
+     d04:	00621821 	addu	v1,v1,v0
+     d08:	8c63038c 	lw	v1,908(v1)
+			d08: R_MIPS_LO16	.rodata
+     d0c:	00600008 	jr	v1
+     d10:	00000000 	nop
+     d14:	3c031fff 	lui	v1,0x1fff
+     d18:	3463ffff 	ori	v1,v1,0xffff
+     d1c:	3c020000 	lui	v0,0x0
+			d1c: R_MIPS_HI16	.text.init
+     d20:	24420b80 	addiu	v0,v0,2944
+			d20: R_MIPS_LO16	.text.init
+     d24:	00431024 	and	v0,v0,v1
+     d28:	3c04a000 	lui	a0,0xa000
+     d2c:	00441025 	or	v0,v0,a0
+     d30:	0040f809 	jalr	v0
+     d34:	00c02021 	move	a0,a2
+     d38:	10400007 	beqz	v0,d58 <setup_scache+0x8c>
+     d3c:	00401821 	move	v1,v0
+     d40:	3c020000 	lui	v0,0x0
+			d40: R_MIPS_HI16	cpu_data
+     d44:	8c420014 	lw	v0,20(v0)
+			d44: R_MIPS_LO16	cpu_data
+     d48:	34421000 	ori	v0,v0,0x1000
+     d4c:	ae020014 	sw	v0,20(s0)
+     d50:	1460000b 	bnez	v1,d80 <setup_scache+0xb4>
+     d54:	00000000 	nop
+     d58:	3c040000 	lui	a0,0x0
+			d58: R_MIPS_HI16	.rodata
+     d5c:	24840300 	addiu	a0,a0,768
+			d5c: R_MIPS_LO16	.rodata
+     d60:	3c050000 	lui	a1,0x0
+			d60: R_MIPS_HI16	.rodata
+     d64:	24a5030c 	addiu	a1,a1,780
+			d64: R_MIPS_LO16	.rodata
+     d68:	0c000000 	jal	0 <probe_pcache>
+			d68: R_MIPS_26	printk
+     d6c:	2406040c 	li	a2,1036
+     d70:	8fbf0014 	lw	ra,20(sp)
+     d74:	8fb00010 	lw	s0,16(sp)
+     d78:	03e00008 	jr	ra
+     d7c:	27bd0018 	addiu	sp,sp,24
+     d80:	3c020000 	lui	v0,0x0
+			d80: R_MIPS_HI16	cpu_data
+
+	do {
+		cache16_unroll32(start,Hit_Invalidate_I);
+		start += 0x200;
+	} while (start < end);
+     d84:	8c420024 	lw	v0,36(v0)
+			d84: R_MIPS_LO16	cpu_data
+     d88:	38438040 	xori	v1,v0,0x8040
+     d8c:	38420020 	xori	v0,v0,0x20
+     d90:	2c420001 	sltiu	v0,v0,1
+     d94:	2c630001 	sltiu	v1,v1,1
+}
+
+static inline void blast_icache16_page_indexed(unsigned long page)
+{
+	unsigned long start = page;
+	unsigned long end = start + PAGE_SIZE;
+	unsigned long ws_inc = 1UL << current_cpu_data.icache.waybit;
+     d98:	00431025 	or	v0,v0,v1
+     d9c:	10400006 	beqz	v0,db8 <setup_scache+0xec>
+	unsigned long ws_end = current_cpu_data.icache.ways <<
+     da0:	00000000 	nop
+     da4:	3c020000 	lui	v0,0x0
+			da4: R_MIPS_HI16	cpu_data
+     da8:	8c420064 	lw	v0,100(v0)
+			da8: R_MIPS_LO16	cpu_data
+     dac:	30420001 	andi	v0,v0,0x1
+     db0:	10400032 	beqz	v0,e7c <setup_scache+0x1b0>
+     db4:	00000000 	nop
+     db8:	3c060000 	lui	a2,0x0
+			db8: R_MIPS_HI16	cpu_data
+     dbc:	94c60056 	lhu	a2,86(a2)
+			dbc: R_MIPS_LO16	cpu_data
+     dc0:	3c020000 	lui	v0,0x0
+			dc0: R_MIPS_HI16	.bss
+	                       current_cpu_data.icache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+		for (addr = start; addr < end; addr += 0x200) 
+     dc4:	8c420008 	lw	v0,8(v0)
+			dc4: R_MIPS_LO16	.bss
+     dc8:	3c040000 	lui	a0,0x0
+			dc8: R_MIPS_HI16	.rodata
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+		for (addr = start; addr < end; addr += 0x200) 
+			cache16_unroll32(addr|ws,Index_Invalidate_I);
+     dcc:	2484031c 	addiu	a0,a0,796
+			dcc: R_MIPS_LO16	.rodata
+     dd0:	50c00001 	beqzl	a2,dd8 <setup_scache+0x10c>
+     dd4:	0007000d 	break	0x7
+     dd8:	0046001b 	divu	zero,v0,a2
+     ddc:	3c030000 	lui	v1,0x0
+			ddc: R_MIPS_HI16	cpu_data
+     de0:	94630054 	lhu	v1,84(v1)
+			de0: R_MIPS_LO16	cpu_data
+     de4:	00064880 	sll	t1,a2,0x2
+     de8:	00022a82 	srl	a1,v0,0xa
+     dec:	00603821 	move	a3,v1
+     df0:	00004012 	mflo	t0
+     df4:	ae08005c 	sw	t0,92(s0)
+     df8:	00000000 	nop
+     dfc:	00660018 	mult	v1,a2
+     e00:	00001812 	mflo	v1
+     e04:	3c060000 	lui	a2,0x0
+			e04: R_MIPS_HI16	.data
+     e08:	00c93021 	addu	a2,a2,t1
+     e0c:	8cc60014 	lw	a2,20(a2)
+			e0c: R_MIPS_LO16	.data
+     e10:	0043001b 	divu	zero,v0,v1
+     e14:	00001012 	mflo	v0
+     e18:	0c000000 	jal	0 <probe_pcache>
+			e18: R_MIPS_26	printk
+     e1c:	a6020058 	sh	v0,88(s0)
+     e20:	3c030000 	lui	v1,0x0
+			e20: R_MIPS_HI16	cpu_data
+     e24:	8c630014 	lw	v1,20(v1)
+			e24: R_MIPS_LO16	cpu_data
+     e28:	3c020002 	lui	v0,0x2
+     e2c:	00621825 	or	v1,v1,v0
+     e30:	0800035c 	j	d70 <setup_scache+0xa4>
+			e30: R_MIPS_26	.text.init
+     e34:	ae030014 	sw	v1,20(s0)
+     e38:	00062b42 	srl	a1,a2,0xd
+     e3c:	00061c02 	srl	v1,a2,0x10
+     e40:	30630007 	andi	v1,v1,0x7
+     e44:	30a50001 	andi	a1,a1,0x1
+     e48:	3c040008 	lui	a0,0x8
+     e4c:	24020040 	li	v0,64
+     e50:	00642004 	sllv	a0,a0,v1
+     e54:	00a21004 	sllv	v0,v0,a1
+     e58:	24030002 	li	v1,2
+     e5c:	3c010000 	lui	at,0x0
+			e5c: R_MIPS_HI16	.bss
+	unsigned long ws_end = current_cpu_data.icache.ways <<
+	                       current_cpu_data.icache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+     e60:	ac240008 	sw	a0,8(at)
+			e60: R_MIPS_LO16	.bss
+     e64:	a6020054 	sh	v0,84(s0)
+     e68:	a6030056 	sh	v1,86(s0)
+     e6c:	08000360 	j	d80 <setup_scache+0xb4>
+			e6c: R_MIPS_26	.text.init
+     e70:	ae000060 	sw	zero,96(s0)
+     e74:	08000354 	j	d50 <setup_scache+0x84>
+			e74: R_MIPS_26	.text.init
+static inline void blast_scache16(void)
+{
+	unsigned long start = KSEG0;
+	unsigned long end = start + current_cpu_data.scache.waysize;
+	unsigned long ws_inc = 1UL << current_cpu_data.scache.waybit;
+     e78:	00001821 	move	v1,zero
+     e7c:	3c040000 	lui	a0,0x0
+			e7c: R_MIPS_HI16	.rodata
+{
+	unsigned long start = KSEG0;
+	unsigned long end = start + current_cpu_data.scache.waysize;
+	unsigned long ws_inc = 1UL << current_cpu_data.scache.waybit;
+	unsigned long ws_end = current_cpu_data.scache.ways << 
+     e80:	0c000000 	jal	0 <probe_pcache>
+			e80: R_MIPS_26	panic
+     e84:	24840354 	addiu	a0,a0,852
+			e84: R_MIPS_LO16	.rodata
+
+00000e88 <ld_mmu_r4xx0>:
+     e88:	3c060000 	lui	a2,0x0
+			e88: R_MIPS_HI16	except_vec2_generic
+     e8c:	24c60000 	addiu	a2,a2,0
+			e8c: R_MIPS_LO16	except_vec2_generic
+     e90:	27bdffe8 	addiu	sp,sp,-24
+     e94:	3c048000 	lui	a0,0x8000
+static inline void blast_scache16(void)
+{
+	unsigned long start = KSEG0;
+	unsigned long end = start + current_cpu_data.scache.waysize;
+	unsigned long ws_inc = 1UL << current_cpu_data.scache.waybit;
+     e98:	30c20003 	andi	v0,a2,0x3
+     e9c:	afbf0010 	sw	ra,16(sp)
+     ea0:	34840100 	ori	a0,a0,0x100
+	unsigned long ws_end = current_cpu_data.scache.ways << 
+	                       current_cpu_data.scache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+     ea4:	00c01821 	move	v1,a2
+     ea8:	10400138 	beqz	v0,138c <ld_mmu_r4xx0+0x504>
+     eac:	24c50080 	addiu	a1,a2,128
+     eb0:	00a01021 	move	v0,a1
+		for (addr = start; addr < end; addr += 0x200)
+     eb4:	88650003 	lwl	a1,3(v1)
+     eb8:	98650000 	lwr	a1,0(v1)
+			cache16_unroll32(addr|ws,Index_Writeback_Inv_SD);
+     ebc:	88670007 	lwl	a3,7(v1)
+     ec0:	98670004 	lwr	a3,4(v1)
+     ec4:	8868000b 	lwl	t0,11(v1)
+     ec8:	98680008 	lwr	t0,8(v1)
+     ecc:	8869000f 	lwl	t1,15(v1)
+     ed0:	9869000c 	lwr	t1,12(v1)
+     ed4:	a8850003 	swl	a1,3(a0)
+     ed8:	b8850000 	swr	a1,0(a0)
+     edc:	a8870007 	swl	a3,7(a0)
+     ee0:	b8870004 	swr	a3,4(a0)
+     ee4:	a888000b 	swl	t0,11(a0)
+     ee8:	b8880008 	swr	t0,8(a0)
+     eec:	a889000f 	swl	t1,15(a0)
+     ef0:	b889000c 	swr	t1,12(a0)
+     ef4:	24630010 	addiu	v1,v1,16
+     ef8:	1462ffee 	bne	v1,v0,eb4 <ld_mmu_r4xx0+0x2c>
+     efc:	24840010 	addiu	a0,a0,16
+     f00:	3c04a000 	lui	a0,0xa000
+     f04:	3c030000 	lui	v1,0x0
+			f04: R_MIPS_HI16	except_vec2_generic
+     f08:	24630000 	addiu	v1,v1,0
+			f08: R_MIPS_LO16	except_vec2_generic
+     f0c:	30c20003 	andi	v0,a2,0x3
+     f10:	34840100 	ori	a0,a0,0x100
+     f14:	10400110 	beqz	v0,1358 <ld_mmu_r4xx0+0x4d0>
+     f18:	24650080 	addiu	a1,v1,128
+     f1c:	00a01021 	move	v0,a1
+     f20:	88650003 	lwl	a1,3(v1)
+     f24:	98650000 	lwr	a1,0(v1)
+     f28:	88660007 	lwl	a2,7(v1)
+     f2c:	98660004 	lwr	a2,4(v1)
+     f30:	8867000b 	lwl	a3,11(v1)
+     f34:	98670008 	lwr	a3,8(v1)
+     f38:	8868000f 	lwl	t0,15(v1)
+     f3c:	9868000c 	lwr	t0,12(v1)
+	                       current_cpu_data.scache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+		for (addr = start; addr < end; addr += 0x200)
+     f40:	a8850003 	swl	a1,3(a0)
+     f44:	b8850000 	swr	a1,0(a0)
+     f48:	a8860007 	swl	a2,7(a0)
+     f4c:	b8860004 	swr	a2,4(a0)
+     f50:	a887000b 	swl	a3,11(a0)
+     f54:	b8870008 	swr	a3,8(a0)
+     f58:	a888000f 	swl	t0,15(a0)
+     f5c:	b888000c 	swr	t0,12(a0)
+     f60:	24630010 	addiu	v1,v1,16
+     f64:	1462ffee 	bne	v1,v0,f20 <ld_mmu_r4xx0+0x98>
+			cache16_unroll32(addr|ws,Index_Writeback_Inv_SD);
+}
+
+static inline void blast_scache16_page(unsigned long page)
+{
+	unsigned long start = page;
+	unsigned long end = page + PAGE_SIZE;
+     f68:	24840010 	addiu	a0,a0,16
+     f6c:	0c000000 	jal	0 <probe_pcache>
+			f6c: R_MIPS_26	.text.init
+     f70:	00000000 	nop
+     f74:	0c000333 	jal	ccc <setup_scache>
+			f74: R_MIPS_26	.text.init
+     f78:	00000000 	nop
+     f7c:	3c030000 	lui	v1,0x0
+			f7c: R_MIPS_HI16	cpu_data
+     f80:	94630040 	lhu	v1,64(v1)
+			f80: R_MIPS_LO16	cpu_data
+     f84:	24020010 	li	v0,16
+     f88:	106200f0 	beq	v1,v0,134c <ld_mmu_r4xx0+0x4c4>
+     f8c:	00000000 	nop
+     f90:	24020020 	li	v0,32
+     f94:	106200e8 	beq	v1,v0,1338 <ld_mmu_r4xx0+0x4b0>
+     f98:	00000000 	nop
+     f9c:	0c000002 	jal	8 <probe_pcache+0x8>
+			f9c: R_MIPS_26	.text
+     fa0:	00000000 	nop
+     fa4:	3c030000 	lui	v1,0x0
+			fa4: R_MIPS_HI16	cpu_data
+     fa8:	94630040 	lhu	v1,64(v1)
+			fa8: R_MIPS_LO16	cpu_data
+     fac:	24020010 	li	v0,16
+     fb0:	3064ffff 	andi	a0,v1,0xffff
+     fb4:	108200dd 	beq	a0,v0,132c <ld_mmu_r4xx0+0x4a4>
+     fb8:	00000000 	nop
+     fbc:	24020020 	li	v0,32
+     fc0:	108200d5 	beq	a0,v0,1318 <ld_mmu_r4xx0+0x490>
+     fc4:	00000000 	nop
+     fc8:	3c050000 	lui	a1,0x0
+			fc8: R_MIPS_HI16	cpu_data
+     fcc:	94a5002c 	lhu	a1,44(a1)
+			fcc: R_MIPS_LO16	cpu_data
+     fd0:	24020010 	li	v0,16
+     fd4:	30a4ffff 	andi	a0,a1,0xffff
+     fd8:	108200cc 	beq	a0,v0,130c <ld_mmu_r4xx0+0x484>
+     fdc:	00000000 	nop
+     fe0:	24020020 	li	v0,32
+     fe4:	108200c6 	beq	a0,v0,1300 <ld_mmu_r4xx0+0x478>
+     fe8:	00000000 	nop
+     fec:	24020040 	li	v0,64
+
+	do {
+		cache16_unroll32(start,Hit_Writeback_Inv_SD);
+		start += 0x200;
+	} while (start < end);
+     ff0:	108200bd 	beq	a0,v0,12e8 <ld_mmu_r4xx0+0x460>
+     ff4:	00000000 	nop
+     ff8:	24020010 	li	v0,16
+     ffc:	108200b7 	beq	a0,v0,12dc <ld_mmu_r4xx0+0x454>
+    1000:	00000000 	nop
+    1004:	24020020 	li	v0,32
+    1008:	108200b1 	beq	a0,v0,12d0 <ld_mmu_r4xx0+0x448>
+{
+	unsigned long start = KSEG0;
+	unsigned long end = start + current_cpu_data.dcache.waysize;
+	unsigned long ws_inc = 1UL << current_cpu_data.dcache.waybit;
+	unsigned long ws_end = current_cpu_data.dcache.ways <<
+    100c:	00000000 	nop
+    1010:	24020040 	li	v0,64
+
+static inline void blast_dcache32(void)
+{
+	unsigned long start = KSEG0;
+	unsigned long end = start + current_cpu_data.dcache.waysize;
+    1014:	108200a8 	beq	a0,v0,12b8 <ld_mmu_r4xx0+0x430>
+    1018:	00000000 	nop
+    101c:	30a4ffff 	andi	a0,a1,0xffff
+    1020:	24020010 	li	v0,16
+static inline void blast_dcache32(void)
+{
+	unsigned long start = KSEG0;
+	unsigned long end = start + current_cpu_data.dcache.waysize;
+	unsigned long ws_inc = 1UL << current_cpu_data.dcache.waybit;
+    1024:	108200a1 	beq	a0,v0,12ac <ld_mmu_r4xx0+0x424>
+    1028:	00000000 	nop
+    102c:	24020020 	li	v0,32
+	unsigned long ws_end = current_cpu_data.dcache.ways <<
+	                       current_cpu_data.dcache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+    1030:	1082009b 	beq	a0,v0,12a0 <ld_mmu_r4xx0+0x418>
+    1034:	00000000 	nop
+    1038:	24020040 	li	v0,64
+    103c:	10820093 	beq	a0,v0,128c <ld_mmu_r4xx0+0x404>
+	                       current_cpu_data.dcache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+		for (addr = start; addr < end; addr += 0x400) 
+    1040:	00000000 	nop
+    1044:	3c050000 	lui	a1,0x0
+			1044: R_MIPS_HI16	cpu_data
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+		for (addr = start; addr < end; addr += 0x400) 
+			cache32_unroll32(addr|ws,Index_Writeback_Inv_D);
+    1048:	94a50054 	lhu	a1,84(a1)
+			1048: R_MIPS_LO16	cpu_data
+    104c:	24020010 	li	v0,16
+    1050:	30a4ffff 	andi	a0,a1,0xffff
+    1054:	1082008a 	beq	a0,v0,1280 <ld_mmu_r4xx0+0x3f8>
+    1058:	00000000 	nop
+    105c:	24020020 	li	v0,32
+    1060:	10820084 	beq	a0,v0,1274 <ld_mmu_r4xx0+0x3ec>
+    1064:	00000000 	nop
+    1068:	24020040 	li	v0,64
+    106c:	1082007e 	beq	a0,v0,1268 <ld_mmu_r4xx0+0x3e0>
+    1070:	00000000 	nop
+    1074:	24020080 	li	v0,128
+    1078:	10820075 	beq	a0,v0,1250 <ld_mmu_r4xx0+0x3c8>
+    107c:	00000000 	nop
+    1080:	24020010 	li	v0,16
+    1084:	1082006f 	beq	a0,v0,1244 <ld_mmu_r4xx0+0x3bc>
+    1088:	00000000 	nop
+    108c:	24020020 	li	v0,32
+    1090:	10820069 	beq	a0,v0,1238 <ld_mmu_r4xx0+0x3b0>
+    1094:	00000000 	nop
+    1098:	24020040 	li	v0,64
+    109c:	10820063 	beq	a0,v0,122c <ld_mmu_r4xx0+0x3a4>
+    10a0:	00000000 	nop
+    10a4:	24020080 	li	v0,128
+    10a8:	1082005b 	beq	a0,v0,1218 <ld_mmu_r4xx0+0x390>
+    10ac:	00000000 	nop
+    10b0:	3c020000 	lui	v0,0x0
+			10b0: R_MIPS_HI16	cpu_data
+    10b4:	94420044 	lhu	v0,68(v0)
+			10b4: R_MIPS_LO16	cpu_data
+    10b8:	3063ffff 	andi	v1,v1,0xffff
+    10bc:	24060fff 	li	a2,4095
+    10c0:	00430018 	mult	v0,v1
+    10c4:	00001012 	mflo	v0
+    10c8:	2442ffff 	addiu	v0,v0,-1
+	                       current_cpu_data.dcache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+		for (addr = start; addr < end; addr += 0x400) 
+    10cc:	00c2182b 	sltu	v1,a2,v0
+    10d0:	54600001 	bnezl	v1,10d8 <ld_mmu_r4xx0+0x250>
+    10d4:	00403021 	move	a2,v0
+    10d8:	3c020000 	lui	v0,0x0
+			10d8: R_MIPS_HI16	.text
+	unsigned long ws_end = current_cpu_data.dcache.ways <<
+	                       current_cpu_data.dcache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+    10dc:	24420058 	addiu	v0,v0,88
+			10dc: R_MIPS_LO16	.text
+    10e0:	3c010000 	lui	at,0x0
+			10e0: R_MIPS_HI16	_flush_cache_all
+    10e4:	ac220000 	sw	v0,0(at)
+			10e4: R_MIPS_LO16	_flush_cache_all
+    10e8:	3c020000 	lui	v0,0x0
+			10e8: R_MIPS_HI16	.text
+    10ec:	24420204 	addiu	v0,v0,516
+			10ec: R_MIPS_LO16	.text
+    10f0:	3c030000 	lui	v1,0x0
+			10f0: R_MIPS_HI16	.text
+static inline void blast_dcache32_page_indexed(unsigned long page)
+{
+	unsigned long start = page;
+	unsigned long end = start + PAGE_SIZE;
+	unsigned long ws_inc = 1UL << current_cpu_data.dcache.waybit;
+    10f4:	24630170 	addiu	v1,v1,368
+			10f4: R_MIPS_LO16	.text
+    10f8:	3c010000 	lui	at,0x0
+			10f8: R_MIPS_HI16	_flush_cache_page
+{
+	unsigned long start = page;
+	unsigned long end = start + PAGE_SIZE;
+	unsigned long ws_inc = 1UL << current_cpu_data.dcache.waybit;
+	unsigned long ws_end = current_cpu_data.dcache.ways <<
+    10fc:	ac220000 	sw	v0,0(at)
+			10fc: R_MIPS_LO16	_flush_cache_page
+    1100:	3c020000 	lui	v0,0x0
+			1100: R_MIPS_HI16	.text
+static inline void blast_dcache32_page_indexed(unsigned long page)
+{
+	unsigned long start = page;
+	unsigned long end = start + PAGE_SIZE;
+	unsigned long ws_inc = 1UL << current_cpu_data.dcache.waybit;
+    1104:	24420118 	addiu	v0,v0,280
+			1104: R_MIPS_LO16	.text
+    1108:	3c010000 	lui	at,0x0
+			1108: R_MIPS_HI16	_flush_cache_mm
+{
+	unsigned long start = page;
+	unsigned long end = start + PAGE_SIZE;
+	unsigned long ws_inc = 1UL << current_cpu_data.dcache.waybit;
+	unsigned long ws_end = current_cpu_data.dcache.ways <<
+    110c:	ac230000 	sw	v1,0(at)
+			110c: R_MIPS_LO16	_flush_cache_mm
+    1110:	3c010000 	lui	at,0x0
+			1110: R_MIPS_HI16	_flush_cache_range
+	unsigned long ws_end = current_cpu_data.dcache.ways <<
+	                       current_cpu_data.dcache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+    1114:	ac220000 	sw	v0,0(at)
+			1114: R_MIPS_LO16	_flush_cache_range
+    1118:	3c030000 	lui	v1,0x0
+			1118: R_MIPS_HI16	.text
+    111c:	2463051c 	addiu	v1,v1,1308
+			111c: R_MIPS_LO16	.text
+    1120:	3c020000 	lui	v0,0x0
+			1120: R_MIPS_HI16	.text
+    1124:	24420964 	addiu	v0,v0,2404
+			1124: R_MIPS_LO16	.text
+    1128:	3c010000 	lui	at,0x0
+			1128: R_MIPS_HI16	_flush_icache_page
+    112c:	ac230000 	sw	v1,0(at)
+			112c: R_MIPS_LO16	_flush_icache_page
+    1130:	3c010000 	lui	at,0x0
+			1130: R_MIPS_HI16	_flush_icache_all
+    1134:	ac220000 	sw	v0,0(at)
+			1134: R_MIPS_LO16	_flush_icache_all
+    1138:	3c030000 	lui	v1,0x0
+			1138: R_MIPS_HI16	.text
+    113c:	24630934 	addiu	v1,v1,2356
+			113c: R_MIPS_LO16	.text
+    1140:	3c020000 	lui	v0,0x0
+			1140: R_MIPS_HI16	.text
+    1144:	24420434 	addiu	v0,v0,1076
+			1144: R_MIPS_LO16	.text
+    1148:	3c040000 	lui	a0,0x0
+			1148: R_MIPS_HI16	.text
+    114c:	24840770 	addiu	a0,a0,1904
+			114c: R_MIPS_LO16	.text
+    1150:	3c050000 	lui	a1,0x0
+			1150: R_MIPS_HI16	.text
+    1154:	24a500a4 	addiu	a1,a1,164
+			1154: R_MIPS_LO16	.text
+    1158:	3c010000 	lui	at,0x0
+			1158: R_MIPS_HI16	_flush_cache_sigtramp
+    115c:	ac230000 	sw	v1,0(at)
+			115c: R_MIPS_LO16	_flush_cache_sigtramp
+    1160:	3c010000 	lui	at,0x0
+			1160: R_MIPS_HI16	_flush_icache_range
+    1164:	ac220000 	sw	v0,0(at)
+			1164: R_MIPS_LO16	_flush_icache_range
+    1168:	3c030000 	lui	v1,0x0
+			1168: R_MIPS_HI16	.text
+    116c:	24630410 	addiu	v1,v1,1040
+			116c: R_MIPS_LO16	.text
+    1170:	3c020000 	lui	v0,0x0
+			1170: R_MIPS_HI16	.text
+    1174:	24420858 	addiu	v0,v0,2136
+			1174: R_MIPS_LO16	.text
+    1178:	3c010000 	lui	at,0x0
+			1178: R_MIPS_HI16	shm_align_mask
+    117c:	ac260000 	sw	a2,0(at)
+			117c: R_MIPS_LO16	shm_align_mask
+    1180:	3c010000 	lui	at,0x0
+			1180: R_MIPS_HI16	_flush_data_cache_page
+    1184:	ac230000 	sw	v1,0(at)
+			1184: R_MIPS_LO16	_flush_data_cache_page
+    1188:	3c010000 	lui	at,0x0
+			1188: R_MIPS_HI16	_dma_cache_wback
+    118c:	ac240000 	sw	a0,0(at)
+			118c: R_MIPS_LO16	_dma_cache_wback
+    1190:	3c010000 	lui	at,0x0
+			1190: R_MIPS_HI16	_dma_cache_inv
+    1194:	ac220000 	sw	v0,0(at)
+			1194: R_MIPS_LO16	_dma_cache_inv
+    1198:	3c010000 	lui	at,0x0
+			1198: R_MIPS_HI16	___flush_cache_all
+    119c:	ac250000 	sw	a1,0(at)
+			119c: R_MIPS_LO16	___flush_cache_all
+    11a0:	3c010000 	lui	at,0x0
+			11a0: R_MIPS_HI16	_dma_cache_wback_inv
+    11a4:	ac240000 	sw	a0,0(at)
+			11a4: R_MIPS_LO16	_dma_cache_wback_inv
+    11a8:	00a0f809 	jalr	a1
+	                       current_cpu_data.dcache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+		for (addr = start; addr < end; addr += 0x400) 
+    11ac:	00000000 	nop
+}
+
+__BUILD_SET_C0(status)
+__BUILD_SET_C0(cause)
+__BUILD_SET_C0(config)
+    11b0:	40028000 	mfc0	v0,$16
+    11b4:	2403fff8 	li	v1,-8
+    11b8:	00431024 	and	v0,v0,v1
+	unsigned long ws_end = current_cpu_data.dcache.ways <<
+	                       current_cpu_data.dcache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+    11bc:	34420003 	ori	v0,v0,0x3
+    11c0:	40828000 	mtc0	v0,$16
+    11c4:	3c030000 	lui	v1,0x0
+			11c4: R_MIPS_HI16	cpu_data
+    11c8:	8c630020 	lw	v1,32(v1)
+			11c8: R_MIPS_LO16	cpu_data
+    11cc:	2c620009 	sltiu	v0,v1,9
+    11d0:	1440000a 	bnez	v0,11fc <ld_mmu_r4xx0+0x374>
+static inline void blast_icache32(void)
+{
+	unsigned long start = KSEG0;
+	unsigned long end = start + current_cpu_data.icache.waysize;
+	unsigned long ws_inc = 1UL << current_cpu_data.icache.waybit;
+    11d4:	2c62000c 	sltiu	v0,v1,12
+    11d8:	14400004 	bnez	v0,11ec <ld_mmu_r4xx0+0x364>
+	unsigned long ws_end = current_cpu_data.icache.ways <<
+    11dc:	2462fff3 	addiu	v0,v1,-13
+    11e0:	2c420003 	sltiu	v0,v0,3
+    11e4:	10400005 	beqz	v0,11fc <ld_mmu_r4xx0+0x374>
+    11e8:	00000000 	nop
+}
+
+__BUILD_SET_C0(status)
+__BUILD_SET_C0(cause)
+__BUILD_SET_C0(config)
+    11ec:	40028000 	mfc0	v0,$16
+{
+	unsigned long start = KSEG0;
+	unsigned long end = start + current_cpu_data.icache.waysize;
+	unsigned long ws_inc = 1UL << current_cpu_data.icache.waybit;
+	unsigned long ws_end = current_cpu_data.icache.ways <<
+    11f0:	2403fff7 	li	v1,-9
+    11f4:	00431024 	and	v0,v0,v1
+    11f8:	40828000 	mtc0	v0,$16
+    11fc:	0c000000 	jal	0 <probe_pcache>
+			11fc: R_MIPS_26	build_clear_page
+	unsigned long ws_end = current_cpu_data.icache.ways <<
+	                       current_cpu_data.icache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+    1200:	00000000 	nop
+    1204:	0c000000 	jal	0 <probe_pcache>
+			1204: R_MIPS_26	build_copy_page
+    1208:	00000000 	nop
+    120c:	8fbf0010 	lw	ra,16(sp)
+	                       current_cpu_data.icache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+		for (addr = start; addr < end; addr += 0x400) 
+    1210:	03e00008 	jr	ra
+    1214:	27bd0018 	addiu	sp,sp,24
+    1218:	3c020000 	lui	v0,0x0
+			1218: R_MIPS_HI16	.text
+    121c:	244219c4 	addiu	v0,v0,6596
+			121c: R_MIPS_LO16	.text
+    1220:	3c010000 	lui	at,0x0
+			1220: R_MIPS_HI16	.bss
+    1224:	0800042c 	j	10b0 <ld_mmu_r4xx0+0x228>
+			1224: R_MIPS_26	.text.init
+    1228:	ac220028 	sw	v0,40(at)
+			1228: R_MIPS_LO16	.bss
+    122c:	3c020000 	lui	v0,0x0
+			122c: R_MIPS_HI16	.text
+    1230:	08000488 	j	1220 <ld_mmu_r4xx0+0x398>
+			1230: R_MIPS_26	.text.init
+    1234:	24421838 	addiu	v0,v0,6200
+			1234: R_MIPS_LO16	.text
+    1238:	3c020000 	lui	v0,0x0
+			1238: R_MIPS_HI16	.text
+    123c:	08000488 	j	1220 <ld_mmu_r4xx0+0x398>
+			123c: R_MIPS_26	.text.init
+    1240:	24421440 	addiu	v0,v0,5184
+			1240: R_MIPS_LO16	.text
+    1244:	3c020000 	lui	v0,0x0
+			1244: R_MIPS_HI16	.text
+    1248:	08000488 	j	1220 <ld_mmu_r4xx0+0x398>
+			1248: R_MIPS_26	.text.init
+    124c:	24420e78 	addiu	v0,v0,3704
+			124c: R_MIPS_LO16	.text
+    1250:	3c020000 	lui	v0,0x0
+			1250: R_MIPS_HI16	.text
+    1254:	24421ab4 	addiu	v0,v0,6836
+			1254: R_MIPS_LO16	.text
+    1258:	3c010000 	lui	at,0x0
+			1258: R_MIPS_HI16	.bss
+    125c:	ac220024 	sw	v0,36(at)
+			125c: R_MIPS_LO16	.bss
+    1260:	08000420 	j	1080 <ld_mmu_r4xx0+0x1f8>
+			1260: R_MIPS_26	.text.init
+    1264:	30a4ffff 	andi	a0,a1,0xffff
+    1268:	3c020000 	lui	v0,0x0
+			1268: R_MIPS_HI16	.text
+    126c:	08000496 	j	1258 <ld_mmu_r4xx0+0x3d0>
+			126c: R_MIPS_26	.text.init
+    1270:	24421928 	addiu	v0,v0,6440
+			1270: R_MIPS_LO16	.text
+    1274:	3c020000 	lui	v0,0x0
+			1274: R_MIPS_HI16	.text
+    1278:	08000496 	j	1258 <ld_mmu_r4xx0+0x3d0>
+			1278: R_MIPS_26	.text.init
+    127c:	24421530 	addiu	v0,v0,5424
+			127c: R_MIPS_LO16	.text
+    1280:	3c020000 	lui	v0,0x0
+			1280: R_MIPS_HI16	.text
+    1284:	08000496 	j	1258 <ld_mmu_r4xx0+0x3d0>
+			1284: R_MIPS_26	.text.init
+    1288:	24420f68 	addiu	v0,v0,3944
+			1288: R_MIPS_LO16	.text
+    128c:	3c020000 	lui	v0,0x0
+			128c: R_MIPS_HI16	.text
+    1290:	244215cc 	addiu	v0,v0,5580
+			1290: R_MIPS_LO16	.text
+    1294:	3c010000 	lui	at,0x0
+			1294: R_MIPS_HI16	.bss
+    1298:	08000411 	j	1044 <ld_mmu_r4xx0+0x1bc>
+			1298: R_MIPS_26	.text.init
+	                       current_cpu_data.icache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc) 
+		for (addr = start; addr < end; addr += 0x400) 
+    129c:	ac220020 	sw	v0,32(at)
+			129c: R_MIPS_LO16	.bss
+    12a0:	3c020000 	lui	v0,0x0
+			12a0: R_MIPS_HI16	.text
+    12a4:	080004a5 	j	1294 <ld_mmu_r4xx0+0x40c>
+			12a4: R_MIPS_26	.text.init
+    12a8:	244211d4 	addiu	v0,v0,4564
+			12a8: R_MIPS_LO16	.text
+    12ac:	3c020000 	lui	v0,0x0
+			12ac: R_MIPS_HI16	.text
+    12b0:	080004a5 	j	1294 <ld_mmu_r4xx0+0x40c>
+			12b0: R_MIPS_26	.text.init
+    12b4:	24420c0c 	addiu	v0,v0,3084
+			12b4: R_MIPS_LO16	.text
+    12b8:	3c020000 	lui	v0,0x0
+			12b8: R_MIPS_HI16	.text
+    12bc:	24421758 	addiu	v0,v0,5976
+			12bc: R_MIPS_LO16	.text
+    12c0:	3c010000 	lui	at,0x0
+			12c0: R_MIPS_HI16	.bss
+
+static inline void blast_icache32_page(unsigned long page)
+{
+	unsigned long start = page;
+	unsigned long end = start + PAGE_SIZE;
+    12c4:	ac22001c 	sw	v0,28(at)
+			12c4: R_MIPS_LO16	.bss
+
+	do {
+		cache32_unroll32(start,Hit_Invalidate_I);
+    12c8:	08000408 	j	1020 <ld_mmu_r4xx0+0x198>
+			12c8: R_MIPS_26	.text.init
+    12cc:	30a4ffff 	andi	a0,a1,0xffff
+    12d0:	3c020000 	lui	v0,0x0
+			12d0: R_MIPS_HI16	.text
+    12d4:	080004b0 	j	12c0 <ld_mmu_r4xx0+0x438>
+			12d4: R_MIPS_26	.text.init
+    12d8:	24421360 	addiu	v0,v0,4960
+			12d8: R_MIPS_LO16	.text
+    12dc:	3c020000 	lui	v0,0x0
+			12dc: R_MIPS_HI16	.text
+    12e0:	080004b0 	j	12c0 <ld_mmu_r4xx0+0x438>
+			12e0: R_MIPS_26	.text.init
+    12e4:	24420d98 	addiu	v0,v0,3480
+			12e4: R_MIPS_LO16	.text
+    12e8:	3c020000 	lui	v0,0x0
+			12e8: R_MIPS_HI16	.text
+    12ec:	244216bc 	addiu	v0,v0,5820
+			12ec: R_MIPS_LO16	.text
+    12f0:	3c010000 	lui	at,0x0
+			12f0: R_MIPS_HI16	.bss
+    12f4:	ac220018 	sw	v0,24(at)
+			12f4: R_MIPS_LO16	.bss
+    12f8:	080003fe 	j	ff8 <ld_mmu_r4xx0+0x170>
+			12f8: R_MIPS_26	.text.init
+    12fc:	30a4ffff 	andi	a0,a1,0xffff
+    1300:	3c020000 	lui	v0,0x0
+			1300: R_MIPS_HI16	.text
+    1304:	080004bc 	j	12f0 <ld_mmu_r4xx0+0x468>
+			1304: R_MIPS_26	.text.init
+    1308:	244212c4 	addiu	v0,v0,4804
+			1308: R_MIPS_LO16	.text
+    130c:	3c020000 	lui	v0,0x0
+			130c: R_MIPS_HI16	.text
+    1310:	080004bc 	j	12f0 <ld_mmu_r4xx0+0x468>
+			1310: R_MIPS_26	.text.init
+    1314:	24420cfc 	addiu	v0,v0,3324
+			1314: R_MIPS_LO16	.text
+    1318:	3c020000 	lui	v0,0x0
+			1318: R_MIPS_HI16	.text
+    131c:	24421004 	addiu	v0,v0,4100
+			131c: R_MIPS_LO16	.text
+    1320:	3c010000 	lui	at,0x0
+			1320: R_MIPS_HI16	.bss
+    1324:	080003f2 	j	fc8 <ld_mmu_r4xx0+0x140>
+			1324: R_MIPS_26	.text.init
+    1328:	ac220014 	sw	v0,20(at)
+			1328: R_MIPS_LO16	.bss
+    132c:	3c020000 	lui	v0,0x0
+			132c: R_MIPS_HI16	.text
+    1330:	080004c8 	j	1320 <ld_mmu_r4xx0+0x498>
+			1330: R_MIPS_26	.text.init
+    1334:	244209a0 	addiu	v0,v0,2464
+			1334: R_MIPS_LO16	.text
+    1338:	3c020000 	lui	v0,0x0
+			1338: R_MIPS_HI16	.text
+    133c:	24421b54 	addiu	v0,v0,6996
+			133c: R_MIPS_LO16	.text
+    1340:	3c010000 	lui	at,0x0
+			1340: R_MIPS_HI16	.bss
+    1344:	080003e7 	j	f9c <ld_mmu_r4xx0+0x114>
+			1344: R_MIPS_26	.text.init
+	unsigned long end = start + PAGE_SIZE;
+
+	do {
+		cache32_unroll32(start,Hit_Invalidate_I);
+		start += 0x400;
+    1348:	ac22000c 	sw	v0,12(at)
+			1348: R_MIPS_LO16	.bss
+    134c:	3c020000 	lui	v0,0x0
+			134c: R_MIPS_HI16	.text
+    1350:	080004d0 	j	1340 <ld_mmu_r4xx0+0x4b8>
+			1350: R_MIPS_26	.text.init
+    1354:	24420a90 	addiu	v0,v0,2704
+			1354: R_MIPS_LO16	.text
+    1358:	8c690000 	lw	t1,0(v1)
+    135c:	8c620004 	lw	v0,4(v1)
+static inline void blast_icache32_page_indexed(unsigned long page)
+{
+	unsigned long start = page;
+	unsigned long end = start + PAGE_SIZE;
+	unsigned long ws_inc = 1UL << current_cpu_data.icache.waybit;
+    1360:	8c660008 	lw	a2,8(v1)
+    1364:	8c67000c 	lw	a3,12(v1)
+	unsigned long ws_end = current_cpu_data.icache.ways <<
+    1368:	ac890000 	sw	t1,0(a0)
+    136c:	ac820004 	sw	v0,4(a0)
+    1370:	ac860008 	sw	a2,8(a0)
+    1374:	ac87000c 	sw	a3,12(a0)
+    1378:	24630010 	addiu	v1,v1,16
+    137c:	1465fff6 	bne	v1,a1,1358 <ld_mmu_r4xx0+0x4d0>
+	                       current_cpu_data.icache.waybit;
+	unsigned long ws, addr;
+
+	for (ws = 0; ws < ws_end; ws += ws_inc)
+    1380:	24840010 	addiu	a0,a0,16
+    1384:	080003db 	j	f6c <ld_mmu_r4xx0+0xe4>
+			1384: R_MIPS_26	.text.init
+    1388:	00000000 	nop
+		for (addr = start; addr < end; addr += 0x400) 
+    138c:	8c620000 	lw	v0,0(v1)
+    1390:	8c670004 	lw	a3,4(v1)
+			cache32_unroll32(addr|ws,Index_Invalidate_I);
+    1394:	8c680008 	lw	t0,8(v1)
+    1398:	8c69000c 	lw	t1,12(v1)
+    139c:	ac820000 	sw	v0,0(a0)
+    13a0:	ac870004 	sw	a3,4(a0)
+    13a4:	ac880008 	sw	t0,8(a0)
+    13a8:	ac89000c 	sw	t1,12(a0)
+    13ac:	24630010 	addiu	v1,v1,16
+    13b0:	1465fff6 	bne	v1,a1,138c <ld_mmu_r4xx0+0x504>
+    13b4:	24840010 	addiu	a0,a0,16
+    13b8:	080003c1 	j	f04 <ld_mmu_r4xx0+0x7c>
+			13b8: R_MIPS_26	.text.init
+    13bc:	3c04a000 	lui	a0,0xa000
