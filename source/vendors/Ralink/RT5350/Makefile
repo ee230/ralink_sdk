@@ -7,6 +7,11 @@ RAMDISK_SIZE  := $(shell echo $(CONFIG_BLK_DEV_RAM_SIZE))
 MKIMAGE_DIR = $(ROOTDIR)/user/mkimage
 CUR_DIR = $(shell pwd)
 COMP = lzma
+ifdef LZMA_PATH
+COMP_BIN = $(LZMA_PATH)/$(COMP)
+else
+COMP_BIN = $(COMP)
+endif
 
 ROMFS_DIRS = \
 	tmp \
@@ -93,7 +98,7 @@ mkimage: $(MKIMAGE_DIR)/crc32.c $(MKIMAGE_DIR)/mkimage.c
 
 image: mkimage
 	$(CROSS_COMPILE)objcopy -O binary -R .note -R .comment -S $(ROOTDIR)/$(LINUXDIR)/vmlinux  $(KERNELZ)
-	cd $(IMAGEDIR) ; rm -f $(KERNELZ).*; $(COMP) -9 -f -S .$(COMP) $(KERNELZ)
+	cd $(IMAGEDIR) ; rm -f $(KERNELZ).*; $(COMP_BIN) -9 -f -S .$(COMP) $(KERNELZ)
 
 ifeq	($(CONFIG_BLK_DEV_INITRD),)
 ifeq	($(CONFIG_ROOTFS_IN_FLASH_NO_PADDING),)

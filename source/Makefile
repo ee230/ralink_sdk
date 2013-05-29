@@ -38,7 +38,7 @@ IMAGEDIR = $(ROOTDIR)/images
 ROMFSDIR = $(ROOTDIR)/romfs
 ROMFSINST= romfs-inst.sh
 SCRIPTSDIR = $(ROOTDIR)/config/scripts
-TFTPDIR    = /tftpboot
+TFTPDIR    = /tftproot
 BUILD_START_STRING ?= $(shell date "+%a, %d %b %Y %T %z")
 
 #

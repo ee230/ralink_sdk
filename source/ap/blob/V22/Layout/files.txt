@@ -1,0 +1,7 @@
+11 b/g/n 2.4GHz AP RT3350 file listing:
+Version: V2.2
+
+1. AP-RT3350-LNA-2X2-2L-PCB Layer Stack.pdf: PCB stack data
+2. AP-RT5350-V22-SPI-SDRAM-2L-Gerber.rar: Gerber file
+3. AP-RT5350-V22-SPI-SDRAM-2L-Overlay.pdf: Overlay
+4. AP-RT5350-V22-SPI-SDRAM-2L-PCB.rar: Layout file in PADS 2007 format

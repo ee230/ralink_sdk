@@ -1,0 +1,7 @@
+11n 2.4GHz AP AP-RT5350 board file listing:
+Version: V22
+
+1. 2-Layer. 1 pcs per panel.
+2. PCB dimension: 95mm * 95mm.
+
+
