@@ -19,7 +19,8 @@ mkdev () {    # usage: mkdev name [bcu] major minor owner group mode
         fi
         [ ! "$opt_n" ] && sudo rm -f $1 &&
         [ ! "$opt_d" ] && sudo mknod $1 $2 $3 $4 &&
-                sudo chown $5:$6 $1 &&
+                #sudo chown $5:$6 $1 &&
+                sudo chown $5:$6 $1 ;
                 sudo chmod $7 $1
 }  
 cd $1
