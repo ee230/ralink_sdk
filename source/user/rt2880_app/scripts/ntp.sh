@@ -17,11 +17,9 @@ if [ "$srv" = "" ]; then
 fi
 
 
-#if [ "$sync" = "" ]; then
-#	sync=1
-#elif [ $sync -lt 300 -o $sync -le 0 ]; then
-#	sync=1
-#fi
+if [ "$sync" = "" ]; then
+	sync=2
+fi
 
 sync=`expr $sync \* 3600`
 
@@ -39,5 +37,11 @@ sed -e 's#.*_\(-*\)0*\(.*\)#GMT-\1\2#' /etc/tmpTZ > /etc/tmpTZ2
 sed -e 's#\(.*\)--\(.*\)#\1\2#' /etc/tmpTZ2 > /etc/TZ
 rm -rf /etc/tmpTZ
 rm -rf /etc/tmpTZ2
+if hash nslookup 2>/dev/null; then
+	while ! nslookup pool.ntp.org >/dev/null 2>&1 ; do
+		echo "NTP: Waiting for Internet to be ready"
+		sleep 4
+	done
+fi
 ntpclient -s -c 0 -h $srv -i $sync &
 
